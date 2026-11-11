@@ -34,6 +34,18 @@ give this record to either intended player as preparation.
   proxy HTTP 403; the CLI Actions listing also returns Forbidden. Neither is
   evidence that the deployed game failed. The PR workflow can repeat the live
   check from its GitHub-hosted runner.
+- **Fresh phase 9 live verification:** PR #12's
+  [run 43080768804](https://github.com/arutt99/BereaHunt/actions/runs/43080768804),
+  job **130732408025**, subsequently passed. Its log records expected main
+  `91282bdb718071ceb052fc25205ed39ea9587d98` (identical application tree), all
+  65 file comparisons, valid MIME types, four internal-path HTTP 404 responses,
+  full normal/assisted offline completion, failed/same-version package checks,
+  save/restart and browser-process offline reopening through the ending.
+  Chrome **156.0.8078.79**; no physical iPhone or field test is inferred.
+  PR [run 43080769027](https://github.com/arutt99/BereaHunt/actions/runs/43080769027)
+  also successfully validated/uploaded the application artifact; production
+  publication was skipped as designed. This supplements the phase 8 evidence
+  with a newly executed live check, without changing production or player saves.
 - D14 accepts the user's preparation/Home Screen/complete-download/closed-app
   offline-reopen check for advancement. Main also preserves “iphone works.
   Save works. Even after closure and relaunch.” and “Yes it was” confirming
