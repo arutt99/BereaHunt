@@ -12,10 +12,12 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
+from time import sleep
 import traceback
 from threading import Thread
 from types import SimpleNamespace
 from urllib.parse import urlsplit
+from uuid import uuid4
 
 from playwright.sync_api import sync_playwright, expect, Error as BrowserError
 
@@ -173,11 +175,12 @@ def main():
                     if path.endswith('.css'):
                         need('text/css' in content_type, 'Live stylesheet has a CSS MIME type')
                 exclusions = []
-                probe_id = hashlib.sha256((site_root/'content/offline-resources.json').read_bytes()).hexdigest()
                 for internal in ('README.md', 'AGENTS.md', 'docs/requirements.md', 'site/index.html'):
                     response = audit.request.get(host.url + internal, headers={'Cache-Control':'no-cache'})
-                    if response.status in (429, 502, 503, 504):
-                        response = audit.request.get(host.url + internal + '?deployment-check=' + probe_id,
+                    for attempt in range(5):
+                        if response.status not in (429, 502, 503, 504): break
+                        sleep(min(2 ** attempt, 4))
+                        response = audit.request.get(host.url + internal + '?deployment-check=' + uuid4().hex,
                                                      headers={'Cache-Control':'no-cache'})
                     print(f'CHECK: excluded path {internal}: HTTP {response.status}; response URL {response.url}')
                     exclusions.append(response.status)
