@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Local full-path browser regressions. Never prints case text or screenshots of play.
-Requires Python Playwright and the selected engine; no external service is contacted.
+"""Full-path browser regressions. Never prints case text or screenshots of play.
+Defaults to isolated local fixtures; --live-url checks the deployed Pages game
+using only disposable browser profiles and read-only requests.
 """
 import argparse
 from functools import partial
@@ -13,6 +14,7 @@ import shutil
 import tempfile
 import traceback
 from threading import Thread
+from types import SimpleNamespace
 from urllib.parse import urlsplit
 
 from playwright.sync_api import sync_playwright, expect, Error as BrowserError
@@ -79,24 +81,31 @@ def main():
     parser.add_argument('--engine', choices=('chromium', 'webkit'), default='chromium')
     parser.add_argument('--chromium', default=shutil.which('chromium') or shutil.which('chromium-browser'))
     parser.add_argument('--preparation-screenshot', help='Optional spoiler-free screenshot path; no gameplay screenshots.')
+    parser.add_argument('--live-url', choices=('https://arutt99.github.io/BereaHunt/',),
+                        help='Read-only Pages smoke; never changes the deployed game or a player save.')
+    parser.add_argument('--expected-site', type=Path, default=ROOT/'site',
+                        help='Expected deployed site snapshot (live checks only).')
     args = parser.parse_args()
+    site_root = args.expected_site.resolve() if args.live_url else ROOT/'site'
     with tempfile.TemporaryDirectory(prefix='berea-browser-') as temp, sync_playwright() as pw:
         directory = Path(temp)
         shutil.copytree(ROOT/'site', directory/'BereaHunt')
-        host = Host(directory)
+        host = SimpleNamespace(url=args.live_url) if args.live_url else Host(directory)
         browser_type = getattr(pw, args.engine)
         launch = dict(headless=True)
         if args.engine == 'chromium':
             launch.update(executable_path=args.chromium, args=['--no-sandbox'])
         browser = browser_type.launch(**launch)
         errors = []
-        solutions = {f'P{i:02}': json.loads((ROOT/f'site/content/solutions/p{i:02}.json').read_text()) for i in range(1, 9)}
+        solutions = {f'P{i:02}': json.loads((site_root/f'content/solutions/p{i:02}.json').read_text()) for i in range(1, 9)}
         contexts = []
 
         def context(script=None):
             c = browser.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True, reduced_motion='reduce')
             if script:
                 c.add_init_script(script)
+            if args.live_url:
+                c.route('**/*', lambda route: route.continue_() if route.request.url.startswith(host.url) else route.abort())
             contexts.append(c)
             return c
 
@@ -126,6 +135,12 @@ def main():
             if button.count():
                 button.click()
                 need(page.locator('#answer-form').count() == 0, 'Travel cannot expose an active form')
+                if args.live_url:
+                    link = page.get_by_role('link', name='Open optional external map', exact=True)
+                    need(urlsplit(link.get_attribute('href')).scheme == 'https', 'Unlocked optional map has a secure external URL')
+                    with page.expect_popup() as popup:
+                        link.click()
+                    popup.value.close()
                 if refs:
                     click(page, 'Can’t visit — continue with references from a safe place')
                     click(page, 'I’m safely stopped — use references')
@@ -142,8 +157,33 @@ def main():
             need(page.evaluate("[...document.querySelectorAll('button,input,select')].filter(n=>n.getBoundingClientRect().width && n.type!=='checkbox').every(n=>n.getBoundingClientRect().height>=47)"), 'Comfortable visible controls')
 
         try:
+            if args.live_url:
+                audit = context()
+                inventory = json.loads((site_root/'content/offline-resources.json').read_text())
+                resources = [r['path'] for r in inventory['resources']] + ['content/offline-resources.json']
+                for path in resources:
+                    response = audit.request.get(host.url + path)
+                    need(response.status == 200, 'Live required resource returns HTTP 200')
+                    need(response.url == host.url + path, 'Live resource stays under the expected Pages path')
+                    need(hashlib.sha256(response.body()).digest() == hashlib.sha256((site_root/path).read_bytes()).digest(),
+                         'Live resource bytes match the expected deployed revision')
+                    content_type = response.headers.get('content-type', '').lower()
+                    if path.endswith('.js'):
+                        need('javascript' in content_type, 'Live modules have a JavaScript MIME type')
+                    if path.endswith('.css'):
+                        need('text/css' in content_type, 'Live stylesheet has a CSS MIME type')
+                for internal in ('README.md', 'AGENTS.md', 'docs/requirements.md', 'site/index.html'):
+                    need(audit.request.get(host.url + internal).status == 404, 'Internal repository files are not deployed')
+                audit.close()
+                print(f'PASS: live HTTPS Pages origin; all {len(resources)} files match expected bytes; MIME types and internal-file exclusion.')
             # A real normal path using every rendered aid, draft restore and final submission.
             c = context(); page = page_for(c)
+            if args.live_url:
+                need(page.evaluate('navigator.serviceWorker.controller.scriptURL') == host.url + 'service-worker.js',
+                     'Live service-worker script uses the actual Pages path')
+                need(page.evaluate('navigator.serviceWorker.getRegistration().then(r=>r.scope)') == host.url,
+                     'Live service-worker scope is the Pages project root')
+                c.set_offline(True)
             if args.preparation_screenshot:
                 page.screenshot(path=args.preparation_screenshot, full_page=True)
             need('Wallace Lake' not in page.locator('body').inner_text(), 'Preparation conceals future names')
@@ -169,7 +209,7 @@ def main():
             page.locator('#answer-mechanism').select_option(solutions['P02']['canonical']['mechanism'])
             click(page, 'Check answer'); need(len(saved(page)['completedPuzzleIds']) == 1, 'Both causal fields required')
             for i, target in enumerate(solutions['P02']['canonical']['sequence']):
-                p = json.loads((ROOT/'site/content/puzzles/p02.json').read_text())
+                p = json.loads((site_root/'content/puzzles/p02.json').read_text())
                 label = next(card['label'] for card in p['workingAid']['initialCards'] if card['id'] == target)
                 while saved(page)['workingAidDraftByPuzzle']['P02']['values']['sequence'].index(target) > i:
                     page.get_by_role('button', name=f'Move {label} up', exact=True).click()
@@ -205,7 +245,7 @@ def main():
             lower, upper = solutions['P06']['canonical']
             page.locator('#answer-lower').fill(lower); page.locator('#answer-upper').fill(upper)
             click(page, 'Check answer'); advance(page)
-            people = json.loads((ROOT/'site/content/puzzles/p07.json').read_text())['workingAid']['people']
+            people = json.loads((site_root/'content/puzzles/p07.json').read_text())['workingAid']['people']
             for i, person in enumerate(people):
                 page.locator(f'#badge-{i}').select_option(solutions['P07']['canonical'][person])
             page.reload()
@@ -230,11 +270,13 @@ def main():
             print('PASS: complete normal mobile path, eight controls, drafts, gated views, ending and case file.')
 
             # Interrupt the *initial* download in a later unvisited resource.
-            c2 = context(); host.failure = 'content/solutions/p08.json'; assisted = page_for(c2, False)
-            click(assisted, 'Download complete adventure')
-            expect(assisted.locator('#offline-status')).to_contain_text('Download incomplete', timeout=60000)
-            need(assisted.get_by_role('button', name='Start the investigation', exact=True).count() == 0, 'Incomplete package cannot start')
-            host.failure = None
+            c2 = context(); assisted = page_for(c2, False)
+            if not args.live_url:
+                host.failure = 'content/solutions/p08.json'
+                click(assisted, 'Download complete adventure')
+                expect(assisted.locator('#offline-status')).to_contain_text('Download incomplete', timeout=60000)
+                need(assisted.get_by_role('button', name='Start the investigation', exact=True).count() == 0, 'Incomplete package cannot start')
+                host.failure = None
             click(assisted, 'Download complete adventure')
             expect(assisted.get_by_role('heading', name='Ready offline', exact=True)).to_be_visible(timeout=60000)
             begin(assisted); c2.set_offline(True)
@@ -262,7 +304,58 @@ def main():
             assisted.close(); assisted = page_for(c2, False)
             expect(assisted.get_by_role('heading', name='Investigation complete', exact=True)).to_be_visible()
             need(not errors, 'No browser runtime errors on offline assisted path')
-            print('PASS: interrupted initial download/retry, all hints/references/reveals, offline page closure/relaunch/completion.')
+            print('PASS: all hints/references/reveals, offline page closure/relaunch/completion.' if args.live_url else
+                  'PASS: interrupted initial download/retry, all hints/references/reveals, offline page closure/relaunch/completion.')
+
+            if args.live_url:
+                # Exercise actual-origin update checks without altering production files.
+                probe_context = context(); probe = page_for(probe_context); begin(probe)
+                probe.locator('#answer-reference').fill('deployment-resume')
+                click(probe, 'Show hint 1 of 3')
+                expect(probe.locator('#shown-hints li')).to_have_count(1)
+                original = saved(probe)
+                click(probe, 'Offline & install'); probe_context.set_offline(True)
+                click(probe, 'Check for a complete update')
+                expect(probe.locator('#offline-status')).to_contain_text('Download incomplete', timeout=60000)
+                need(saved(probe) == original, 'Failed live-origin update retains the exact save')
+                probe_context.set_offline(False)
+                click(probe, 'Check for a complete update')
+                expect(probe.locator('#offline-status')).to_contain_text('up to date and verified', timeout=60000)
+                probe.reload()
+                expect(probe.locator('#answer-reference')).to_have_value('deployment-resume')
+                expect(probe.locator('#shown-hints li')).to_have_count(1)
+                need(saved(probe) == original, 'Verified live package check preserves the exact save')
+                probe.evaluate('localStorage.setItem("deployment-unrelated","keep")')
+                click(probe, 'Offline & install')
+                click(probe, 'Restart investigation'); probe.locator('#dialog > form button').click()
+                need(saved(probe) == original, 'Live restart cancellation preserves progress')
+                click(probe, 'Restart investigation'); click(probe, 'Erase progress and restart')
+                need(saved(probe)['completedPuzzleIds'] == [], 'Live confirmed restart clears case progress')
+                need(probe.evaluate('localStorage.getItem("deployment-unrelated")') == 'keep', 'Restart preserves unrelated browser storage')
+                print('PASS: live-origin failed/same-version verified package checks, draft/hint preservation and scoped restart.')
+
+                # A full process shutdown and fresh offline launch at the real HTTPS origin.
+                profile = directory / 'live-persistent-profile'
+                persistent = browser_type.launch_persistent_context(str(profile), **launch, viewport={'width':390,'height':844})
+                try:
+                    durable = page_for(persistent); begin(durable)
+                    durable.locator('#answer-reference').fill('process-resume')
+                    click(durable, 'Show hint 1 of 3'); expect(durable.locator('#shown-hints li')).to_have_count(1)
+                    persistent.close()
+                    persistent = browser_type.launch_persistent_context(str(profile), **launch, viewport={'width':390,'height':844})
+                    persistent.set_offline(True)
+                    durable = page_for(persistent, False)
+                    expect(durable.locator('#answer-reference')).to_have_value('process-resume')
+                    expect(durable.locator('#shown-hints li')).to_have_count(1)
+                    for i in range(8):
+                        click(durable, 'Reveal answer'); click(durable, 'Reveal answer and continue')
+                        if i < 7: advance(durable, True)
+                    expect(durable.get_by_role('heading', name='Investigation complete', exact=True)).to_be_visible()
+                finally:
+                    persistent.close()
+                need(not errors, 'No uncaught errors during actual-origin browser smoke')
+                print(f'PASS: live Pages browser-process offline relaunch through ending; {args.engine} {browser.version}. No physical iPhone or field test claimed.')
+                return 0
 
             # Active clients retain a package pin; failed and compatible updates retain saves.
             c3 = context(); update = page_for(c3); begin(update)
@@ -350,7 +443,8 @@ def main():
             print(f'PASS: {args.engine} {browser.version}; project subpath; 390×844 touch/reduced-motion viewport. No actual iPhone, field or live-host test claimed.')
         finally:
             for c in contexts: c.close()
-            browser.close(); host.server.shutdown()
+            browser.close()
+            if not args.live_url: host.server.shutdown()
     return 0
 
 

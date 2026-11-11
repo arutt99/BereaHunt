@@ -2,6 +2,13 @@
 
 Spoiler-free, **2026-11-11**. Applies to the phase 6 application on fetched
 `origin/main` **1667fad**, with phase 7 corrections on `codex/phase-7-testing`.
+**Current acceptance, 2026-11-11:** the user confirms the spoiler-free iPhone
+preparation/Home Screen/download/offline-reopen check works and directs us to
+advance. That reported check is accepted for phase 7 advancement; do not ask
+the players to repeat it. The expanded device protocol below records additional
+coverage, not observations inferred from that confirmation or another player
+assignment. Model/iOS and expanded lifecycle/update results remain unspecified.
+
 Detailed case-bearing observations belong exclusively under
 `docs/development-spoilers/testing/`. Neither player needs to preview the case.
 
@@ -50,12 +57,12 @@ supporting evidence; it cannot establish iPhone Safari or Home Screen behavior.
 | T14 | Mobile usability | Every objective at narrow/portrait/landscape widths and doubled text; bounded table scrolling, named large controls, useful focus, reduced motion, enlarged image/text equivalents |
 | T15 | Puzzle/narrative review and timing | Trace all actual inputs and alternatives; reliable concise testimony, final synthesis supported before submission, assistance coherent. Distinguish automation duration from unmeasured human solving/driving |
 | T16 | Critical-fact and access review | Reconcile delivered content with existing dated evidence, route estimates and restrictions; unsupported physical details remain optional/excluded, no invented field or source refresh |
-| D01 | Actual iPhone Safari and installed Home Screen | Required device protocol below; cannot be inferred from any desktop engine |
+| D01 | Actual iPhone Safari and installed Home Screen | User-reported preparation/install/download/offline-reopen pass accepted for advancement; expanded protocol below is not fully observed |
 
 Execution status, exact environment and limitations are in
-[readiness](readiness.md). An unrun required check blocks phase completion.
+[readiness](readiness.md). The user has accepted the reported device check for advancement; retain the exact coverage limits.
 
-## Required actual-device protocol
+## Expanded actual-device protocol
 
 Use a physical iPhone and this candidate through a secure test origin. Record
 model, iOS version/build, Safari version where exposed, candidate revision,
