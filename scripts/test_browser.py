@@ -172,10 +172,16 @@ def main():
                         need('javascript' in content_type, 'Live modules have a JavaScript MIME type')
                     if path.endswith('.css'):
                         need('text/css' in content_type, 'Live stylesheet has a CSS MIME type')
+                exclusions = []
+                probe_id = hashlib.sha256((site_root/'content/offline-resources.json').read_bytes()).hexdigest()
                 for internal in ('README.md', 'AGENTS.md', 'docs/requirements.md', 'site/index.html'):
                     response = audit.request.get(host.url + internal, headers={'Cache-Control':'no-cache'})
+                    if response.status in (429, 502, 503, 504):
+                        response = audit.request.get(host.url + internal + '?deployment-check=' + probe_id,
+                                                     headers={'Cache-Control':'no-cache'})
                     print(f'CHECK: excluded path {internal}: HTTP {response.status}; response URL {response.url}')
-                    need(response.status == 404, 'Internal repository files are not deployed')
+                    exclusions.append(response.status)
+                need(all(status == 404 for status in exclusions), 'Internal repository files are not deployed')
                 audit.close()
                 print(f'PASS: live HTTPS Pages origin; all {len(resources)} files match expected bytes; MIME types and internal-file exclusion.')
             # A real normal path using every rendered aid, draft restore and final submission.
