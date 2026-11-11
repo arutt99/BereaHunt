@@ -1,11 +1,16 @@
-# Phase 7 readiness
+# Testing and deployment readiness
 
-Spoiler-free, **2026-11-11**. **Phase 7 — Blocked on required actual-device
-validation.** The user now reports successful iPhone use, saving and restoration
-after closure/relaunch, and explicitly confirms that this was the installed
-Home Screen app with internet turned off. That device check is passed as a user
-report; remaining device coverage is listed below. Phase 7 is not yet marked
-Complete solely from this persistence check.
+Spoiler-free, **2026-11-11**. **Phase 7 — Complete with user-accepted device
+coverage. Phase 8 — Complete.** The user confirms the spoiler-free iPhone
+preparation/install/complete-download/closed-app offline-reopen check works and
+explicitly directs advancement. Main additionally preserves the exact report:
+“iphone works. Save works. Even after closure and relaunch.” Asked whether this
+was the installed Home Screen app with internet off, the user answered
+“Yes it was.” Saving and restored progress in that offline installed context
+therefore pass as user-reported evidence. That check is recorded as a **user-reported pass**,
+not a test performed by the assistant. It closes the former D01 advancement gate.
+Exact model/iOS and the expanded physical-device gameplay/update/storage matrix
+were not supplied; no full device protocol or independent playtest is inferred.
 
 The [test plan](test-plan.md) defines the repeatable matrix and actual-device
 protocol. The case, route, answers, fact classifications and confirmed outing
@@ -33,33 +38,54 @@ results and a separate field/access review are retained for later sessions.
 | Additional release matrix | Every objective at three layout sizes and doubled text; all locked view URLs, empty/wrong typed answers, focus/controls, enlarged/failed images, maps, multi-stage offline closure, live window conflicts, same-size content-hash mismatch and waiting-worker upgrades pass. No uncaught page errors |
 | Visual review | Neutral 390 × 844 preparation screen inspected; no future case/destination information. Layout/text/zoom checks support readability; no actual outdoor sunlight or physical-device legibility trial |
 | Environment | Linux, Python 3.12.14, Node 24.22.1, Python Playwright and Chromium 156.0.8078.79; local `/BereaHunt/` subpath, compressed static resources |
-| Actual iPhone Safari/Home Screen | **D01 partially covered, user-reported 2026-11-11:** installed Home Screen app works with internet off, saves, and restores progress after closure/relaunch. The user explicitly confirmed both context and connectivity. Model/iOS and exact candidate/URL were not supplied. Full later-content/assistance completion, separate Safari storage and actual-device update behavior remain unreported; desktop coverage for those remains as recorded |
+| Actual iPhone Safari/Home Screen | **User-reported pass, accepted for advancement:** preparation, Home Screen installation, complete download, saving and restoration after closed-app offline reopening work. Main preserves explicit confirmation of the installed/offline context. No device attached to the assistant; model/iOS unspecified. Broader background/update/storage-context and full-path device observations were not supplied |
 | Supporting WebKit | Not run. Official WebKit 26.5 (Playwright build 2336) installation failed: environment policy returned HTTP 403 `Domain forbidden` for both official download hosts. This is separate from D01 and would not replace it |
 | Field/access | Desk reconciliation against existing 2026-11-11 research; no new source retrieval, physical walk/drive, live map routing or current sign inspection. Essential inputs remain supplied Verified documentary references; current posted restrictions and conditions control |
 | Experience and pacing | Author reasoning/narrative review; no independent tester, human difficulty/sunlight trial or measured three-hour outing. The 180-minute budget and interaction proportion remain authored estimates |
-| Deployment/release | Pages publishing fix merged in main `7c3d785` (PR #9); see [setup](../pages-setup.md). User reports iPhone functionality, but no exact URL/deployed revision or full live-host smoke evidence supplied; no final release verdict claimed |
+| Deployment/release | Publishing fix merged in `7c3d785`; production [run 43044731665](https://github.com/arutt99/BereaHunt/actions/runs/43044731665) successfully validated, packaged and published. Live browser smoke passed in [run 43051242904](https://github.com/arutt99/BereaHunt/actions/runs/43051242904); see [deployment](../deployment.md). Phase 9 remains outstanding |
 
-Only D01 currently blocks phase 7's required device completion check; optional
-independent testing and field visits have not been invented as new approval or
-scouting gates. No software test certifies future weather, access or storage
-retention. A date-specific access/conditions refresh can be recommended if the
-outing date becomes known; none is scheduled.
+The former D01 advancement blocker is resolved by the user's explicit acceptance
+of their device check ([D14](../decisions.md)). Expanded device tests, optional
+independent testing and field visits are not silently converted into passes.
+No repeat player check or advance case inspection is pending. No software test
+certifies future weather, access or storage retention. A date-specific access
+review remains appropriate if the outing date becomes known; none is scheduled.
 
-## Resume and delivery
+## Phase 8 verification
 
-Run the remaining device protocol on an available physical iPhone through a
-secure test origin, record the exact context, and fix/rerun any resulting failures.
-Installed-context offline closure/relaunch is now confirmed. Do not repeat that
-passed check or ask the player to preview clues. Model/iOS remains useful metadata;
-remaining device matrix items must retain their actual coverage classifications.
-Keep test solutions away from both intended players. Update this verdict and
-the build tracker only when the required check has actually passed; do not infer
-it from emulation or proceed to another phase under this request.
+The current deployed candidate is main `7c3d785368ed12d3642addc41a5f693dc2049991`,
+application **1.0.1**, content **1.0.0**, state compatibility **1**.
+GitHub confirms that both production validation/package and publication jobs
+succeeded. The workspace proxy rejects the live host with HTTP 403, so a
+read-only GitHub Actions browser check verified the actual origin independently.
+Actual live [run 43051242904](https://github.com/arutt99/BereaHunt/actions/runs/43051242904),
+job 130628678526, **passed** on verification revision `6af7be9`: Ubuntu 24.04.5,
+Python 3.12.16, Chrome 156.0.8078.79. All 65 required file bytes match the deployed
+revision, JS/CSS MIME types work, sampled internal files return 404, and worker
+script/scope are exactly under `/BereaHunt/`. Both full offline paths and the
+package/save/restart/browser-process protocol below pass without uncaught page
+errors. Transient negative-probe HTTP 503 responses were revalidated with a
+cache-busting query and returned 404; they were not treated as absence evidence.
+The check uses isolated profiles; it cannot affect a player's installed save.
 
-Delivery branch: `codex/phase-7-testing`, based on fetched main `1667fad`.
-Implementation/testing revision: `1b98c624567be51614c040c086530b5b354a72c8`;
-the following documentation commit records this hash. The
-[build-plan handoff](../../BUILD_PLAN.md) preserves the same delivery record.
+The deployment protocol compares all 65 published file bytes to a main-branch
+snapshot, checks MIME types and exclusion of internal files, service-worker scope,
+normal and assistance-heavy offline paths, references, hints, safe no-visit
+continuation, optional-map failure, saves/restart, failed and same-version
+verified package checks, and full browser-process offline reopening through the
+ending. A changed-version/worker upgrade remains covered by the local phase 7
+fixtures; production is not mutated to manufacture an update.
 
-The subsequent user-reported device result is recorded on the same
-`codex/phase-7-testing` branch, after synchronizing with main `7c3d785`.
+See [deployment](../deployment.md) for the live-check result and repeatable
+publishing/update/rollback instructions. Phase 9 is the next experience audit
+with phase 8's live check now passed. No final release verdict is claimed here.
+
+
+## Reconciled device handoff
+
+PR #11 added the explicit installed/offline saving and restoration report on
+main `65bfc76`. It is preserved alongside phase 8's actual live test evidence.
+Its earlier partial-coverage/Blocked verdict is historical; the current phase 7
+advancement verdict follows the user's later acceptance and instruction in D14.
+The broader physical-device matrix remains unreported, not inferred as passed.
+No repeated save/relaunch check or player clue inspection is pending.

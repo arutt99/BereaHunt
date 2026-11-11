@@ -247,3 +247,74 @@ with restored progress now pass as user-reported evidence. The preceding
 unknown-context notes are historical and superseded by this clarification.
 It does not supply model/iOS, full game completion, separate Safari storage or
 actual-device update results. No repeat save test or advance clue review needed.
+
+
+
+## Phase 8 — accepted device report and actual Pages verification, 2026-11-11
+
+This entry supersedes the earlier D01 advancement and unmerged/deployment-pending
+statements, preserving the original observations. The user confirms their
+preparation/Home Screen/download/closed-app offline-reopen check works and
+explicitly asks to move on. D14 accepts that user-reported coverage for advancement;
+it does not manufacture a full physical-device protocol, model/iOS, independent
+playtest or field review. No repeat player check or solution inspection is pending.
+
+Fetched/deployed main: `7c3d785368ed12d3642addc41a5f693dc2049991`.
+Actual production run **43044731665** succeeded in both validation/package job
+**130605558312** and Pages publish job **130605668771**. App version 1.0.1,
+content 1.0.0, compatibility 1; no `site/` bytes changed in phase 8. Bootstrap
+SHA-256: `c83285ab01dcc99af507d7f82aad35e3da7c585999142ff90ead9baabf8ada1e`.
+
+Actual live smoke: **Pass**, run **43051242904**, job **130628678526**, driver
+revision **6af7be931311b19474e83d23cca8203ef10883df** on Ubuntu 24.04.5,
+Python 3.12.16, Playwright 1.58.0 and Google Chrome 156.0.8078.79. The workspace
+proxy cannot reach this Pages host; the GitHub runner actually requested the real
+HTTPS origin. A main checkout is the expected deployed snapshot; the PR's
+unmerged code is never represented as the deployed app.
+
+- Every one of the 64 inventoried resources plus the bootstrap returned 200,
+  stayed at the expected Pages resource URL and matched expected SHA-256 bytes.
+  JavaScript/CSS MIME types pass. README.md, AGENTS.md, docs/requirements.md and
+  site/index.html return 404; transient 503s for two negative probes revalidate
+  to 404 with a cache-busting query, not an inferred absence. Workflow upload
+  remains restricted to `site/`; development records stay excluded.
+- Exact actual-origin worker script/scope pass. Full normal UI path goes offline
+  immediately after preparation, uses all eight typed/working-aid controls,
+  restores drafts, rejects incorrect/partial answers, retains sequential gates,
+  expands a reference image and reaches the ending/explanation/reviewable case.
+- All eight reference actions remain unsolved and do not grant or fill answers.
+  All three hints and explained reveals work offline; cancellation, repeated
+  closure/reopening and both safe no-visit continuations preserve coherence.
+  Optional map URLs stay secure, unlock only at the confirmed stage, and failed
+  popup navigation never prevents continuation. No external map service pass
+  is claimed.
+- An offline failed package check retains the exact save; a subsequent verified
+  same-version check reports up-to-date and preserves the saved draft/hint after
+  reopening. Restart cancellation preserves bytes; confirmed restart clears
+  only the case save and retains unrelated browser storage.
+- A disposable persistent Chromium profile is prepared at the real HTTPS origin,
+  saves a draft/hint, fully shuts down and starts a fresh browser process offline.
+  It restores the draft/hint and finishes through the ending without connectivity.
+  Zero uncaught page errors. No screenshots, player profiles or case-bearing logs
+  were uploaded; no production file or genuine player save was mutated.
+
+The existing full local Chromium suite and the new live-mode control flow against
+an isolated local fixture pass separately. Inventory/design/content self-checks,
+eleven Python/eight Node tests, document links, workflow YAML/shell and whitespace
+checks pass. Local fixtures retain changed-version/incompatible package and
+waiting-worker evidence; same-version live verification is not a production
+upgrade or destructive rollback test. Setup/update/rollback procedures are in
+`docs/deployment.md`. Phase 8 is **Complete**; phase 9's final experience verdict
+is still outstanding. Field/source/independent human/timing coverage is unchanged.
+Delivery branch: `codex/phase-8-deployment`, PR #10; no default-branch merge.
+
+
+### PR #11 / phase 8 reconciliation
+
+Merged main `65bfc76` into the phase 8 feature branch to resolve documentation
+conflicts. Both user-report entries and the actual Pages results are retained.
+The explicit installed/offline save-restoration confirmation is actual user
+reporting, not an assistant test. The historical partial-coverage/Blocked verdict
+in that handoff is superseded by D14's later user acceptance and direction to
+advance; expanded on-device paths/storage/update coverage is not manufactured.
+Application/content/workflow bytes are unchanged by this conflict resolution.

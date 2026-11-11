@@ -1,8 +1,12 @@
 # GitHub Pages publishing setup
 
 Spoiler-free, **2026-11-11**. This addresses the reported README landing page
-and provides a test origin for the required iPhone checks. It does not mark
-phase 7, phase 8 or the final release Complete.
+and provides the published game origin. **Current update:** PR #9 merged as
+`7c3d785`; production [run 43044731665](https://github.com/arutt99/BereaHunt/actions/runs/43044731665)
+successfully validated and published. The user confirms their iPhone
+preparation/offline check works. See [deployment](deployment.md) for current
+phase 8 coverage. The original repair notes below are historical, not pending
+player steps or a final release verdict.
 
 ## Cause and fix
 
@@ -65,11 +69,13 @@ GitHub also ran the actual PR validation for implementation commit `6275bf1`:
 [run 43044360719](https://github.com/arutt99/BereaHunt/actions/runs/43044360719)
 successfully validated the app and uploaded the Pages artifact. The production
 job was skipped as intended on a pull request. [PR #9](https://github.com/arutt99/BereaHunt/pull/9)
-is open; this CI result does not mean the game has been published.
+subsequently merged and production deployed successfully in run 43044731665.
+The PR validation alone had not established publication.
 
 Live reads of this Pages host were blocked in the assistant's environment by
-HTTP 403 at the outbound proxy. No live game load, Pages setting change,
-deployment, actual iPhone result or completed release is claimed. The user's
+HTTP 403 at the outbound proxy. Those original repair attempts did not establish a live load, setting change,
+deployment or iPhone result. Subsequent production success and the user check
+are attributed above; final release remains phase 9. The user's
 screenshot establishes the README response; it does not establish the game or
 its installed/offline behavior.
 

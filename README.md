@@ -5,22 +5,24 @@ and later destinations stay concealed during normal play. The authored content,
 research and development records contain spoilers: neither intended player needs
 to preview them.
 
-Phase 7 adds release testing and usability refinements. It remains **blocked on
-required actual iPhone Safari/Home Screen validation**, with no released or
-deployed experience claimed. See [testing readiness](docs/testing/readiness.md)
-and the spoiler-free [test plan](docs/testing/test-plan.md).
+Phase 7 software checks pass, and the user's iPhone preparation/Home Screen/
+download/offline-reopen check is accepted. The Pages publishing fix is merged,
+and GitHub confirms successful production deployment of `7c3d785`.
+Phase 8 is complete: actual-origin browser checks pass, including full offline
+completion and browser-process reopening. Phase 9's final verdict remains
+outstanding. See [testing readiness](docs/testing/readiness.md).
 
-## Publish for device testing
+## Published game
 
-If GitHub Pages shows this README, it is serving the repository root. The
-[Pages workflow](.github/workflows/pages.yml) publishes only the game in `site/`
-at [the game URL](https://arutt99.github.io/BereaHunt/). Set **Settings → Pages →
-Build and deployment → Source** to **GitHub Actions**, then merge the publishing
-fix to main and wait for **Deploy game to Pages** to succeed. See
-[Pages setup](docs/pages-setup.md) for exact steps and current verification limits.
+Open [the game](https://arutt99.github.io/BereaHunt/). The expected landing screen
+is **Prepare the investigation**. Installation and complete download are
+spoiler-free; keep **Start the investigation** for play. The user has already
+confirmed that their preparation/offline check works; no repeat is pending.
 
-The expected landing screen is **Prepare the investigation**. Installation and
-complete download are spoiler-free; keep **Start the investigation** for play.
+The [Pages workflow](.github/workflows/pages.yml) publishes only `site/`.
+See [deployment](docs/deployment.md) for the deployed revision, actual live-check
+coverage, installation, publishing, updates and rollback. The earlier
+[Pages setup](docs/pages-setup.md) records the resolved README publishing issue.
 
 ## Run locally
 
@@ -33,8 +35,8 @@ python3 -m http.server 8000 --directory site
 Open `http://localhost:8000/`. Use localhost for service-worker support; a phone
 accessing a development server by a plain HTTP LAN address is not a secure
 context. The eventual static host must use HTTPS. Only `site/` is deployable.
-The preliminary Pages setup supplies a device-test origin; full live deployment
-verification and a completed phase 8 verdict are still outstanding.
+GitHub confirms the candidate was deployed; live browser verification is recorded
+separately in the deployment handoff.
 
 ## Prepare on iPhone
 
@@ -49,8 +51,8 @@ Safari and the installed app may keep separate progress and downloads. Use the
 same context throughout. Progress saves automatically, with visible warnings
 if saving fails; pauses have no timer or penalty. Device/browser data removal
 or eviction can remove progress or files. The app can repair a download with
-connectivity, but cannot recover removed progress. Actual iPhone Safari and
-Home Screen validation is a phase 7 check, not established by Linux tests.
+connectivity, but cannot recover removed progress. The user reports their iPhone preparation/offline check passes. Expanded device
+coverage is unspecified and is not established by Linux tests.
 
 Maps and external source links are optional and may need connectivity. Written
 arrivals, puzzles, working aids, images/text equivalents, hints, references,
