@@ -1,91 +1,122 @@
-# Testing and deployment readiness
+# Final experience readiness
 
-Spoiler-free, **2026-11-11**. **Phase 7 — Complete with user-accepted device
-coverage. Phase 8 — Complete.** The user confirms the spoiler-free iPhone
-preparation/install/complete-download/closed-app offline-reopen check works and
-explicitly directs advancement. Main additionally preserves the exact report:
+Spoiler-free, **2026-11-11**. **Phase 9 — Complete. Release verdict: READY.**
+The final audit found no unresolved release-blocking software defect or essential
+unverified factual dependency. Players can complete the connected case through
+normal solutions or assistance, revisit evidence, resume saved progress and
+continue when a stop or image is unavailable. All nine numbered phases are
+complete at their recorded evidence scope.
+
+Open [the game](https://arutt99.github.io/BereaHunt/). Preparation and complete
+download preserve the surprise; keep **Start the investigation** for the outing.
+Neither player needs to preview clues, inspect the route or repeat the already
+accepted iPhone check. The verdict includes the practical limits below; it is
+not a guarantee of future access, a measured three-hour outing or an independent
+player review.
+
+## Audited release
+
+- Published source: `7c3d785368ed12d3642addc41a5f693dc2049991`.
+- Application **1.0.1**, content **1.0.0**, state compatibility **1**.
+- Phase 9 base: fetched main `91282bdb718071ceb052fc25205ed39ea9587d98`.
+  Every application file is identical to the published source. The final audit
+  changes documentation; no replacement download or deployment is needed.
+- Baseline remote research/source reviews: **2026-11-11**. The final audit
+  reconciles those records without claiming a new source retrieval or field visit.
+- Production [run 43044731665](https://github.com/arutt99/BereaHunt/actions/runs/43044731665)
+  successfully packaged and deployed the game. Actual-origin
+  [run 43051242904](https://github.com/arutt99/BereaHunt/actions/runs/43051242904)
+  passed all 65 file-byte comparisons, MIME/internal-file exclusion checks,
+  worker scope, both offline paths, saving/restart and browser-process reopening
+  through the ending. During phase 9 the GitHub job results and smoke log were
+  re-read; these are existing phase 8 observations, not a fresh live execution.
+  The workspace's direct live-host request still returns proxy HTTP 403.
+
+See [deployment](../deployment.md) for publishing, installation, update and
+rollback procedures. The [test plan](test-plan.md) remains the repeatable matrix.
+The detailed final requirement-by-requirement audit is intentionally confined
+to **development spoilers** at `docs/development-spoilers/testing/final-audit.md`;
+it is not player preparation material.
+
+## Complete experience review
+
+| Area | Final evidence and result |
+| --- | --- |
+| One shared phone and both players' surprise | Neutral preparation/install screen inspected again; sequential grants, locked views, evidence and citation gates checked. No separate roles, second device or player preview required |
+| Route, access and factual accuracy | Compact history/nature route, ordinary legal public/visitor access and known restrictions reconciled with source records and accepted planning decisions. Six Verified documentary references supply essential facts; no unverified physical inscription, count or viewpoint is needed |
+| Short walks and travel | Source-based short-approach estimates and bounded optional exploration fit the approximate quarter-mile total per walk target. Two short drives have explicit allowances; neither walk nor drive was physically measured |
+| Fairness, variety and payoff | All actual prompts, inputs, answer variants, alternatives, hints and explanations reviewed. Relevant earlier evidence is surfaced before final synthesis; concise ending and optional full explanation fit the connected case. This is author review, not independent human feedback |
+| Pacing and phone-only play | Reconciled 180-minute budget, average nine-minute puzzle target and approximately 75/25 discussion/manipulation allocation. Short passages and local working aids support one-phone cooperation without printing, writing materials, audio, staff or a helper |
+| Assistance and unavailable locations | Three hints per objective, separate unsolved references and deliberate explained reveals; identical evidence and ending for either path. Both no-visit continuations work without GPS, a physical search or an external map |
+| Saving, pauses and recovery | Drafts, evidence and assistance survive closure/reopening; restart is confirmed. Interrupted downloads, failed/incompatible/compatible updates, cache damage, waiting workers, concurrent windows and unavailable/quota storage covered |
+| Complete offline experience | Fresh local normal/assisted paths and browser-process offline reopening pass, including later tools, references, hints/reveals and ending. Actual Pages-origin evidence separately confirms the deployed base path |
+| Mobile usability | Every objective checked at 320 × 844, 390 × 844 and 844 × 390, normal/doubled text, large named controls, focus, reduced motion, enlarged/failed images and optional maps. No measured outdoor-sunlight trial |
+| Static hosting and disclosure | No backend, account, key or paid service for core play. Only application files are deployed; detailed author records remain outside the artifact. Deliberate client-source inspection can reveal answers |
+
+## Checks executed for phase 9
+
+Fresh checks on the unchanged release bytes all pass:
+
+- Complete resource size/hash inventory; design and content self-tests, including
+  actual-input solution models, modeled completion paths and invalid mutations.
+- Eleven Python and eight Node regression tests.
+- Full Chromium normal/assisted browser suite: offline page/process reopening,
+  working tools, drafts, assistance, gated views, ending, persistence/restart
+  and download/update/cache/storage failures.
+- Every-objective release matrix: responsive text/layout, focus, controls,
+  evidence, locked URLs, image/map failures, multi-stage offline closure,
+  concurrent windows and real waiting-worker/compatible-package adoption.
+
+No uncaught page errors were observed. Environment: Linux, Python **3.12.14**,
+Node **24.22.1**, Playwright **1.62.0**, Chromium **156.0.8078.79**, isolated
+`/BereaHunt/` fixtures and disposable browser profiles. These tests never use
+or alter the player's installed save. Documentation links, neutral public copy,
+unchanged published application bytes and whitespace are checked for delivery.
+
+## Actual iPhone evidence and remaining limits
+
+The user confirms their spoiler-free preparation, Home Screen installation,
+complete download and closed-app offline reopening check works and explicitly
+accepts advancement ([D14](../decisions.md)). Main additionally records:
 “iphone works. Save works. Even after closure and relaunch.” Asked whether this
 was the installed Home Screen app with internet off, the user answered
-“Yes it was.” Saving and restored progress in that offline installed context
-therefore pass as user-reported evidence. That check is recorded as a **user-reported pass**,
-not a test performed by the assistant. It closes the former D01 advancement gate.
-Exact model/iOS and the expanded physical-device gameplay/update/storage matrix
-were not supplied; no full device protocol or independent playtest is inferred.
+“Yes it was.” Saving and restored progress in that context therefore pass as
+**user-reported evidence**. The former device advancement gate is resolved.
 
-The [test plan](test-plan.md) defines the repeatable matrix and actual-device
-protocol. The case, route, answers, fact classifications and confirmed outing
-requirements are unchanged. Neither intended player needs to inspect the mystery.
+No physical iPhone is attached to the assistant. Exact model/iOS, separate Safari
+storage behavior, full-game on-device completion and the expanded background/
+update matrix were not supplied and are not inferred as tested. Linux browser
+checks remain supporting evidence. The prior official Linux WebKit download
+was denied by environment policy with HTTP 403; no WebKit pass is claimed.
+No repeated player check or clue inspection is pending.
 
-## Delivered refinement
+No physical walkthrough, independent playtest, timed drive/walk, measured
+three-hour outing or human difficulty/sunlight assessment occurred. Those are
+explicit nonblocking limits of the accepted reference-led design. The roughly
+three-hour core budget includes travel, optional observation, reading, solving,
+ending and contingency; the starting visit and personal pauses can extend it.
 
-Source/explanation expanders now have larger tap targets. Evidence comparison,
-grid generation and working-area undo/reset retain useful keyboard focus after
-redrawing. Requesting a hint focuses the newly displayed hint. Application
-package version is **1.0.1**; content/state compatibility is preserved.
+## Practical preparation and future conditions
 
-The existing full normal/assisted regression suite now supports either Chromium
-or WebKit. A separate release matrix covers every objective, locked view URLs,
-incorrect typed answers, relevant evidence, image failures, optional map failure,
-stage-by-stage closure, responsive text, focus and worker updates. Concealed
-results and a separate field/access review are retained for later sessions.
+Use the same installed context for complete download and play. Safari and the
+Home Screen app may keep separate files/progress. Maps and external citations
+may need connectivity; all core play is local. Browser/device data removal or
+eviction can remove progress or files; repair needs connectivity and cannot
+recover a deleted save. Saving failures are reported visibly.
 
-## Coverage and limits
+The planned customer drink visit at Fat Head's remains the start. The game adds
+no purchases, paid admission, business entry, reservations or scheduled breaks.
+Ordinary parking availability remains the user's accepted planning assumption;
+no particular bay, seat, shelter, clear winter path or future space is promised.
+Posted restrictions control. Read and interact only while safely stopped.
 
-| Area | Current evidence / limitation |
-| --- | --- |
-| Content, reasoning and state | Content/design self-tests, eleven Python regressions and eight Node tests pass again on the final candidate, including all modeled normal/assistance paths and answer variants |
-| Normal and assisted application | Both full paths, all aids, hints/references/reveals, complete offline browser-process relaunch, persistence/restart and download/update/cache faults pass in local Chromium |
-| Additional release matrix | Every objective at three layout sizes and doubled text; all locked view URLs, empty/wrong typed answers, focus/controls, enlarged/failed images, maps, multi-stage offline closure, live window conflicts, same-size content-hash mismatch and waiting-worker upgrades pass. No uncaught page errors |
-| Visual review | Neutral 390 × 844 preparation screen inspected; no future case/destination information. Layout/text/zoom checks support readability; no actual outdoor sunlight or physical-device legibility trial |
-| Environment | Linux, Python 3.12.14, Node 24.22.1, Python Playwright and Chromium 156.0.8078.79; local `/BereaHunt/` subpath, compressed static resources |
-| Actual iPhone Safari/Home Screen | **User-reported pass, accepted for advancement:** preparation, Home Screen installation, complete download, saving and restoration after closed-app offline reopening work. Main preserves explicit confirmation of the installed/offline context. No device attached to the assistant; model/iOS unspecified. Broader background/update/storage-context and full-path device observations were not supplied |
-| Supporting WebKit | Not run. Official WebKit 26.5 (Playwright build 2336) installation failed: environment policy returned HTTP 403 `Domain forbidden` for both official download hosts. This is separate from D01 and would not replace it |
-| Field/access | Desk reconciliation against existing 2026-11-11 research; no new source retrieval, physical walk/drive, live map routing or current sign inspection. Essential inputs remain supplied Verified documentary references; current posted restrictions and conditions control |
-| Experience and pacing | Author reasoning/narrative review; no independent tester, human difficulty/sunlight trial or measured three-hour outing. The 180-minute budget and interaction proportion remain authored estimates |
-| Deployment/release | Publishing fix merged in `7c3d785`; production [run 43044731665](https://github.com/arutt99/BereaHunt/actions/runs/43044731665) successfully validated, packaged and published. Live browser smoke passed in [run 43051242904](https://github.com/arutt99/BereaHunt/actions/runs/43051242904); see [deployment](../deployment.md). Phase 9 remains outstanding |
+The exact outing date is unknown. **If it becomes known, a fresh access/hours,
+closures/events/roadworks and weather/footing/daylight check is recommended near
+play.** No monitoring, helper, future appointment or completion day is scheduled.
+In winter, finish optional observation by about 16:30 local time, earlier in
+poor light or unsafe conditions. Use references rather than attempt an unsuitable
+walk or stop. If no lawful comfortable position is available, preserve progress
+and resume elsewhere; postpone if travel itself is unsafe.
 
-The former D01 advancement blocker is resolved by the user's explicit acceptance
-of their device check ([D14](../decisions.md)). Expanded device tests, optional
-independent testing and field visits are not silently converted into passes.
-No repeat player check or advance case inspection is pending. No software test
-certifies future weather, access or storage retention. A date-specific access
-review remains appropriate if the outing date becomes known; none is scheduled.
-
-## Phase 8 verification
-
-The current deployed candidate is main `7c3d785368ed12d3642addc41a5f693dc2049991`,
-application **1.0.1**, content **1.0.0**, state compatibility **1**.
-GitHub confirms that both production validation/package and publication jobs
-succeeded. The workspace proxy rejects the live host with HTTP 403, so a
-read-only GitHub Actions browser check verified the actual origin independently.
-Actual live [run 43051242904](https://github.com/arutt99/BereaHunt/actions/runs/43051242904),
-job 130628678526, **passed** on verification revision `6af7be9`: Ubuntu 24.04.5,
-Python 3.12.16, Chrome 156.0.8078.79. All 65 required file bytes match the deployed
-revision, JS/CSS MIME types work, sampled internal files return 404, and worker
-script/scope are exactly under `/BereaHunt/`. Both full offline paths and the
-package/save/restart/browser-process protocol below pass without uncaught page
-errors. Transient negative-probe HTTP 503 responses were revalidated with a
-cache-busting query and returned 404; they were not treated as absence evidence.
-The check uses isolated profiles; it cannot affect a player's installed save.
-
-The deployment protocol compares all 65 published file bytes to a main-branch
-snapshot, checks MIME types and exclusion of internal files, service-worker scope,
-normal and assistance-heavy offline paths, references, hints, safe no-visit
-continuation, optional-map failure, saves/restart, failed and same-version
-verified package checks, and full browser-process offline reopening through the
-ending. A changed-version/worker upgrade remains covered by the local phase 7
-fixtures; production is not mutated to manufacture an update.
-
-See [deployment](../deployment.md) for the live-check result and repeatable
-publishing/update/rollback instructions. Phase 9 is the next experience audit
-with phase 8's live check now passed. No final release verdict is claimed here.
-
-
-## Reconciled device handoff
-
-PR #11 added the explicit installed/offline saving and restoration report on
-main `65bfc76`. It is preserved alongside phase 8's actual live test evidence.
-Its earlier partial-coverage/Blocked verdict is historical; the current phase 7
-advancement verdict follows the user's later acceptance and instruction in D14.
-The broader physical-device matrix remains unreported, not inferred as passed.
-No repeated save/relaunch check or player clue inspection is pending.
+The final audit resolves the last numbered phase. No further implementation
+phase or player approval is pending.
