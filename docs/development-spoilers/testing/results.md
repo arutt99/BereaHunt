@@ -222,3 +222,28 @@ completed its validation/package/upload job successfully; the publish job was
 skipped as designed. PR **#9** is open and mergeable with no default-branch merge
 performed. This is CI/artifact evidence, not a production deployment or live game
 check. The subsequent documentation revision records the observed CI result.
+
+## Subsequent actual-device user report — 2026-11-11
+
+User: “iphone works. Save works. Even after closure and relaunch.” This provides
+user-reported iPhone function, saving and restored progress after closure/relaunch.
+It is not an assistant-observed execution. No device/iOS, URL/revision, browser
+versus standalone context, connectivity state, full path or update coverage was
+specified. In particular, do not silently classify this as offline installed-app
+relaunch or complete device validation. D01 is now partially covered rather than
+wholly untested; the remaining phase 7 gate stays open pending precise coverage.
+Ask whether this was the installed Home Screen app with connectivity off and,
+if handy, model/iOS; no player clue preview or repetition of the passed save check.
+
+Fetched main `7c3d785` confirms PR #9 has since merged; that supersedes the prior
+open-PR handoff above. No live deployment result is inferred solely from that
+merge. Follow-up records use `codex/phase-7-testing` synchronized to current main;
+no app/content/research bytes or practical requirements changed.
+
+Follow-up question explicitly named the installed Home Screen app and internet
+turned off. User answered **“Yes it was.”** This confirms the test context and
+offline condition: installed iPhone use, saving, closure and offline relaunch
+with restored progress now pass as user-reported evidence. The preceding
+unknown-context notes are historical and superseded by this clarification.
+It does not supply model/iOS, full game completion, separate Safari storage or
+actual-device update results. No repeat save test or advance clue review needed.
