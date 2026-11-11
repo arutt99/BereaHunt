@@ -173,7 +173,9 @@ def main():
                     if path.endswith('.css'):
                         need('text/css' in content_type, 'Live stylesheet has a CSS MIME type')
                 for internal in ('README.md', 'AGENTS.md', 'docs/requirements.md', 'site/index.html'):
-                    need(audit.request.get(host.url + internal).status == 404, 'Internal repository files are not deployed')
+                    response = audit.request.get(host.url + internal, headers={'Cache-Control':'no-cache'})
+                    print(f'CHECK: excluded path {internal}: HTTP {response.status}; response URL {response.url}')
+                    need(response.status == 404, 'Internal repository files are not deployed')
                 audit.close()
                 print(f'PASS: live HTTPS Pages origin; all {len(resources)} files match expected bytes; MIME types and internal-file exclusion.')
             # A real normal path using every rendered aid, draft restore and final submission.
