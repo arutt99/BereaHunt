@@ -14,7 +14,7 @@ started” entry referred to these missing handoff records, not missing answers.
 | R03 | Favor history and parks/nature, fewer worthwhile stops and limited driving; no required return to the start. | §§2,9 |
 | R04 | Approximately three hours of core play including travel, reading and solving; around 15:00 America/New_York, January–May 2027. Personal pauses can extend it. | §§2,9 |
 | R05 | Approximately 0.25 mile **total per car-to-stop-to-car walk**, along usable paths; not 0.25 mile each way. No separate overall walking cap or identified individual accessibility constraint. | §§2,9 |
-| R06 | The starting customer drink visit is already planned by the players. The game adds no required purchases, paid admission, business entry, reservations or staff participation; subsequent stops require free permitted parking/access. Public indoor spaces are eligible if suitable. | §§2,4,9; user clarification 2026-11-11 |
+| R06 | The starting customer drink visit is already planned. Subsequent stops use ordinary free legal public/visitor parking and access; the game adds no required purchases, paid admission, business entry, reservations or staff participation. The user accepts routine parking availability based on local knowledge; no separate bay-by-bay approval or capacity guarantee is required. Actual known restrictions still apply. | §§2,4,9; user clarifications 2026-11-11 |
 | R07 | First clue opens during the planned starting drink visit; no additional scheduled meals/drinks/breaks. No printing, prepared props, pen/paper, audio, second phone or helper required. Provide necessary working aids on the phone. | §§2,4,8–9; user clarification 2026-11-11 |
 | R08 | Check actual public viewpoints, legibility, route lengths, access, seasonal conditions and late-stage daylight. Do not assume clear paths or an on-site verifier. | §§3,9–11 |
 
@@ -53,6 +53,13 @@ choices**, not questions for the players. Research precedes narrative commitment
 **Research tasks:** normal starting-venue hours; concealed route access/parking; short
 walks and driving; seasonal hours, daylight and changes; source-backed reference
 material and reuse rights. These must be resolved or explicitly block readiness.
+
+ChatGPT owns these research tasks. Phase 3 needs defensible walking/drive
+estimates and baseline public access, not an individual parking-space survey
+or a player scouting trip. Routine parking availability is an accepted planning
+assumption (D13). An actual known restriction still requires a suitable route
+or design adjustment. Temporary conditions can be refreshed near the outing
+during final readiness review if a date becomes known; no check is scheduled.
 
 **Open practical information:** exact play date/weekday, iPhone/iOS version,
 whether an independent app tester becomes available, and any firm delivery date.

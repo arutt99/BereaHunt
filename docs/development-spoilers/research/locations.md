@@ -6,14 +6,22 @@ inspection occurred. Source IDs and precise claims resolve in
 [`facts.json`](facts.json); its source records contain URLs, retrieval methods,
 review dates and separate publication/capture dates. Unknown means unknown.
 
+**Parking policy follow-up (D13):** the user knows local parking and accepts
+routine availability. Use ordinary public/visitor parking; no bay-by-bay
+capacity/permission certification is a standalone gate. Existing fee/access
+facts retain their classifications. ChatGPT owns usable-path and travel
+estimates, actual known restrictions and any approach redesign; no player
+scouting or clue inspection is needed. Older bay-specific unknowns below are
+research limitations, not requests for player action.
+
 ## Selection result
 
 | ID | Candidate | Disposition | Reason / remaining gate |
 | --- | --- | --- | --- |
 | L00 | Fat Head's Brewery, Middleburg Heights | Confirmed planned customer start | Players will have a drink as customers and open the first clue there. Known venue; no noncustomer lot opening or fixed game bay. |
-| L01 | Berea Falls Scenic Overlook | Preferred conditional shortlist | Compact public nature/history setting, operator-backed geology and visitor lot; fee and full short walking route need stronger evidence. |
-| L02 | Wallace Lake | Preferred conditional shortlist | Operator-backed former-quarry history and visitor parking; short approach and site-specific fee policy unresolved. |
-| L03 | McKelvey Park / downtown municipal parking | Preferred conditional shortlist | Documentary civic-history opportunities and municipal free-parking evidence; exact bay, permitted stay and short sidewalk route unresolved. |
+| L01 | Berea Falls Scenic Overlook | Preferred conditional shortlist | Operator-backed geology and visitor lot; ChatGPT documents a suitable short-approach estimate. Ordinary parking availability accepted under D13. |
+| L02 | Wallace Lake | Preferred conditional shortlist | Operator-backed former-quarry history and visitor parking; ChatGPT documents a suitable short-approach estimate and handles known restrictions. |
+| L03 | McKelvey Park / downtown municipal parking | Preferred conditional shortlist | Documentary civic history and municipal free-parking evidence; ChatGPT documents a suitable public sidewalk approach without requiring an exact bay. |
 | L04 | Coe Lake Park | Reserve; excluded from draft itinerary | Relevant quarry history, but published construction notice and unknown approach boundaries make it weaker than the preferred candidates. |
 
 All future candidates are in Berea itself; the named starting venue is the
@@ -49,14 +57,14 @@ Selection does not commit the story, puzzles or final number of chapters.
 | Exact public viewpoint / legibility | Intended designated overlook platform, reached from operator visitor lot. Exact accessible path and any panel/bridge detail's current legibility unestablished (F012,F016). Never descend to water or approach railway land. |
 | Access / restrictions | Operator describes visitor access/parking (F013); designated public paths only (S27). Published general reservation hours 06:00–23:00 (F060) do not override posted closures. |
 | Free parking / arrival | Secondary evidence describes a free visit; operator confirms lot but not site-specific fee/limits (F014 **Provisionally Verified**). Draft arrival 15:30; not a booked or measured time. |
-| Full usable round-trip walk | **Not established** (F015). S20's old search excerpt reports an 80-yard hike. Even assuming 80 yards each way gives only a conditional 160-yard path component, not actual bay/path/closure proof. Need a defined ordinary bay, approved platform and trace including lot circulation. |
+| Full usable round-trip walk | Estimate still to be documented (F015). S20's old excerpt reports an 80-yard hike; even assuming each way gives only a conditional 160-yard path component. Include ordinary lot travel in a representative public-approach estimate; no exact bay survey required. |
 | Permanent setting / history | F011 supplies a source-backed erosion process. Older trestle descriptions are useful leads, not present-day counts. Exact heights, ages, sign wording and number of bridges are not approved puzzle inputs. |
 | Puzzle opportunity | O01: interpret an authored erosion-process reference against fictional evidence; optional comparison with surroundings. O02: optional present-view comparison only after stronger viewpoint evidence. See verification matrix. |
 | Images / reuse | A01 (S19) has a specific CC BY 4.0 metadata record, capture 2022-04-23 / upload 2024-07-19. Pixel inspection is still needed before choosing image details. Operator photos/maps have no established redistribution license. A02 authored process diagram is the primary proposed reference. |
 | Season / changes | Ice/snow, spray, high water, vegetation, small-lot capacity and closures. Lack of a named current closure is not proof of a clear approach. Daylight walk first, then phone tasks from a permitted stationary position. |
 | Safety / accessibility | Use only the maintained designated viewpoint; no scrambling, water entry, track approach, object retrieval or obstructing cyclists. Old “accessible” descriptions do not certify current winter conditions. |
 | Verification / field checks | Documentary reference **Verified**; exact observations and round-trip/access arrangements provisional or unverified. No field checks. |
-| Outstanding action / fallback | Confirm fee/posted use and mapped short approach; replace any unsupported physical dependency with A02. If closed/icy/full, omit entry and use the same reference at a separately legal safe stopping place; never stop on the parkway shoulder. |
+| Outstanding action / fallback | ChatGPT documents a representative short public approach and accounts for known restrictions; routine lot availability accepted under D13. Replace unsupported physical dependencies with A02. If unavailable, use the same reference from a legal stopping place. |
 
 ## L02 — preferred former-quarry setting
 
@@ -67,14 +75,14 @@ Selection does not commit the story, puzzles or final number of chapters.
 | Exact public viewpoint / legibility | Proposed short designated land-side lake viewpoint from public visitor parking; **not established**. Fishing-pier amenity alone does not establish a short route, panel or readable boundary (F025). |
 | Access / restrictions | Operator lists recreation and parking (F022), with general hours 06:00–23:00 (F060). No swimming, ice access, beach concession, rental, reserved canopy or seasonal restroom is required. |
 | Free parking / arrival | Secondary guide describes free shared parking, but exact primary no-fee/posted restrictions unresolved (F023). Draft arrival 16:10, with any walk first. |
-| Full usable round-trip walk | **Unknown** (F024). No measured route obtained. Map pins or “nearby” amenities cannot certify 0.25 mile total. Do not prescribe a lake circuit. |
+| Full usable round-trip walk | Estimate still to be documented (F024). Use a representative nearby public-parking approach with usable-path evidence, rather than a point-to-point radius or a lake circuit. No physical bay survey required. |
 | Permanent setting / history | F021 supports two former quarries joined by flooding, not a current visible quarry boundary. Broad former-quarry history independently corroborated by F043/S17. |
 | Puzzle opportunity | O03: distinguish past state from present state using original documentary reference A03 and fictional records. Physical lake observation optional; no count, depth guess or arbitrary use of a historical date as a password. |
 | Images / reuse | S08/S09 have undated operator image links, no established reuse permission. Use A03, an authored non-geometric transformation diagram; do not invent a geographically accurate quarry outline or copy the operator management map. |
 | Season / changes | Ice, mud, high water and snow; seasonal amenities unavailable; S14 contains winter management and retained roadway notices. No route into wildlife-management land or Albion–W130th works segment is proposed. |
 | Safety / accessibility | Stay on designated land paths, away from shore/ice, and yield to normal users. No requirement to inspect below water, cross fences or enter picnic reservations. |
 | Verification / field checks | Documentary facts **Verified**; current exact observation/short walk and site-specific fee arrangements not fully verified. No field checks. |
-| Outstanding action / fallback | Establish ordinary bay, short legal path and fee policy. If unsuitable, provide A03 without entering; continue from another legal stopping place, not a shoulder. |
+| Outstanding action / fallback | ChatGPT documents a representative short public approach; routine visitor parking availability accepted under D13 without inventing fee/private-rights facts. If unsuitable, provide A03 and continue from a legal stopping place. |
 
 ## L03 — preferred civic-history / final stationary cluster
 
@@ -84,15 +92,15 @@ Selection does not commit the story, puzzles or final number of chapters.
 | Coordinates | City's outgoing **place** pin **41.3660595, -81.8528186**. The URL's different camera-center coordinates are not the place. Parking bay coordinates and exact entrance unverified. |
 | Exact public viewpoint / legibility | Proposed designated park paths near the historic bell. Exact present inscription and full sidewalk route unconfirmed (F033,F035). No bell touching, ringing or plaque rubbing. |
 | Access / hours | Municipal public park; published city rules close parks at 22:00 and specified facilities 22:00–09:00 (F061). Do not occupy a reserved pergola or rely on fountain operation, lights or business entry. |
-| Free parking / arrival | City describes free downtown parking; independent municipal-lot directions and city identification support F034. Exact bay/entry, maximum stay and event restrictions still need confirmation. Draft arrival 16:50, finish about 18:00; not proof of permission for that dwell time. |
-| Full usable round-trip walk | **Unknown** (F035). Need a public sidewalk/crossing trace from a defined ordinary municipal bay. No distance derived from point-to-point separation. Late-season-light walk is optional, not an essential January stage. |
+| Free parking / arrival | City free-parking provision, independent municipal-lot directions and city identification support F034. D13 accepts routine availability; account for any actual known posted/event restriction, without requiring a bay guarantee. Draft arrival 16:50, finish about 18:00 is an estimate, not a reservation. |
+| Full usable round-trip walk | Estimate still to be documented (F035) along public sidewalks/crossings from representative municipal parking, without an exact numbered bay. Point-to-point separation is insufficient. Late-season-light observation is optional, not an essential January stage. |
 | Permanent setting / history | F031 documents bell provenance; F032 documents dedication/rededication. Facts may support a concise authored documentary timeline, without asserting a present plaque or counting trees. |
 | Puzzle opportunity | O04: reason about original vs relocated evidence with A04 documentary provenance, supported by fictional records. Final synthesis can be seated after dark without an outdoor clue, if legal parking duration is established. |
 | Images / reuse | City image links are undated and lack an established license. A04 uses paraphrased facts/original diagrams rather than copied photos, sign text or logos. |
 | Season / changes | Municipal events, snow, construction detours, memorial observances and short winter daylight. No guaranteed parking space or path illumination. Treat any posted closure as controlling. |
 | Safety / accessibility | Normal public sidewalks/crossings only; no interaction during street crossing, memorial disruption or assumptions about private-lot access. |
 | Verification / field checks | Historical documentary references and general free-city-parking provision **Verified**; current exact clue and short walk are not. No field checks. |
-| Outstanding action / fallback | Confirm entrance/bay, permitted dwell and full walking trace. Prefer documentary reference from a legal stationary position when daylight/path conditions fail; if lot itself unavailable, relocate legally before playing. |
+| Outstanding action / fallback | ChatGPT documents a suitable public sidewalk approach from representative municipal parking and handles known posted limits; no bay guarantee under D13. Prefer documentary reference from a legal stationary position when daylight/path conditions fail. |
 
 ## L04 — reserve, not a navigation commitment
 

@@ -18,7 +18,13 @@ Detailed location and design choices belong in the development-spoiler records.
 | D10 | Resolved clarification | Players will visit Fat Head's as customers for a drink and open the first clue there. Retire the noncustomer parking-lot opening concern (B01); no fixed bay, venue observation or staff-delivered clue. | User clarification 2026-11-11 supersedes the earlier interpretation; source brief §§2,9 updated. Ordinary customer arrangements do not imply game participation. | R02,R06–R07; F003,F004; starting record |
 | D11 | Recommendation | Use authored, source-backed reference evidence where exact physical clues cannot be remotely verified; verify stop access independently. | Brief §3 expressly permits this redesign. No change to the player's surprise or need to travel to unsafe/closed locations. | Fact inventory; phases 3–6 |
 | D12 | Confirmed authorization | Push the corrected feature branch and its existing concealed research to `arutt99/BereaHunt` after resolving the starting-arrangement misunderstanding. | User 2026-11-11: “After resolving that, you may push.” No default-branch merge authorized. | Delivery record; `codex/research-feasibility` |
+| D13 | Confirmed planning preference / accepted assumption | User knows the area and is comfortable finding ordinary parking. Close routine parking availability as a separate approval issue; use ordinary legal public/visitor parking, without a bay survey or capacity guarantee. Walking/drive estimates and actual known access restrictions remain ChatGPT's phase 3 research tasks. No player route reconnaissance or permission-gathering needed. | User follow-up 2026-11-11: parking is plentiful and not a concern. This does not verify an unknown fee/private permission or waive the approximate short-walk target. | R05–R08; research readiness; B03 retired as a separate gate |
 
 The starting drink visit is the user's explicit clarification of the outing;
 it is not an additional game-imposed purchase or scheduled break. Remaining
 route research tasks are recorded in [research readiness](research-readiness.md).
+
+No user action is pending for phase 3. Map/source checks and suitable approach
+selection belong to ChatGPT. The exact outing date is useful later for a
+conditional refresh of hours/closures/conditions; it is not needed to finish
+baseline route planning or restart discovery.

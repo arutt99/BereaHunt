@@ -28,7 +28,7 @@ Allowed statuses: **Not started**, **In progress**, **Blocked**, **Complete**. M
 | --- | --- | --- | --- | --- |
 | 1 | Requirements handoff and decision record | Existing discovery brief | Complete | Interview was already complete; [requirements](docs/requirements.md) and [practical decisions](docs/decisions.md) now preserve its handoff (2026-11-11). |
 | 2 | Researched location shortlist | Phase 1 | Complete | Conditional shortlist, 28 remote sources plus user clarification, 34 classified claim/plan records and asset-rights review; see [spoiler-free research readiness](docs/research-readiness.md) (2026-11-11). |
-| 3 | Verified clue inventory and feasible route | Phase 2 | Blocked | Starting arrangement resolved: planned customer drink visit and first clue at the known venue. Later parking arrangements and usable walking/driving measurements remain unresolved (B02–B04). [Coverage and remaining actions](docs/research-readiness.md) (2026-11-11). |
+| 3 | Verified clue inventory and feasible route | Phase 2 | In progress | No player action pending. Start resolved; ordinary parking availability accepted under D13, retiring B03 as a separate approval gate. ChatGPT owns remaining short-walk/travel estimates (B02/B04). [Coverage and ownership](docs/research-readiness.md) (2026-11-11). |
 | 4 | Coherent story and puzzle architecture | Phase 3 | Not started | — |
 | 5 | Complete, validated adventure content | Phase 4 | Not started | — |
 | 6 | Working mobile game application | Phase 5 | Not started | — |
@@ -144,6 +144,16 @@ Use the source classifications exactly: **Verified**, **Provisionally Verified**
 - Exclude unverified, provisional, and rejected facts from essential puzzle dependencies. Replace weak candidates or narrow the design; seek a user decision if the selected scope must change.
 - Develop a route from the planned starting customer drink visit with fewer worthwhile stops, limited driving, free permitted parking/access at subsequent stops, and roughly a quarter mile total per usable car-to-stop-to-car walk. Budget roughly three hours including travel/puzzles from around 3 p.m. America/New_York in January–May 2027, accounting for late-stage daylight/hours and seasonal/weather risks. No additional scheduled meals/breaks or required return to the start. Cite distances, estimates, and assumptions.
 - Assign every viable location-dependent puzzle opportunity a feasible fallback and identify any unresolved prerequisites.
+
+**Ownership clarification:** these are ChatGPT's research tasks. The user is
+comfortable finding ordinary local parking, so routine availability is an
+accepted planning assumption, not a separate player approval or capacity
+guarantee. Use ordinary legal public/visitor parking and handle actual known
+restrictions. Baseline route fit needs credible map/source-based walking and
+driving estimates during phase 3; an exact bay survey or physical walkthrough
+is not required. A date-specific refresh of temporary closures, hours/events
+and conditions belongs near play in phase 9 if the date becomes known. Do not
+turn either check into a request for player clue reconnaissance.
 
 **Deliverables:** updated fact/location records; `docs/development-spoilers/research/verification.md` and `route.md`; spoiler-free coverage/conflict report.
 
@@ -372,3 +382,14 @@ research; no further disclosure approval or default-branch merge is requested.
 - **Branch:** continue `codex/research-feasibility`; the correction/delivery commit is the branch revision containing this entry, following `8d30aaa`.
 - **Checks:** record/link integrity, Verified-only essential reference eligibility, public destination concealment, corrected starting references and whitespace checks; no new field/device/game tests claimed.
 - **Delivery authorization:** user explicitly approved the push after the starting correction. Retain the scoped feature branch; do not merge into main.
+
+### 2026-11-11 — parking scope and research ownership
+
+- **Status:** phase 3 In progress; no user prerequisite pending. This supersedes the earlier Blocked/standalone B03 parking gate interpretation.
+- **User preference:** local parking is plentiful and ordinary availability is not a concern. Record as D13's accepted planning assumption, not a newly verified parking fee, private permission or guaranteed future space.
+- **Resolution:** retire B03 as a separate approval/capacity gate. Use ordinary legal public/visitor parking and account for actual known restrictions. No bay survey, special permission collection or player scouting is needed.
+- **Research to close now:** ChatGPT documents suitable public approaches, approximate round-trip walks and realistic driving estimates with buffer (B02/B04), and retains source-backed essential puzzle inputs. These belong in phase 3 before phase 4 architecture; they are unfinished researcher work, not something the players must certify.
+- **Later check:** a fresh review of date-specific closures, hours/events and weather belongs near the outing/final readiness (phase 9) if a date is known. No ongoing monitoring, advance player walkthrough or scheduled future check is implied.
+- **Checks/evidence:** official public-venue/access pages re-read; shared-browser route lookup returned a navigation-tool error and remained at `about:blank`, supplying no new distance/timing evidence. No factual classification, physical inspection or route measurement is invented. Document/link/spoiler and whitespace validation accompany this correction.
+- **Files:** authoritative brief, requirements/practical decisions, research readiness, development decisions, location/verification/route policy and this tracker. Fact inventory remains unchanged.
+- **Branch:** follow-up on `codex/research-feasibility`, in the commit containing this entry after `87370fa`. Existing push authorization continues; no default-branch merge.

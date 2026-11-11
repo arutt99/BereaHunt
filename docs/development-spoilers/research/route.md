@@ -1,8 +1,9 @@
 # DEVELOPMENT SPOILERS — feasibility route and timing
 
 Review date: **2026-11-11**. **Conditional route, not approved player directions.**
-Phase 3 is **Blocked** until the access and measurement gates in
-[`verification.md`](verification.md) close. Do not publish this itinerary or
+Phase 3 is **In progress** on ChatGPT's route-estimate work in
+[`verification.md`](verification.md). Routine parking availability is accepted
+under D13, with no player action pending. Do not publish this itinerary or
 claim it was driven/walked. No story or solution is committed here.
 
 ## Route selection
@@ -36,19 +37,18 @@ roadworks segment described in F062 as a convenient assumed through-route.
 | Stop | Proposed usable arrangement | Full round trip | Gate / current design |
 | --- | --- | --- | --- |
 | L00 | Open the first clue while having a drink during the planned customer visit. | Ordinary customer approach unmeasured; no extra game-directed exterior walk. | B01 **Resolved** by user clarification; known start, no noncustomer lot opening or fixed game bay. |
-| L01 | Defined ordinary visitor bay → approved overlook platform → same bay. | **Not verified.** Old 80-yard hike lead is insufficient. | B02. No water/railway approach. |
-| L02 | Defined ordinary visitor bay → nearest approved land-side viewpoint → same bay. | **Unknown** along a usable path. | B02. No full lake circuit, beach/ice entry or invented pier-panel task. |
-| L03 | Defined free municipal bay → public sidewalks/crossings → park viewpoint → same bay. | **Unknown** along usable sidewalks. | B02/B03. Default late-winter stage uses documentary evidence, with no after-dark walk. |
+| L01 | Representative ordinary visitor parking → designated overlook → return. | Route estimate still to be documented; old 80-yard lead is supporting evidence, not a current measured trace. | B02, ChatGPT-owned; no individual bay survey. |
+| L02 | Representative ordinary visitor parking → nearby designated land-side viewpoint → return. | Usable-path estimate still to be documented. | B02, ChatGPT-owned; no lake circuit or beach/ice requirement. |
+| L03 | Ordinary free municipal parking → public sidewalks/crossings → park viewpoint → return. | Usable-sidewalk estimate still to be documented. | B02; B03 parking-capacity gate retired under D13. Late-winter observation optional. |
 
-**Acceptance:** approximately 0.25 mile **total** (about 402 m) per individual
-walk, including parking-lot travel and all detours. The “nearest point” on a
-map, an accessible-only bay, a straight-line radius, a destination pin or an
-80-yard old description does not establish that. A reference fallback removes
-an uncertain puzzle observation; it does not prove the proposed walk is short
-or the parking legal. Confirm with a scaled current path trace or suitable
-operator evidence before treating the standard outing as approved. If an
-approach fails, move the viewpoint closer or substitute a better-supported
-candidate under the existing scope; no player clue reconnaissance required.
+**Acceptance:** approximately 0.25 mile **total** (about 402 m) per required
+walk, including ordinary parking-lot/sidewalk travel and crossings. Use a
+credible map or published approach estimate from representative ordinary
+parking; an exact numbered bay or physical survey is not required. A
+straight-line radius alone is not a walking-route estimate. ChatGPT chooses
+and adjusts the approach within the agreed scope, without a player scouting
+trip. Routine parking availability is accepted under D13; known restrictions
+still apply, and no parking assumption verifies an exact physical clue.
 
 ## Three-hour planning envelope
 
@@ -68,8 +68,10 @@ must allocate actual puzzles to the budget; phase 7 must measure them.
 | 16:50–18:00 | L03 documentary investigation and ending | 70 | Four 8-minute puzzles, 12 concise evidence reading, 8 ending, 8 buffer; 10 reserved for optional safe-light observation or extra discussion. No essential outdoor task in this interval. |
 | **Total** | **Core outing** | **180** | 40 travel + 30 observation/walking allowance + 64 substantial solving + 30 reading/opening + 8 ending + 8 buffer. |
 
-Late-stage parking dwell is approximately 70 minutes; permission/maximum stay
-must be verified (B03). The last 10-minute observation allowance is **not** an
+Late-stage parking dwell is approximately 70 minutes in the planning budget.
+Use ordinary municipal parking and account for any known posted stay limit;
+no individual bay guarantee or standalone permission dossier is needed (D13).
+The last 10-minute observation allowance is **not** an
 after-dark instruction: in January it remains in-app discussion/reference
 work. The players' planned starting drink visit is explicit; its length is
 flexible, with no extra scheduled game break. Longer time there, pauses, slower
@@ -118,6 +120,8 @@ known. No recheck, weather prediction or monitoring has been scheduled.
 | Network unavailable | Cached written arrival instructions and references remain accessible; external maps/search may be unavailable. No claim of offline turn-by-turn driving. |
 
 The route is a coherent **candidate** with an explicit three-hour budget and
-daylight strategy. Later-stop parking arrangements, usable short routes and drivable
-measurement remain essential feasibility evidence, so this file does not
-claim the phase 3 completion check has passed.
+daylight strategy. Ordinary parking availability is an accepted practical
+assumption, not a separate blocker. ChatGPT still needs to document suitable
+short-walk and driving estimates (B02/B04) before phase 3 is complete. A fresh
+date-specific conditions check belongs near play if a date becomes known;
+it is not an advance player task or a scheduled monitoring service.

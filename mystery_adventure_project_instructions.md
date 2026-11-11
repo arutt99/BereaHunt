@@ -4,6 +4,8 @@ This is the spoiler-free requirements brief established through the discovery in
 
 **Starting-arrangement clarification, 2026-11-11:** We will visit Fat Head's as customers for a drink and open the first clue there. The starting venue is already known and is not a surprise. The no-additional-purchases/business-entry constraint applies after this planned customer visit; there is no separate noncustomer parking-lot opening to authorize.
 
+**Parking and research ownership clarification, 2026-11-11:** We know the area and are comfortable finding ordinary parking. Treat routine parking availability as an accepted planning assumption rather than a separate approval or guarantee to obtain from us. ChatGPT owns route/access research: select ordinary legal public/visitor parking, keep the approximate short-walk target, document defensible map/source-based walking and driving estimates, and handle any actual known restriction. Do not require us to survey parking bays, seek special permissions or preview the route. This does not turn an unknown fee, private-lot permission or physical clue into a verified fact. A fresh check for temporary closures and conditions belongs near the outing if its date becomes known; it is not needed to repeat discovery or demand a scouting trip now.
+
 ## 1. Project Overview and Primary Goal
 
 The goal is to design, develop, and deploy one polished, mobile-friendly mystery adventure on GitHub Pages for a date outing for me and my wife. We live in the area and will investigate together using one shared iPhone, launching the game from its Home Screen.

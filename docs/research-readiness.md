@@ -6,7 +6,7 @@ Spoiler-free handoff, **2026-11-11**. No itinerary, clue or solution is included
 | --- | --- | --- |
 | 1 — requirements | **Complete** | Existing interview preserved in `requirements.md` and `decisions.md`. “Not started” had meant the handoff records were missing; the interview itself was already recorded on current GitHub main. |
 | 2 — location research | **Complete** | Documented conditional shortlist, 28 remote sources plus one user clarification, and 34 classified records; source/access evidence, seasonal risks, rights and reference alternatives recorded separately. |
-| 3 — verification and feasibility | **Blocked** | Dependency audit, rejected weak clues, reference-based redesigns, candidate route and three-hour/daylight budget delivered. Essential access and route measurements still need evidence. |
+| 3 — verification and feasibility | **In progress** | ChatGPT owns the remaining route/short-walk estimates. Routine parking availability is accepted from local knowledge and is not a separate approval gate. No action is pending from either player. |
 
 ## Verification coverage
 
@@ -44,16 +44,46 @@ The agreed drink visit is the starting arrangement. The game adds no required
 purchases, business entry or scheduled breaks after that visit. This correction
 is incorporated in the authoritative brief and decision records.
 
-## What still prevents phase 3 completion
+## What I need from the players
 
-- **Short walks and parking:** establish the actual usable car-to-stop-to-car
-  paths from ordinary permitted bays, including sidewalks/crossings, within
-  approximately a quarter mile **total** each. Finish checking site-specific
-  free-parking restrictions and the permitted final stationary stay. These
-  are research tasks, not a request for either player to inspect clues.
-- **Driving:** confirm legal entrance-to-entrance routes and distances/time
-  estimates against the candidate budget. Allocated travel time and
-  straight-line separation are not measured driving evidence.
+**Nothing for the current route-planning work.** The user knows the area and
+is comfortable finding ordinary parking. I have recorded that as an accepted
+planning assumption (D13) and retired a separate parking-availability approval gate.
+I will choose ordinary legal public/visitor parking and account for actual
+known restrictions. No player scouting, photographs, bay survey, special
+permission request or advance inspection of clues is needed.
+
+This records a practical preference, not new proof of an unknown fee,
+private-lot permission or physical clue. Existing factual classifications
+have not been upgraded on that basis.
+
+## ChatGPT's remaining phase 3 work
+
+- **Short walks:** select suitable public approaches and document credible
+  map/source-based round-trip estimates against the approximately quarter-mile
+  **total** target. Representative ordinary parking is sufficient; an exact
+  numbered bay or a physical survey is not required. Adjust an unsuitable
+  approach or location myself within the agreed scope.
+- **Driving and pacing:** document an ordinary drivable route and realistic
+  estimates with buffer against the roughly three-hour budget. These are
+  planning estimates, not a claim of a physical drive or timed playthrough.
+- **Clue feasibility:** retain only source-backed essential inputs; replace
+  or redesign weak physical dependencies and provide reference alternatives.
+  A planning assumption about parking does not verify a puzzle detail.
+
+These checks close in **phase 3**, before the concealed route is used to
+commit narrative/puzzle architecture. They are unfinished research tasks for
+ChatGPT, not reasons to request more discovery answers or a player route visit.
+The browser attempt in this follow-up produced a navigation-tool error and no
+route data; it did not supply new distance/timing evidence.
+
+## Later readiness checks
+
+If the outing date becomes known, a fresh look at temporary closures,
+date-specific hours/events and weather belongs near play during final
+readiness review (phase 9). Baseline access, approximate walks and travel fit
+belong in phase 3 now. A future refresh is not a scheduled monitoring service,
+a required advance scouting trip or a reason to hold ordinary planning open.
 
 The source-backed venue address and published hours are available on the
 [official venue page](https://fatheads.com/middleburg-heights/). No third party

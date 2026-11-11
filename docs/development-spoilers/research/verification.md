@@ -1,6 +1,7 @@
 # DEVELOPMENT SPOILERS — verification and feasibility audit
 
-Reviewed **2026-11-11**. Phase 2: **Complete**. Phase 3: **Blocked**.
+Reviewed **2026-11-11**. Phase 2: **Complete**. Phase 3: **In progress**.
+No player action is pending; route estimates are ChatGPT-owned research.
 Read with [`facts.json`](facts.json), [`locations.md`](locations.md) and
 [`route.md`](route.md). Do not give these files to either intended player as
 preparation or ask them to inspect physical clues.
@@ -98,6 +99,7 @@ No unresolved photo license is required by the proposed reference design.
 | Quarry historical-marker page (`https://remarkableohio.org/marker/16-18-berea-sandstone-quarries-the-big-quarry/`) | Returned large site-navigation text without usable marker detail in inspected portion. No wording/current viewpoint approved. |
 | Commons sign photograph lead | Specific sign file not retrievable. Replaced image dependency with authored documentary references. |
 | Time-and-date 2027 month queries | Dated queries unavailable; undated page returned cached 2026 content. Did not reuse it as a 2027 calendar. Calculated explicitly approximate NOAA-based planning sunsets instead. |
+| Shared-browser public-venue route lookup, follow-up | After checking the origin against the official brewery page, a lookup using public venue names was attempted. Navigation returned “Browser Use could not read requirements”; subsequent AX inspection still showed `about:blank`. No directions, distance, timing or map pixels were obtained. This is a browser-tool error, not a closure or evidence of a site bot block. |
 
 These are bounded research limits, not proof that the information cannot be
 obtained by another source or method. No phone/email was sent on the user's
@@ -108,13 +110,14 @@ behalf. No independent physical helper has been assumed.
 | ID | Exact remaining evidence/action | Priority / closure criterion |
 | --- | --- | --- |
 | B01 | **Resolved:** user clarified a planned customer drink visit, opening the first clue at the already-known brewery. Earlier noncustomer lot/fixed-bay requirement retired; source brief and F003/F004 corrected. | No independent noncustomer parking authorization or relocation decision needed. Ordinary venue arrangements apply; no staff game role or special access assumed. |
-| B02 | Scaled, current ordinary-bay → designated-viewpoint → bay pedestrian traces for the preferred stops; include lot travel, sidewalks/crossings and usable-route constraints. | **Critical.** Establish approximately ≤0.25 mile total for each required walk, or replace/narrow the approach. Old excerpts and map pins do not close it. No player pre-inspection of clues. |
-| B03 | Site-specific permitted free parking for park candidates; municipal entrance/bay and permitted final dwell; exceptions/seasonal/event restrictions. | **Critical.** Primary published policy or equally reliable dated evidence for actual proposed arrangements. Municipal free-parking provision already documented; exact use still needs finalization. |
-| B04 | Drivable entrance-to-entrance route, distances and defensible ordinary travel estimates compatible with the stated budget. | **Critical to route verdict.** Replace allocations with documented map/road evidence, avoiding closed/restricted segments; adjust within existing scope. |
+| B02 | **ChatGPT research:** suitable public approaches and credible map/source-based round-trip walking estimates, including normal lot/sidewalk travel and crossings. | Keep approximately 0.25 mile total per required walk. A representative ordinary parking area is sufficient; no exact bay survey or player scouting. Adjust unsuitable approaches within the delegated scope. |
+| B03 | **Retired as a separate approval gate:** D13 accepts routine parking availability from the user's local knowledge, alongside operator visitor-parking evidence S07/S09 and municipal provision S11. | Choose ordinary free legal public/visitor parking and address any actual known restriction. No capacity guarantee or bay-by-bay permission record required. Unknown fees/private rights remain unverified; no factual classification changed. |
+| B04 | **ChatGPT research:** ordinary drivable route and defensible map/source-based travel estimates, with buffer, against the approximate three-hour plan. | Finish during phase 3. Estimates need a documented basis but do not require an actual drive, guaranteed traffic or exact parking-bay coordinates. |
 | U01 | Future weather, capacity, time-sensitive openings and exact play date. | Ordinary change risk, not a requirement for an advance player visit or an invented forecast. References/skip path and conditional pre-play refresh address day-of changes once baseline access clears. |
 
-No user choice is needed about the concealed route, story or solutions. B02–B04
-remain researcher tasks; B01 is closed by the starting-visit clarification.
+No user choice is needed about the concealed route, story or solutions. B02/B04
+remain ChatGPT's research tasks; B01 is closed by the starting-visit
+clarification and B03 is retired under D13's practical planning preference.
 Do not ask a player to approve unknown
 factual claims or physically inspect spoilers as a substitute.
 
@@ -128,8 +131,8 @@ factual claims or physically inspect spoilers as a substitute.
 | Phase 3: precise dependency audit and rejection/redesign of weak observations | Pass for research design; all essential proposed inputs limited to Verified documentary facts. |
 | Phase 3: no assumed on-site helper or false field claim | Pass; all physical checks unperformed. |
 | Phase 3: coherent candidate, seasonal/light treatment, explicit timing assumptions, fallback coverage | Documented; estimates are not measured route approval. |
-| Phase 3: agreed customer start, verified later parking/short walks and sufficient route evidence | Starting misunderstanding **Resolved**; **Blocked: B02–B04** for remaining route evidence. |
-| Phase 3: final feasible route and readiness to commit dependent story architecture | **Blocked** until the critical gates close. Do not start phase 4 or claim release readiness. |
+| Phase 3: agreed customer start, ordinary legal access and sufficient route/short-walk estimates | B01 resolved; routine parking gate B03 retired under D13. **Research In progress: B02/B04**, owned by ChatGPT. |
+| Phase 3: final feasible route and readiness to commit dependent story architecture | Not yet complete; finish the phase 3 estimates before phase 4. No player action or advance route inspection is required. |
 
 Source facts cannot establish future weather or capacity, and record checks
 cannot establish real-world truth. Retain the useful research; close specific
@@ -165,4 +168,22 @@ verified venue fee, parking policy or future opening. Current totals are 29
 sources (28 remote plus one user message), 34 records: 22 Verified, five
 Provisionally Verified, five Unverified and two Rejected. The six eligible
 documentary inputs and zero approved essential physical observations remain.
-B01 is closed. Subsequent route gates B02–B04 remain researcher tasks.
+B01 is closed. The subsequent parking-ownership clarification below
+supersedes B03's former standalone gate.
+
+## Parking scope and ownership correction — 2026-11-11
+
+The user is familiar with local parking and does not consider routine capacity
+a concern (public decision D13). Ordinary availability is accepted for
+planning; B03 is retired as a separate approval/certification task. This is
+not confirmation of a fee, private parking permission or future availability,
+and none of the 34 factual/plan records is upgraded. The authoritative brief,
+requirements, readiness, route policy and tracker record the same distinction.
+
+ChatGPT owns B02/B04 and any actual known access conflict. Source/map-based
+walking and driving estimates close the baseline phase 3 work; a numbered-bay
+survey, guaranteed space or physical walkthrough is not required. The browser
+attempt above yielded no new route estimates, so they remain unfinished
+research, not a user prerequisite. When a play date is known, temporary
+closures/hours/conditions can be refreshed near play in phase 9 without
+inventing a scheduled check or involving either player in clue reconnaissance.
