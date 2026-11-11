@@ -1,0 +1,10 @@
+# Project execution
+
+- Read `mystery_adventure_project_instructions.md` for the authoritative requirements.
+- Read `BUILD_PLAN.md` for the numbered implementation phases, progress tracker, deliverables, and completion checks.
+- For a request such as "implement phase 1", execute that numbered phase from `BUILD_PLAN.md`, verify its prerequisites and completion checks, and update its tracker and handoff record. Stop after the requested phase.
+- For each distinct work request, inspect/fetch the current relevant base branch, use a descriptively named feature branch, validate the changes, commit the scoped files, and push the branch to GitHub as part of completing the work. Continue using that branch for follow-up changes to the same task. Preserve newer remote requirements and unrelated user changes. Do not leave completed work only in the local workspace; report the branch and commit, or the exact push blocker. Do not merge into the default branch unless requested.
+- Read existing files under `docs/` before making decisions. Preserve recorded user selections and distinguish confirmed requirements, recommendations, open decisions, and unverified assumptions.
+- The discovery interview is already recorded in the source brief. Preserve its confirmed constraints and independently make the creative choices delegated there. Ask only about material practical conflicts, without spoilers; do not repeat discovery or ask the players to approve the plot, route shortlist, clues, or answers.
+- Keep routine updates, branch/commit names, and handoffs spoiler-free. Put detailed research, route plans, narrative/puzzle design, solutions, and test findings under clearly labeled `docs/development-spoilers/` records. Never ask either player to inspect clues or solutions in advance as the default testing plan.
+- Never fabricate real-world details, source verification, physical walkthroughs, device tests, or deployment results. Record blockers precisely and do not mark an incomplete phase Complete.
