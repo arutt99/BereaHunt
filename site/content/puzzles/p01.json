@@ -1,0 +1,84 @@
+{
+  "id": "P01",
+  "chapterId": "CH00",
+  "locationId": "L00",
+  "prerequisitePuzzleIds": [],
+  "entryEvidenceIds": [
+    "E00",
+    "E01"
+  ],
+  "requiredEvidenceIds": [
+    "E00",
+    "E01"
+  ],
+  "surfacedEvidenceIds": [
+    "E00",
+    "E01"
+  ],
+  "essentialFactIds": [],
+  "requiredPhysicalFactIds": [],
+  "requiredAssetIds": [],
+  "prompt": "For LC17, follow the completed handoffs from H0. What is the terminal reference? Ignore receipts for other jobs.",
+  "answerType": "reference_id",
+  "answerFields": [
+    {
+      "name": "reference",
+      "label": "Terminal reference",
+      "type": "text"
+    }
+  ],
+  "solutionRef": "solutions/p01.json",
+  "workingAid": {
+    "kind": "receipt_comparison",
+    "inputRefs": [
+      "E01#receipts"
+    ],
+    "instructions": "Keep the brief visible while following matching job and reference IDs.",
+    "controls": [
+      "compare",
+      "answer_text"
+    ]
+  },
+  "hintIds": [
+    "P01-H1",
+    "P01-H2",
+    "P01-H3"
+  ],
+  "referenceEvidenceIds": [
+    "E00",
+    "E01"
+  ],
+  "revealId": "P01-REVEAL",
+  "rewardEvidenceIds": [
+    "E02"
+  ],
+  "completionRoutes": {
+    "correct": [
+      "E02"
+    ],
+    "reveal": [
+      "E02"
+    ]
+  },
+  "nextPuzzleId": "P02",
+  "targetMinutes": 6,
+  "manipulationMinutes": 0,
+  "testingStatus": "author_desk_review_and_automated_content_checks",
+  "feedback": {
+    "empty": "Complete the labeled answer fields before checking.",
+    "incorrect": "Keep the job ID fixed and follow each outgoing reference to the next matching incoming reference. The last matching handoff matters.",
+    "correct": "Finding recorded. The supporting explanation is available in your case file."
+  },
+  "assistance": {
+    "referenceLabel": "Can’t access this clue",
+    "referenceIntroduction": "Everything needed for this objective is in the records below. If exploration is unavailable, stay legally and safely stopped and continue with these same unsolved inputs. Opening references does not check your answer or complete the objective.",
+    "requiresVisit": false,
+    "requiresNetwork": false,
+    "requiresImage": false,
+    "completesPuzzle": false,
+    "revealsAnswer": false,
+    "hintDelaySeconds": 0,
+    "revealConfirmation": "Show the complete answer and reasoning, then continue the case? This is separate from opening reference evidence.",
+    "revealConfirmationRequired": true
+  }
+}

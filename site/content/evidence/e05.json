@@ -1,0 +1,94 @@
+{
+  "id": "E05",
+  "kind": "document",
+  "title": "Cipher protocol and reference selectors",
+  "classification": "mixed_separated",
+  "bodyBlocks": [
+    {
+      "id": "dispatch",
+      "type": "paragraph",
+      "text": "Private dispatch slip · decode the descriptor below, then match it to one reference selector. Its public access will be confirmed before you travel. Do not guess a destination from the word alone.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "protocol",
+      "type": "instructions",
+      "title": "Coordinate protocol",
+      "steps": [
+        "Use the foundation material named in the causal reference as the keyword.",
+        "Write each keyword letter once, in its original order. Then append the unused letters of ABCDEFGHIKLMNOPQRSTUVWXYZ. J is omitted; the grid has 25 cells.",
+        "Fill a blank 5 × 5 grid from left to right, top to bottom. Label rows and columns 1–5. In each pair, read row first, then column.",
+        "Decode 11 12 13 14 14 35 52. Match the decoded descriptor to the connecting feature in the selector records. Use that reference’s northern public access only after confirmation."
+      ],
+      "data": {
+        "keywordEvidenceId": "E04",
+        "alphabet": "ABCDEFGHIKLMNOPQRSTUVWXYZ",
+        "coordinateOrder": "row_column",
+        "pairs": [
+          "11",
+          "12",
+          "13",
+          "14",
+          "14",
+          "35",
+          "52"
+        ],
+        "size": 5
+      },
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "selectors",
+      "type": "table",
+      "title": "Reference selectors",
+      "columns": [
+        {
+          "key": "id",
+          "label": "Reference"
+        },
+        {
+          "key": "description",
+          "label": "Description"
+        }
+      ],
+      "rows": [
+        {
+          "id": "REF-A",
+          "description": "An isolated basin with no connecting channel."
+        },
+        {
+          "id": "REF-B",
+          "description": "Two former sandstone-quarry basins joined through a shallower connecting channel; northern public access indexed separately."
+        },
+        {
+          "id": "REF-C",
+          "description": "An object moved from its earlier civic setting; no basin connection."
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "selectorSource",
+      "type": "paragraph",
+      "text": "The linked-quarry selector paraphrases the operator’s documentary account of the 1941 flooding that joined two former quarries through a shallower channel. It does not promise a visible underwater boundary.",
+      "classification": "authored_reference",
+      "factIds": [
+        "F021"
+      ],
+      "title": "Documentary reference · original paraphrase"
+    }
+  ],
+  "factIds": [
+    "F021"
+  ],
+  "assetIds": [],
+  "textEquivalent": "Private dispatch slip · decode the descriptor below, then match it to one reference selector. Its public access will be confirmed before you travel. Do not guess a destination from the word alone.\n\nCoordinate protocol\n\nUse the foundation material named in the causal reference as the keyword.\n\nWrite each keyword letter once, in its original order. Then append the unused letters of ABCDEFGHIKLMNOPQRSTUVWXYZ. J is omitted; the grid has 25 cells.\n\nFill a blank 5 × 5 grid from left to right, top to bottom. Label rows and columns 1–5. In each pair, read row first, then column.\n\nDecode 11 12 13 14 14 35 52. Match the decoded descriptor to the connecting feature in the selector records. Use that reference’s northern public access only after confirmation.\n\nReference selectors\n\nReference: REF-A; Description: An isolated basin with no connecting channel.\n\nReference: REF-B; Description: Two former sandstone-quarry basins joined through a shallower connecting channel; northern public access indexed separately.\n\nReference: REF-C; Description: An object moved from its earlier civic setting; no basin connection.\n\nDocumentary reference · original paraphrase\n\nThe linked-quarry selector paraphrases the operator’s documentary account of the 1941 flooding that joined two former quarries through a shallower channel. It does not promise a visible underwater boundary.",
+  "grantEvent": {
+    "type": "enterPuzzle",
+    "puzzleId": "P03"
+  },
+  "supportsFrom": []
+}

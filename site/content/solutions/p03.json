@@ -1,0 +1,41 @@
+{
+  "puzzleId": "P03",
+  "answerType": "text",
+  "canonical": "SHALLOW",
+  "acceptedAliases": [],
+  "normalizationProfile": "text",
+  "reasoningSteps": [
+    "E04 names SHALE, the protocol’s requested foundation material.",
+    "Unique key letters followed by unused letters without J yield SHALE / BCDFG / IKMNO / PQRTU / VWXYZ.",
+    "Read row then column: 11=S, 12=H, 13=A, 14=L, 14=L, 35=O, 52=W.",
+    "SHALLOW selects REF-B’s shallower-link account. E07 confirms its northern public approach before departure."
+  ],
+  "alternativeEliminations": [
+    "Column-first decoding contradicts the explicit protocol.",
+    "An isolated basin and a relocated object do not match the decoded connecting-feature descriptor."
+  ],
+  "hints": [
+    {
+      "id": "P03-H1",
+      "text": "Use the foundation material named in the certified reference as the instructed key."
+    },
+    {
+      "id": "P03-H2",
+      "text": "Deduplicate SHALE, append unused letters without J, fill by rows, and read row then column."
+    },
+    {
+      "id": "P03-H3",
+      "text": "The first pairs read SH; use the resulting descriptor to select the matching reference and its northern access."
+    }
+  ],
+  "reveal": {
+    "id": "P03-REVEAL",
+    "title": "Answer and reasoning",
+    "explanation": "E04 names SHALE, the protocol’s requested foundation material. Unique key letters followed by unused letters without J yield SHALE / BCDFG / IKMNO / PQRTU / VWXYZ. Read row then column: 11=S, 12=H, 13=A, 14=L, 14=L, 35=O, 52=W. SHALLOW selects REF-B’s shallower-link account. E07 confirms its northern public approach before departure.",
+    "continueLabel": "Continue the case"
+  },
+  "completionEvidenceIds": [
+    "E06",
+    "E07"
+  ]
+}

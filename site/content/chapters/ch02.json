@@ -1,0 +1,16 @@
+{
+  "id": "CH02",
+  "order": 2,
+  "publicLabel": "Chapter 3",
+  "unlockedTitle": "One label, two identities",
+  "locationId": "L05",
+  "puzzleIds": [
+    "P04",
+    "P05"
+  ],
+  "prerequisitePuzzleIds": [
+    "P03"
+  ],
+  "introduction": "The later register offers one location label. The older records may still describe separate objects. Restore their identities before accepting anyone’s account of their past.",
+  "transition": "The pair and its legitimate owner are established. Now separate the first diversion from what happened afterwards."
+}

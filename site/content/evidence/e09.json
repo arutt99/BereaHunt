@@ -1,0 +1,64 @@
+{
+  "id": "E09",
+  "kind": "finding",
+  "title": "Restored paired identity",
+  "classification": "fictional",
+  "bodyBlocks": [
+    {
+      "id": "pair",
+      "type": "paragraph",
+      "text": "Recovered pair: K4 from original group A and M7 from original group B. Both are B17 relief panels owned by Lark Workshop. T9 is another owner’s sample; R2 is packing material. The shared LAKE alias does not merge the two serials into one object.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "identity",
+      "type": "table",
+      "title": "Restored identity",
+      "columns": [
+        {
+          "key": "serial",
+          "label": "Serial"
+        },
+        {
+          "key": "owner",
+          "label": "Owner"
+        },
+        {
+          "key": "kind",
+          "label": "Kind"
+        },
+        {
+          "key": "batch",
+          "label": "Batch"
+        }
+      ],
+      "rows": [
+        {
+          "serial": "K4",
+          "owner": "Lark Workshop",
+          "kind": "relief",
+          "batch": "B17"
+        },
+        {
+          "serial": "M7",
+          "owner": "Lark Workshop",
+          "kind": "relief",
+          "batch": "B17"
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    }
+  ],
+  "factIds": [],
+  "assetIds": [],
+  "textEquivalent": "Recovered pair: K4 from original group A and M7 from original group B. Both are B17 relief panels owned by Lark Workshop. T9 is another owner’s sample; R2 is packing material. The shared LAKE alias does not merge the two serials into one object.\n\nRestored identity\n\nSerial: K4; Owner: Lark Workshop; Kind: relief; Batch: B17\n\nSerial: M7; Owner: Lark Workshop; Kind: relief; Batch: B17",
+  "grantEvent": {
+    "type": "completePuzzle",
+    "puzzleId": "P04"
+  },
+  "supportsFrom": [
+    "E08"
+  ]
+}

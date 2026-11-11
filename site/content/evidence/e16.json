@@ -1,0 +1,169 @@
+{
+  "id": "E16",
+  "kind": "document",
+  "title": "Certified authority and order packet",
+  "classification": "fictional",
+  "bodyBlocks": [
+    {
+      "id": "scope",
+      "type": "paragraph",
+      "text": "Certified authority and order packet · complete relevant records. For this fictional case, badges are individual and unshared; records are reliable and untampered. There is no delegation, impersonation, collusion, queued delay or offline substitution. Actions take effect immediately at the recorded case time. Nothing outside this packet is needed to identify the first diversion.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "permissions",
+      "type": "paragraph",
+      "text": "The documented cradle-and-recipient diversion requires BOTH repack and redirect authority at the issue time. Review alone cannot change custody. Authority starts are inclusive and ends exclusive. All times below are already case time; do not apply the service-clock correction again.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "authority",
+      "type": "table",
+      "title": "Authority windows",
+      "columns": [
+        {
+          "key": "badge",
+          "label": "Badge"
+        },
+        {
+          "key": "permissions",
+          "label": "Authority"
+        },
+        {
+          "key": "from",
+          "label": "Valid from (inclusive)"
+        },
+        {
+          "key": "until",
+          "label": "Valid until (exclusive)"
+        }
+      ],
+      "rows": [
+        {
+          "badge": "C4",
+          "permissions": [
+            "repack"
+          ],
+          "from": "14:50",
+          "until": "15:30"
+        },
+        {
+          "badge": "A7",
+          "permissions": [
+            "catalogue_review"
+          ],
+          "from": "14:50",
+          "until": "15:30"
+        },
+        {
+          "badge": "B2",
+          "permissions": [
+            "repack",
+            "redirect"
+          ],
+          "from": "14:50",
+          "until": "15:30"
+        },
+        {
+          "badge": "D9",
+          "permissions": [
+            "repack",
+            "redirect"
+          ],
+          "from": "15:11",
+          "until": "15:30"
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "orders",
+      "type": "table",
+      "title": "Candidate order records",
+      "columns": [
+        {
+          "key": "id",
+          "label": "Order"
+        },
+        {
+          "key": "serials",
+          "label": "Payload"
+        },
+        {
+          "key": "receiver",
+          "label": "Receiver"
+        },
+        {
+          "key": "time",
+          "label": "Issued case time"
+        },
+        {
+          "key": "badge",
+          "label": "Badge"
+        }
+      ],
+      "rows": [
+        {
+          "id": "O18",
+          "serials": [
+            "K4",
+            "M7"
+          ],
+          "receiver": "Lark Workshop",
+          "time": "15:04",
+          "badge": "C4"
+        },
+        {
+          "id": "O26",
+          "serials": [
+            "K4",
+            "M7"
+          ],
+          "receiver": "Gannet Trading",
+          "time": "15:12",
+          "badge": "D9"
+        },
+        {
+          "id": "O43",
+          "serials": [
+            "K4",
+            "M7"
+          ],
+          "receiver": "Gannet Trading",
+          "time": "15:06",
+          "badge": "B2"
+        },
+        {
+          "id": "O57",
+          "serials": [
+            "K4",
+            "T9"
+          ],
+          "receiver": "Gannet Trading",
+          "time": "15:06",
+          "badge": "A7"
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "question",
+      "type": "paragraph",
+      "text": "Identify the first unauthorized diversion of the recovered pair, not merely a later handoff or a descriptive review. Match the pair, approved receiver, corrected window and both necessary permissions, then join the badge to the roster. Record one actor and one order.",
+      "classification": "fictional",
+      "factIds": []
+    }
+  ],
+  "factIds": [],
+  "assetIds": [],
+  "textEquivalent": "Certified authority and order packet · complete relevant records. For this fictional case, badges are individual and unshared; records are reliable and untampered. There is no delegation, impersonation, collusion, queued delay or offline substitution. Actions take effect immediately at the recorded case time. Nothing outside this packet is needed to identify the first diversion.\n\nThe documented cradle-and-recipient diversion requires BOTH repack and redirect authority at the issue time. Review alone cannot change custody. Authority starts are inclusive and ends exclusive. All times below are already case time; do not apply the service-clock correction again.\n\nAuthority windows\n\nBadge: C4; Authority: repack; Valid from (inclusive): 14:50; Valid until (exclusive): 15:30\n\nBadge: A7; Authority: catalogue_review; Valid from (inclusive): 14:50; Valid until (exclusive): 15:30\n\nBadge: B2; Authority: repack, redirect; Valid from (inclusive): 14:50; Valid until (exclusive): 15:30\n\nBadge: D9; Authority: repack, redirect; Valid from (inclusive): 15:11; Valid until (exclusive): 15:30\n\nCandidate order records\n\nOrder: O18; Payload: K4, M7; Receiver: Lark Workshop; Issued case time: 15:04; Badge: C4\n\nOrder: O26; Payload: K4, M7; Receiver: Gannet Trading; Issued case time: 15:12; Badge: D9\n\nOrder: O43; Payload: K4, M7; Receiver: Gannet Trading; Issued case time: 15:06; Badge: B2\n\nOrder: O57; Payload: K4, T9; Receiver: Gannet Trading; Issued case time: 15:06; Badge: A7\n\nIdentify the first unauthorized diversion of the recovered pair, not merely a later handoff or a descriptive review. Match the pair, approved receiver, corrected window and both necessary permissions, then join the badge to the roster. Record one actor and one order.",
+  "grantEvent": {
+    "type": "completePuzzle",
+    "puzzleId": "P07"
+  },
+  "supportsFrom": []
+}

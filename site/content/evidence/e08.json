@@ -1,0 +1,136 @@
+{
+  "id": "E08",
+  "kind": "document",
+  "title": "Transformation reference and private inventory",
+  "classification": "mixed_separated",
+  "bodyBlocks": [
+    {
+      "id": "transformation",
+      "type": "paragraph",
+      "text": "Wallace Lake joined two former sandstone quarries when they flooded in 1941. Coe and Wallace lakes occupy former Berea sandstone quarries. The diagram shows only the idea of separate origins and a shared later setting; no actual quarry outlines, names, depths or present boundaries are shown.",
+      "classification": "authored_reference",
+      "factIds": [
+        "F021",
+        "F043"
+      ],
+      "title": "Documentary reference · original paraphrase"
+    },
+    {
+      "id": "transformationFigure",
+      "type": "figure",
+      "assetId": "A03",
+      "caption": "Conceptual transformation: two separate sandstone quarries lead to Wallace Lake through 1941 flooding and a shallower connecting channel. The diagram is not a geographic map. Separate earlier identities remain relevant after the later setting is shared.",
+      "classification": "authored_reference",
+      "factIds": [
+        "F021",
+        "F043"
+      ]
+    },
+    {
+      "id": "retrieval",
+      "type": "paragraph",
+      "text": "Private inventory request · recover every relief panel in batch B17 owned by Lark Workshop. A later site-alias merge changes only the location label. Original group and serial keys, kind, owner and batch are immutable. Do not deduplicate different serials because their location label becomes the same.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "before",
+      "type": "table",
+      "title": "Original inventory",
+      "columns": [
+        {
+          "key": "group",
+          "label": "Original group"
+        },
+        {
+          "key": "serial",
+          "label": "Serial"
+        },
+        {
+          "key": "owner",
+          "label": "Owner"
+        },
+        {
+          "key": "kind",
+          "label": "Kind"
+        },
+        {
+          "key": "batch",
+          "label": "Batch"
+        }
+      ],
+      "rows": [
+        {
+          "group": "A",
+          "serial": "K4",
+          "owner": "Lark Workshop",
+          "kind": "relief",
+          "batch": "B17"
+        },
+        {
+          "group": "A",
+          "serial": "T9",
+          "owner": "Other studio",
+          "kind": "sample",
+          "batch": "S8"
+        },
+        {
+          "group": "B",
+          "serial": "M7",
+          "owner": "Lark Workshop",
+          "kind": "relief",
+          "batch": "B17"
+        },
+        {
+          "group": "B",
+          "serial": "R2",
+          "owner": "Lark Workshop",
+          "kind": "packing",
+          "batch": "B17"
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "merge",
+      "type": "table",
+      "title": "Later location alias",
+      "columns": [
+        {
+          "key": "group",
+          "label": "Original group retained"
+        },
+        {
+          "key": "alias",
+          "label": "Later alias"
+        }
+      ],
+      "rows": [
+        {
+          "group": "A",
+          "alias": "LAKE"
+        },
+        {
+          "group": "B",
+          "alias": "LAKE"
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    }
+  ],
+  "factIds": [
+    "F021",
+    "F043"
+  ],
+  "assetIds": [
+    "A03"
+  ],
+  "textEquivalent": "Documentary reference · original paraphrase\n\nWallace Lake joined two former sandstone quarries when they flooded in 1941. Coe and Wallace lakes occupy former Berea sandstone quarries. The diagram shows only the idea of separate origins and a shared later setting; no actual quarry outlines, names, depths or present boundaries are shown.\n\nConceptual transformation: two separate sandstone quarries lead to Wallace Lake through 1941 flooding and a shallower connecting channel. The diagram is not a geographic map. Separate earlier identities remain relevant after the later setting is shared.\n\nPrivate inventory request · recover every relief panel in batch B17 owned by Lark Workshop. A later site-alias merge changes only the location label. Original group and serial keys, kind, owner and batch are immutable. Do not deduplicate different serials because their location label becomes the same.\n\nOriginal inventory\n\nOriginal group: A; Serial: K4; Owner: Lark Workshop; Kind: relief; Batch: B17\n\nOriginal group: A; Serial: T9; Owner: Other studio; Kind: sample; Batch: S8\n\nOriginal group: B; Serial: M7; Owner: Lark Workshop; Kind: relief; Batch: B17\n\nOriginal group: B; Serial: R2; Owner: Lark Workshop; Kind: packing; Batch: B17\n\nLater location alias\n\nOriginal group retained: A; Later alias: LAKE\n\nOriginal group retained: B; Later alias: LAKE",
+  "grantEvent": {
+    "type": "enterPuzzle",
+    "puzzleId": "P04"
+  },
+  "supportsFrom": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "CH03",
+  "order": 3,
+  "publicLabel": "Chapter 4",
+  "unlockedTitle": "The missing interval",
+  "locationId": "L05",
+  "puzzleIds": [
+    "P06",
+    "P07"
+  ],
+  "prerequisitePuzzleIds": [
+    "P05"
+  ],
+  "introduction": "A later handoff can draw attention away from an earlier change. Correct the observations first, then connect badges to people using the reliable checkout records.",
+  "transition": "The roster is complete. Bring the findings together; a role alone is not proof."
+}

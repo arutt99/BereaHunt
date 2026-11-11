@@ -1,0 +1,44 @@
+{
+  "puzzleId": "P07",
+  "answerType": "bijection",
+  "canonical": {
+    "Nadia Hart": "C4",
+    "Luca Bellamy": "A7",
+    "Quinn Arden": "B2",
+    "Samir Cole": "D9"
+  },
+  "acceptedAliases": [],
+  "normalizationProfile": "bijection",
+  "reasoningSteps": [
+    "Nadia is conservator with C4; Samir is courier with D9.",
+    "One-to-one roles plus Luca’s exclusions leave him cataloguer with A7.",
+    "Quinn must be dispatcher; B2 is the remaining badge. No statement is rejected or treated as a lie."
+  ],
+  "alternativeEliminations": [
+    "Any swapped badge violates a signed constraint or one-to-one role assignment."
+  ],
+  "hints": [
+    {
+      "id": "P07-H1",
+      "text": "Start with the explicit checkout and courier records."
+    },
+    {
+      "id": "P07-H2",
+      "text": "Use Luca's exclusions and the cataloguer badge, keeping roles one-to-one."
+    },
+    {
+      "id": "P07-H3",
+      "text": "Nadia/C4 and Samir/D9 fix two rows; Luca/A7 leaves Quinn/B2."
+    }
+  ],
+  "reveal": {
+    "id": "P07-REVEAL",
+    "title": "Answer and reasoning",
+    "explanation": "Nadia is conservator with C4; Samir is courier with D9. One-to-one roles plus Luca’s exclusions leave him cataloguer with A7. Quinn must be dispatcher; B2 is the remaining badge. No statement is rejected or treated as a lie.",
+    "continueLabel": "Continue the case"
+  },
+  "completionEvidenceIds": [
+    "E15",
+    "E16"
+  ]
+}

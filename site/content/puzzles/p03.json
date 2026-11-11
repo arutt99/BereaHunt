@@ -1,0 +1,130 @@
+{
+  "id": "P03",
+  "chapterId": "CH01",
+  "locationId": "L01",
+  "prerequisitePuzzleIds": [
+    "P02"
+  ],
+  "entryEvidenceIds": [
+    "E05"
+  ],
+  "requiredEvidenceIds": [
+    "E03",
+    "E04",
+    "E05"
+  ],
+  "surfacedEvidenceIds": [
+    "E03",
+    "E04",
+    "E05"
+  ],
+  "essentialFactIds": [
+    "F011",
+    "F021"
+  ],
+  "requiredPhysicalFactIds": [],
+  "requiredAssetIds": [
+    "A02"
+  ],
+  "prompt": "Use the supplied protocol and foundation-material key to decode the seven coordinate pairs. Enter the literal descriptor, then compare the selectors. The exact public destination will be confirmed after this finding.",
+  "answerType": "text",
+  "answerFields": [
+    {
+      "name": "answer",
+      "label": "Decoded descriptor",
+      "type": "text"
+    }
+  ],
+  "solutionRef": "solutions/p03.json",
+  "workingAid": {
+    "kind": "local_polybius_grid",
+    "inputRefs": [
+      "E04#keyword",
+      "E05#protocol",
+      "E05#selectors"
+    ],
+    "instructions": "Enter your keyword to populate a grid using the displayed protocol, or fill its 25 cells yourself. The grid uses row then column. Reset restores blank cells; no keyword or decoded answer is prefilled.",
+    "controls": [
+      "keyword_input",
+      "build_from_entered_key",
+      "manual_grid",
+      "reset"
+    ],
+    "initialKeyword": "",
+    "initialCells": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "alphabet": "ABCDEFGHIKLMNOPQRSTUVWXYZ",
+    "size": 5
+  },
+  "hintIds": [
+    "P03-H1",
+    "P03-H2",
+    "P03-H3"
+  ],
+  "referenceEvidenceIds": [
+    "E03",
+    "E04",
+    "E05"
+  ],
+  "revealId": "P03-REVEAL",
+  "rewardEvidenceIds": [
+    "E06",
+    "E07"
+  ],
+  "completionRoutes": {
+    "correct": [
+      "E06",
+      "E07"
+    ],
+    "reveal": [
+      "E06",
+      "E07"
+    ]
+  },
+  "nextPuzzleId": "P04",
+  "targetMinutes": 9,
+  "manipulationMinutes": 0,
+  "testingStatus": "author_desk_review_and_automated_content_checks",
+  "feedback": {
+    "empty": "Complete the labeled answer fields before checking.",
+    "incorrect": "Recheck your key, the omitted letter, row-fill order and row–column convention. Enter the decoded descriptor rather than a place name.",
+    "correct": "Finding recorded. The supporting explanation is available in your case file."
+  },
+  "assistance": {
+    "referenceLabel": "Can’t access this clue",
+    "referenceIntroduction": "Everything needed for this objective is in the records below. If exploration is unavailable, stay legally and safely stopped and continue with these same unsolved inputs. Opening references does not check your answer or complete the objective.",
+    "requiresVisit": false,
+    "requiresNetwork": false,
+    "requiresImage": false,
+    "completesPuzzle": false,
+    "revealsAnswer": false,
+    "hintDelaySeconds": 0,
+    "revealConfirmation": "Show the complete answer and reasoning, then continue the case? This is separate from opening reference evidence.",
+    "revealConfirmationRequired": true
+  }
+}

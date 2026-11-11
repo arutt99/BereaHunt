@@ -179,3 +179,20 @@ a concise reveal. Full explanation is an optional expansion citing the collected
 documents. Assisted completion reaches the same end, without criticism or a
 required score. The completed case remains reviewable. Nothing is sent to a
 third party. No required drive back to the known start is added.
+
+## Phase 5 handoff — 2026-11-11
+
+All proposed player copy, source documents, assistance text, final reveal/full
+explanation and working-aid inputs are authored in `site/content/`. Preparation
+is its own spoiler-free file. References are original local SVGs with complete
+text equivalents; they require no image-only observation or downloaded third-party
+photo. The three boards retain blank/mixed initial state, native controls and
+source-block references. The decoding grid is user-keyed, not prefilled.
+
+Content validation checks actual point-of-use evidence, complete reference paths,
+required fields, answer contracts and paragraph length. Standalone SVG geometry
+checks are recorded in the concealed content review. No mobile UI, working-aid
+event handler, persistence, installed context or offline app has been tested;
+implement those in phase 6, then execute the required phase 7 coverage. The
+current resource manifest is explicitly a content package to extend, not an
+already-working service-worker cache.

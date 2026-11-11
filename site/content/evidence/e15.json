@@ -1,0 +1,68 @@
+{
+  "id": "E15",
+  "kind": "finding",
+  "title": "Reconstructed roster",
+  "classification": "fictional",
+  "bodyBlocks": [
+    {
+      "id": "roster",
+      "type": "table",
+      "title": "Reconstructed roster",
+      "columns": [
+        {
+          "key": "name",
+          "label": "Name"
+        },
+        {
+          "key": "role",
+          "label": "Role"
+        },
+        {
+          "key": "badge",
+          "label": "Badge"
+        }
+      ],
+      "rows": [
+        {
+          "name": "Nadia Hart",
+          "role": "conservator",
+          "badge": "C4"
+        },
+        {
+          "name": "Luca Bellamy",
+          "role": "cataloguer",
+          "badge": "A7"
+        },
+        {
+          "name": "Quinn Arden",
+          "role": "dispatcher",
+          "badge": "B2"
+        },
+        {
+          "name": "Samir Cole",
+          "role": "courier",
+          "badge": "D9"
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "reason",
+      "type": "paragraph",
+      "text": "Nadia fixes the conservator/C4 row. Samir fixes courier/D9. With conservator and courier assigned, Luca’s exclusions leave cataloguer/A7; Quinn takes dispatcher and B2. This identifies badge holders, not yet the first unauthorized act.",
+      "classification": "fictional",
+      "factIds": []
+    }
+  ],
+  "factIds": [],
+  "assetIds": [],
+  "textEquivalent": "Reconstructed roster\n\nName: Nadia Hart; Role: conservator; Badge: C4\n\nName: Luca Bellamy; Role: cataloguer; Badge: A7\n\nName: Quinn Arden; Role: dispatcher; Badge: B2\n\nName: Samir Cole; Role: courier; Badge: D9\n\nNadia fixes the conservator/C4 row. Samir fixes courier/D9. With conservator and courier assigned, Luca’s exclusions leave cataloguer/A7; Quinn takes dispatcher and B2. This identifies badge holders, not yet the first unauthorized act.",
+  "grantEvent": {
+    "type": "completePuzzle",
+    "puzzleId": "P07"
+  },
+  "supportsFrom": [
+    "E14"
+  ]
+}
