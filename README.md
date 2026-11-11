@@ -10,6 +10,18 @@ required actual iPhone Safari/Home Screen validation**, with no released or
 deployed experience claimed. See [testing readiness](docs/testing/readiness.md)
 and the spoiler-free [test plan](docs/testing/test-plan.md).
 
+## Publish for device testing
+
+If GitHub Pages shows this README, it is serving the repository root. The
+[Pages workflow](.github/workflows/pages.yml) publishes only the game in `site/`
+at [the game URL](https://arutt99.github.io/BereaHunt/). Set **Settings → Pages →
+Build and deployment → Source** to **GitHub Actions**, then merge the publishing
+fix to main and wait for **Deploy game to Pages** to succeed. See
+[Pages setup](docs/pages-setup.md) for exact steps and current verification limits.
+
+The expected landing screen is **Prepare the investigation**. Installation and
+complete download are spoiler-free; keep **Start the investigation** for play.
+
 ## Run locally
 
 Requires Python 3.10+; there are no runtime dependencies or build step.
@@ -21,7 +33,8 @@ python3 -m http.server 8000 --directory site
 Open `http://localhost:8000/`. Use localhost for service-worker support; a phone
 accessing a development server by a plain HTTP LAN address is not a secure
 context. The eventual static host must use HTTPS. Only `site/` is deployable.
-GitHub Pages configuration and live testing belong to phase 8.
+The preliminary Pages setup supplies a device-test origin; full live deployment
+verification and a completed phase 8 verdict are still outstanding.
 
 ## Prepare on iPhone
 

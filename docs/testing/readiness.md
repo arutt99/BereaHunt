@@ -34,7 +34,7 @@ results and a separate field/access review are retained for later sessions.
 | Supporting WebKit | Not run. Official WebKit 26.5 (Playwright build 2336) installation failed: environment policy returned HTTP 403 `Domain forbidden` for both official download hosts. This is separate from D01 and would not replace it |
 | Field/access | Desk reconciliation against existing 2026-11-11 research; no new source retrieval, physical walk/drive, live map routing or current sign inspection. Essential inputs remain supplied Verified documentary references; current posted restrictions and conditions control |
 | Experience and pacing | Author reasoning/narrative review; no independent tester, human difficulty/sunlight trial or measured three-hour outing. The 180-minute budget and interaction proportion remain authored estimates |
-| Deployment/release | No Pages configuration, live deployment or final release verdict performed; those remain phases 8–9 |
+| Deployment/release | Preliminary Pages workflow prepared in response to the reported README landing page; see [setup](../pages-setup.md). Pages source/merge and live-host checks are pending; no successful deployment or final release verdict claimed |
 
 Only D01 currently blocks phase 7's required device completion check; optional
 independent testing and field visits have not been invented as new approval or
