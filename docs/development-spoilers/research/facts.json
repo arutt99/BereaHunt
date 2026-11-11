@@ -1,0 +1,1209 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-11",
+  "research_method": "Remote source text/metadata only, including cached/indexed pages. No physical visit, contact with operators, current image-pixel inspection, live map rendering or measured drivable/pedestrian itinerary.",
+  "classification_policy": "Verified applies to the precise documentary claim, not future access or present physical visibility. Only flagged Verified references may inform faithful in-app authored evidence. No essential physical observation is approved. User-confirmed plans are explicitly scoped to the reported intention; they are not independent operator permission or field observations.",
+  "locations": [
+    {
+      "id": "L00",
+      "name": "Fat Head's Brewery, Middleburg Heights"
+    },
+    {
+      "id": "L01",
+      "name": "Berea Falls Scenic Overlook"
+    },
+    {
+      "id": "L02",
+      "name": "Wallace Lake"
+    },
+    {
+      "id": "L03",
+      "name": "McKelvey Park"
+    },
+    {
+      "id": "L04",
+      "name": "Coe Lake Park"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Middleburg Heights venue",
+      "publisher": "Fat Head's Brewery",
+      "url": "https://fatheads.com/middleburg-heights/",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Address, hours; no permission for noncustomer game parking found."
+    },
+    {
+      "id": "S02",
+      "title": "Brewery & Beer Hall",
+      "publisher": "Ohio Craft Brewers Association",
+      "url": "https://ohiocraftbeer.org/breweries/fat-heads-middleburg-heights/",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "search result text",
+      "evidence_summary": "Corroborates street number and hours; uses Rd rather than operator's Dr."
+    },
+    {
+      "id": "S03",
+      "title": "McKelvey Park",
+      "publisher": "City of Berea",
+      "url": "https://www.cityofberea.org/205/McKelvey-Park",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text and outgoing map URL",
+      "evidence_summary": "Park history, address, bell provenance and official map link."
+    },
+    {
+      "id": "S04",
+      "title": "Coe Lake Facilities",
+      "publisher": "City of Berea",
+      "url": "https://www.cityofberea.org/202/Coe-Lake",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Construction/AED notice, address, rentals and event-priority warning."
+    },
+    {
+      "id": "S05",
+      "title": "Coe Lake facility listing",
+      "publisher": "City of Berea",
+      "url": "https://www.cityofberea.org/Facilities/Facility/Details/Coe-Lake-18",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Address, parking/trails amenities; not a fee policy."
+    },
+    {
+      "id": "S06",
+      "title": "Berea Falls Scenic Overlook",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/parks/visit/parks/rocky-river-reservation/berea-falls-scenic-overlook",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text and outgoing map URL",
+      "evidence_summary": "Geology and official map pin; not current sign legibility."
+    },
+    {
+      "id": "S07",
+      "title": "Berea Falls Trailhead",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/parks/visit/parks/rocky-river-reservation/berea-falls-trailhead",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Small visitor lot serving the waterfall; no measured walk."
+    },
+    {
+      "id": "S08",
+      "title": "Wallace Lake",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/parks/visit/parks/mill-stream-run-reservation/wallace-lake",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text and outgoing map URL",
+      "evidence_summary": "Former quarries, flooding, amenities and official map pin."
+    },
+    {
+      "id": "S09",
+      "title": "Wallace Lake Picnic Area",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/parks/visit/parks/mill-stream-run-reservation/wallace-lake-picnic-area",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Valley Parkway location and visitor parking; no path measurement."
+    },
+    {
+      "id": "S10",
+      "title": "FAQs",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/about/cleveland-metroparks-organization/faqs",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Reservation hours, shared picnic use; picnic areas have no mailing addresses."
+    },
+    {
+      "id": "S11",
+      "title": "Working Here",
+      "publisher": "City of Berea",
+      "url": "https://www.cityofberea.org/322/Working-Here",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Downtown section explicitly describes free city-lot and on-street parking."
+    },
+    {
+      "id": "S12",
+      "title": "Directions",
+      "publisher": "Berea Arts Fest",
+      "url": "https://www.bereaartsfest.org/directions",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Free municipal-lot directions via Berea Commons. University shuttle parking is event-specific."
+    },
+    {
+      "id": "S13",
+      "title": "City park rules",
+      "publisher": "City of Berea",
+      "url": "https://www.cityofberea.org/DocumentCenter/View/4368/Regulations-for-Use-of-Parks-and-Playgrounds-2022-0615-rev-2024-0506?bidId=",
+      "reviewed_on": "2026-11-11",
+      "publication_date": "2024-05-13 (internal revision)",
+      "image_capture_date": null,
+      "retrieval": "PDF text",
+      "evidence_summary": "Internal revision date differs from filename; hours and preservation rules."
+    },
+    {
+      "id": "S14",
+      "title": "Alerts & Closures",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/parks/visit/alerts-closures",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Retained roadworks notice and winter wildlife-management dates; not live reopening proof."
+    },
+    {
+      "id": "S15",
+      "title": "History: A History Set in Stone",
+      "publisher": "City of Berea",
+      "url": "https://www.cityofberea.org/326/History",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "George D. Kanaan account credits the historical society; sharpening/building uses."
+    },
+    {
+      "id": "S16",
+      "title": "Cleveland Quarries Co.",
+      "publisher": "Case Western Reserve University",
+      "url": "https://case.edu/ech/articles/c/cleveland-quarries-co",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Company history, consolidation/merger chronology; distinct from start of all quarrying."
+    },
+    {
+      "id": "S17",
+      "title": "Garfield Rocks! (Part I)",
+      "publisher": "National Park Service",
+      "url": "https://www.nps.gov/articles/000/garfield-rocks-part-i.htm",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Former-quarry lakes, grindstones/building uses, differing discovery stories. Photos have third-party credits."
+    },
+    {
+      "id": "S18",
+      "title": "Rich Sandstone Viens",
+      "publisher": "Berea Historical Society",
+      "url": "https://www.bereahistoricalsociety.org/rich-sandstone-viens",
+      "reviewed_on": "2026-11-11",
+      "publication_date": "1996 (underlying book; web date unknown)",
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Geology differs from other accounts; book text/images explicitly all rights reserved."
+    },
+    {
+      "id": "S19",
+      "title": "Berea Falls, East Branch Rocky River.jpg",
+      "publisher": "Wikimedia Commons / Central Avenue",
+      "url": "https://commons.wikimedia.org/wiki/File:Berea_Falls,_East_Branch_Rocky_River.jpg",
+      "reviewed_on": "2026-11-11",
+      "publication_date": "2024-07-19 (upload)",
+      "image_capture_date": "2022-04-23",
+      "retrieval": "file description text",
+      "evidence_summary": "CC BY 4.0; capture and upload dates separate. Only description/license metadata reviewed."
+    },
+    {
+      "id": "S20",
+      "title": "Waterfalls of Northern Ohio, Berea Falls p.94",
+      "publisher": "Daniel F. Styer / Oberlin College host",
+      "url": "https://www2.oberlin.edu/physics/dstyer/WaterfallsOfNorthernOhio.pdf",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "search-index excerpt only",
+      "evidence_summary": "Search excerpt reports 80-yard hike; full 20 MB PDF exceeded retrieval limit."
+    },
+    {
+      "id": "S21",
+      "title": "General Solar Position Calculations",
+      "publisher": "NOAA Global Monitoring Division",
+      "url": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "PDF text",
+      "evidence_summary": "Equations for approximate planning sunsets, not terrain/weather visibility."
+    },
+    {
+      "id": "S22",
+      "title": "Coe Lake AED location map",
+      "publisher": "City of Berea",
+      "url": "https://www.cityofberea.org/DocumentCenter/View/4858",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "PDF text only; image not inspected",
+      "evidence_summary": "PDF opened; no usable path dimensions extracted. Screenshot result was a text placeholder."
+    },
+    {
+      "id": "S23",
+      "title": "2025 Pathfinder",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/getmedia/341b407e-f88e-4d8f-be3c-d859c682f5a0/2025-Pathfinder-Final-compressed.pdf",
+      "reviewed_on": "2026-11-11",
+      "publication_date": "2025 (edition)",
+      "image_capture_date": null,
+      "retrieval": "PDF text",
+      "evidence_summary": "Map guide text opened; screenshot output not inspectable; no short path measured."
+    },
+    {
+      "id": "S24",
+      "title": "Ten to Explore, October 2022",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/parks/visit/ten-to-explore/2022/october",
+      "reviewed_on": "2026-11-11",
+      "publication_date": "2022-10 (article period)",
+      "image_capture_date": null,
+      "retrieval": "search result text",
+      "evidence_summary": "Older account of accessible overlook and trestle views, not current conditions."
+    },
+    {
+      "id": "S25",
+      "title": "Berea Falls",
+      "publisher": "Field Notes Ohio",
+      "url": "https://www.fieldnotesohio.com/waterfalls/berea-falls/",
+      "reviewed_on": "2026-11-11",
+      "publication_date": "2026-09-22 (stated review)",
+      "image_capture_date": null,
+      "retrieval": "search result text",
+      "evidence_summary": "Secondary free-visit/short-approach description; states review 2026-09-22, not live status."
+    },
+    {
+      "id": "S26",
+      "title": "Wallace Lake Park",
+      "publisher": "Find Swimming Holes",
+      "url": "https://findswimmingholes.com/swimming-holes-in-ohio/wallace-lake-park",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "search result text",
+      "evidence_summary": "Secondary guide says standard free shared parking; not site operator permission."
+    },
+    {
+      "id": "S27",
+      "title": "Park Rules & Regulations",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/about/cleveland-metroparks-organization/cleveland-metroparks-police-department-safety/park-rules-regulations",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "Preservation, designated trails, courtesy and link to full codified rules."
+    },
+    {
+      "id": "S28",
+      "title": "Parking",
+      "publisher": "City of Berea",
+      "url": "https://cityofberea.org/573/Parking",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "search result text",
+      "evidence_summary": "Event-context description identifies municipal parking behind City Hall at 11 Berea Commons."
+    },
+    {
+      "id": "S29",
+      "title": "Starting drink visit and push authorization clarification",
+      "publisher": "User",
+      "source_type": "user_clarification",
+      "url": null,
+      "source_ref": "User message in this conversation, 2026-11-11, following local commit 8d30aaa.",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "direct user message",
+      "evidence_summary": "Players will start at Fat Head's, have a drink and open the first clue there. The start is known. User authorized pushing after correcting this interpretation; no brewery game participation claimed."
+    }
+  ],
+  "facts": [
+    {
+      "id": "F001",
+      "location_id": "L00",
+      "claim": "The venue lists 17450 Engle Lake Dr, Middleburg Heights, OH 44130.",
+      "kind": "documentary",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Visit Us / industry address"
+        },
+        {
+          "source_id": "S02",
+          "locator": "Visit Us / industry address"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "S02 uses Rd; operator uses Dr. Address is not permission.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F002",
+      "location_id": "L00",
+      "claim": "Published hours include 15:00 daily: Mon–Thu 12–21, Fri 12–22, Sat 11–22, Sun 11–21.",
+      "kind": "published_hours",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "locator": "Opening Hours"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Publication only; not 2027/holiday access or parking consent.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F003",
+      "location_id": "L00",
+      "claim": "The players plan to visit Fat Head's as customers for a drink and open the first clue there.",
+      "kind": "confirmed_plan",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S29",
+          "locator": "Planned starting drink visit"
+        }
+      ],
+      "availability": {
+        "scope": "User-confirmed plan only; not an independently verified access/parking policy.",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "User-confirmed intention, not independent verification of a parking policy, fee, reservation or future opening.",
+      "physical_check_performed": false,
+      "supersedes": "Earlier noncustomer-lot/exact-bay interpretation, retired by user clarification on 2026-11-11."
+    },
+    {
+      "id": "F004",
+      "location_id": "L00",
+      "claim": "Fat Head's is already known to the players and is not a surprise starting venue.",
+      "kind": "confirmed_plan",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S29",
+          "locator": "Known starting venue"
+        }
+      ],
+      "availability": {
+        "scope": "User-confirmed plan only; not an independently verified access/parking policy.",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Only the starting venue is disclosed; the first clue, case and later destinations remain concealed. No exact bay or coordinate is required by this plan.",
+      "physical_check_performed": false,
+      "supersedes": "Earlier noncustomer-lot/exact-bay interpretation, retired by user clarification on 2026-11-11."
+    },
+    {
+      "id": "F010",
+      "location_id": "L01",
+      "claim": "Official overlook directions target 41.378044,-81.866079.",
+      "kind": "map_pin",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S06",
+          "locator": "Outgoing maps.google.com/maps?q=41.37804400,-81.86607900"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Navigation pin, not surveyed bay/viewpoint; map rendering failed.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F011",
+      "location_id": "L01",
+      "claim": "Erosion of shale under sandstone undermines sandstone, which breaks away at Berea Falls.",
+      "kind": "reference",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S06",
+          "locator": "Opening geological explanation"
+        }
+      ],
+      "availability": {
+        "scope": "documentary reference only",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": true,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Use an authored process diagram, not an invented measured local section or exact age.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F012",
+      "location_id": "L01",
+      "claim": "Trestle arrangement is currently countable and legible from the approved overlook.",
+      "kind": "physical_observation",
+      "verification_status": "Provisionally Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S24",
+          "locator": "Older operator description of trestle views"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": "Designated public viewing area only; current exact legibility unconfirmed.",
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "No current dated viewpoint pixels inspected; exclude counts/colors/inscriptions.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F013",
+      "location_id": "L01",
+      "claim": "Operator provides a small visitor parking lot serving the falls.",
+      "kind": "published_access",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S07",
+          "locator": "Trailhead description"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Intended visitor use, not space/cost/snow-clearance guarantee.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F014",
+      "location_id": "L01",
+      "claim": "The intended visitor parking arrangement is free for the outing.",
+      "kind": "permission",
+      "verification_status": "Provisionally Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S07",
+          "locator": "Operator parking description / secondary cost listing"
+        },
+        {
+          "source_id": "S25",
+          "locator": "Operator parking description / secondary cost listing"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Primary site does not explicitly confirm site-specific fee/posted limits.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F015",
+      "location_id": "L01",
+      "claim": "The full usable car-to-overlook-to-car walk meets approximately 0.25 mile.",
+      "kind": "walk_distance",
+      "verification_status": "Provisionally Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S20",
+          "locator": "Search excerpt, printed p.94: 80-yard hike"
+        },
+        {
+          "source_id": "S07",
+          "locator": "Search excerpt, printed p.94: 80-yard hike"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Unknown bay/path condition and one-way vs total interpretation. Not a certified round trip.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F016",
+      "location_id": "L01",
+      "claim": "Exact present sign wording is legible from the intended public viewpoint.",
+      "kind": "physical_observation",
+      "verification_status": "Unverified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S06",
+          "locator": "No sign transcription/legibility evidence"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": "Designated public viewing area only; current exact legibility unconfirmed.",
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Reject word-extraction dependency; substitute F011-based reference.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F020",
+      "location_id": "L02",
+      "claim": "Official lake directions target 41.360973,-81.857704.",
+      "kind": "map_pin",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S08",
+          "locator": "Outgoing maps.google.com/maps?q=41.36097300,-81.85770400"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Navigation pin, not bay or validated short footpath; no invented mailing address.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F021",
+      "location_id": "L02",
+      "claim": "Wallace Lake's 1941 flooding joined two former sandstone quarries through a shallower connecting channel.",
+      "kind": "reference",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S08",
+          "locator": "Lake description and paragraph after directions"
+        }
+      ],
+      "availability": {
+        "scope": "documentary reference only",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": true,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Documentary transformation, not a currently visible quarry boundary.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F022",
+      "location_id": "L02",
+      "claim": "The lake and picnic area are listed as visitor facilities with parking.",
+      "kind": "published_access",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S08",
+          "locator": "Amenities / picnic area description"
+        },
+        {
+          "source_id": "S09",
+          "locator": "Amenities / picnic area description"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Not specific-bay, fee or future-opening evidence.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F023",
+      "location_id": "L02",
+      "claim": "The selected visitor parking arrangement is free and permitted.",
+      "kind": "permission",
+      "verification_status": "Provisionally Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S09",
+          "locator": "Parking amenity / secondary shared-parking guide"
+        },
+        {
+          "source_id": "S26",
+          "locator": "Parking amenity / secondary shared-parking guide"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Primary site-specific no-fee confirmation missing; do not use reserved canopy or private land.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F024",
+      "location_id": "L02",
+      "claim": "The full usable bay-to-approved-lake-viewpoint-to-bay walk meets approximately 0.25 mile.",
+      "kind": "walk_distance",
+      "verification_status": "Unverified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S08",
+          "locator": "No measured pedestrian route supplied"
+        },
+        {
+          "source_id": "S09",
+          "locator": "No measured pedestrian route supplied"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Need actual public-path trace, including crossings and ordinary bay position.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F025",
+      "location_id": "L02",
+      "claim": "A particular pier panel or quarry boundary is a reliable current exact physical clue.",
+      "kind": "physical_observation",
+      "verification_status": "Unverified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S08",
+          "locator": "Fishing Pier amenity is not a panel transcription or viewpoint survey"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": "Designated public viewing area only; current exact legibility unconfirmed.",
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "No essential beach/ice/water approach, seasonal service or inferred sign.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F030",
+      "location_id": "L03",
+      "claim": "Park address is 30 E. Bridge St; city's place-map URL gives 41.3660595,-81.8528186.",
+      "kind": "map_pin",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S03",
+          "locator": "Address; outgoing URL !3d41.3660595!4d-81.8528186"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Place pin, not parking bay. Different map camera-center coordinates must not be substituted.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F031",
+      "location_id": "L03",
+      "claim": "City reports reinstalling a bell from the former City Hall at East Bridge and Seminary.",
+      "kind": "reference",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S03",
+          "locator": "Park features paragraph"
+        }
+      ],
+      "availability": {
+        "scope": "documentary reference only",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": true,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Documentary provenance; not confirmation of a current inscription or visibility.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F032",
+      "location_id": "L03",
+      "claim": "City dates dedication to 1985-09-27 and rededication to 2015-09-27.",
+      "kind": "reference",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S03",
+          "locator": "Opening park history paragraph"
+        }
+      ],
+      "availability": {
+        "scope": "documentary reference only",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": true,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Documentary timeline only; avoid simple date-entry puzzle.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F033",
+      "location_id": "L03",
+      "claim": "Bell and a particular inscription are currently legible along the short public approach.",
+      "kind": "physical_observation",
+      "verification_status": "Provisionally Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S03",
+          "locator": "Undated feature description and image links"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": "Designated public viewing area only; current exact legibility unconfirmed.",
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Image dates/viewpoint unestablished. No fountain-operation or tree-count dependencies.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F034",
+      "location_id": "L03",
+      "claim": "Downtown has free city parking, including municipal parking reached via Berea Commons behind City Hall.",
+      "kind": "published_access",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S11",
+          "locator": "Downtown parking; municipal-lot directions; City Hall parking description"
+        },
+        {
+          "source_id": "S12",
+          "locator": "Downtown parking; municipal-lot directions; City Hall parking description"
+        },
+        {
+          "source_id": "S28",
+          "locator": "Downtown parking; municipal-lot directions; City Hall parking description"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Individual bay, maximum stay, events, entrance and short pedestrian path still need checking. No private/university substitution.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F035",
+      "location_id": "L03",
+      "claim": "Municipal-bay-to-park-to-bay walk meets approximately 0.25 mile along usable sidewalks.",
+      "kind": "walk_distance",
+      "verification_status": "Unverified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S03",
+          "locator": "General location/lot directions only"
+        },
+        {
+          "source_id": "S12",
+          "locator": "General location/lot directions only"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "No traced route with crossings from an identified bay. Straight line cannot establish it.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F040",
+      "location_id": "L04",
+      "claim": "City lists Coe Lake at 85 S. Rocky River Dr with parking and trails.",
+      "kind": "documentary",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "locator": "Address / features"
+        },
+        {
+          "source_id": "S05",
+          "locator": "Address / features"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Exact viewpoint, parking cost and currently accessible area unestablished.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F041",
+      "location_id": "L04",
+      "claim": "City page publishes construction-related AED removal and event-priority notices.",
+      "kind": "published_notice",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "locator": "Construction notice / event-priority note"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Notice is present; currency and work boundaries unknown, not proof the whole park is closed.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F042",
+      "location_id": "L04",
+      "claim": "A current construction-free short approach and free permitted parking have been established.",
+      "kind": "permission",
+      "verification_status": "Unverified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "locator": "Construction notice / map not visually inspected"
+        },
+        {
+          "source_id": "S22",
+          "locator": "Construction notice / map not visually inspected"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Scheduled project completion is not actual reopening evidence; reserve only.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F043",
+      "location_id": "L04",
+      "claim": "Coe and Wallace lakes occupy former Berea sandstone quarries.",
+      "kind": "reference",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S17",
+          "locator": "NPS former quarry lakes / operator history"
+        },
+        {
+          "source_id": "S08",
+          "locator": "NPS former quarry lakes / operator history"
+        }
+      ],
+      "availability": {
+        "scope": "documentary reference only",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": true,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Documentary reference, not a visible buried feature or a required extra stop.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F050",
+      "location_id": null,
+      "claim": "Berea sandstone served as tool-sharpening grindstones and building stone.",
+      "kind": "reference",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S15",
+          "locator": "City Berea Stone / company history / NPS grindstone-to-dimension-stone account"
+        },
+        {
+          "source_id": "S16",
+          "locator": "City Berea Stone / company history / NPS grindstone-to-dimension-stone account"
+        },
+        {
+          "source_id": "S17",
+          "locator": "City Berea Stone / company history / NPS grindstone-to-dimension-stone account"
+        }
+      ],
+      "availability": {
+        "scope": "documentary reference only",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": true,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Cross-source agreement on uses; no exact founding date needed.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F051",
+      "location_id": null,
+      "claim": "A single uncontested date and discovery story establishes all Berea quarrying.",
+      "kind": "reference",
+      "verification_status": "Rejected",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S15",
+          "locator": "Different corporate/industry milestones; NPS notes differing discovery stories"
+        },
+        {
+          "source_id": "S16",
+          "locator": "Different corporate/industry milestones; NPS notes differing discovery stories"
+        },
+        {
+          "source_id": "S17",
+          "locator": "Different corporate/industry milestones; NPS notes differing discovery stories"
+        }
+      ],
+      "availability": {
+        "scope": "documentary reference only",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Exclude single-date/anecdote deductions; do not invent reconciliation.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F052",
+      "location_id": null,
+      "claim": "Precise local geological age, layer order and thickness can be taken directly from the society page as puzzle inputs.",
+      "kind": "reference",
+      "verification_status": "Rejected",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S18",
+          "locator": "Different geological ages/details"
+        },
+        {
+          "source_id": "S17",
+          "locator": "Different geological ages/details"
+        },
+        {
+          "source_id": "S06",
+          "locator": "Different geological ages/details"
+        }
+      ],
+      "availability": {
+        "scope": "documentary reference only",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Narrow to F011; no exact measured local section supported by this research.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F060",
+      "location_id": null,
+      "claim": "Metroparks publishes general reservation hours 06:00–23:00.",
+      "kind": "published_hours",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S10",
+          "locator": "Reservation hours FAQ"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Not a guarantee against posted closures, darkness or future conditions.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F061",
+      "location_id": null,
+      "claim": "City park rules close parks at 22:00; specified facilities close 22:00–09:00.",
+      "kind": "published_hours",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S13",
+          "locator": "Section 2, PDF p.1"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Use internal revision date, not conflicting filename; no assumed lighting or rented-facility access.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F062",
+      "location_id": null,
+      "claim": "Reviewed alerts include wildlife management through 2027-02-07 and Valley Parkway works expected finished 2026-10-30.",
+      "kind": "published_notice",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S14",
+          "locator": "Wildlife Management / Mill Stream Run"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Retained past finish date is not reopening confirmation. Works segment Albion–W130th not adopted into draft route.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F063",
+      "location_id": "L01",
+      "claim": "Identified falls photo metadata states CC BY 4.0, capture 2022-04-23, upload 2024-07-19.",
+      "kind": "asset_metadata",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S19",
+          "locator": "Summary / Licensing / File history / EXIF"
+        }
+      ],
+      "availability": {
+        "scope": "precise published claim only; physical availability not established",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Credit Central Avenue, title/source/license and changes. Metadata only inspected; no present-day visibility or pixel-detail inference.",
+      "physical_check_performed": false
+    }
+  ]
+}

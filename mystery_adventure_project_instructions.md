@@ -2,6 +2,10 @@
 
 This is the spoiler-free requirements brief established through the discovery interview. It records the intended experience and development rules; it does not verify any location or contain the eventual story, route, or solutions.
 
+**Starting-arrangement clarification, 2026-11-11:** We will visit Fat Head's as customers for a drink and open the first clue there. The starting venue is already known and is not a surprise. The no-additional-purchases/business-entry constraint applies after this planned customer visit; there is no separate noncustomer parking-lot opening to authorize.
+
+**Parking and research ownership clarification, 2026-11-11:** We know the area and are comfortable finding ordinary parking. Treat routine parking availability as an accepted planning assumption rather than a separate approval or guarantee to obtain from us. ChatGPT owns route/access research: select ordinary legal public/visitor parking, keep the approximate short-walk target, document defensible map/source-based walking and driving estimates, and handle any actual known restriction. Do not require us to survey parking bays, seek special permissions or preview the route. This does not turn an unknown fee, private-lot permission or physical clue into a verified fact. A fresh check for temporary closures and conditions belongs near the outing if its date becomes known; it is not needed to repeat discovery or demand a scouting trip now.
+
 ## 1. Project Overview and Primary Goal
 
 The goal is to design, develop, and deploy one polished, mobile-friendly mystery adventure on GitHub Pages for a date outing for me and my wife. We live in the area and will investigate together using one shared iPhone, launching the game from its Home Screen.
@@ -32,15 +36,15 @@ The clearest failure would be needing a hint or reveal and then thinking, "That 
 | --- | --- |
 | Players and occasion | Me and my wife, on a private date outing; both remain unspoiled. |
 | Geography | Berea, Ohio; neighboring cities only in the immediate Berea border area, such as the Berea/Strongsville border. Do not interpret this as permission to roam throughout neighboring cities. |
-| Starting landmark | Fat Head's Brewery in Middleburg Heights, as specifically selected by me. The exact address, appropriate starting position, parking permissions, and access still require research. Honor this selected start while applying the geographic limits to the rest of the route. |
+| Starting landmark | Fat Head's Brewery in Middleburg Heights. We plan to visit as customers for a drink, open the first clue there and begin. This known venue is not a surprise. No fixed parking bay, geofence or special game viewpoint is required. Honor this start while applying the geographic limits to the rest of the route. |
 | Settings | Favor historical elements and parks/nature. Wooded areas, unpaved paths, cemeteries, and memorials are acceptable. |
 | Play window | Sometime January–May 2027, probably with little or no snow; exact date remains undecided. |
 | Start time | Approximately 3 p.m. local time, America/New_York. Check seasonal daylight and actual access conditions. |
 | Duration | Approximately three hours for the core outing, including walking, driving, and gameplay. Personal pauses may extend elapsed time. |
 | Route rhythm | Prefer fewer worthwhile stops and limited driving. Multiple connected challenges at one stop are acceptable. Finish wherever the strongest practical route naturally ends; returning to the start is not required. |
 | Walking | Approximately a quarter mile total for an individual car-to-stop-to-car walk. No separate total-distance limit was specified. No player-specific accessibility concerns were identified. |
-| Spending and entry | Completion must require no purchases, paid admission, or business entry. Verify free, permitted parking. Free public indoor spaces are acceptable. |
-| Breaks | We will pause whenever we want. Do not schedule meals, drinks, reservations, or relaxation breaks into the game. |
+| Spending and entry | The planned customer drink visit at Fat Head's is the agreed starting arrangement. The game must add no required purchases, paid admission or business entry beyond that visit. Verify free, permitted parking for subsequent stops. Free public indoor spaces are acceptable. |
+| Breaks | Open the first clue during our planned starting drink visit. After that we will pause whenever we want; do not add scheduled meals, drinks, reservations or relaxation breaks to the game. |
 | Fiction and tone | Present-day, grounded detective investigation with historical connections; serious and enjoyable, with possible conspiratorial elements and occasional restrained eeriness. Murder is acceptable; gruesome or gory presentation is unnecessary. |
 | Player role | Investigators working together on the same case and puzzle. |
 | Puzzle target | About 5–10 minutes per substantial puzzle on average. Assistance should be readily available before about 15 minutes of being stuck; this is not a timer or enforced waiting period. |
@@ -65,7 +69,7 @@ Do not ask me to approve spoiler-bearing story options, location shortlists, clu
 
 - Exact play date and weekday, plus any opportunity for a fresh access/hours check shortly before play.
 - Exact completion date, if a firm deadline becomes necessary.
-- Verified starting arrangements at Fat Head's and the rest of the concealed route.
+- Normal customer arrival/hours at Fat Head's and verified access for the rest of the concealed route. No separate noncustomer-start permission is needed for our planned drink visit.
 - Seasonal access, permitted parking, visibility, distances, and opening hours for the selected route.
 - Exact iPhone/iOS version for device-specific validation, if available later.
 - Whether an independent person can test the app. This is possible but unconfirmed; do not assume anyone can conduct an on-site inspection or route playtest.
@@ -197,7 +201,7 @@ Do not create puzzles that require players to trespass, disturb property, enter 
 
 Do not assume that a business will participate in the game unless explicit arrangements have been made.
 
-Do not require printing, bringing writing materials, hiding or retrieving physical game props, making purchases, or obtaining help from staff or passersby. Provide necessary working aids on the phone when a puzzle would otherwise demand extensive notes or manipulation on paper.
+Do not require printing, bringing writing materials, hiding or retrieving physical game props, making additional purchases beyond the planned starting drink visit, or obtaining game help from staff or passersby. Provide necessary working aids on the phone when a puzzle would otherwise demand extensive notes or manipulation on paper.
 
 ### Puzzle quality standards
 
@@ -456,7 +460,7 @@ Avoid unnecessary complexity, excessive animation, and distracting interface ele
 
 Develop a coherent route centered on Berea, Ohio, beginning at the user-selected Fat Head's Brewery in Middleburg Heights. Neighboring-city stops must stay in the immediate Berea border area. Favor historical places and parks/nature while selecting locations for verified access and genuine puzzle potential.
 
-Do not assume that naming the brewery grants parking permission, business participation, or access to a particular part of the property. Research the exact starting arrangements and a permitted way to begin without a purchase or required business entry. If the selected start cannot meet the confirmed requirements, raise that practical conflict without exposing the rest of the route.
+The players have confirmed an ordinary customer visit to Fat Head's for a drink, opening the first clue there. This resolves the earlier concern about using a customer lot solely for a no-purchase game opening. Keep the opening phone-based and usable from an ordinary customer seating area, without a fixed bay, geofence, special access or staff-delivered clue. The known starting venue may appear in preparation instructions; the first clue, story and later destinations remain concealed. Do not infer business participation, endorsement or access to production/restricted areas from the customer visit. Normal venue hours and customer arrangements still apply; do not invent additional permissions or reservations.
 
 Optimize for:
 
@@ -476,9 +480,9 @@ Plan for one shared car with short walks from appropriate parking. Each individu
 
 Prefer meaningful clusters and multiple related discoveries at a stop over numerous short drives. The finish need not return to the start or be tied to a restaurant or drinks venue.
 
-Free public indoor spaces may be used if their verified hours and access suit the route. No purchases, paid parking, admissions, business entry, reservations, or staff assistance may be essential. Do not rely on a business's participation without arrangements, including the starting brewery.
+Free public indoor spaces may be used if their verified hours and access suit the route. Apart from the players' planned customer drink visit at the start, no purchases, paid parking, admissions, business entry, reservations or game assistance from staff may be essential. Do not rely on a business's participation without arrangements, including the starting brewery.
 
-Players will take breaks and get drinks at their own discretion. Do not build scheduled breaks, meal stops, or reservations into the game. Save progress so the case resumes naturally after any pause.
+Players will open the first clue during their planned drink visit at Fat Head's, then take further breaks or get drinks at their own discretion. Do not build additional scheduled breaks, meal stops, drink stops or reservations into the game. The opening's timing must be flexible, with progress saved so the case resumes naturally after any pause.
 
 Target an approximately three-hour core outing including travel, observation, reading, and puzzle solving. Personal pauses can extend elapsed time. Base the estimate on the actual researched route and realistic puzzle targets; keep an internal time budget without exposing the concealed itinerary.
 
@@ -735,7 +739,7 @@ The experience should:
 - Allow players to recover from mistakes or inaccessible clues
 - Preserve surprises throughout gameplay
 - Require no game master or third-party coordination during play
-- Require no purchases, business entry, printing, or writing materials
+- Require no additional purchases or business entry beyond the agreed starting drink visit, and no printing or writing materials
 - Keep individual car-to-stop-to-car walks to roughly a quarter mile total
 - Favor fewer worthwhile stops and avoid excessive driving
 - Work offline after the initial complete download, apart from optional external services
