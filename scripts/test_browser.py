@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Local phase-6 browser regressions. Never prints case text or screenshots of play.
-Requires Python Playwright and Chromium; no external service is contacted.
+"""Local full-path browser regressions. Never prints case text or screenshots of play.
+Requires Python Playwright and the selected engine; no external service is contacted.
 """
 import argparse
 from functools import partial
@@ -11,10 +11,11 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
+import traceback
 from threading import Thread
 from urllib.parse import urlsplit
 
-from playwright.sync_api import sync_playwright, expect
+from playwright.sync_api import sync_playwright, expect, Error as BrowserError
 
 ROOT = Path(__file__).resolve().parents[1]
 SAVE = 'berea-case-01:investigation'
@@ -75,6 +76,7 @@ class Host:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--engine', choices=('chromium', 'webkit'), default='chromium')
     parser.add_argument('--chromium', default=shutil.which('chromium') or shutil.which('chromium-browser'))
     parser.add_argument('--preparation-screenshot', help='Optional spoiler-free screenshot path; no gameplay screenshots.')
     args = parser.parse_args()
@@ -82,7 +84,11 @@ def main():
         directory = Path(temp)
         shutil.copytree(ROOT/'site', directory/'BereaHunt')
         host = Host(directory)
-        browser = pw.chromium.launch(executable_path=args.chromium, headless=True, args=['--no-sandbox'])
+        browser_type = getattr(pw, args.engine)
+        launch = dict(headless=True)
+        if args.engine == 'chromium':
+            launch.update(executable_path=args.chromium, args=['--no-sandbox'])
+        browser = browser_type.launch(**launch)
         errors = []
         solutions = {f'P{i:02}': json.loads((ROOT/f'site/content/solutions/p{i:02}.json').read_text()) for i in range(1, 9)}
         contexts = []
@@ -324,12 +330,12 @@ def main():
             print('PASS: unavailable/quota storage truthfully reported; in-memory play and save retry work.')
             # A real browser-process shutdown/reopen, not only a new tab.
             profile = directory / 'persistent-profile'
-            persistent = pw.chromium.launch_persistent_context(str(profile), executable_path=args.chromium, headless=True, args=['--no-sandbox'], viewport={'width':390,'height':844})
+            persistent = browser_type.launch_persistent_context(str(profile), **launch, viewport={'width':390,'height':844})
             durable = page_for(persistent); begin(durable)
             durable.locator('#answer-reference').fill('process-resume')
             click(durable, 'Show hint 1 of 3'); expect(durable.locator('#shown-hints li')).to_have_count(1)
             persistent.close()
-            persistent = pw.chromium.launch_persistent_context(str(profile), executable_path=args.chromium, headless=True, args=['--no-sandbox'], viewport={'width':390,'height':844})
+            persistent = browser_type.launch_persistent_context(str(profile), **launch, viewport={'width':390,'height':844})
             persistent.set_offline(True)
             durable = page_for(persistent, False)
             expect(durable.locator('#answer-reference')).to_have_value('process-resume')
@@ -341,7 +347,7 @@ def main():
             persistent.close()
             need(not errors, 'No uncaught browser runtime errors after process restart')
             print('PASS: complete offline relaunch after browser-process shutdown; saved draft/hint and full ending survive.')
-            print(f'PASS: Chromium {browser.version}; project subpath; 390×844 touch/reduced-motion viewport. No actual iPhone, field or live-host test claimed.')
+            print(f'PASS: {args.engine} {browser.version}; project subpath; 390×844 touch/reduced-motion viewport. No actual iPhone, field or live-host test claimed.')
         finally:
             for c in contexts: c.close()
             browser.close(); host.server.shutdown()
@@ -349,4 +355,11 @@ def main():
 
 
 if __name__ == '__main__':
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except (AssertionError, BrowserError) as error:
+        # Do not print Playwright's case-bearing accessibility snapshot.
+        print(f'FAIL: browser regression: {str(error).splitlines()[0]}')
+        print('Check locations:', ', '.join(str(frame.lineno) for frame in
+              traceback.extract_tb(error.__traceback__) if frame.filename == __file__))
+        raise SystemExit(1) from None

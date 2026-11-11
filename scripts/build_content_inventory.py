@@ -41,7 +41,7 @@ def inventory_outputs():
     manifest = dict(adventureId=adventure['id'], contentVersion=adventure['contentVersion'],
                     schemaVersion=adventure['schemaVersion'],
                     stateCompatibility=adventure['stateCompatibility'],
-                    inventoryScope='complete_application', applicationImplemented=True, applicationVersion='1.0.0',
+                    inventoryScope='complete_application', applicationImplemented=True, applicationVersion='1.0.1',
                     bootstrap=dict(path=MANIFEST, selfHashExcluded=True,
                                    reason='A manifest cannot contain its own hash. Fetch this versioned bootstrap first; verify every listed resource before declaring the package complete.'),
                     externalResourcesRequired=False,

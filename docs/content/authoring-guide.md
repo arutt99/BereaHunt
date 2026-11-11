@@ -215,3 +215,19 @@ granted-record scope and each explicit display gate, including titles/URLs.
 Only neutral metadata appears during preparation. Hash links of the form
 `#evidence/ID` or `#puzzle/ID` check the same grants; they do not unlock anything.
 Do not include author-only debugging/reveal shortcuts in the deployed app.
+
+## Phase 7 regression and device gate
+
+Application version 1.0.1 preserves the content/state contract while refining
+focus and summary touch targets. After a reviewed deployable edit, run both
+`python3 scripts/test_browser.py` and `python3 scripts/test_release.py`, as well
+as the inventory, content/design and runtime checks above. Each browser suite
+also accepts `--engine webkit` when installed. They use isolated temporary
+copies, neutral failure output and no actual-player save or required external
+service. Do not publish gameplay failure snapshots.
+
+The [test plan](../testing/test-plan.md) defines the matrix and required physical
+iPhone protocol. [Readiness](../testing/readiness.md) records the open device
+blocker and precise current coverage. Linux browser geometry, doubled text,
+engine emulation or a simulated standalone flag cannot complete the required
+iPhone Safari/Home Screen lifecycle/storage/offline checks.

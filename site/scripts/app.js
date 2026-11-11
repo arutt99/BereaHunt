@@ -241,7 +241,7 @@ async function renderCurrent() {
   main.append(el('h1', {}, chapter.unlockedTitle), paragraph(chapter.introduction), el('section', { className: 'objective' }, el('h2', {}, 'Current objective'), paragraph(p.prompt)));
   const place = model.locations[p.locationId];
   main.append(el('details', { className: 'document' }, el('summary', {}, 'Current visit & safe access'), locationCard(place)));
-  main.append(el('h2', {}, 'Relevant evidence'), button(compare ? 'Use single-column evidence' : 'Compare relevant evidence', () => run(async () => { compare = !compare; p.surfacedEvidenceIds.forEach(id => opened.set(id, true)); await redrawPreservingPosition(); }), 'quiet'));
+  main.append(el('h2', {}, 'Relevant evidence'), button(compare ? 'Use single-column evidence' : 'Compare relevant evidence', () => run(async () => { compare = !compare; p.surfacedEvidenceIds.forEach(id => opened.set(id, true)); await redrawPreservingPosition(); }), 'quiet', { id: 'compare-evidence' }));
   main.append(el('div', { className: 'evidence-grid' }, p.surfacedEvidenceIds.map(id => evidenceCard(id))));
   const form = el('form', { id: 'answer-form', onsubmit: event => { event.preventDefault(); run(submitAnswer); } });
   form.append(renderAid(model, state, p, draft => commit({ type: 'draft', draft }), () => run(redrawPreservingPosition)),
@@ -252,10 +252,14 @@ async function renderCurrent() {
   const help = el('section', { className: 'card', 'aria-label': 'Assistance' }, el('h2', {}, 'Keep investigating'), paragraph('Help is available whenever you want it. No delays or penalties.'));
   if (hints) {
     const solution = await loadSolution(model, state, p.id);
-    help.append(el('ol', { id: 'shown-hints' }, solution.hints.slice(0, hints).map(hint => el('li', {}, hint.text))));
+    help.append(el('ol', { id: 'shown-hints' }, solution.hints.slice(0, hints).map(hint => el('li', { tabindex: '-1' }, hint.text))));
   }
   help.append(el('div', { className: 'actions' },
-    button(hints < 3 ? `Show hint ${hints + 1} of 3` : 'All three hints shown', () => run(async () => { await loadSolution(model, state, p.id); commit({ type: 'hint' }); await redrawPreservingPosition(); document.querySelector('#shown-hints li:last-child')?.scrollIntoView({ block: 'nearest' }); }), 'secondary', { disabled: hints === 3 }),
+    button(hints < 3 ? `Show hint ${hints + 1} of 3` : 'All three hints shown', () => run(async () => {
+      await loadSolution(model, state, p.id); commit({ type: 'hint' }); await redrawPreservingPosition();
+      const hint = document.querySelector('#shown-hints li:last-child');
+      hint?.focus({ preventScroll: true }); hint?.scrollIntoView({ block: 'nearest' });
+    }), 'secondary', { disabled: hints === 3 }),
     button('Can’t access this clue', () => run(async () => {
       commit({ type: 'reference' }); showDialog('Unsolved reference evidence', [paragraph(p.assistance.referenceIntroduction), ...p.referenceEvidenceIds.map(id => evidenceCard(id, true))]);
     })),
