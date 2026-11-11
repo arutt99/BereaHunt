@@ -27,3 +27,19 @@ is required.
 | RD09 | Delegated route/staging choice | Narrow to L00 → L01 → L05, using the operator's North Quarry approach to the shortlisted lake setting; remove main-beach fixed-viewpoint walking and the downtown drive. An actual city parking-game restriction F073 rules out the old long municipal-lot stage. | feasibility-closure.md; route.md; phase 4 |
 | RD10 | Delegated documentary design choice | Essential inputs remain the six Verified authored references. Optional short exploration has no observation-dependent unlock, exact viewpoint or GPS proof. Old F015/F024/F035 and physical-clue uncertainty are retained. | facts.json; phase 4 dependencies |
 | RD11 | Authored planning estimate | Use source-road-log-based ranges with stated allowances and a single 180-minute budget. Do not describe chosen excursion bounds as measured viewpoint distances or a route estimate as a field test. | feasibility closure; experience design |
+
+## Phase 4 delegated design decisions — 2026-11-11
+
+These choices are made under D07 and the confirmed brief; they are not player
+approval requests. They supersede the discarded obsolete-base proposal.
+
+| ID | Status | Selected design and rationale | Affected records |
+| --- | --- | --- | --- |
+| ND01 | Delegated design choice, complete | The Hollow Register: a present-day private provenance/diversion investigation involving two newly commissioned sandstone reliefs. Real parks and civic history are context; no real staff, business or monument is implicated. | story-and-puzzles.md; blueprint.json |
+| ND02 | Delegated design choice, complete | Four fictional people with a reconstructed one-to-one role/badge roster; reliable records, no lying witnesses or long interviews. First-act opportunity is distinguished from later courier activity. | P06–P08; roster/final models |
+| ND03 | Delegated design choice, complete | Five chapters, eight substantial puzzles on the narrowed L00/L01/L05 route; exact destinations confirmed only after P01/P03. Later chapters share the final recreation setting without extra drives. | chapter/evidence graph; route; experience.md |
+| ND04 | Delegated design choice, complete | Mechanic mix: receipt chain; causal/test-profile board; explicitly keyed Polybius cipher; pre/post-merge identity board; provenance classification; calibrated timeline; roster board; short final synthesis. No arbitrary extraction or disputed real dates as passwords. | P01–P08 specifications and solution models |
+| ND05 | Delegated design choice, complete | F011,F021,F031,F032,F043,F050 as essential authored documentary references; physical observation optional and no unverified feature gates. Original non-geographic diagrams replace copied photos or invented signs. | A02–A05; facts; content model |
+| ND06 | Delegated design choice, complete | Final answer is actor + order ID, checked atomically; Quinn Arden/O43. Concise dramatic reveal with optional full explanation; no essay, score gate or external report. | P08; content/state contract |
+| ND07 | Delegated UX choice, complete | Charcoal/ivory, outdoor-readable system typography, no audio; relevant evidence beside objective; tap/select alternatives for boards; separate reference and confirmed reveal; installed-context complete offline readiness before play. | experience.md; content-model.md |
+| ND08 | Authored pacing estimate | Single 180-minute budget with 72 solving minutes and 18 manipulation minutes (about 25%). Exact puzzle target minutes specified; no timed playthrough or human difficulty result claimed. | blueprint pacing; experience budget |
