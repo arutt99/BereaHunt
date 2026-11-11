@@ -1,5 +1,10 @@
 # DEVELOPMENT SPOILERS — phase 7 testing and refinement
 
+**Current status:** phase 9 is Complete, verdict READY; see the
+[final audit](final-audit.md). The earlier phase 7 blocker narrative below is
+historical and superseded by D14 and the subsequent handoffs retained here.
+The final audit separately reruns the complete local software/browser matrix.
+
 **2026-11-11. Phase 7 remains Blocked by required physical-iPhone validation.**
 Base: fetched `origin/main` **1667fad** (merged phase 6). Delivery branch:
 `codex/phase-7-testing`. These are author/software checks, not independent

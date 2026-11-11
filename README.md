@@ -5,12 +5,16 @@ and later destinations stay concealed during normal play. The authored content,
 research and development records contain spoilers: neither intended player needs
 to preview them.
 
-Phase 7 software checks pass, and the user's iPhone preparation/Home Screen/
-download/offline-reopen check is accepted. The Pages publishing fix is merged,
-and GitHub confirms successful production deployment of `7c3d785`.
-Phase 8 is complete: actual-origin browser checks pass, including full offline
-completion and browser-process reopening. Phase 9's final verdict remains
-outstanding. See [testing readiness](docs/testing/readiness.md).
+**Phase 9 is complete. Release verdict: ready.** The final audit supports the
+complete experience, including normal and assisted offline completion, saved
+progress and recovery from unavailable clues. The user's installed iPhone
+offline check is accepted; GitHub confirms the published game and live checks.
+See [testing readiness](docs/testing/readiness.md) for evidence and practical limits.
+
+The roughly three-hour duration is a planning estimate, not a timed outing.
+Research was reviewed on 2026-11-11; no physical walkthrough or independent
+playtest is claimed. If the outing date becomes known, a fresh access/hours and
+conditions check is recommended near play. No check or monitoring is scheduled.
 
 ## Published game
 
@@ -100,7 +104,8 @@ and worker upgrades. Layout probes use separate pages at 320 × 844, 390 × 844
 and 844 × 390, with normal and doubled text; they do not establish actual-device
 orientation behavior. Both suites accept `--engine webkit` when that Playwright
 browser is installed. The current environment denied its official download;
-no WebKit or actual iPhone pass is claimed. Detailed case-bearing evidence stays
+these browser suites claim no WebKit or physical-iPhone pass. The accepted user
+device report is recorded separately. Detailed case-bearing evidence stays
 outside this README and the deployable site.
 
 ## Structure and updates

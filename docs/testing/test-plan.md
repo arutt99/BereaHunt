@@ -1,5 +1,10 @@
 # Phase 7 test plan
 
+**Final status:** phase 9 is Complete with a ready verdict. This repeatable
+protocol remains the test reference; current evidence and practical limits are
+in [readiness](readiness.md). The full software/browser matrix was rerun for
+the final audit; expanded actual-device scenarios below remain unreported.
+
 Spoiler-free, **2026-11-11**. Applies to the phase 6 application on fetched
 `origin/main` **1667fad**, with phase 7 corrections on `codex/phase-7-testing`.
 **Current acceptance, 2026-11-11:** the user confirms the spoiler-free iPhone
@@ -90,4 +95,4 @@ separately. No helper or testing appointment is assumed.
    Record an expanded scenario as passed only with actual observations. D01
    advancement is already resolved by the accepted user check; this does not
    mark every scenario above as performed. Actual Pages-origin smoke is phase 8;
-   phase 9 supplies the final experience verdict.
+   phase 9's completed experience verdict is recorded in readiness.

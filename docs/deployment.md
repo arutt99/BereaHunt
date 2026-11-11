@@ -1,8 +1,9 @@
 # GitHub Pages deployment
 
 Spoiler-free, **2026-11-11**. The deployed release candidate is available at
-[the game](https://arutt99.github.io/BereaHunt/). **Phase 8 — Complete.** Phase 9's final experience verdict
-is separate from publication. Neither player needs to preview the case.
+[the game](https://arutt99.github.io/BereaHunt/). **Phases 8 and 9 — Complete.**
+The final experience verdict is **ready**; see [testing readiness](testing/readiness.md)
+for the audit and practical limits. Neither player needs to preview the case.
 
 ## Published candidate and evidence
 
@@ -116,5 +117,7 @@ normal play, not deliberate source inspection.
 Core play uses no backend, account, API key or paid service. Browser automation
 is Chromium evidence, not an iPhone or route walkthrough. The user's device
 check remains separately attributed; no independent playtest, measured outing,
-new field/source check or final phase 9 verdict is implied. Access research dates,
-route/pacing estimates and unknown outing date retain their documented limits.
+new field/source check is implied by deployment. The separate phase 9 audit
+reconciles this evidence and confirms that its documentation changes leave every
+deployed application byte unchanged. Access research dates, route/pacing
+estimates and unknown outing date retain their documented limits.

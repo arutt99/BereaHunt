@@ -64,8 +64,10 @@ gap to be fixed by a future visit: the primary supplied documentary inputs and
 separately researched ordinary public access are already the selected design.
 
 The eventual outing date remains unknown. If known later, a fresh date-sensitive
-review of operator closures/hours/events and conditions is appropriate near play
-in phase 9. None is scheduled, and no player clue reconnaissance is requested.
+review of operator closures/hours/events and conditions is appropriate near play.
+The [final audit](final-audit.md) reconciles this review without claiming new
+source retrieval or field work. None is scheduled, and no player clue
+reconnaissance is requested.
 The subsequent user-reported iPhone preparation/offline pass is accepted for
 phase advancement (D14); it supplies no field evidence or broader device
 observations. No player reconnaissance is pending.
