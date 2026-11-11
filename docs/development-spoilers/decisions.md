@@ -56,3 +56,16 @@ approval requests. They supersede the discarded obsolete-base proposal.
 
 All confirmed practical selections and uncertainty remain unchanged. No new
 player decision, case preview, independent helper or field visit is presumed.
+
+## Phase 6 delegated implementation decisions — 2026-11-11
+
+| ID | Status | Decision and reason | Affected records |
+| --- | --- | --- | --- |
+| AD01 | Delegated implementation choice, complete | Native static HTML/CSS/ES modules, system typography and original neutral icons; no framework/backend/runtime package or remote asset required. | site; README; experience |
+| AD02 | Delegated reliability choice, complete | Hash-verified isolated package staging, atomic active pointer, durable client pins, verified update/reopen and retained old complete caches. No force-refresh/reset over an active case. | service worker; offline UI; inventory |
+| AD03 | Delegated state choice, complete | Legal completion-prefix/mode restoration, separate safe-stop travel gate, typed drafts/undo, adventure-key-only persistence and cross-window write protection. Preserve invalid/incompatible bytes until confirmed restart. | engine; persistence; aids; tests |
+| AD04 | Delegated validation choice, complete | Built-in Node runtime regressions, existing standard-library checks and local Chromium fault-injection browser tests including full offline process relaunch; actual iPhone/field/experience/live-host coverage remains later phases. | scripts/test_browser.py; testing/phase-6-results.md |
+
+Confirmed practical selections, factual uncertainty and delegated case content
+remain unchanged. No player preview, scouting obligation, helper or new release
+date is introduced.

@@ -196,3 +196,42 @@ event handler, persistence, installed context or offline app has been tested;
 implement those in phase 6, then execute the required phase 7 coverage. The
 current resource manifest is explicitly a content package to extend, not an
 already-working service-worker cache.
+
+## Phase 6 implementation — 2026-11-11
+
+The native static application now implements this architecture. Preparation stays
+neutral. Begin is explicit and encourages installed-context use; browser-context
+play requires an explanatory confirmation. Actual iPhone standalone behavior
+remains phase 7. Readiness verifies the entire cached package, not registration.
+
+Stopped objectives surface their complete relevant input packs as readable
+expandable documents. Compare expands the inputs in two columns when space
+permits and a single column on phones. The task stays above them, working aids
+and drafts remain local, and case-file dialogs do not navigate away from the
+current draft/scroll. Original figures open an enlarged scrollable view with a
+keyboard-operable zoom slider and full text. Fictional and documentary blocks
+are visibly distinct; external citations use the authored naming gates.
+
+The causal board has large move buttons; the reconciliation board joins the
+original immutable keys to the selected Before/After alias view with checkboxes;
+the roster uses four native selects. The cipher grid starts blank, supports a
+user-entered keyword and 25 editable labeled cells. Undo/reset affect working
+values only. Wrong full submissions never mark individual positions/fields
+correct. All core aid code is in the verified package.
+
+A correct answer or confirmed reveal records identical rewards before the
+finding screen. Full reasoning and eliminated alternatives remain reviewable.
+Three hints are immediate and retained. The reference action records assistance
+and reopens the complete unsolved inputs without filling a board or granting a
+reward. Travel confirmation precedes a separate safe-stop acknowledgment, with a
+no-visit reference continuation that requires neither GPS nor a physical visit.
+The final two-field action reaches E17, its concise ending, optional full-case
+explanation and complete reviewable dossier.
+
+Automatic saves include typed drafts, hints/references/reveals, transitions and
+explanation use. Invalid/incompatible saves are preserved with an explicit
+restart/retry path. Storage failures are visible and retryable. Restart is
+confirmed and touches only the investigation key. Complete updates are staged
+and checked before activation; an open page stays pinned to its original
+complete package until explicit update/reopen. Tests and actual limitations are
+recorded in [phase 6 results](../testing/phase-6-results.md).

@@ -196,3 +196,28 @@ each fact/source's `displayAfterPuzzleId`. F021/S08's complete citation waits
 until P03 completes; its real destination name must not shortcut the anonymized
 selector. Show `lockedCitationLabel` until then. The authored E05 reference
 already supplies all unsolved factual inputs without that naming citation.
+
+## Phase 6 runtime alignment — 2026-11-11
+
+The complete application supersedes the frozen phase-5 inventory scope described
+above. `complete_application` inventories shell/code/styles/icons and every
+content resource, with package identity derived from the manifest fingerprint.
+Actual browser readiness verifies cached bytes; the development inventory alone
+does not confer readiness. See the concealed phase-6 test record for execution.
+
+State schema 1 includes `started`, `mode`, `arrivedTravelLegIds` and `revision`
+in addition to the previously specified fields. `mode` distinguishes objective,
+finding, destination, travel, ending and preparation. Entry evidence is derived
+only for completed puzzles and the actual stopped current objective. A finding
+holds completion rewards without entering the next objective; travel modes hold
+only already-granted confirmation evidence. The safe-stop field separates
+confirming a destination from beginning its puzzle. The reference travel action
+records the same gate from a lawful safe position without visit/proof assertions.
+
+Drafts use `{values, history}` with typed per-puzzle values and at most twenty
+undo states. Derived `evidenceIds`, chapter/puzzle and the completion prefix are
+validated on restore rather than trusted independently. Compatible version
+adoption preserves progress and updates version metadata. Unsupported schemas or
+compatibilities remain intact with a visible recovery path. The adventure-specific
+persistence adapter detects changed storage before writes, preventing another
+window's newer save from being silently replaced.

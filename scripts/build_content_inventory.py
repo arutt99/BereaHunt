@@ -41,7 +41,7 @@ def inventory_outputs():
     manifest = dict(adventureId=adventure['id'], contentVersion=adventure['contentVersion'],
                     schemaVersion=adventure['schemaVersion'],
                     stateCompatibility=adventure['stateCompatibility'],
-                    inventoryScope='phase_5_content', applicationImplemented=False,
+                    inventoryScope='complete_application', applicationImplemented=True, applicationVersion='1.0.0',
                     bootstrap=dict(path=MANIFEST, selfHashExcluded=True,
                                    reason='A manifest cannot contain its own hash. Fetch this versioned bootstrap first; verify every listed resource before declaring the package complete.'),
                     externalResourcesRequired=False,
@@ -63,7 +63,7 @@ def main():
     else:
         for path, text in outputs.items():
             path.write_text(text)
-        print('Built local content inventory and asset fingerprints. This is not offline app readiness.')
+        print('Built complete application inventory and asset fingerprints. Browser verification is required for offline readiness.')
     return 0
 
 
