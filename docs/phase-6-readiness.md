@@ -54,5 +54,6 @@ pending. Phase 7 should perform its full refinement/device/experience matrix;
 phase 8 handles actual deployment. No default-branch merge is included here.
 
 Delivery branch: `codex/phase-6-application`, based on fetched main `f9aa141`.
-The implementation commit is the revision containing this report; the exact
-artifact hash is recorded in the [phase handoff](../BUILD_PLAN.md) after committing.
+Implementation artifact commit: `6f0b065ec6911ef0271eb7763daf55b76042fc26`.
+The following documentation commit records this exact hash in the
+[phase handoff](../BUILD_PLAN.md); both belong to the same delivery branch.
