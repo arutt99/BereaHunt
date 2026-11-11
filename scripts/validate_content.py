@@ -398,9 +398,15 @@ def validate_files(c):
         need(not any(node.tag.split('}')[-1] in ('script','image','foreignObject','audio') for node in root.iter()), 'Asset has remote/executable content')
         need(not any(k.split('}')[-1] in ('href','src') or k.startswith('on') for node in root.iter() for k in node.attrib), 'External/executable asset attribute')
     paths=[p for p in (ROOT/'site').rglob('*') if p.is_file()]
-    need(all(p.suffix in ('.json','.svg') for p in paths), 'Unexpected phase-5 deployment file')
+    need(all(p.suffix in ('.json','.svg','.html','.css','.js','.png','.webmanifest') for p in paths), 'Unexpected deployment file')
+    need(all(p.relative_to(ROOT/'site').parts[0] in ('content','assets','styles','scripts') or p.name in ('index.html','manifest.webmanifest','service-worker.js') for p in paths), 'Development file in deployable package')
+    manifest = read(ROOT/'site/content/offline-resources.json')
+    need(manifest['applicationImplemented'] is True and manifest['inventoryScope']=='complete_application', 'Application inventory scope incomplete')
+    need({'index.html','manifest.webmanifest','service-worker.js','scripts/app.js','scripts/engine.js','scripts/aids.js','styles/app.css','assets/icons/touch.png'} <= {r['path'] for r in manifest['resources']}, 'Core application resource missing')
     need(not any(p.is_symlink() for p in (ROOT/'site').rglob('*')), 'Symlink in content package')
     for p in paths:
+        if p.suffix not in ('.json', '.svg', '.html', '.css'):
+            continue
         data=p.read_text()
         need(not re.search(r'\b(?:TODO|TBD|FIXME|lorem ipsum|placeholder)\b',data,re.I), 'Unfinished content file')
 

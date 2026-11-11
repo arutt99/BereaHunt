@@ -1,0 +1,10 @@
+{
+  "name": "berea-investigation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/runtime.test.mjs",
+    "inventory": "python3 scripts/build_content_inventory.py",
+    "serve": "python3 -m http.server 8000 --directory site"
+  }
+}

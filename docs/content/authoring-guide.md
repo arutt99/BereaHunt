@@ -164,3 +164,54 @@ solutions and normal interface gating prevent accidental spoilers, not source
 inspection. Do not promise secrecy from a player inspecting GitHub or cached
 files. Keep routine handoffs, branch/commit descriptions and review screenshots
 spoiler-free; neither intended player is the default advance content tester.
+
+## Phase 6 application integration — 2026-11-11
+
+The complete application now lives in `site/`. Native modules separate answer
+contracts (`answers.js`), deterministic transitions/restoration (`engine.js`),
+working aids (`aids.js`), persistence, local content loading, worker communication
+and presentation. No runtime dependency or bundler is needed. The original
+corpus, solutions, source dates and factual classifications are unchanged.
+
+The inventory scope is now `complete_application`, with
+`applicationImplemented: true`. It covers **every** deployable file except the
+explicit self-hash exclusion. This includes shell, modules, styles, icons,
+service worker, all later content/solutions and local references. The validator's
+file allowlist supports those types and rejects development-file roots/symlinks.
+The inventory tool's output alone still does not establish browser readiness:
+the app verifies actual cached lengths/hashes before showing Ready offline.
+
+After any `site/` edit, rebuild and check the inventory, run the existing Python
+checks, `npm test` (Node 20+) and `python3 scripts/test_browser.py` (Python Playwright
+and Chromium). See [README](../../README.md) for actual local run commands. The
+browser suite operates on temporary copies, including incompatible/failed updates;
+it must not damage the authored corpus or require a player to inspect solutions.
+
+Keep IDs and `stateCompatibility` stable for compatible corrections; bump
+`contentVersion` for released content changes. The package ID is the bootstrap
+manifest's SHA-256, so code/style/icon edits also create distinct packages even
+without a story change. Bump the inventory's `applicationVersion` for released
+application changes. Incompatible state/content changes are refused by protocol 1
+and need an explicitly designed migration in a future development request.
+
+The worker stages a full replacement, checks every byte, then changes a single
+active-package pointer. Existing clients retain a durable version pin, including
+when the worker stops. The next verified update/reopen uses the replacement.
+Old complete caches are retained for recovery; partial staging caches are never
+readiness evidence. A worker-code update waits for old windows to close rather
+than force-refreshing an active case. Never delete a save or auto-reset the case
+as a cache update. No manual save-transfer feature is introduced.
+
+Restoration validates the completion prefix, derived evidence/current stage,
+travel confirmations/safe-stop gates, assistance and drafts. Malformed and
+incompatible bytes are left untouched; confirmed restart replaces only this
+adventure's key. Unavailable storage/write failures retain in-memory progress and
+show a retry warning. A different window's newer save blocks overwriting it.
+The engine cannot restore deliberately removed device data or guarantee Safari
+and standalone storage sharing.
+
+Player content is rendered as text and typed blocks. Source citations apply both
+granted-record scope and each explicit display gate, including titles/URLs.
+Only neutral metadata appears during preparation. Hash links of the form
+`#evidence/ID` or `#puzzle/ID` check the same grants; they do not unlock anything.
+Do not include author-only debugging/reveal shortcuts in the deployed app.

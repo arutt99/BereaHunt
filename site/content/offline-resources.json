@@ -3,8 +3,9 @@
   "contentVersion": "1.0.0",
   "schemaVersion": 1,
   "stateCompatibility": 1,
-  "inventoryScope": "phase_5_content",
-  "applicationImplemented": false,
+  "inventoryScope": "complete_application",
+  "applicationImplemented": true,
+  "applicationVersion": "1.0.0",
   "bootstrap": {
     "path": "content/offline-resources.json",
     "selfHashExcluded": true,
@@ -15,6 +16,30 @@
     "Optional external navigation and citation links"
   ],
   "resources": [
+    {
+      "path": "assets/icons/icon-192.png",
+      "sha256": "5c92dd4b06f1173724cf155756cb584379fe0d6100999583df4f6403fedd70ef",
+      "byteLength": 822,
+      "required": true
+    },
+    {
+      "path": "assets/icons/icon-512.png",
+      "sha256": "c7a9a986d31c975c034b28243559ec9f41029addcfb075a23d959c540084d148",
+      "byteLength": 2341,
+      "required": true
+    },
+    {
+      "path": "assets/icons/icon.svg",
+      "sha256": "d6bc9c8d74399fed37d049cc8863827a20c11ea4f2db026df222eea021aa26c4",
+      "byteLength": 318,
+      "required": true
+    },
+    {
+      "path": "assets/icons/touch.png",
+      "sha256": "df31ae19b021331f7d268bd5d8930f3115f3abb54daf78655b75ce1f26f4a210",
+      "byteLength": 766,
+      "required": true
+    },
     {
       "path": "assets/references/r02.svg",
       "sha256": "3d6e99fe73dbbf96da1245f155dac82ccdfe8d335e41438d02614a9826f96713",
@@ -301,6 +326,78 @@
       "path": "content/sources.json",
       "sha256": "45d9e9e28c1345b93de715f6cac9f66973f64466855867197f89859f338a7c3d",
       "byteLength": 10121,
+      "required": true
+    },
+    {
+      "path": "index.html",
+      "sha256": "d5f13b00994e3708a74f1d9deb08349553bf1e285511d5ed136c8ed3ce1bd88f",
+      "byteLength": 1850,
+      "required": true
+    },
+    {
+      "path": "manifest.webmanifest",
+      "sha256": "e0ede29b879b0a0005faa08fe9b3e761923f8e5fa3436852ae032116c10efce3",
+      "byteLength": 498,
+      "required": true
+    },
+    {
+      "path": "scripts/aids.js",
+      "sha256": "db79bcca65552de688b7cdbb75553b17088cb9e9241801fcac90ceb731c67571",
+      "byteLength": 8434,
+      "required": true
+    },
+    {
+      "path": "scripts/answers.js",
+      "sha256": "9cb98d002e7bdf8affd26b44dcaba6fd51a01184f1523d03faa19dce323a63b8",
+      "byteLength": 3344,
+      "required": true
+    },
+    {
+      "path": "scripts/app.js",
+      "sha256": "84444e2e7067714e975aa65f76da6a290d247b2bcd542103ded064fa771c38c7",
+      "byteLength": 26189,
+      "required": true
+    },
+    {
+      "path": "scripts/content.js",
+      "sha256": "eb3b1840387c94c5ab555a3a46565b99120302213bb81b1f78b0c7c8f2e921a6",
+      "byteLength": 1699,
+      "required": true
+    },
+    {
+      "path": "scripts/dom.js",
+      "sha256": "66c3494a7d891d5704e8a1d60f2bc5e61d421a3cf9cc28a45ffd97f4aac525b4",
+      "byteLength": 2363,
+      "required": true
+    },
+    {
+      "path": "scripts/engine.js",
+      "sha256": "87f360863be53eedd03025ccde380d75fe2d0e1807f042e602695bd05ac9993c",
+      "byteLength": 8256,
+      "required": true
+    },
+    {
+      "path": "scripts/offline.js",
+      "sha256": "100aca506967bfd2f7caa9d562cf044f2d5fb2d003f03f920ad6f12d9ff6288c",
+      "byteLength": 1463,
+      "required": true
+    },
+    {
+      "path": "scripts/persistence.js",
+      "sha256": "e20a8426ca121460862a658695adc8480dd9b168cf2f146d01e0cdb06c7bb498",
+      "byteLength": 1380,
+      "required": true
+    },
+    {
+      "path": "service-worker.js",
+      "sha256": "aa56afca93b2da895cb0b2e372d584cfad9149601cc75a065d58534f4c20fc6d",
+      "byteLength": 10929,
+      "required": true
+    },
+    {
+      "path": "styles/app.css",
+      "sha256": "004e6cc46853fafb1affd7bd36bf2857107bd9c90f0b7bc577b4a3fa767ad102",
+      "byteLength": 6930,
       "required": true
     }
   ]
