@@ -61,6 +61,12 @@ Chromium smoke test of the extracted artifact reached **Ready offline**, closed
 the page and reopened offline with the `/BereaHunt/`-scoped service worker, with
 zero page errors. The game, content and package hashes themselves are unchanged.
 
+GitHub also ran the actual PR validation for implementation commit `6275bf1`:
+[run 43044360719](https://github.com/arutt99/BereaHunt/actions/runs/43044360719)
+successfully validated the app and uploaded the Pages artifact. The production
+job was skipped as intended on a pull request. [PR #9](https://github.com/arutt99/BereaHunt/pull/9)
+is open; this CI result does not mean the game has been published.
+
 Live reads of this Pages host were blocked in the assistant's environment by
 HTTP 403 at the outbound proxy. No live game load, Pages setting change,
 deployment, actual iPhone result or completed release is claimed. The user's

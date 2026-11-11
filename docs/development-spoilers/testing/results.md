@@ -216,3 +216,9 @@ Settings API: `Forbidden`. Live Pages read: HTTP 403 at the outbound proxy.
 No setting changed, main merge, successful Actions deployment, live corrected
 response or new iPhone evidence is claimed. Phase 7 stays Blocked; this limited
 test-origin publishing repair is not a completed phase 8 or release verdict.
+
+Actual GitHub PR workflow run **43044360719** for implementation **6275bf1**
+completed its validation/package/upload job successfully; the publish job was
+skipped as designed. PR **#9** is open and mergeable with no default-branch merge
+performed. This is CI/artifact evidence, not a production deployment or live game
+check. The subsequent documentation revision records the observed CI result.
