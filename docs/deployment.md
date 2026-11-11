@@ -1,7 +1,7 @@
 # GitHub Pages deployment
 
 Spoiler-free, **2026-11-11**. The deployed release candidate is available at
-[the game](https://arutt99.github.io/BereaHunt/). Phase 9's final experience verdict
+[the game](https://arutt99.github.io/BereaHunt/). **Phase 8 — Complete.** Phase 9's final experience verdict
 is separate from publication. Neither player needs to preview the case.
 
 ## Published candidate and evidence
@@ -14,11 +14,14 @@ is separate from publication. Neither player needs to preview the case.
 - The user confirms their iPhone preparation/Home Screen/download/closed-app
   offline-reopening check works and directs advancement. This is user-reported
   device coverage; exact model/iOS and expanded device scenarios are unspecified.
-- Actual-origin automated smoke result: **pending the verification workflow**.
-  Workspace requests to this host receive proxy HTTP 403, so live verification
-  runs on a GitHub-hosted runner against the real HTTPS origin. Local fixture
-  checks are supporting evidence only. Details remain in the separate testing
-  records, with no gameplay screenshots or solution-bearing logs uploaded.
+- Actual-origin automated smoke: **Pass**, [run 43051242904](https://github.com/arutt99/BereaHunt/actions/runs/43051242904),
+  job **130628678526**, using verification revision `6af7be9`, Python 3.12.16
+  and Chrome 156.0.8078.79 on Ubuntu 24.04.5. All 65 files match the source
+  revision above; the complete browser protocol below passes with no uncaught
+  page errors. Bootstrap SHA-256: `c83285ab01dcc99af507d7f82aad35e3da7c585999142ff90ead9baabf8ada1e`.
+  Workspace requests receive proxy HTTP 403; this actual live evidence comes
+  from the GitHub-hosted runner, separately from local fixture checks.
+  No gameplay screenshots or solution-bearing logs were uploaded.
 
 ## Install and prepare
 

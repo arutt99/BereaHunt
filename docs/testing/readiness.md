@@ -1,7 +1,7 @@
 # Testing and deployment readiness
 
 Spoiler-free, **2026-11-11**. **Phase 7 — Complete with user-accepted device
-coverage. Phase 8 — In progress.** The user confirms the spoiler-free iPhone
+coverage. Phase 8 — Complete.** The user confirms the spoiler-free iPhone
 preparation/install/complete-download/closed-app offline-reopen check works and
 explicitly directs advancement. That check is recorded as a **user-reported pass**,
 not a test performed by the assistant. It closes the former D01 advancement gate.
@@ -38,7 +38,7 @@ results and a separate field/access review are retained for later sessions.
 | Supporting WebKit | Not run. Official WebKit 26.5 (Playwright build 2336) installation failed: environment policy returned HTTP 403 `Domain forbidden` for both official download hosts. This is separate from D01 and would not replace it |
 | Field/access | Desk reconciliation against existing 2026-11-11 research; no new source retrieval, physical walk/drive, live map routing or current sign inspection. Essential inputs remain supplied Verified documentary references; current posted restrictions and conditions control |
 | Experience and pacing | Author reasoning/narrative review; no independent tester, human difficulty/sunlight trial or measured three-hour outing. The 180-minute budget and interaction proportion remain authored estimates |
-| Deployment/release | Publishing fix merged in `7c3d785`; production [run 43044731665](https://github.com/arutt99/BereaHunt/actions/runs/43044731665) successfully validated, packaged and published. Live smoke is being verified in phase 8; see [deployment](../deployment.md). Phase 9 remains outstanding |
+| Deployment/release | Publishing fix merged in `7c3d785`; production [run 43044731665](https://github.com/arutt99/BereaHunt/actions/runs/43044731665) successfully validated, packaged and published. Live browser smoke passed in [run 43051242904](https://github.com/arutt99/BereaHunt/actions/runs/43051242904); see [deployment](../deployment.md). Phase 9 remains outstanding |
 
 The former D01 advancement blocker is resolved by the user's explicit acceptance
 of their device check ([D14](../decisions.md)). Expanded device tests, optional
@@ -53,7 +53,15 @@ The current deployed candidate is main `7c3d785368ed12d3642addc41a5f693dc2049991
 application **1.0.1**, content **1.0.0**, state compatibility **1**.
 GitHub confirms that both production validation/package and publication jobs
 succeeded. The workspace proxy rejects the live host with HTTP 403, so a
-read-only GitHub Actions browser check verifies the actual origin independently.
+read-only GitHub Actions browser check verified the actual origin independently.
+Actual live [run 43051242904](https://github.com/arutt99/BereaHunt/actions/runs/43051242904),
+job 130628678526, **passed** on verification revision `6af7be9`: Ubuntu 24.04.5,
+Python 3.12.16, Chrome 156.0.8078.79. All 65 required file bytes match the deployed
+revision, JS/CSS MIME types work, sampled internal files return 404, and worker
+script/scope are exactly under `/BereaHunt/`. Both full offline paths and the
+package/save/restart/browser-process protocol below pass without uncaught page
+errors. Transient negative-probe HTTP 503 responses were revalidated with a
+cache-busting query and returned 404; they were not treated as absence evidence.
 The check uses isolated profiles; it cannot affect a player's installed save.
 
 The deployment protocol compares all 65 published file bytes to a main-branch
@@ -66,4 +74,4 @@ fixtures; production is not mutated to manufacture an update.
 
 See [deployment](../deployment.md) for the live-check result and repeatable
 publishing/update/rollback instructions. Phase 9 is the next experience audit
-once phase 8's live check passes. No final release verdict is claimed here.
+with phase 8's live check now passed. No final release verdict is claimed here.

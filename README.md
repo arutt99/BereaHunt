@@ -8,7 +8,8 @@ to preview them.
 Phase 7 software checks pass, and the user's iPhone preparation/Home Screen/
 download/offline-reopen check is accepted. The Pages publishing fix is merged,
 and GitHub confirms successful production deployment of `7c3d785`.
-Phase 8's actual-origin smoke is being verified; phase 9's final verdict remains
+Phase 8 is complete: actual-origin browser checks pass, including full offline
+completion and browser-process reopening. Phase 9's final verdict remains
 outstanding. See [testing readiness](docs/testing/readiness.md).
 
 ## Published game
