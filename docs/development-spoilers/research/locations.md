@@ -1,5 +1,12 @@
 # DEVELOPMENT SPOILERS — location research and shortlist
 
+**Current status update — 2026-11-11:** phase 3 is Complete for the narrowed
+L00 → L01 → L05 reference-led route. See [feasibility closure](feasibility-closure.md)
+and the current [route](route.md). The earlier conditional shortlist/audit below
+is retained as research history; its former B02/B04 blockers and municipal-lot
+staging are superseded by that explicit redesign. Original physical-clue and
+path classifications remain unchanged. No field verification is claimed.
+
 Do not use this file as player preparation. Reviewed **2026-11-11**, remotely.
 No on-site visit, operator contact, measured route, or current image-pixel
 inspection occurred. Source IDs and precise claims resolve in
@@ -131,3 +138,19 @@ assets. Authoring, final puzzle logic, mobile legibility and offline packaging
 belong to phases 4–6. Do not hotlink essential evidence. Do not copy city,
 Metroparks, historical-society or NPS-hosted third-party photographs merely
 because they can be viewed online. No copied image is presently a dependency.
+
+
+## L05 — selected Wallace Lake north approach (phase 4 prerequisite closure)
+
+| Required field | Current record |
+| --- | --- |
+| Name / position | North Quarry Picnic Area; north end of Wallace Lake, off Valley Parkway north of North Quarry Lane, Berea; operator S30, F070 |
+| Coordinates | Operator outgoing directions pin 41.364374,-81.856805; not a surveyed bay or exact viewpoint |
+| Public use / parking | Operator lists picnicking and parking; general shared-use policy S31, F071/F072. D13 accepts ordinary availability; posted restrictions and closures control |
+| Hours / arrival | Published reservation hours 06:00–23:00; normally second nature observation before 16:30 winter cutoff, followed by stationary reference work; no exact arrival promise |
+| Viewpoint / walk | No exact shore/bridge/table/view is a required destination. Optional ordinary-area exploration is bounded to a short out-and-back including lot travel; see feasibility closure. No measured feature distance claimed |
+| Facts / puzzle potential | Same former-quarry reference F021/F043 and uses F050; civic documentary references F031/F032 can be examined here without another drive |
+| Images / rights | No copied operator image, surveyed quarry outline or real sign transcription. Original paraphrases/conceptual diagrams A03–A05 authored later |
+| Access / safety / seasonal risk | Normal designated public recreation areas only; no water/ice, stream exposure, field-trip geology route, rail land, reserved facility or seasonal service dependency; ice, cold, daylight, capacity and changes remain ordinary risks |
+| Verification / sources | F070–F072 precise published claims Verified, S30/S31 reviewed 2026-11-11. No current physical clue, field walkthrough or parking-space guarantee |
+| Fallback / outstanding | Full documentary references independent of visit/visibility. Use only a lawful safe stationary position; resume elsewhere if unavailable. Actual assets and device/offline behavior remain later work |

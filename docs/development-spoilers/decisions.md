@@ -15,7 +15,15 @@ choices only; no plot, characters, final puzzles or solution committed.
 | RD08 | Confirmed planning preference | D13 accepts routine parking availability from the user's local knowledge. Retire B03 as a separate blanket permission/capacity gate; retain ordinary public visitor lots (S07,S09) and the municipality's free-parking provision (S11). Actual known restrictions remain actionable, with no private-lot permission or fee fact upgraded. B02/B04 are ChatGPT-owned route-estimate research, not player tasks. | Public D13; verification ownership and route approach policy |
 
 The user's 2026-11-11 clarification corrects the starting-visit interpretation.
-Phase 3 is In progress on B02/B04 research; B03 is retired as a separate
-parking-availability gate. Neither the start nor user input is pending. These
-choices are not requests for either player to approve a route, preview clues
-or supply an on-site test. Full story architecture waits for phase 4.
+The earlier In progress phase 3 verdict is superseded by the prerequisite
+closure below. B03 remains retired as a separate parking-availability gate.
+Neither the start nor user input is pending; no player route/clue inspection
+is required.
+
+## Phase 3 prerequisite closure — 2026-11-11
+
+| ID | Status | Decision and basis | Affected records |
+| --- | --- | --- | --- |
+| RD09 | Delegated route/staging choice | Narrow to L00 → L01 → L05, using the operator's North Quarry approach to the shortlisted lake setting; remove main-beach fixed-viewpoint walking and the downtown drive. An actual city parking-game restriction F073 rules out the old long municipal-lot stage. | feasibility-closure.md; route.md; phase 4 |
+| RD10 | Delegated documentary design choice | Essential inputs remain the six Verified authored references. Optional short exploration has no observation-dependent unlock, exact viewpoint or GPS proof. Old F015/F024/F035 and physical-clue uncertainty are retained. | facts.json; phase 4 dependencies |
+| RD11 | Authored planning estimate | Use source-road-log-based ranges with stated allowances and a single 180-minute budget. Do not describe chosen excursion bounds as measured viewpoint distances or a route estimate as a field test. | feasibility closure; experience design |
