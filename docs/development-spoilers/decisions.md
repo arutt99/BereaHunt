@@ -11,8 +11,9 @@ choices only; no plot, characters, final puzzles or solution committed.
 | RD04 | Delegated research choice | Avoid single quarry founding/discovery answers and exact geological ages/sections; narrower cross-source facts support fairer evidence. | F051,F052 rejected; F011,F050 retained |
 | RD05 | Delegated design recommendation | Use original concise references A02–A05, not unlicensed web photos. A01 has an identified license but still needs pixel review; it is optional, not a dependency. | Asset inventory; later phase 5 |
 | RD06 | Delegated planning choice | Use 16:30 conservative winter outdoor cutoff and reference-based later stage. Sunset estimates explicitly calculated; no assumption of lighting, snow-free access or punctual play. | route.md daylight/budget |
-| RD07 | Open research gate | Preserve starting choice without treating brewery naming as permission. No purchase, staff interaction, adjacent-lot assumption or unilateral relocation. | B01; public practical decisions |
+| RD07 | Resolved clarification | Players will visit the brewery as customers for a drink and open the first clue there. Known starting venue; retire the noncustomer lot-opening requirement. No fixed game bay, special access, staff-delivered clue or relocation. | B01 resolved; F003,F004; S29; public D10 |
 
-No confirmed requirement changed. Phase 3 remains Blocked on B01–B04. These
+The user's 2026-11-11 clarification corrects the starting-visit interpretation.
+Phase 3 remains Blocked on B02–B04, not the starting venue. These
 choices are not requests for either player to approve a route, preview clues
 or supply an on-site test. Full story architecture waits for phase 4.

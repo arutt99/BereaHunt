@@ -5,15 +5,16 @@ Spoiler-free handoff, **2026-11-11**. No itinerary, clue or solution is included
 | Phase | Status | Result |
 | --- | --- | --- |
 | 1 — requirements | **Complete** | Existing interview preserved in `requirements.md` and `decisions.md`. “Not started” had meant the handoff records were missing; the interview itself was already recorded on current GitHub main. |
-| 2 — location research | **Complete** | Documented conditional shortlist, 28 source records and 34 classified fact records; addresses/map-pin evidence, access, hours, walking unknowns, seasonal risks, rights and reference alternatives recorded separately. |
+| 2 — location research | **Complete** | Documented conditional shortlist, 28 remote sources plus one user clarification, and 34 classified records; source/access evidence, seasonal risks, rights and reference alternatives recorded separately. |
 | 3 — verification and feasibility | **Blocked** | Dependency audit, rejected weak clues, reference-based redesigns, candidate route and three-hour/daylight budget delivered. Essential access and route measurements still need evidence. |
 
 ## Verification coverage
 
 Research used official business, city and park information, historical and
 academic sources, published rules, map-link metadata and a licensed photograph's
-description. Twenty documentary claims are Verified, five are Provisionally
-Verified, seven Unverified and two Rejected. These labels apply to precise
+description, plus the user's starting-visit clarification. Twenty-two records
+are Verified (20 documentary claims and two user-confirmed plans), five are
+Provisionally Verified, five Unverified and two Rejected. These labels apply to precise
 claims, **not** blanket approval of locations or future conditions.
 
 Six source-backed documentary inputs are eligible for later authored in-app
@@ -29,14 +30,22 @@ sources are explicitly marked. Reference assets still need authoring and
 validation in their later phases. Both intended players remain outside the
 spoiler-bearing review process.
 
-## What prevents phase 3 completion
+## Starting arrangement resolved
 
-- **Selected start:** Fat Head's official page confirms its address and
-  published hours, but does not establish permission to park solely for a
-  no-purchase, no-entry opening. The brief requires that permission to be
-  researched separately. Need reliable permission and an exact starting
-  position, or a focused practical decision approving a public starting
-  arrangement. No purchase or location change has been silently added.
+The players will start at Fat Head's as customers for a drink and open the
+first clue there. The venue is already known and may appear in preparation
+instructions; the first clue, case and later destinations remain concealed.
+The earlier noncustomer parking-lot opening was a mistaken interpretation and
+has been retired. No fixed game bay, special access, staff-delivered clue or
+public-start relocation is needed. Normal customer arrangements/hours apply;
+no game participation by the brewery is assumed.
+
+The agreed drink visit is the starting arrangement. The game adds no required
+purchases, business entry or scheduled breaks after that visit. This correction
+is incorporated in the authoritative brief and decision records.
+
+## What still prevents phase 3 completion
+
 - **Short walks and parking:** establish the actual usable car-to-stop-to-car
   paths from ordinary permitted bays, including sidewalks/crossings, within
   approximately a quarter mile **total** each. Finish checking site-specific
@@ -46,9 +55,9 @@ spoiler-bearing review process.
   estimates against the candidate budget. Allocated travel time and
   straight-line separation are not measured driving evidence.
 
-The source-backed opening information is available on the
-[official venue page](https://fatheads.com/middleburg-heights/). It is not a
-noncustomer parking authorization. No third party has been contacted.
+The source-backed venue address and published hours are available on the
+[official venue page](https://fatheads.com/middleburg-heights/). No third party
+has been contacted; the customer-start correction comes directly from the user.
 
 The roughly three-hour budget accounts for travel, walking, reading and
 5–10-minute puzzle targets. Winter daylight is treated conservatively: later
@@ -73,7 +82,8 @@ Detailed supporting records are in the clearly labeled
 `docs/development-spoilers/research/` directory; they are **not player reading**
 and must stay outside the eventual deployed `site/` artifact.
 
-Delivery is currently local on `codex/research-feasibility`. Automatic approval
-review rejected pushing the potentially private research/spoiler records to
-GitHub without explicit disclosure approval. No push or merge occurred; the
-committed branch is preserved pending that approval.
+The user explicitly authorized pushing the corrected records, including the
+existing concealed research, to `arutt99/BereaHunt` on branch
+`codex/research-feasibility`. The earlier automatic approval rejection is
+historical; no additional disclosure approval is pending. No default-branch
+merge is authorized.

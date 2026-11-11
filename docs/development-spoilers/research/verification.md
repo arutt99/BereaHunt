@@ -7,7 +7,8 @@ preparation or ask them to inspect physical clues.
 
 ## What was actually checked
 
-Remote review of 28 source records produced 34 precise fact records. Methods
+Remote review of 28 sources plus one direct user clarification produced 34
+precise claim/plan records. Methods
 are recorded per source: full page text, PDF text, outgoing official map URL,
 file metadata, or **search excerpt only**. Cached content's retrieval/review
 date is not a publication, capture, live-condition or field-verification date.
@@ -24,7 +25,7 @@ and puzzle authoring belong to phases 4–5 after feasibility clears.
 
 | Candidate dependency | Classification / exactness audit | Decision |
 | --- | --- | --- |
-| L00 exact starting place and no-purchase parking | F003,F004 **Unverified**; address and published hours do not establish permission. | Block approval; do not silently change the start or invent public access. |
+| L00 starting arrangement | F003,F004 now record the **Verified user-confirmed plan**, sourced to S29: normal customer drink visit, first clue there, known starting venue. | B01 **Resolved** as a requirements correction. No separate noncustomer parking-lot opening or fixed game bay is needed. This is not an operator permission claim. |
 | L01 precise trestle count, sign wording, heights or local measured layers | F012 provisional; F016 unverified; old descriptions/images do not establish exact current public legibility. | Exclude as essential. O01 uses F011-backed authored process reference instead. O02 stays optional/rejected for dependency purposes. |
 | L01 short walking arrangement | F015 provisional; old 80-yard lead lacks current usable round trip and bay. | Keep as research candidate, not approved walking instruction. |
 | L02 visible quarry seam, pier panel, underwater detail or exact historic outline | F025 unverified. Published history does not show a present visible boundary. | Exclude. O03 uses F021 documentary transformation, with schematic explicitly non-geographic. |
@@ -74,10 +75,11 @@ No unresolved photo license is required by the proposed reference design.
    closed. S14 retains an expected roadworks completion date before the
    research date; do not mark works complete from a timetable. Keep L04 out
    and avoid the named works segment pending fresh evidence.
-6. **Parking:** Municipal general free-parking evidence is stronger than the
-   private starting lot or secondary Metroparks no-fee descriptions. No
-   business/customer parking, festival-only university parking or adjacent
-   privately owned overflow is converted into public permission.
+6. **Parking:** The selected start is an ordinary customer drink visit under
+   S29, not noncustomer lot use. For subsequent stops, municipal general
+   free-parking evidence is stronger than secondary Metroparks no-fee
+   descriptions. No private, festival-only university or adjacent overflow
+   lot is converted into public permission.
 7. **Photo evidence:** S19 records capture 2022, upload 2024, later page edit
    separately. None means a 2026 photograph. Explicit creator credit is
    Central Avenue; history shows a differently named uploader. Preserve the
@@ -105,28 +107,28 @@ behalf. No independent physical helper has been assumed.
 
 | ID | Exact remaining evidence/action | Priority / closure criterion |
 | --- | --- | --- |
-| B01 | No-purchase, no-entry start at selected brewery: operator/public evidence of permission and a precise legal bay/position; alternatively a user decision approving a public starting arrangement. | **Critical.** Resolve without a purchase requirement or unapproved relocation. Public opening hours do not close it. |
+| B01 | **Resolved:** user clarified a planned customer drink visit, opening the first clue at the already-known brewery. Earlier noncustomer lot/fixed-bay requirement retired; source brief and F003/F004 corrected. | No independent noncustomer parking authorization or relocation decision needed. Ordinary venue arrangements apply; no staff game role or special access assumed. |
 | B02 | Scaled, current ordinary-bay → designated-viewpoint → bay pedestrian traces for the preferred stops; include lot travel, sidewalks/crossings and usable-route constraints. | **Critical.** Establish approximately ≤0.25 mile total for each required walk, or replace/narrow the approach. Old excerpts and map pins do not close it. No player pre-inspection of clues. |
 | B03 | Site-specific permitted free parking for park candidates; municipal entrance/bay and permitted final dwell; exceptions/seasonal/event restrictions. | **Critical.** Primary published policy or equally reliable dated evidence for actual proposed arrangements. Municipal free-parking provision already documented; exact use still needs finalization. |
 | B04 | Drivable entrance-to-entrance route, distances and defensible ordinary travel estimates compatible with the stated budget. | **Critical to route verdict.** Replace allocations with documented map/road evidence, avoiding closed/restricted segments; adjust within existing scope. |
 | U01 | Future weather, capacity, time-sensitive openings and exact play date. | Ordinary change risk, not a requirement for an advance player visit or an invented forecast. References/skip path and conditional pre-play refresh address day-of changes once baseline access clears. |
 
 No user choice is needed about the concealed route, story or solutions. B02–B04
-remain researcher tasks; B01 may require a material practical decision if
-permission cannot be established. Do not ask a player to approve unknown
+remain researcher tasks; B01 is closed by the starting-visit clarification.
+Do not ask a player to approve unknown
 factual claims or physically inspect spoilers as a substitute.
 
 ## Completion checks and handoff verdict
 
 | Check | Result |
 | --- | --- |
-| Phase 2: selected scope/start researched; sources and dates recorded | Pass; 28 source records, including limitations on partial retrieval. |
+| Phase 2: selected scope/start researched; sources and dates recorded | Pass; 28 remote sources plus user clarification S29, including limitations on partial retrieval. |
 | Phase 2: every shortlist record has required fields and explicit unknowns | Pass; five location records including required start and excluded reserve. |
 | Phase 2: proposed observations classified; shortlist/rejections justified; rights addressed | Pass; 34 fact records, conditional candidates, fallback asset specifications. |
 | Phase 3: precise dependency audit and rejection/redesign of weak observations | Pass for research design; all essential proposed inputs limited to Verified documentary facts. |
 | Phase 3: no assumed on-site helper or false field claim | Pass; all physical checks unperformed. |
 | Phase 3: coherent candidate, seasonal/light treatment, explicit timing assumptions, fallback coverage | Documented; estimates are not measured route approval. |
-| Phase 3: verified free permitted start/parking, short usable walks, sufficient route evidence | **Fail / Blocked: B01–B04.** |
+| Phase 3: agreed customer start, verified later parking/short walks and sufficient route evidence | Starting misunderstanding **Resolved**; **Blocked: B02–B04** for remaining route evidence. |
 | Phase 3: final feasible route and readiness to commit dependent story architecture | **Blocked** until the critical gates close. Do not start phase 4 or claim release readiness. |
 
 Source facts cannot establish future weather or capacity, and record checks
@@ -140,7 +142,7 @@ On 2026-11-11, a Python standard-library integrity check parsed `facts.json`,
 checked unique source/fact/location IDs, all evidence and location references,
 classification vocabulary, review-date syntax, source metadata fields,
 nonempty uncertainty notes, and the Verified-only documentary eligibility
-rule. It confirmed 28 sources, 34 facts, five locations, six eligible
+rule. The initial check confirmed 28 sources, 34 facts, five locations, six eligible
 documentary inputs and zero approved essential physical observations. All
 physical-check flags remain false.
 
@@ -152,3 +154,15 @@ records and the five opportunity/fallback rows. `git diff --check` is used
 before delivery for whitespace/conflict-marker errors. These checks validate
 record integrity and planning arithmetic, not the truth of a physical claim,
 actual travel/solving time, field conditions or iPhone behavior.
+
+## Starting-visit correction — 2026-11-11
+
+The user clarified that the brewery is a planned customer drink visit and the
+known place to open the first clue, not a noncustomer parking-lot opening.
+S29 records that direct evidence separately from remote sources. F003/F004
+now describe only the user-confirmed plan; they do not assert an independently
+verified venue fee, parking policy or future opening. Current totals are 29
+sources (28 remote plus one user message), 34 records: 22 Verified, five
+Provisionally Verified, five Unverified and two Rejected. The six eligible
+documentary inputs and zero approved essential physical observations remain.
+B01 is closed. Subsequent route gates B02–B04 remain researcher tasks.

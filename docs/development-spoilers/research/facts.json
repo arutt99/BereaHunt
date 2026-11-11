@@ -2,7 +2,7 @@
   "schema_version": 1,
   "reviewed_on": "2026-11-11",
   "research_method": "Remote source text/metadata only, including cached/indexed pages. No physical visit, contact with operators, current image-pixel inspection, live map rendering or measured drivable/pedestrian itinerary.",
-  "classification_policy": "Verified applies to the precise documentary claim, not future access or present physical visibility. Only flagged Verified references may inform faithful in-app authored evidence. No essential physical observation is approved.",
+  "classification_policy": "Verified applies to the precise documentary claim, not future access or present physical visibility. Only flagged Verified references may inform faithful in-app authored evidence. No essential physical observation is approved. User-confirmed plans are explicitly scoped to the reported intention; they are not independent operator permission or field observations.",
   "locations": [
     {
       "id": "L00",
@@ -333,6 +333,19 @@
       "image_capture_date": null,
       "retrieval": "search result text",
       "evidence_summary": "Event-context description identifies municipal parking behind City Hall at 11 Berea Commons."
+    },
+    {
+      "id": "S29",
+      "title": "Starting drink visit and push authorization clarification",
+      "publisher": "User",
+      "source_type": "user_clarification",
+      "url": null,
+      "source_ref": "User message in this conversation, 2026-11-11, following local commit 8d30aaa.",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "direct user message",
+      "evidence_summary": "Players will start at Fat Head's, have a drink and open the first clue there. The start is known. User authorized pushing after correcting this interpretation; no brewery game participation claimed."
     }
   ],
   "facts": [
@@ -389,48 +402,50 @@
     {
       "id": "F003",
       "location_id": "L00",
-      "claim": "Noncustomer parking is permitted for a no-purchase, no-entry game start.",
-      "kind": "permission",
-      "verification_status": "Unverified",
+      "claim": "The players plan to visit Fat Head's as customers for a drink and open the first clue there.",
+      "kind": "confirmed_plan",
+      "verification_status": "Verified",
       "reviewed_on": "2026-11-11",
       "evidence": [
         {
-          "source_id": "S01",
-          "locator": "Visitor information; no such authorization found"
+          "source_id": "S29",
+          "locator": "Planned starting drink visit"
         }
       ],
       "availability": {
-        "scope": "precise published claim only; physical availability not established",
+        "scope": "User-confirmed plan only; not an independently verified access/parking policy.",
         "public_viewpoint": null,
         "current_physical_visibility_confirmed": false
       },
       "eligible_as_essential_reference": false,
       "eligible_as_essential_physical_clue": false,
-      "uncertainty": "Must establish permission; do not infer it from customer parking or hours.",
-      "physical_check_performed": false
+      "uncertainty": "User-confirmed intention, not independent verification of a parking policy, fee, reservation or future opening.",
+      "physical_check_performed": false,
+      "supersedes": "Earlier noncustomer-lot/exact-bay interpretation, retired by user clarification on 2026-11-11."
     },
     {
       "id": "F004",
       "location_id": "L00",
-      "claim": "A precise legal starting position and its coordinates are established.",
-      "kind": "permission",
-      "verification_status": "Unverified",
+      "claim": "Fat Head's is already known to the players and is not a surprise starting venue.",
+      "kind": "confirmed_plan",
+      "verification_status": "Verified",
       "reviewed_on": "2026-11-11",
       "evidence": [
         {
-          "source_id": "S01",
-          "locator": "Address-only directions"
+          "source_id": "S29",
+          "locator": "Known starting venue"
         }
       ],
       "availability": {
-        "scope": "precise published claim only; physical availability not established",
+        "scope": "User-confirmed plan only; not an independently verified access/parking policy.",
         "public_viewpoint": null,
         "current_physical_visibility_confirmed": false
       },
       "eligible_as_essential_reference": false,
       "eligible_as_essential_physical_clue": false,
-      "uncertainty": "Neither bay coordinates nor legal alternative standing position established.",
-      "physical_check_performed": false
+      "uncertainty": "Only the starting venue is disclosed; the first clue, case and later destinations remain concealed. No exact bay or coordinate is required by this plan.",
+      "physical_check_performed": false,
+      "supersedes": "Earlier noncustomer-lot/exact-bay interpretation, retired by user clarification on 2026-11-11."
     },
     {
       "id": "F010",

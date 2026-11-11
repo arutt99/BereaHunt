@@ -10,7 +10,7 @@ Say **“Implement phase 1”**, then **“Implement phase 2”**, and so on. Ea
 - Complete the phase's tasks and completion checks, including its documentation and relevant tests. A proposed outline alone does not complete a phase.
 - Prerequisites must be satisfied before dependent work proceeds. If a requested phase is premature, explain the specific missing prerequisite rather than silently doing other phases.
 - Independently choose the case, characters, eligible locations, chapter structure, puzzles, final-answer format, and detailed visual treatment within the confirmed brief. Ask only about genuinely material practical conflicts or unresolved constraints, without exposing spoilers. Do not seek approval of story options, shortlists, clues, or solutions.
-- Preserve the confirmed outing: one shared iPhone/Home Screen app; Berea and its immediate border areas, with the selected starting landmark; roughly three hours from around 3 p.m. local time in January–May 2027; roughly a quarter mile total per car-to-stop-to-car walk; free access/parking, no purchases or required business entry, no scheduled breaks, printing, writing materials, or audio.
+- Preserve the confirmed outing: one shared iPhone/Home Screen app; Berea and its immediate border areas; open the first clue during the planned customer drink visit at the already-known Fat Head's start; roughly three hours from around 3 p.m. local time in January–May 2027; roughly a quarter mile total per car-to-stop-to-car walk; subsequent stops use free access/parking with no additional required purchases/business entry or scheduled breaks; no printing, writing materials or audio.
 - Core play, including later chapters, assistance, and reference evidence, must work offline after a confirmed complete download and offline relaunch. Treat external maps and optional searches separately.
 - Keep both players unspoiled. Routine updates, branch/commit names, screenshots, preparation screens, and handoffs must conceal future destinations, story developments, and answers. Put detailed research, route plans, design, and test evidence in clearly labeled development-spoiler records.
 - If research, on-site confirmation, account access, or another external dependency prevents completion, preserve the useful work, mark the phase **Blocked**, and identify the exact remaining action. Do not invent a result or mark the phase complete.
@@ -27,8 +27,8 @@ Allowed statuses: **Not started**, **In progress**, **Blocked**, **Complete**. M
 | Phase | Deliverable | Prerequisite | Status | Completion evidence / blocker |
 | --- | --- | --- | --- | --- |
 | 1 | Requirements handoff and decision record | Existing discovery brief | Complete | Interview was already complete; [requirements](docs/requirements.md) and [practical decisions](docs/decisions.md) now preserve its handoff (2026-11-11). |
-| 2 | Researched location shortlist | Phase 1 | Complete | Conditional shortlist, 28 sources, 34 classified facts and asset-rights review recorded separately; see [spoiler-free research readiness](docs/research-readiness.md) (2026-11-11). |
-| 3 | Verified clue inventory and feasible route | Phase 2 | Blocked | Dependency audit and candidate route/budget delivered; selected-start permission, exact parking arrangements and usable walking/driving measurements remain unresolved. [Coverage and remaining actions](docs/research-readiness.md) (2026-11-11). |
+| 2 | Researched location shortlist | Phase 1 | Complete | Conditional shortlist, 28 remote sources plus user clarification, 34 classified claim/plan records and asset-rights review; see [spoiler-free research readiness](docs/research-readiness.md) (2026-11-11). |
+| 3 | Verified clue inventory and feasible route | Phase 2 | Blocked | Starting arrangement resolved: planned customer drink visit and first clue at the known venue. Later parking arrangements and usable walking/driving measurements remain unresolved (B02–B04). [Coverage and remaining actions](docs/research-readiness.md) (2026-11-11). |
 | 4 | Coherent story and puzzle architecture | Phase 3 | Not started | — |
 | 5 | Complete, validated adventure content | Phase 4 | Not started | — |
 | 6 | Working mobile game application | Phase 5 | Not started | — |
@@ -117,7 +117,7 @@ Use the source classifications exactly: **Verified**, **Provisionally Verified**
 
 **Tasks**
 
-- Research the selected starting arrangements and candidates in Berea/immediate border areas using municipal/park sources, historical organizations, official businesses, recent imagery, and credible local reporting. The selected start does not establish parking permission or business participation.
+- Research the selected starting arrangements and candidates in Berea/immediate border areas using municipal/park sources, historical organizations, official businesses, recent imagery, and credible local reporting. The players have clarified an ordinary customer drink visit at the known start; no separate noncustomer lot-opening permission is required. This does not imply business participation in the game.
 - Populate location and fact records, including exact sources, evidence dates, public viewpoints, access, relevant physical details, and change risks. Cross-check important claims independently where possible.
 - Separate historical facts from current physical observations. List any information that cannot be established online.
 - Independently shortlist candidates for reliable puzzle potential, historical/nature interest, compact route fit, free access/parking, short round-trip walks, arrival-time hours/daylight, and reference-evidence alternatives. Do not show future destinations to either player or invent features/participation.
@@ -142,7 +142,7 @@ Use the source classifications exactly: **Verified**, **Provisionally Verified**
 - Audit each candidate observation for exactness, current visibility from the intended public viewpoint, access, safety, and durability. Resolve conflicting sources and classify remaining uncertainty honestly.
 - Plan around no on-site helper. Where online evidence is inadequate, seek stronger evidence, replace the dependency, or redesign around verified in-app reference evidence with the physical observation optional. Verify access separately if directing players to the stop. Record real physical checks only if performed; do not ask either player to inspect clues in advance.
 - Exclude unverified, provisional, and rejected facts from essential puzzle dependencies. Replace weak candidates or narrow the design; seek a user decision if the selected scope must change.
-- Develop a route from the selected start with fewer worthwhile stops, limited driving, free permitted parking/access, and roughly a quarter mile total per usable car-to-stop-to-car walk. Budget roughly three hours including travel/puzzles from around 3 p.m. America/New_York in January–May 2027, accounting for late-stage daylight/hours and seasonal/weather risks. No scheduled meals/breaks or required return to the start. Cite distances, estimates, and assumptions.
+- Develop a route from the planned starting customer drink visit with fewer worthwhile stops, limited driving, free permitted parking/access at subsequent stops, and roughly a quarter mile total per usable car-to-stop-to-car walk. Budget roughly three hours including travel/puzzles from around 3 p.m. America/New_York in January–May 2027, accounting for late-stage daylight/hours and seasonal/weather risks. No additional scheduled meals/breaks or required return to the start. Cite distances, estimates, and assumptions.
 - Assign every viable location-dependent puzzle opportunity a feasible fallback and identify any unresolved prerequisites.
 
 **Deliverables:** updated fact/location records; `docs/development-spoilers/research/verification.md` and `route.md`; spoiler-free coverage/conflict report.
@@ -351,16 +351,24 @@ Next eligible phase:
 - **Branch and commit:** `codex/research-feasibility`; artifact commit `41b151ca95cd676e08398125be9a84ac77f44d68`. Tracker/handoff recorded in the following commit on the same branch.
 - **User decisions recorded:** no confirmed requirement relaxed. Story and detailed puzzle authoring remain deferred; no request for either player to inspect concealed clues.
 - **Checks performed and evidence:** audited proposed physical observations, rejected weak/disputed dependencies, specified documentary redesigns and separate reference/reveal contingencies; zero unverified physical observations approved as essential. Candidate route and 180-minute budget explicitly distinguish travel allocations/straight-line lower bounds from measured driving/walking. Approximate NOAA-based seasonal sunsets and conservative winter observation limits recorded. Record-integrity, public spoiler-name, link and whitespace checks passed. No physical, iPhone, app, deployment or measured playthrough test performed.
-- **Open uncertainties / blockers:** B01 selected-start no-purchase permission/exact legal position; B02 usable ordinary-bay-to-viewpoint round trips; B03 site-specific free-parking restrictions and final dwell; B04 drivable entrance-to-entrance distances/times. These are critical to the feasible-route completion check; a reference fallback does not verify them. See the spoiler-free readiness record for practical implications and separate research audit for precise evidence needed.
+- **Open uncertainties / blockers:** at the initial audit, B01 concerned a no-purchase parking-lot opening; the user's subsequent customer-visit clarification resolves and supersedes it (see follow-up below). Remaining: B02 usable ordinary-bay-to-viewpoint round trips; B03 later-stop free-parking restrictions/final dwell; B04 drivable entrance-to-entrance distances/times. These remain critical to the feasible-route completion check; a reference fallback does not verify them.
 - **Next eligible phase:** finish phase 3's access/measurement gates, validate the revised evidence and update this tracker. Phase 4 remains Not started until that passes. No future recheck, helper or specific completion date has been arranged.
 
 ### Delivery status — 2026-11-11
 
-The scoped work is committed on local branch `codex/research-feasibility`.
-The GitHub push was rejected by automatic approval review: the branch contains
-potentially private research/spoilers and the reviewer could not establish
-authorization for disclosure to the remote. Nothing was pushed or merged.
-User approval to push these records to the existing `arutt99/BereaHunt`
-repository is needed before retrying; do not bypass the rejection. The source
-artifact commit is recorded above; use the branch HEAD for the subsequent
-tracker/delivery updates.
+The initial GitHub push was rejected by automatic approval review over
+authorization to disclose potentially private research/spoilers. The user
+subsequently authorized pushing the corrected records to the existing
+`arutt99/BereaHunt` repository: “After resolving that, you may push.” This is
+explicit authorization for the feature-branch delivery, including the existing
+research; no further disclosure approval or default-branch merge is requested.
+
+### 2026-11-11 — starting-arrangement clarification and authorized delivery
+
+- **Scope/status:** starting issue B01 Resolved; phase 1/2 Complete; phase 3 still Blocked on unrelated researcher tasks B02–B04.
+- **User decision:** visit Fat Head's as customers for a drink, open the first clue there and begin. The starting venue is known and may be disclosed before play; the case and future destinations remain concealed.
+- **Correction:** authoritative brief, requirements/decisions, source inventory, location/route audit and readiness records now reflect the planned customer visit. No noncustomer lot permission, fixed game bay, special access or venue relocation is needed; no staff-delivered clue or brewery game participation is assumed. No additional game-required purchases or scheduled breaks are introduced.
+- **Evidence:** S29 is the direct user clarification, separate from the 28 remote sources. Current 34 claim/plan records: 22 Verified (including two user-confirmed plans), five Provisionally Verified, five Unverified, two Rejected; six eligible documentary inputs and zero essential physical observations approved.
+- **Branch:** continue `codex/research-feasibility`; the correction/delivery commit is the branch revision containing this entry, following `8d30aaa`.
+- **Checks:** record/link integrity, Verified-only essential reference eligibility, public destination concealment, corrected starting references and whitespace checks; no new field/device/game tests claimed.
+- **Delivery authorization:** user explicitly approved the push after the starting correction. Retain the scoped feature branch; do not merge into main.

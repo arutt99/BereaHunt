@@ -10,12 +10,12 @@ started” entry referred to these missing handoff records, not missing answers.
 | ID | Requirement / acceptance criterion | Brief |
 | --- | --- | --- |
 | R01 | Two adults, the user and his wife, investigate together using one shared car and iPhone; both remain unspoiled. | §§1–2 |
-| R02 | Berea, Ohio, and immediate border areas only; selected start is Fat Head's Brewery in Middleburg Heights. Verify the exact starting arrangement independently. | §§2,9 |
+| R02 | Berea, Ohio, and immediate border areas only; start at Fat Head's Brewery in Middleburg Heights during the players' planned customer drink visit, opening the first clue there. The venue is already known; no fixed bay or noncustomer parking opening is required. | §§2,9; user clarification 2026-11-11 |
 | R03 | Favor history and parks/nature, fewer worthwhile stops and limited driving; no required return to the start. | §§2,9 |
 | R04 | Approximately three hours of core play including travel, reading and solving; around 15:00 America/New_York, January–May 2027. Personal pauses can extend it. | §§2,9 |
 | R05 | Approximately 0.25 mile **total per car-to-stop-to-car walk**, along usable paths; not 0.25 mile each way. No separate overall walking cap or identified individual accessibility constraint. | §§2,9 |
-| R06 | Free permitted parking and access; no purchases, paid admission, required business entry, reservations or staff participation. Public indoor spaces are eligible if suitable. | §§2,4,9 |
-| R07 | No scheduled meals/drinks/breaks. No printing, prepared props, pen/paper, audio, second phone or helper required. Provide necessary working aids on the phone. | §§2,4,8–9 |
+| R06 | The starting customer drink visit is already planned by the players. The game adds no required purchases, paid admission, business entry, reservations or staff participation; subsequent stops require free permitted parking/access. Public indoor spaces are eligible if suitable. | §§2,4,9; user clarification 2026-11-11 |
+| R07 | First clue opens during the planned starting drink visit; no additional scheduled meals/drinks/breaks. No printing, prepared props, pen/paper, audio, second phone or helper required. Provide necessary working aids on the phone. | §§2,4,8–9; user clarification 2026-11-11 |
 | R08 | Check actual public viewpoints, legibility, route lengths, access, seasonal conditions and late-stage daylight. Do not assume clear paths or an on-site verifier. | §§3,9–11 |
 
 ## Confirmed case and interaction requirements
@@ -50,7 +50,7 @@ The case, characters, eligible stops, route shortlist, chapters, puzzle designs,
 answers, final-answer format and detailed visual treatment are **delegated design
 choices**, not questions for the players. Research precedes narrative commitment.
 
-**Research tasks:** starting permissions; concealed route access/parking; short
+**Research tasks:** normal starting-venue hours; concealed route access/parking; short
 walks and driving; seasonal hours, daylight and changes; source-backed reference
 material and reuse rights. These must be resolved or explicitly block readiness.
 

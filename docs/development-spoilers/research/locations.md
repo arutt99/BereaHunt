@@ -10,7 +10,7 @@ review dates and separate publication/capture dates. Unknown means unknown.
 
 | ID | Candidate | Disposition | Reason / remaining gate |
 | --- | --- | --- | --- |
-| L00 | Fat Head's Brewery, Middleburg Heights | Required selected start; unresolved | Honor interview, but noncustomer permission and exact legal starting position are missing. |
+| L00 | Fat Head's Brewery, Middleburg Heights | Confirmed planned customer start | Players will have a drink as customers and open the first clue there. Known venue; no noncustomer lot opening or fixed game bay. |
 | L01 | Berea Falls Scenic Overlook | Preferred conditional shortlist | Compact public nature/history setting, operator-backed geology and visitor lot; fee and full short walking route need stronger evidence. |
 | L02 | Wallace Lake | Preferred conditional shortlist | Operator-backed former-quarry history and visitor parking; short approach and site-specific fee policy unresolved. |
 | L03 | McKelvey Park / downtown municipal parking | Preferred conditional shortlist | Documentary civic-history opportunities and municipal free-parking evidence; exact bay, permitted stay and short sidewalk route unresolved. |
@@ -18,7 +18,7 @@ review dates and separate publication/capture dates. Unknown means unknown.
 
 All future candidates are in Berea itself; the named starting venue is the
 express exception already selected in the brief. No broader neighboring-city
-tour, required purchase, staff participation or scheduled break is introduced.
+tour, additional game-required purchase, staff participation or scheduled break is introduced.
 “Preferred” is a research decision, **not** a verified navigation instruction.
 Selection does not commit the story, puzzles or final number of chapters.
 
@@ -27,18 +27,18 @@ Selection does not commit the story, puzzles or final number of chapters.
 | Required field | Research record |
 | --- | --- |
 | Name / address | Fat Head's Brewery, 17450 Engle Lake Dr, Middleburg Heights, OH 44130 (F001). Operator spelling takes precedence over secondary “Rd.” |
-| Coordinates | **Unknown** for a permitted starting bay/viewpoint. Official address search is not an exact approved parking position (F004). |
-| Exact public viewpoint / current legibility | None established. Do not make players walk around a production building or inspect signage. |
-| Hours / likely arrival | Published opening schedule includes 15:00 every weekday (F002). Not proof of no-purchase parking, holiday opening or 2027 permission. |
-| Access / free parking | F003 **Unverified**. No public operator authorization found for using customer parking solely to play. A commercial parking lot is not automatically public. No permission for adjacent parcels or roadside stopping was established. |
-| Car-to-stop-to-car walk | Proposed zero-walk, seated opening **only if** a permitted bay is established. No legal bay or distance has been verified; “zero” is a design proposal. |
+| Coordinates | Address-based customer arrival (F001); no exact game-specific bay, geofence or viewpoint needed. No surveyed parking coordinates claimed. |
+| Exact public viewpoint / current legibility | Phone-based opening from an ordinary customer seating area during the planned drink visit. No venue feature, production-building search or sign inspection is needed. |
+| Hours / likely arrival | Published schedule includes about 15:00 daily (F002); normal venue/holiday hours apply. This is an ordinary customer visit, not an application for noncustomer access. |
+| Access / parking arrangement | User-confirmed customer drink visit, F003. Standard customer arrangements apply; the user did not request parking solely to play. No separate noncustomer-use permission is needed for the proposed opening. Do not claim special parking rights, adjacent-lot permission or staff participation. |
+| Car-to-stop-to-car walk | Ordinary customer arrival, not measured. The opening adds no game-directed exterior search or observation walk; do not describe the actual customer approach as a verified zero-distance walk. |
 | Features / history | No physical feature required. Opening must use fictional in-app evidence, with no claim of brewery involvement or endorsement. |
 | Images / reuse | Official page images exist, but no reuse license or capture dates established; not selected as evidence. Do not copy logos or invent real signs. |
-| Season / change risks | Holiday hours, customer capacity, private-property restrictions, ice; 2027 conditions unconfirmed. |
+| Season / change risks | Ordinary holiday hours/customer availability; future conditions unconfirmed. No reservation, special access or brewery involvement in the game is assumed. |
 | Safety / accessibility | No puzzle while driving, delivery-yard approach, road-shoulder stop or unsanctioned parking. |
-| Verification / field checks | Address/hours documentary **Verified**; necessary parking permission **Unverified**. No physical inspection or communication. |
-| Outstanding action | Establish free no-purchase permission and an exact start position, or obtain a focused user decision to change the start. Public information did not establish that permission is either granted or prohibited. |
-| Fallback | In-app opening can move technically, but changing the selected physical start needs a practical decision. An app fallback cannot grant parking rights. |
+| Verification / field checks | Address/hours documentary **Verified**; planned customer start and known venue confirmed directly by user (F003,F004; S29). No physical inspection or operator communication. B01 resolved as a requirements correction. |
+| Outstanding action | No permission question or relocation decision pending. Keep normal date-specific venue checks separate from remaining route research. |
+| Fallback | Opening is saved and resumable without a fixed venue feature or staff interaction. If normal customer access is unavailable, keep progress and the selected start arrangement flexible; do not invent a required replacement stop. |
 
 ## L01 — preferred nature observation stop
 

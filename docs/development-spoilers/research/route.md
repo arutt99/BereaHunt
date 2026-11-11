@@ -12,11 +12,12 @@ return to L00. L04 is a reserve and is not a concealed extra stop. See
 [`locations.md`](locations.md) for exact candidate definitions, restrictions,
 coordinates and fact IDs. This keeps the future route in Berea itself, groups
 the nature observations before the stationary ending, and avoids the more
-uncertain construction-area candidate. No meal, purchase or scheduled break.
+uncertain construction-area candidate. L00 is the players' planned customer
+drink visit; no additional meal, purchase or scheduled break is introduced.
 
 | Leg | Planning corridor, not turn-by-turn instructions | Distance evidence | Travel allowance |
 | --- | --- | --- | --- |
-| L00 → L01 | Engle/Bagley approach toward the Barrett/Valley Parkway overlook area | Exact permitted start coordinates and drivable length **unknown**. | **20 min** allocation, not measured/map-provider travel time. |
+| L00 → L01 | Customer departure from F001's venue address toward the Barrett/Valley Parkway overlook area | Exact exit-to-entrance drivable length **unmeasured** (B04); no fixed game bay required. | **20 min** allocation, not measured/map-provider travel time. |
 | L01 → L02 | Valley Parkway corridor between operator destination pins | Haversine separation **1.257 mi** is a lower bound only; drivable route **unmeasured**. | **10 min** allocation. |
 | L02 → L03 | Lake area to downtown municipal parking | Haversine separation of lake/park pins **0.433 mi** is a lower bound only; entrance-to-entrance drive **unmeasured**. | **10 min** allocation. |
 
@@ -34,7 +35,7 @@ roadworks segment described in F062 as a convenient assumed through-route.
 
 | Stop | Proposed usable arrangement | Full round trip | Gate / current design |
 | --- | --- | --- | --- |
-| L00 | Remain seated in an expressly permitted bay for the opening. | Zero walk is proposed; legal bay **unestablished**. | B01. No customer-lot or roadside assumption. |
+| L00 | Open the first clue while having a drink during the planned customer visit. | Ordinary customer approach unmeasured; no extra game-directed exterior walk. | B01 **Resolved** by user clarification; known start, no noncustomer lot opening or fixed game bay. |
 | L01 | Defined ordinary visitor bay → approved overlook platform → same bay. | **Not verified.** Old 80-yard hike lead is insufficient. | B02. No water/railway approach. |
 | L02 | Defined ordinary visitor bay → nearest approved land-side viewpoint → same bay. | **Unknown** along a usable path. | B02. No full lake circuit, beach/ice entry or invented pier-panel task. |
 | L03 | Defined free municipal bay → public sidewalks/crossings → park viewpoint → same bay. | **Unknown** along usable sidewalks. | B02/B03. Default late-winter stage uses documentary evidence, with no after-dark walk. |
@@ -58,7 +59,7 @@ must allocate actual puzzles to the budget; phase 7 must measure them.
 
 | Local interval | Allocation | Minutes | Design assumption |
 | --- | --- | --- | --- |
-| 15:00–15:10 | L00 opening/prepared app | 10 | Installed, completely downloaded app; no purchase or brewery interaction. Starting permission unresolved. |
+| 15:00–15:10 | L00 opening during planned customer drink visit | 10 | Installed, completely downloaded app; first clue opens from the normal customer area. No special bay or game assistance from staff. This is an opening estimate, not a limit on the drink visit. |
 | 15:10–15:30 | Travel to L01 | 20 | Safe navigation only; no solving while moving. |
 | 15:30–16:00 | L01 | 30 | 10 walking/observation + two 8-minute puzzles + 4 reading/transition; walk first, phone work after returning. |
 | 16:00–16:10 | Travel to L02 | 10 | Time allocation awaiting measured route. |
@@ -70,7 +71,8 @@ must allocate actual puzzles to the budget; phase 7 must measure them.
 Late-stage parking dwell is approximately 70 minutes; permission/maximum stay
 must be verified (B03). The last 10-minute observation allowance is **not** an
 after-dark instruction: in January it remains in-app discussion/reference
-work. No scheduled personal break is hidden in the budget. Pauses, slower
+work. The players' planned starting drink visit is explicit; its length is
+flexible, with no extra scheduled game break. Longer time there, pauses, slower
 solving, traffic and ice can lengthen elapsed time; assistance is immediate,
 not time-gated. The nominal 16:10–16:20 final nature walk gives useful winter
 margin, but no fixed schedule justifies rushing or taking an unsafe path.
@@ -108,7 +110,7 @@ known. No recheck, weather prediction or monitoring has been scheduled.
 
 | Condition | Required behavior for later design |
 | --- | --- |
-| Starting parking unavailable/unapproved | Do not begin in a customer lot or roadside. B01 must close before the route is approved; relocation needs a practical start decision. |
+| Normal starting-venue customer access unavailable | Preserve progress and the selected customer start; use normal venue arrangements without inventing special parking or a replacement stop. B01's noncustomer-parking concern is resolved by the user's clarified plan. |
 | Full lot, closed approach, changed feature or poor visibility | No arrival proof needed. Use the same source-backed reference, continue only while legally and safely stopped elsewhere, and preserve the unlocked story. |
 | Snow/ice, flood warning, no safe pedestrian access or lost daylight | Skip the outdoor observation; no pressure to investigate. If even travel/stopping is unsuitable, postpone the outing and preserve progress. |
 | Reserved space or event | Do not enter it or assume an alternate private lot. Use verified public alternatives only; otherwise references. |
@@ -116,6 +118,6 @@ known. No recheck, weather prediction or monitoring has been scheduled.
 | Network unavailable | Cached written arrival instructions and references remain accessible; external maps/search may be unavailable. No claim of offline turn-by-turn driving. |
 
 The route is a coherent **candidate** with an explicit three-hour budget and
-daylight strategy. Parking permission, usable short routes and drivable
+daylight strategy. Later-stop parking arrangements, usable short routes and drivable
 measurement remain essential feasibility evidence, so this file does not
 claim the phase 3 completion check has passed.
