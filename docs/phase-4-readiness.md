@@ -1,41 +1,70 @@
-# Phase 4 readiness correction
+# Phase 4 readiness
 
-Spoiler-free, **2026-11-11**. This is a prerequisite/delivery record, not a
-completed narrative or puzzle architecture.
+Spoiler-free handoff, **2026-11-11**. **Phase 4 — Complete.**
 
-## Recovered project state
+This delivery contains the actual narrative and puzzle architecture on the
+confirmed brief and current merged research. It replaces the earlier status-only
+correction; that correction and its cause remain documented in `BUILD_PLAN.md`.
+The incompatible stale-base draft is not used.
 
-The earlier statement that phases 1–3 were absent was incorrect. It was based
-on a stale local checkout at `1c8045b`, without fetching current main. GitHub
-`main` at `57bbbf9` contains the merged requirements and research work:
+## Delivered
 
-| Record | Current state |
-| --- | --- |
-| [Requirements](requirements.md) and [practical decisions](decisions.md) | Phase 1 Complete; discovery and the confirmed outing are preserved |
-| [Research readiness](research-readiness.md) and concealed research records | Phase 2 Complete; shortlist, sources, factual classifications and reference alternatives are preserved |
-| Existing verification/route audit | Phase 3 In progress on B02/B04: ChatGPT's walking and driving estimates |
-| Phase 4 | Blocked until phase 3's completion checks pass, as required by `BUILD_PLAN.md` |
+- Complete concealed story, truth/chronology, chapter sequence, evidence graph,
+  eight specified puzzles, solutions/alternatives, progressive hints, separate
+  reference/reveal routes, and concise final-submission design.
+- Concrete content/solution schema, state events and persistence/update contracts.
+- One-phone mobile flows for installation, complete offline preparation, stopped
+  investigation, relevant-evidence comparison, safe navigation, working aids,
+  reference assistance, resume/restart and ending.
+- Delegated creative/UX decisions, a machine-readable design blueprint, executable
+  consistency checks, and a detailed concealed verification record.
+- Closure of the specifically identified researcher-owned phase 3 prerequisites:
+  source-based travel ranges, explicit short-walk scope, and staging revised to
+  obey an actual published restriction. The original factual classifications
+  and confirmed practical decisions are preserved.
 
-The missing estimates are unfinished researcher work. They do not require more
-discovery, player scouting, route approval, parking-capacity certification or
-story approval. Routine parking availability is already accepted under D13.
-No previously recorded factual classification has been changed by this correction.
+The three required design documents are `story-and-puzzles.md`,
+`content-model.md` and `experience.md` under
+`docs/development-spoilers/design/`. Supporting design/research/test records
+also remain under that clearly labeled directory tree, outside a future `site/`
+deployment. They contain spoilers; neither player needs to inspect them.
 
-## Correction and next eligible work
+## Checks performed
 
-The incompatible local phase 4 draft and its synthetic validator have been
-removed from the repository working tree. Their successful fixture checks did
-not validate this project's actual requirements, researched setting or route.
-They are not phase completion evidence and should not be used for later content.
+Run from the repository root with Python 3.10 or newer; no packages required:
 
-The original phase 4 request remains pending. The build plan requires finishing
-the existing phase 3 route estimates before committing dependent architecture;
-this correction does not silently execute another phase or invent its result.
-Once that prerequisite passes, produce the three specified design documents
-and separate delegated-design record under `docs/development-spoilers/`.
-Choose the creative details independently under the already-confirmed brief;
-keep routine updates and delivery metadata spoiler-free.
+```sh
+python3 scripts/validate_design.py --self-test
+```
 
-No user action is pending. No new research, physical walkthrough, player test,
-device test or deployment result is claimed here. The authoritative progress
-and delivery record is [BUILD_PLAN.md](../BUILD_PLAN.md).
+Passed: record/dependency/fact eligibility checks; 1,024 modeled correct,
+revealed and reference-assisted completion paths; eight finite solution models,
+including unique roster/final deductions; eighteen negative mutations; and the
+single 180-minute planning budget. Local file links, whitespace, public spoiler
+concealment and preservation of all pre-existing fact records were checked.
+The selected baseline text/surface palette pairs also pass calculated contrast
+checks; this does not establish every future rendered component's accessibility.
+
+## Scope and next phase
+
+This is a completed **design phase**, not a finished application. Phase 5 is now
+eligible: write the complete player-facing corpus and original assets, validate
+answer variants/references, and inventory every offline resource. Phase 6 builds
+the mobile engine; later phases test and deploy it.
+
+Puzzle durations, travel ranges and the approximate discussion/manipulation mix
+are authored planning estimates. No independent human timing/playtest, field
+walkthrough, current image-pixel inspection, device/browser app test, offline
+relaunch test or deployment is claimed. Source-backed references carry essential
+facts; no unverified physical detail gates completion. Day-of restrictions and
+conditions still control; final release needs the later audits.
+
+No discovery, story/route approval, player reconnaissance or other user action
+is pending. The planned customer start, one shared iPhone, free subsequent
+access, short-walk target, no additional required purchases/materials/audio,
+complete offline play and spoiler protection remain requirements.
+
+Delivery branch: `codex/phase-4-architecture`; prerequisite closure is commit
+`7679991`. The substantive architecture commit is the branch revision containing
+this report and the phase 4 completion entry in [BUILD_PLAN.md](../BUILD_PLAN.md).
+No default-branch merge is performed as part of delivery.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "reviewed_on": "2026-11-11",
-  "research_method": "Remote source text/metadata only, including cached/indexed pages. No physical visit, contact with operators, current image-pixel inspection, live map rendering or measured drivable/pedestrian itinerary.",
+  "research_method": "Remote source text/metadata, including cached/indexed pages, plus explicitly authored route estimates and a narrowed optional-walk design. No field visit, live routing, pixel measurement or timed drive. See feasibility-closure.md.",
   "classification_policy": "Verified applies to the precise documentary claim, not future access or present physical visibility. Only flagged Verified references may inform faithful in-app authored evidence. No essential physical observation is approved. User-confirmed plans are explicitly scoped to the reported intention; they are not independent operator permission or field observations.",
   "locations": [
     {
@@ -23,6 +23,10 @@
     {
       "id": "L04",
       "name": "Coe Lake Park"
+    },
+    {
+      "id": "L05",
+      "name": "North Quarry Picnic Area (Wallace Lake north approach)"
     }
   ],
   "sources": [
@@ -346,6 +350,61 @@
       "image_capture_date": null,
       "retrieval": "direct user message",
       "evidence_summary": "Players will start at Fat Head's, have a drink and open the first clue there. The start is known. User authorized pushing after correcting this interpretation; no brewery game participation claimed."
+    },
+    {
+      "id": "S30",
+      "title": "North Quarry Picnic Area",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/parks/visit/parks/mill-stream-run-reservation/north-quarry-picnic-area",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text and outgoing directions URL",
+      "evidence_summary": "Operator places public picnic facility at north end of Wallace Lake, off Valley Parkway north of North Quarry Lane; lists visitor parking; directions target 41.364374,-81.856805. Not a surveyed bay or exact viewpoint."
+    },
+    {
+      "id": "S31",
+      "title": "Picnicking",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/parks/visit/activities/picnicking",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "web page text",
+      "evidence_summary": "General non-exclusive shared-use/free picnic policy and North Quarry listing; not a specific-space, future-condition or fee-exception guarantee."
+    },
+    {
+      "id": "S32",
+      "title": "Upper Devonian strata of the Northern Appalachian Basin: 2023 field trip road log",
+      "publisher": "SUNY Geneseo host / Baird, Harper, Over, Hannibal and McKenzie",
+      "url": "https://www.geneseo.edu/wp-content/uploads/2023/07/sds-pre-meeting-field-trip-day-1-3-final.pdf",
+      "reviewed_on": "2026-11-11",
+      "publication_date": "2023-07 (trip date)",
+      "image_capture_date": null,
+      "retrieval": "PDF text, printed p.24 / PDF page index 23",
+      "evidence_summary": "Public road log connects Bagley, Barrett and Valley Parkway to North Quarry. Relative readings 8.8/9.2/10.0 support approximate segments; parenthesized cumulative falls reading is inconsistent and not used. Geological bank/stream paths and old construction notes are not adopted."
+    },
+    {
+      "id": "S33",
+      "title": "I-71 Ohio Exit 235 Bagley Road directory",
+      "publisher": "iExit Interstate Exit Guide",
+      "url": "https://www.iexitapp.com/Ohio/I-71/Exit%20235/37594",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "search result text and indexed directory",
+      "evidence_summary": "Locates selected start near the Bagley interchange; 0.41-mile listing is supporting context, not a verified entrance-to-entrance route or road mileage."
+    },
+    {
+      "id": "S34",
+      "title": "Fall Colors: Berea Falls Scenic Overlook",
+      "publisher": "Cleveland Metroparks",
+      "url": "https://www.clevelandmetroparks.com/about/conservation/fall-colors",
+      "reviewed_on": "2026-11-11",
+      "publication_date": null,
+      "image_capture_date": null,
+      "retrieval": "search result text",
+      "evidence_summary": "Describes short approach to a large deck; not a present-condition guarantee or measured path."
     }
   ],
   "facts": [
@@ -379,7 +438,7 @@
     {
       "id": "F002",
       "location_id": "L00",
-      "claim": "Published hours include 15:00 daily: Mon–Thu 12–21, Fri 12–22, Sat 11–22, Sun 11–21.",
+      "claim": "Published hours include 15:00 daily: Mon\u2013Thu 12\u201321, Fri 12\u201322, Sat 11\u201322, Sun 11\u201321.",
       "kind": "published_hours",
       "verification_status": "Verified",
       "reviewed_on": "2026-11-11",
@@ -1116,7 +1175,7 @@
     {
       "id": "F060",
       "location_id": null,
-      "claim": "Metroparks publishes general reservation hours 06:00–23:00.",
+      "claim": "Metroparks publishes general reservation hours 06:00\u201323:00.",
       "kind": "published_hours",
       "verification_status": "Verified",
       "reviewed_on": "2026-11-11",
@@ -1139,7 +1198,7 @@
     {
       "id": "F061",
       "location_id": null,
-      "claim": "City park rules close parks at 22:00; specified facilities close 22:00–09:00.",
+      "claim": "City park rules close parks at 22:00; specified facilities close 22:00\u201309:00.",
       "kind": "published_hours",
       "verification_status": "Verified",
       "reviewed_on": "2026-11-11",
@@ -1179,7 +1238,7 @@
       },
       "eligible_as_essential_reference": false,
       "eligible_as_essential_physical_clue": false,
-      "uncertainty": "Retained past finish date is not reopening confirmation. Works segment Albion–W130th not adopted into draft route.",
+      "uncertainty": "Retained past finish date is not reopening confirmation. Works segment Albion\u2013W130th not adopted into draft route.",
       "physical_check_performed": false
     },
     {
@@ -1203,6 +1262,125 @@
       "eligible_as_essential_reference": false,
       "eligible_as_essential_physical_clue": false,
       "uncertainty": "Credit Central Avenue, title/source/license and changes. Metadata only inspected; no present-day visibility or pixel-detail inference.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F070",
+      "location_id": "L05",
+      "claim": "The operator lists North Quarry Picnic Area at the northern end of Wallace Lake, off Valley Parkway north of North Quarry Lane; outgoing directions target 41.364374,-81.856805.",
+      "kind": "published_access",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S30",
+          "locator": "Description / amenities / outgoing directions link"
+        }
+      ],
+      "availability": {
+        "scope": "precise published documentary claim only; no field verification or future guarantee",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "A public facility and destination pin, not a surveyed parking space, view, path length or 2027 opening.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F071",
+      "location_id": "L05",
+      "claim": "The operator lists North Quarry Picnic Area as a visitor picnicking location with parking.",
+      "kind": "published_access",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S30",
+          "locator": "North Quarry amenities and picnic-area listing"
+        },
+        {
+          "source_id": "S31",
+          "locator": "North Quarry amenities and picnic-area listing"
+        }
+      ],
+      "availability": {
+        "scope": "precise published documentary claim only; no field verification or future guarantee",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Ordinary visitor use only; no exclusive facility, fixed table, fee exception, space guarantee or special game permit claimed.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F072",
+      "location_id": null,
+      "claim": "The operator describes the vast majority of its picnic areas as free, non-exclusive shared-use facilities, with reservation hours 06:00\u201323:00.",
+      "kind": "published_access",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S31",
+          "locator": "Picnicking opening policy"
+        }
+      ],
+      "availability": {
+        "scope": "precise published documentary claim only; no field verification or future guarantee",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "General policy, not proof of every site-specific exception or a future available space; retain posted restrictions and D13 planning scope.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F073",
+      "location_id": "L03",
+      "claim": "Published city park rules section 6.13 prohibit parking-area loitering adjacent to city parks and playing games in public parking lots without the specified permit.",
+      "kind": "published_restriction",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S13",
+          "locator": "Section 6.13, PDF p.3 of 5"
+        }
+      ],
+      "availability": {
+        "scope": "precise published documentary claim only; no field verification or future guarantee",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Do not stage the final game session in a municipal parking lot. This is the published rule, not a legal opinion about every conceivable private phone activity.",
+      "physical_check_performed": false
+    },
+    {
+      "id": "F074",
+      "location_id": null,
+      "claim": "The 2023 academic road log records a public-road corridor from the falls via Barrett Road across Bagley to North Quarry and an approximately 2.3-mile Bagley segment toward I-71.",
+      "kind": "documentary",
+      "verification_status": "Verified",
+      "reviewed_on": "2026-11-11",
+      "evidence": [
+        {
+          "source_id": "S32",
+          "locator": "Printed p.24, road-log relative readings and reverse segment"
+        }
+      ],
+      "availability": {
+        "scope": "precise published documentary claim only; no field verification or future guarantee",
+        "public_viewpoint": null,
+        "current_physical_visibility_confirmed": false
+      },
+      "eligible_as_essential_reference": false,
+      "eligible_as_essential_physical_clue": false,
+      "uncertainty": "Source has an inconsistent cumulative value beside the falls entry. Use relative segment ranges only, not a precision survey or live traffic/closure assertion.",
       "physical_check_performed": false
     }
   ]

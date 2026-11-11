@@ -1,5 +1,12 @@
 # DEVELOPMENT SPOILERS — verification and feasibility audit
 
+**Current status update — 2026-11-11:** phase 3 is Complete for the narrowed
+L00 → L01 → L05 reference-led route. See [feasibility closure](feasibility-closure.md)
+and the current [route](route.md). The earlier conditional shortlist/audit below
+is retained as research history; its former B02/B04 blockers and municipal-lot
+staging are superseded by that explicit redesign. Original physical-clue and
+path classifications remain unchanged. No field verification is claimed.
+
 Reviewed **2026-11-11**. Phase 2: **Complete**. Phase 3: **In progress**.
 No player action is pending; route estimates are ChatGPT-owned research.
 Read with [`facts.json`](facts.json), [`locations.md`](locations.md) and

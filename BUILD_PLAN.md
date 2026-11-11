@@ -28,8 +28,8 @@ Allowed statuses: **Not started**, **In progress**, **Blocked**, **Complete**. M
 | --- | --- | --- | --- | --- |
 | 1 | Requirements handoff and decision record | Existing discovery brief | Complete | Interview was already complete; [requirements](docs/requirements.md) and [practical decisions](docs/decisions.md) now preserve its handoff (2026-11-11). |
 | 2 | Researched location shortlist | Phase 1 | Complete | Conditional shortlist, 28 remote sources plus user clarification, 34 classified claim/plan records and asset-rights review; see [spoiler-free research readiness](docs/research-readiness.md) (2026-11-11). |
-| 3 | Verified clue inventory and feasible route | Phase 2 | In progress | No player action pending. Start resolved; ordinary parking availability accepted under D13, retiring B03 as a separate approval gate. ChatGPT owns remaining short-walk/travel estimates (B02/B04). [Coverage and ownership](docs/research-readiness.md) (2026-11-11). |
-| 4 | Coherent story and puzzle architecture | Phase 3 | Blocked | Current main recovered and prerequisites reviewed. Phases 1/2 are Complete; phase 3 remains In progress on ChatGPT-owned B02/B04 route estimates. See [phase 4 readiness](docs/phase-4-readiness.md). No player decision or repeated discovery is needed. |
+| 3 | Verified clue inventory and feasible route | Phase 2 | Complete | Source-based route estimates and explicit reference-led/short-walk redesign close B02/B04; actual parking restriction handled. [Spoiler-free readiness](docs/research-readiness.md), concealed feasibility closure (2026-11-11). No field test claimed. |
+| 4 | Coherent story and puzzle architecture | Phase 3 | Complete | Actual concealed story/puzzle blueprint, content/state schema, mobile/offline flows and delegated decisions delivered; 1,024 modeled paths, eight solution models and eighteen negative mutations pass. [Spoiler-free handoff](docs/phase-4-readiness.md) (2026-11-11). |
 | 5 | Complete, validated adventure content | Phase 4 | Not started | — |
 | 6 | Working mobile game application | Phase 5 | Not started | — |
 | 7 | Tested and refined release candidate | Phase 6 | Not started | — |
@@ -403,3 +403,26 @@ research; no further disclosure approval or default-branch merge is requested.
 - **Remaining action:** finish ChatGPT-owned B02/B04 walking/driving estimates in the existing phase 3 records; validate the route and update phase 3's tracker. Then execute the actual phase 4 deliverables under `docs/development-spoilers/design/`, preserving the confirmed brief and delegated creative authority. No player action is pending.
 - **Checks:** current-main history and all existing phase statuses reviewed; local document links, required records, phase-status consistency and scoped diff/whitespace checks. No new source, route, device, game, field or deployment verification claimed.
 - **Delivery:** `codex/phase-4-architecture`; this entry is included in the correction commit on that branch. Default-branch merge remains outside this request.
+
+
+### 2026-11-11 — prerequisite closure before phase 4 implementation
+
+- **Phase/status:** phase 3 Complete for the narrowed reference-led route; phase 4 In progress. This supersedes the earlier phase 3 B02/B04 and phase 4 Blocked verdicts.
+- **Scope:** user renewed the phase 4 request after the correction-only merge; close the specifically identified researcher-owned prerequisite before dependent design. No discovery or confirmed practical requirement changed.
+- **Evidence:** 34 sources, 39 classified records, six location records and six unchanged Verified essential documentary inputs. Travel estimates have source/method/allowance records; chosen optional-walk bounds are explicitly distinguished from measured feature distances. An actual published restriction is handled through revised staging. All prior factual classifications remain intact; no essential physical observation introduced.
+- **Files:** concealed research facts, locations, route, verification and feasibility closure; prior route retained as an archive; development decision record; public research and phase 4 readiness; this tracker.
+- **Checks:** unique/reference IDs, exact classification counts, Verified-only essential references, zero asserted field checks/essential physical observations, 180-minute planning arithmetic, and whitespace. Browser/API/map-image attempts did not produce measurements and are recorded as limitations, not successful evidence.
+- **Remaining limits:** no field/device/playthrough test or future-condition guarantee; final assets, app and release checks remain later phases. No player action pending.
+- **Delivery:** same `codex/phase-4-architecture` branch; prerequisite closure committed separately before the substantive architecture commit. No default-branch merge.
+
+### 2026-11-11 — phase 4 implementation and completion
+
+- **Phase/status:** 4 Complete; phase 5 now eligible. This is the substantive implementation, distinct from the earlier correction-only commit `558f356`.
+- **Base/prerequisites:** current main `1c0830b`; specifically identified phase 3 closure completed first in `7679991`. Confirmed brief, all existing factual classifications and delegated creative authority preserved.
+- **Delivered files:** three required concealed design documents (`story-and-puzzles.md`, `content-model.md`, `experience.md`); structured `blueprint.json`; separate ND design decisions; `scripts/validate_design.py`; detailed concealed `testing/design-results.md`; spoiler-free phase 4 readiness and this tracker. No runtime placeholder corpus or app is represented as finished.
+- **Design coverage:** complete case/chronology and fair final deduction; chapter/evidence/location dependencies; eight full puzzle specifications with alternatives, three hints, explained reveal, reference continuation and rewards; exact brief final-answer contract; versioned content/state schema; one-phone working aids, relevant-evidence surfacing, safe travel, complete offline preparation, resume/restart and concise ending/optional explanation.
+- **Checks actually performed:** `python3 scripts/validate_design.py --self-test` passes record/eligibility/graph checks, 1,024 modeled completion routes, eight solution models, unique final/roster and eighteen rejected invalid mutations. The single 180-minute budget and approximate interaction mix reconcile. Pre-existing parsed fact records were compared with current-main research and remain unchanged; local Markdown links, public spoiler concealment, specified palette contrast and scoped whitespace checks pass.
+- **Limits:** design consistency and author's desk review only; no independent human difficulty/timing, field walkthrough, iPhone/browser app execution, offline relaunch or deployment result claimed. Source-based route ranges and puzzle timing remain estimates. Final assets, corpus and engine are later work.
+- **User decisions:** no new discovery or spoiler approval requested; no player scouting/testing obligation introduced. No material confirmed requirement changed.
+- **Next eligible phase:** 5 — author and validate the complete corpus/original assets and offline resource inventory under this design. Stop after phase 4; no phase 5 placeholder implementation added.
+- **Delivery:** same `codex/phase-4-architecture` feature branch; architecture commit is the revision containing this completion record, following prerequisite commit `7679991`. Push the feature branch; no default-branch merge.

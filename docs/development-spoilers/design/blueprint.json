@@ -1,0 +1,1298 @@
+{
+  "schema_version": 1,
+  "artifact_type": "phase_4_design",
+  "adventure_id": "berea-case-01",
+  "status": "design_complete",
+  "runtime_content_complete": false,
+  "application_implemented": false,
+  "research_path": "docs/development-spoilers/research/facts.json",
+  "requirements_path": "docs/requirements.md",
+  "contracts": {
+    "single_phone": true,
+    "offline_all_chapters_required": true,
+    "audio_allowed": false,
+    "paper_required": false,
+    "arrival_proof_required": false,
+    "hints_delayed": false,
+    "assistance_blocks_completion": false,
+    "reveal_confirmation_required": true,
+    "completion_idempotent": true,
+    "reference_reveals_answer": false,
+    "show_relevant_evidence": true,
+    "final_submission_field_count": 2
+  },
+  "pacing": {
+    "puzzle_minutes": 72,
+    "travel_minutes": 30,
+    "optional_observation_minutes": 20,
+    "reading_and_transitions_minutes": 35,
+    "ending_minutes": 8,
+    "contingency_minutes": 15,
+    "total_minutes": 180,
+    "manipulation_minutes": 18,
+    "winter_observation_cutoff": "16:30",
+    "classification": "untimed_design_estimate"
+  },
+  "route": {
+    "location_ids": [
+      "L00",
+      "L01",
+      "L05"
+    ],
+    "required_return_to_start": false,
+    "essential_physical_fact_ids": [],
+    "documentary_fact_ids": [
+      "F011",
+      "F021",
+      "F031",
+      "F032",
+      "F043",
+      "F050"
+    ],
+    "navigation_fact_ids": [
+      "F001",
+      "F002",
+      "F003",
+      "F004",
+      "F010",
+      "F013",
+      "F060",
+      "F070",
+      "F071",
+      "F072"
+    ],
+    "restriction_fact_ids": [
+      "F073"
+    ],
+    "feasibility_record": "docs/development-spoilers/research/feasibility-closure.md",
+    "legs": [
+      {
+        "id": "TR01",
+        "after_puzzle_id": "P01",
+        "from": "L00",
+        "to": "L01",
+        "estimate_miles": [
+          3.0,
+          4.0
+        ],
+        "allocated_minutes": 20,
+        "requires_confirmation": true
+      },
+      {
+        "id": "TR02",
+        "after_puzzle_id": "P03",
+        "from": "L01",
+        "to": "L05",
+        "estimate_miles": [
+          1.2,
+          1.6
+        ],
+        "allocated_minutes": 10,
+        "requires_confirmation": true
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "id": "CH00",
+      "location_id": "L00",
+      "puzzle_ids": [
+        "P01"
+      ],
+      "prerequisite_puzzle_ids": []
+    },
+    {
+      "id": "CH01",
+      "location_id": "L01",
+      "puzzle_ids": [
+        "P02",
+        "P03"
+      ],
+      "prerequisite_puzzle_ids": [
+        "P01"
+      ]
+    },
+    {
+      "id": "CH02",
+      "location_id": "L05",
+      "puzzle_ids": [
+        "P04",
+        "P05"
+      ],
+      "prerequisite_puzzle_ids": [
+        "P03"
+      ]
+    },
+    {
+      "id": "CH03",
+      "location_id": "L05",
+      "puzzle_ids": [
+        "P06",
+        "P07"
+      ],
+      "prerequisite_puzzle_ids": [
+        "P05"
+      ]
+    },
+    {
+      "id": "CH04",
+      "location_id": "L05",
+      "puzzle_ids": [
+        "P08"
+      ],
+      "prerequisite_puzzle_ids": [
+        "P07"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E00",
+      "title": "Case brief",
+      "classification": "fictional",
+      "supports_from": [],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E01",
+      "title": "Completed receipts",
+      "classification": "fictional",
+      "supports_from": [],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E02",
+      "title": "First research confirmation",
+      "classification": "mixed_separated",
+      "supports_from": [],
+      "fact_ids": [
+        "F010",
+        "F013"
+      ],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E03",
+      "title": "Causal reference and fictional bench profiles",
+      "classification": "mixed_separated",
+      "supports_from": [],
+      "fact_ids": [
+        "F011"
+      ],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E04",
+      "title": "Mechanism conclusion",
+      "classification": "fictional",
+      "supports_from": [
+        "E03"
+      ],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E05",
+      "title": "Cipher protocol and reference selectors",
+      "classification": "fictional",
+      "supports_from": [],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E06",
+      "title": "Decoded descriptor",
+      "classification": "fictional",
+      "supports_from": [
+        "E04",
+        "E05"
+      ],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E07",
+      "title": "Northern public approach confirmation",
+      "classification": "mixed_separated",
+      "supports_from": [
+        "E06"
+      ],
+      "fact_ids": [
+        "F021",
+        "F070",
+        "F071"
+      ],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E08",
+      "title": "Transformation reference and private inventory",
+      "classification": "mixed_separated",
+      "supports_from": [],
+      "fact_ids": [
+        "F021",
+        "F043"
+      ],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E09",
+      "title": "Restored paired identity",
+      "classification": "fictional",
+      "supports_from": [
+        "E08"
+      ],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E10",
+      "title": "Commission and provenance references",
+      "classification": "mixed_separated",
+      "supports_from": [],
+      "fact_ids": [
+        "F031",
+        "F032",
+        "F050"
+      ],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E11",
+      "title": "Modern ownership and approved receiver",
+      "classification": "fictional",
+      "supports_from": [
+        "E09",
+        "E10"
+      ],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E12",
+      "title": "Calibrated service log",
+      "classification": "fictional",
+      "supports_from": [],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E13",
+      "title": "First-diversion bounds",
+      "classification": "fictional",
+      "supports_from": [
+        "E12"
+      ],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E14",
+      "title": "Reliable roster records",
+      "classification": "fictional",
+      "supports_from": [],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E15",
+      "title": "Reconstructed roster",
+      "classification": "fictional",
+      "supports_from": [
+        "E14"
+      ],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E16",
+      "title": "Certified authority and order packet",
+      "classification": "fictional",
+      "supports_from": [],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    },
+    {
+      "id": "E17",
+      "title": "Resolution and optional full explanation",
+      "classification": "fictional",
+      "supports_from": [
+        "E04",
+        "E09",
+        "E11",
+        "E13",
+        "E15",
+        "E16"
+      ],
+      "fact_ids": [],
+      "required_offline": true,
+      "text_equivalent_required": true
+    }
+  ],
+  "puzzles": [
+    {
+      "id": "P01",
+      "chapter_id": "CH00",
+      "location_id": "L00",
+      "prerequisite_puzzle_ids": [],
+      "entry_evidence_ids": [
+        "E00",
+        "E01"
+      ],
+      "required_evidence_ids": [
+        "E00",
+        "E01"
+      ],
+      "surfaced_evidence_ids": [
+        "E00",
+        "E01"
+      ],
+      "essential_fact_ids": [],
+      "required_physical_fact_ids": [],
+      "required_asset_ids": [],
+      "answer_type": "reference_id",
+      "canonical_answer": "R1",
+      "accepted_aliases": [
+        "r-1",
+        "reference 1"
+      ],
+      "alternative_eliminations": [
+        "K8 is intermediate, not terminal.",
+        "R9 has a different job ID."
+      ],
+      "hints": [
+        "Track stable job IDs, not the order of paper fragments.",
+        "Keep the LC17 and LC71 receipt chains separate.",
+        "Start LC17 at H0 and follow each completed handoff through K8."
+      ],
+      "reveal_explanation": "LC17 follows H0 to J2 to K8 to R1; R9 belongs to LC71. R1 is the terminal research reference, confirming the exact first destination before travel.",
+      "completion_routes": {
+        "correct": [
+          "E02"
+        ],
+        "reveal": [
+          "E02"
+        ]
+      },
+      "unlocks_puzzle_ids": [
+        "P02"
+      ],
+      "reference_route": {
+        "evidence_ids": [
+          "E00",
+          "E01"
+        ],
+        "requires_visit": false,
+        "requires_network": false,
+        "requires_image": false,
+        "reveals_answer": false,
+        "completes_puzzle": false,
+        "optional_observation_choice": false
+      },
+      "target_minutes": 6,
+      "manipulation_minutes": 0,
+      "working_aid": "receipt_comparison",
+      "narrative_purpose": "Establish trustworthy chain tracing and unlock the first setting.",
+      "testing_status": "automated_design_checks_only",
+      "human_playtest_performed": false
+    },
+    {
+      "id": "P02",
+      "chapter_id": "CH01",
+      "location_id": "L01",
+      "prerequisite_puzzle_ids": [
+        "P01"
+      ],
+      "entry_evidence_ids": [
+        "E03"
+      ],
+      "required_evidence_ids": [
+        "E02",
+        "E03"
+      ],
+      "surfaced_evidence_ids": [
+        "E02",
+        "E03"
+      ],
+      "essential_fact_ids": [
+        "F011"
+      ],
+      "required_physical_fact_ids": [],
+      "required_asset_ids": [
+        "A02"
+      ],
+      "answer_type": "sequence_and_text",
+      "canonical_answer": {
+        "sequence": [
+          "shale_erodes",
+          "support_lost",
+          "sandstone_breaks"
+        ],
+        "mechanism": "support withdrawal"
+      },
+      "accepted_aliases": [
+        "support removal",
+        "cradle removal",
+        "removed support"
+      ],
+      "alternative_eliminations": [
+        "Impact fails the seal and contact-trace observations.",
+        "Water fails the trace and retained-cradle observations."
+      ],
+      "hints": [
+        "Order the natural process by its stated causes, using the supplied reference.",
+        "Compare all three case observations against each controlled bench profile.",
+        "The lower-support profile preserves the outer seal and removes the cradle."
+      ],
+      "reveal_explanation": "The reference orders shale erosion before loss of support before breakaway. Only the support-withdrawal bench test matches an intact seal, lower contact trace and removed cradle. This uses fictional controlled tests, not an inferred real forensic law.",
+      "completion_routes": {
+        "correct": [
+          "E04"
+        ],
+        "reveal": [
+          "E04"
+        ]
+      },
+      "unlocks_puzzle_ids": [
+        "P03"
+      ],
+      "reference_route": {
+        "evidence_ids": [
+          "E03"
+        ],
+        "requires_visit": false,
+        "requires_network": false,
+        "requires_image": false,
+        "reveals_answer": false,
+        "completes_puzzle": false,
+        "optional_observation_choice": true
+      },
+      "target_minutes": 10,
+      "manipulation_minutes": 6,
+      "working_aid": "causal_cards_and_profile_selector",
+      "narrative_purpose": "Distinguish deliberate internal support removal from an apparent handling accident.",
+      "testing_status": "automated_design_checks_only",
+      "human_playtest_performed": false
+    },
+    {
+      "id": "P03",
+      "chapter_id": "CH01",
+      "location_id": "L01",
+      "prerequisite_puzzle_ids": [
+        "P02"
+      ],
+      "entry_evidence_ids": [
+        "E05"
+      ],
+      "required_evidence_ids": [
+        "E04",
+        "E05"
+      ],
+      "surfaced_evidence_ids": [
+        "E04",
+        "E05"
+      ],
+      "essential_fact_ids": [
+        "F011",
+        "F021"
+      ],
+      "required_physical_fact_ids": [],
+      "required_asset_ids": [
+        "A02"
+      ],
+      "answer_type": "text",
+      "canonical_answer": "SHALLOW",
+      "accepted_aliases": [],
+      "alternative_eliminations": [
+        "Column-first decoding contradicts the explicit protocol.",
+        "An isolated basin and a relocated object do not match the decoded connecting-feature descriptor."
+      ],
+      "hints": [
+        "Use the foundation material named in the certified reference as the instructed key.",
+        "Deduplicate SHALE, append unused letters without J, fill by rows, and read row then column.",
+        "The first pairs read SH; use the resulting descriptor to select the matching reference and its northern access."
+      ],
+      "reveal_explanation": "SHALE yields SHALE/BCDFG/IKMNO/PQRTU/VWXYZ. Pairs 11 12 13 14 14 35 52 decode SHALLOW. The shallower-link reference describes joined former quarries; its northern public approach is then confirmed by the operator destination record.",
+      "completion_routes": {
+        "correct": [
+          "E06",
+          "E07"
+        ],
+        "reveal": [
+          "E06",
+          "E07"
+        ]
+      },
+      "unlocks_puzzle_ids": [
+        "P04"
+      ],
+      "reference_route": {
+        "evidence_ids": [
+          "E05"
+        ],
+        "requires_visit": false,
+        "requires_network": false,
+        "requires_image": false,
+        "reveals_answer": false,
+        "completes_puzzle": false,
+        "optional_observation_choice": false
+      },
+      "target_minutes": 9,
+      "manipulation_minutes": 0,
+      "working_aid": "local_polybius_grid",
+      "narrative_purpose": "Decode a justified message and deduce the next reference/destination without local knowledge.",
+      "testing_status": "automated_design_checks_only",
+      "human_playtest_performed": false
+    },
+    {
+      "id": "P04",
+      "chapter_id": "CH02",
+      "location_id": "L05",
+      "prerequisite_puzzle_ids": [
+        "P03"
+      ],
+      "entry_evidence_ids": [
+        "E08"
+      ],
+      "required_evidence_ids": [
+        "E07",
+        "E08"
+      ],
+      "surfaced_evidence_ids": [
+        "E07",
+        "E08"
+      ],
+      "essential_fact_ids": [
+        "F021",
+        "F043"
+      ],
+      "required_physical_fact_ids": [],
+      "required_asset_ids": [
+        "A03"
+      ],
+      "answer_type": "unordered_id_pair",
+      "canonical_answer": [
+        "K4",
+        "M7"
+      ],
+      "accepted_aliases": [],
+      "alternative_eliminations": [
+        "Selecting one serial loses a distinct original record.",
+        "T9 and R2 fail explicit retrieval criteria."
+      ],
+      "hints": [
+        "A later shared location alias does not erase original identities.",
+        "Retain the original group/serial joins and apply owner, kind and batch together.",
+        "Each old group has one B17 relief panel for Lark Workshop; exclude the other owner and packing material."
+      ],
+      "reveal_explanation": "The documentary two-to-one transformation motivates preserving pre-merge identity. Fictional group A contributes K4 and group B M7: both are Lark Workshop B17 relief panels. T9 has another owner/kind; R2 is packing. A single panel is incomplete and extra IDs fail the retrieval instruction.",
+      "completion_routes": {
+        "correct": [
+          "E09"
+        ],
+        "reveal": [
+          "E09"
+        ]
+      },
+      "unlocks_puzzle_ids": [
+        "P05"
+      ],
+      "reference_route": {
+        "evidence_ids": [
+          "E08"
+        ],
+        "requires_visit": false,
+        "requires_network": false,
+        "requires_image": false,
+        "reveals_answer": false,
+        "completes_puzzle": false,
+        "optional_observation_choice": true
+      },
+      "target_minutes": 10,
+      "manipulation_minutes": 8,
+      "working_aid": "before_after_reconciliation",
+      "narrative_purpose": "Restore the two-panel payload needed to follow the diverted shipment.",
+      "testing_status": "automated_design_checks_only",
+      "human_playtest_performed": false
+    },
+    {
+      "id": "P05",
+      "chapter_id": "CH02",
+      "location_id": "L05",
+      "prerequisite_puzzle_ids": [
+        "P04"
+      ],
+      "entry_evidence_ids": [
+        "E10"
+      ],
+      "required_evidence_ids": [
+        "E09",
+        "E10"
+      ],
+      "surfaced_evidence_ids": [
+        "E09",
+        "E10"
+      ],
+      "essential_fact_ids": [
+        "F031",
+        "F032",
+        "F050"
+      ],
+      "required_physical_fact_ids": [],
+      "required_asset_ids": [
+        "A04",
+        "A05"
+      ],
+      "answer_type": "text",
+      "canonical_answer": "modern commission",
+      "accepted_aliases": [
+        "new commission",
+        "contemporary commission",
+        "newly commissioned panels"
+      ],
+      "alternative_eliminations": [
+        "Historic salvage is an unverified proposal claim, not a certified fact.",
+        "Unknown ignores the exact serial-linked new commission."
+      ],
+      "hints": [
+        "Separate the age of a material from manufacture of this particular object.",
+        "Match the recovered serials to the signed new-commission invoice.",
+        "A copied historic origin label cannot override the specific recent commission or establish its present owner."
+      ],
+      "reveal_explanation": "The signed LC17/B17 commission identifies K4 and M7 as newly made for Lark Workshop. Historic sandstone uses and the unrelated relocated-bell record cannot date these panels or turn them into civic salvage. Only Lark Workshop is the approved receiver in the supplied case authorization.",
+      "completion_routes": {
+        "correct": [
+          "E11"
+        ],
+        "reveal": [
+          "E11"
+        ]
+      },
+      "unlocks_puzzle_ids": [
+        "P06"
+      ],
+      "reference_route": {
+        "evidence_ids": [
+          "E10"
+        ],
+        "requires_visit": false,
+        "requires_network": false,
+        "requires_image": false,
+        "reveals_answer": false,
+        "completes_puzzle": false,
+        "optional_observation_choice": false
+      },
+      "target_minutes": 9,
+      "manipulation_minutes": 0,
+      "working_aid": "document_compare",
+      "narrative_purpose": "Establish modern identity, owner and the false-provenance sale intention.",
+      "testing_status": "automated_design_checks_only",
+      "human_playtest_performed": false
+    },
+    {
+      "id": "P06",
+      "chapter_id": "CH03",
+      "location_id": "L05",
+      "prerequisite_puzzle_ids": [
+        "P05"
+      ],
+      "entry_evidence_ids": [
+        "E12"
+      ],
+      "required_evidence_ids": [
+        "E04",
+        "E09",
+        "E12"
+      ],
+      "surfaced_evidence_ids": [
+        "E04",
+        "E09",
+        "E12"
+      ],
+      "essential_fact_ids": [],
+      "required_physical_fact_ids": [],
+      "required_asset_ids": [],
+      "answer_type": "time_bounds",
+      "canonical_answer": [
+        "15:02",
+        "15:10"
+      ],
+      "accepted_aliases": [],
+      "alternative_eliminations": [
+        "The raw service readings are not case time.",
+        "A single exact minute is not supported."
+      ],
+      "hints": [
+        "The same calibrated service clock supplies both entries.",
+        "A fast service clock reads four minutes later than case time.",
+        "Subtract four minutes from 15:06 and 15:14; the act lies after the first and by the second."
+      ],
+      "reveal_explanation": "15:06 service time becomes 15:02 case time; 15:14 becomes 15:10. The first diversion is after the last intact observation and by the first diverted one. No exact minute is established.",
+      "completion_routes": {
+        "correct": [
+          "E13"
+        ],
+        "reveal": [
+          "E13"
+        ]
+      },
+      "unlocks_puzzle_ids": [
+        "P07"
+      ],
+      "reference_route": {
+        "evidence_ids": [
+          "E12"
+        ],
+        "requires_visit": false,
+        "requires_network": false,
+        "requires_image": false,
+        "reveals_answer": false,
+        "completes_puzzle": false,
+        "optional_observation_choice": false
+      },
+      "target_minutes": 9,
+      "manipulation_minutes": 0,
+      "working_aid": "time_comparison",
+      "narrative_purpose": "Bound the earlier act separately from later transport activity.",
+      "testing_status": "automated_design_checks_only",
+      "human_playtest_performed": false,
+      "time_bounds": {
+        "lower_inclusive": false,
+        "upper_inclusive": true,
+        "accepted_forms": [
+          "24_hour_pair",
+          "explicit_pm_pair",
+          "shared_trailing_pm"
+        ]
+      }
+    },
+    {
+      "id": "P07",
+      "chapter_id": "CH03",
+      "location_id": "L05",
+      "prerequisite_puzzle_ids": [
+        "P06"
+      ],
+      "entry_evidence_ids": [
+        "E14"
+      ],
+      "required_evidence_ids": [
+        "E11",
+        "E14"
+      ],
+      "surfaced_evidence_ids": [
+        "E11",
+        "E14"
+      ],
+      "essential_fact_ids": [],
+      "required_physical_fact_ids": [],
+      "required_asset_ids": [],
+      "answer_type": "bijection",
+      "canonical_answer": {
+        "Nadia Hart": "C4",
+        "Luca Bellamy": "A7",
+        "Quinn Arden": "B2",
+        "Samir Cole": "D9"
+      },
+      "accepted_aliases": [],
+      "alternative_eliminations": [
+        "Any swapped badge violates a signed constraint or one-to-one role assignment."
+      ],
+      "hints": [
+        "Start with the explicit checkout and courier records.",
+        "Use Luca's exclusions and the cataloguer badge, keeping roles one-to-one.",
+        "Nadia/C4 and Samir/D9 fix two rows; Luca/A7 leaves Quinn/B2."
+      ],
+      "reveal_explanation": "Nadia is the conservator with C4. Samir is courier with D9. Luca cannot be courier or dispatcher, so is cataloguer with A7. The remaining person Quinn is dispatcher with B2. The complete unique roster unlocks the authority/order packet for final interpretation.",
+      "completion_routes": {
+        "correct": [
+          "E15",
+          "E16"
+        ],
+        "reveal": [
+          "E15",
+          "E16"
+        ]
+      },
+      "unlocks_puzzle_ids": [
+        "P08"
+      ],
+      "reference_route": {
+        "evidence_ids": [
+          "E14"
+        ],
+        "requires_visit": false,
+        "requires_network": false,
+        "requires_image": false,
+        "reveals_answer": false,
+        "completes_puzzle": false,
+        "optional_observation_choice": false
+      },
+      "target_minutes": 10,
+      "manipulation_minutes": 4,
+      "working_aid": "four_row_roster",
+      "narrative_purpose": "Link neutral badge IDs to people without selecting the actor prematurely.",
+      "testing_status": "automated_design_checks_only",
+      "human_playtest_performed": false
+    },
+    {
+      "id": "P08",
+      "chapter_id": "CH04",
+      "location_id": "L05",
+      "prerequisite_puzzle_ids": [
+        "P07"
+      ],
+      "entry_evidence_ids": [],
+      "required_evidence_ids": [
+        "E04",
+        "E09",
+        "E11",
+        "E13",
+        "E15",
+        "E16"
+      ],
+      "surfaced_evidence_ids": [
+        "E04",
+        "E09",
+        "E11",
+        "E13",
+        "E15",
+        "E16"
+      ],
+      "essential_fact_ids": [],
+      "required_physical_fact_ids": [],
+      "required_asset_ids": [],
+      "answer_type": "final_pair",
+      "canonical_answer": {
+        "actor": "Quinn Arden",
+        "order": "O43"
+      },
+      "accepted_aliases": {
+        "actor": [
+          "Quinn"
+        ],
+        "order": [
+          "O-43",
+          "order 43",
+          "43"
+        ]
+      },
+      "alternative_eliminations": [
+        "O18 retains the authorized receiver.",
+        "O26 is after the first-diversion upper bound.",
+        "O57 has T9 instead of M7 and lacks relevant authority."
+      ],
+      "hints": [
+        "Combine the actual pair and approved receiver with the opportunity record, not the proposed historic label.",
+        "Compare the corrected first-diversion interval and both required permissions with the candidate orders.",
+        "Join the one fitting order's badge to the reconstructed roster; the later courier handoff cannot cause an earlier diversion."
+      ],
+      "reveal_explanation": "O43 alone has K4/M7, an unapproved Gannet receiver, issue time 15:06 within (15:02,15:10], and repack/redirect authority B2. B2 belongs to Quinn Arden. O18 retains the owner, O26 is too late, O57 has the wrong payload and authority. This identifies the first diversion; a later courier record alone does not establish that earlier act.",
+      "completion_routes": {
+        "correct": [
+          "E17"
+        ],
+        "reveal": [
+          "E17"
+        ]
+      },
+      "unlocks_puzzle_ids": [],
+      "reference_route": {
+        "evidence_ids": [],
+        "requires_visit": false,
+        "requires_network": false,
+        "requires_image": false,
+        "reveals_answer": false,
+        "completes_puzzle": false,
+        "optional_observation_choice": false
+      },
+      "target_minutes": 9,
+      "manipulation_minutes": 0,
+      "working_aid": "two_field_final",
+      "narrative_purpose": "Combine mechanism, payload, provenance, time and identity in one brief deliberate finding.",
+      "testing_status": "automated_design_checks_only",
+      "human_playtest_performed": false,
+      "final_contract": {
+        "atomic_pair_validation": true,
+        "per_field_correctness_feedback": false,
+        "external_submission": false,
+        "optional_full_explanation": true
+      }
+    }
+  ],
+  "asset_specs": [
+    {
+      "id": "A02",
+      "classification": "authored_reference",
+      "fact_ids": [
+        "F011"
+      ],
+      "required_offline": true,
+      "image_essential": false,
+      "text_equivalent_required": true,
+      "authoring_status": "phase_5_required"
+    },
+    {
+      "id": "A03",
+      "classification": "authored_reference",
+      "fact_ids": [
+        "F021",
+        "F043"
+      ],
+      "required_offline": true,
+      "image_essential": false,
+      "text_equivalent_required": true,
+      "authoring_status": "phase_5_required"
+    },
+    {
+      "id": "A04",
+      "classification": "authored_reference",
+      "fact_ids": [
+        "F031",
+        "F032"
+      ],
+      "required_offline": true,
+      "image_essential": false,
+      "text_equivalent_required": true,
+      "authoring_status": "phase_5_required"
+    },
+    {
+      "id": "A05",
+      "classification": "authored_reference",
+      "fact_ids": [
+        "F050"
+      ],
+      "required_offline": true,
+      "image_essential": false,
+      "text_equivalent_required": true,
+      "authoring_status": "phase_5_required"
+    }
+  ],
+  "solution_models": {
+    "receipt_chain": {
+      "job": "LC17",
+      "root": "H0",
+      "edges": [
+        {
+          "job": "LC17",
+          "from": "K8",
+          "to": "R1"
+        },
+        {
+          "job": "LC71",
+          "from": "K8",
+          "to": "R9"
+        },
+        {
+          "job": "LC17",
+          "from": "H0",
+          "to": "J2"
+        },
+        {
+          "job": "LC17",
+          "from": "J2",
+          "to": "K8"
+        }
+      ]
+    },
+    "causal_process": {
+      "events": [
+        "shale_erodes",
+        "support_lost",
+        "sandstone_breaks"
+      ],
+      "before": [
+        [
+          "shale_erodes",
+          "support_lost"
+        ],
+        [
+          "support_lost",
+          "sandstone_breaks"
+        ]
+      ],
+      "case_observations": {
+        "seal": "intact",
+        "trace": "lower",
+        "cradle": "removed"
+      },
+      "bench_profiles": [
+        {
+          "mechanism": "impact",
+          "seal": "broken",
+          "trace": "upper",
+          "cradle": "retained"
+        },
+        {
+          "mechanism": "water",
+          "seal": "intact",
+          "trace": "stain",
+          "cradle": "retained"
+        },
+        {
+          "mechanism": "support withdrawal",
+          "seal": "intact",
+          "trace": "lower",
+          "cradle": "removed"
+        }
+      ]
+    },
+    "cipher": {
+      "keyword": "SHALE",
+      "alphabet": "ABCDEFGHIKLMNOPQRSTUVWXYZ",
+      "coordinate_order": "row_column",
+      "pairs": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "14",
+        "35",
+        "52"
+      ],
+      "selector_records": [
+        {
+          "id": "REF-A",
+          "connecting_feature": "none",
+          "destination_id": null
+        },
+        {
+          "id": "REF-B",
+          "connecting_feature": "SHALLOW",
+          "destination_id": "L05",
+          "access": "northern_public_approach"
+        },
+        {
+          "id": "REF-C",
+          "connecting_feature": "relocated_object",
+          "destination_id": null
+        }
+      ]
+    },
+    "identity_merge": {
+      "groups_before": [
+        "A",
+        "B"
+      ],
+      "shared_alias_after": "LAKE",
+      "retain_original_keys": true,
+      "criteria": {
+        "owner": "Lark Workshop",
+        "kind": "relief",
+        "batch": "B17"
+      },
+      "inventory": [
+        {
+          "group": "A",
+          "serial": "K4",
+          "owner": "Lark Workshop",
+          "kind": "relief",
+          "batch": "B17"
+        },
+        {
+          "group": "A",
+          "serial": "T9",
+          "owner": "Other studio",
+          "kind": "sample",
+          "batch": "S8"
+        },
+        {
+          "group": "B",
+          "serial": "M7",
+          "owner": "Lark Workshop",
+          "kind": "relief",
+          "batch": "B17"
+        },
+        {
+          "group": "B",
+          "serial": "R2",
+          "owner": "Lark Workshop",
+          "kind": "packing",
+          "batch": "B17"
+        }
+      ]
+    },
+    "provenance": {
+      "commission": {
+        "job": "LC17",
+        "batch": "B17",
+        "serials": [
+          "K4",
+          "M7"
+        ],
+        "owner": "Lark Workshop",
+        "manufacture": "new",
+        "relative_date": "two_weeks_before_case"
+      },
+      "sale_claim": {
+        "serials": [
+          "K4",
+          "M7"
+        ],
+        "claimed_origin": "historic_civic_salvage",
+        "status": "claim_under_examination"
+      },
+      "approved_receivers": [
+        "Lark Workshop"
+      ],
+      "supported_classification": "modern commission"
+    },
+    "timeline": {
+      "clock_minutes_fast": 4,
+      "last_intact_service_time": "15:06",
+      "first_diverted_service_time": "15:14",
+      "single_case_day": true,
+      "no_drift": true
+    },
+    "roster": {
+      "people": [
+        "Nadia Hart",
+        "Luca Bellamy",
+        "Quinn Arden",
+        "Samir Cole"
+      ],
+      "roles": [
+        "conservator",
+        "cataloguer",
+        "dispatcher",
+        "courier"
+      ],
+      "badges": [
+        "A7",
+        "B2",
+        "C4",
+        "D9"
+      ],
+      "constraints": {
+        "person_badge": {
+          "Nadia Hart": "C4"
+        },
+        "person_role": {
+          "Nadia Hart": "conservator",
+          "Samir Cole": "courier"
+        },
+        "role_badge": {
+          "courier": "D9",
+          "cataloguer": "A7"
+        },
+        "excluded_roles": {
+          "Luca Bellamy": [
+            "courier",
+            "dispatcher"
+          ]
+        }
+      }
+    },
+    "final": {
+      "required_permissions": [
+        "repack",
+        "redirect"
+      ],
+      "intervals": [
+        {
+          "badge": "C4",
+          "permissions": [
+            "repack"
+          ],
+          "from": "14:50",
+          "until": "15:30"
+        },
+        {
+          "badge": "A7",
+          "permissions": [
+            "catalogue_review"
+          ],
+          "from": "14:50",
+          "until": "15:30"
+        },
+        {
+          "badge": "B2",
+          "permissions": [
+            "repack",
+            "redirect"
+          ],
+          "from": "14:50",
+          "until": "15:30"
+        },
+        {
+          "badge": "D9",
+          "permissions": [
+            "repack",
+            "redirect"
+          ],
+          "from": "15:11",
+          "until": "15:30"
+        }
+      ],
+      "orders": [
+        {
+          "id": "O18",
+          "serials": [
+            "K4",
+            "M7"
+          ],
+          "receiver": "Lark Workshop",
+          "time": "15:04",
+          "badge": "C4"
+        },
+        {
+          "id": "O26",
+          "serials": [
+            "K4",
+            "M7"
+          ],
+          "receiver": "Gannet Trading",
+          "time": "15:12",
+          "badge": "D9"
+        },
+        {
+          "id": "O43",
+          "serials": [
+            "K4",
+            "M7"
+          ],
+          "receiver": "Gannet Trading",
+          "time": "15:06",
+          "badge": "B2"
+        },
+        {
+          "id": "O57",
+          "serials": [
+            "K4",
+            "T9"
+          ],
+          "receiver": "Gannet Trading",
+          "time": "15:06",
+          "badge": "A7"
+        }
+      ],
+      "closed_case_rules": {
+        "complete_relevant_records": true,
+        "individual_unshared_badges": true,
+        "no_delegation_impersonation_or_collusion": true,
+        "no_queued_delayed_or_offline_changes": true,
+        "certified_records_reliable": true,
+        "actions_take_effect_immediately": true
+      }
+    }
+  }
+}
