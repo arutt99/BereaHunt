@@ -87,5 +87,7 @@ separately. No helper or testing appointment is assumed.
    background/foreground transitions, and truthful recovery from removed files.
    Do not clear a genuine player's progress to manufacture a test.
 6. Preserve exact observations/failures, fix any defects and rerun affected checks.
-   Change D01 to Pass only with actual observations. Actual GitHub Pages-origin
-   smoke tests remain phase 8; phase 9 supplies the final experience verdict.
+   Record an expanded scenario as passed only with actual observations. D01
+   advancement is already resolved by the accepted user check; this does not
+   mark every scenario above as performed. Actual Pages-origin smoke is phase 8;
+   phase 9 supplies the final experience verdict.

@@ -226,8 +226,19 @@ also accepts `--engine webkit` when installed. They use isolated temporary
 copies, neutral failure output and no actual-player save or required external
 service. Do not publish gameplay failure snapshots.
 
-The [test plan](../testing/test-plan.md) defines the matrix and required physical
-iPhone protocol. [Readiness](../testing/readiness.md) records the open device
-blocker and precise current coverage. Linux browser geometry, doubled text,
-engine emulation or a simulated standalone flag cannot complete the required
-iPhone Safari/Home Screen lifecycle/storage/offline checks.
+The [test plan](../testing/test-plan.md) defines the matrix and expanded physical
+iPhone protocol. [Readiness](../testing/readiness.md) records the user-accepted
+preparation/offline device check and precise current coverage. The former
+advancement blocker is resolved; expanded device scenarios are not inferred as
+tested. Linux browser geometry, doubled text, engine emulation or a simulated
+standalone flag do not establish physical iPhone lifecycle/storage behavior.
+
+## Live deployment verification
+
+See [deployment](../deployment.md) for actual publication evidence, complete
+update/rollback instructions and the read-only GitHub Actions live check.
+`test_browser.py --live-url https://arutt99.github.io/BereaHunt/` validates actual
+response bytes against `--expected-site`, then runs normal/assisted offline
+completion and recovery in disposable profiles. Local mutation fixtures remain
+the evidence for changed-version/incompatible packages and waiting workers;
+never change production content or player data merely to manufacture a test.
