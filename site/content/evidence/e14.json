@@ -1,0 +1,127 @@
+{
+  "id": "E14",
+  "kind": "document",
+  "title": "Reliable roster records",
+  "classification": "fictional",
+  "bodyBlocks": [
+    {
+      "id": "roster",
+      "type": "paragraph",
+      "text": "Certified checkout and contribution records. Four people, four distinct roles and four badges are each assigned one-to-one. All four statements are reliable; no witness is lying. Reconstruct the complete name-to-badge roster.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "people",
+      "type": "table",
+      "title": "People",
+      "columns": [
+        {
+          "key": "name",
+          "label": "Name"
+        }
+      ],
+      "rows": [
+        {
+          "name": "Nadia Hart"
+        },
+        {
+          "name": "Luca Bellamy"
+        },
+        {
+          "name": "Quinn Arden"
+        },
+        {
+          "name": "Samir Cole"
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "roles",
+      "type": "table",
+      "title": "Role descriptions",
+      "columns": [
+        {
+          "key": "role",
+          "label": "Role"
+        },
+        {
+          "key": "description",
+          "label": "Responsibility"
+        }
+      ],
+      "rows": [
+        {
+          "role": "conservator",
+          "description": "Inspects and packs objects."
+        },
+        {
+          "role": "cataloguer",
+          "description": "Maintains descriptive records."
+        },
+        {
+          "role": "dispatcher",
+          "description": "Arranges order routing and handoffs."
+        },
+        {
+          "role": "courier",
+          "description": "Carries the later transfer."
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "constraints",
+      "type": "table",
+      "title": "Reliable records",
+      "columns": [
+        {
+          "key": "id",
+          "label": "Record"
+        },
+        {
+          "key": "text",
+          "label": "Statement"
+        }
+      ],
+      "rows": [
+        {
+          "id": "CR1",
+          "text": "Nadia Hart checked out C4 and was the conservator."
+        },
+        {
+          "id": "CR2",
+          "text": "Samir Cole was the courier; the courier checked out D9."
+        },
+        {
+          "id": "CR3",
+          "text": "The cataloguer checked out A7."
+        },
+        {
+          "id": "CR4",
+          "text": "Luca Bellamy was neither courier nor dispatcher."
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "badges",
+      "type": "paragraph",
+      "text": "Available badges: A7, B2, C4, D9. Assign each once. Names and role descriptions are not evidence of guilt; the certified authority and order packet follows the completed roster.",
+      "classification": "fictional",
+      "factIds": []
+    }
+  ],
+  "factIds": [],
+  "assetIds": [],
+  "textEquivalent": "Certified checkout and contribution records. Four people, four distinct roles and four badges are each assigned one-to-one. All four statements are reliable; no witness is lying. Reconstruct the complete name-to-badge roster.\n\nPeople\n\nName: Nadia Hart\n\nName: Luca Bellamy\n\nName: Quinn Arden\n\nName: Samir Cole\n\nRole descriptions\n\nRole: conservator; Responsibility: Inspects and packs objects.\n\nRole: cataloguer; Responsibility: Maintains descriptive records.\n\nRole: dispatcher; Responsibility: Arranges order routing and handoffs.\n\nRole: courier; Responsibility: Carries the later transfer.\n\nReliable records\n\nRecord: CR1; Statement: Nadia Hart checked out C4 and was the conservator.\n\nRecord: CR2; Statement: Samir Cole was the courier; the courier checked out D9.\n\nRecord: CR3; Statement: The cataloguer checked out A7.\n\nRecord: CR4; Statement: Luca Bellamy was neither courier nor dispatcher.\n\nAvailable badges: A7, B2, C4, D9. Assign each once. Names and role descriptions are not evidence of guilt; the certified authority and order packet follows the completed roster.",
+  "grantEvent": {
+    "type": "enterPuzzle",
+    "puzzleId": "P07"
+  },
+  "supportsFrom": []
+}

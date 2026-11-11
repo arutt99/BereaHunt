@@ -1,0 +1,37 @@
+{
+  "id": "E00",
+  "kind": "document",
+  "title": "Case brief",
+  "classification": "fictional",
+  "bodyBlocks": [
+    {
+      "id": "brief",
+      "type": "paragraph",
+      "text": "The Hollow Register\n\nA sandstone consignment has disappeared from a private workshop’s custody chain. The outer packing seal is intact. A sale description calls the missing consignment an old civic relic. Before that description becomes its history, find the first unauthorized redirection.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "commission",
+      "type": "paragraph",
+      "text": "Your commission: reconstruct job LC17. Begin at seal H0 and follow only completed handoffs for that exact job. Each receipt’s outgoing reference becomes the next receipt’s incoming reference. The terminal reference opens the first research file.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "boundary",
+      "type": "paragraph",
+      "text": "This is a fictional case. Lark Workshop, the people and transactions in the dossier are invented. Real venues, parks and their staff are not participants. All records marked certified are reliable within the case; a proposal marked “claim under examination” is something to test. There is no live shipment, deadline or external report.",
+      "classification": "fictional",
+      "factIds": []
+    }
+  ],
+  "factIds": [],
+  "assetIds": [],
+  "textEquivalent": "The Hollow Register\n\nA sandstone consignment has disappeared from a private workshop’s custody chain. The outer packing seal is intact. A sale description calls the missing consignment an old civic relic. Before that description becomes its history, find the first unauthorized redirection.\n\nYour commission: reconstruct job LC17. Begin at seal H0 and follow only completed handoffs for that exact job. Each receipt’s outgoing reference becomes the next receipt’s incoming reference. The terminal reference opens the first research file.\n\nThis is a fictional case. Lark Workshop, the people and transactions in the dossier are invented. Real venues, parks and their staff are not participants. All records marked certified are reliable within the case; a proposal marked “claim under examination” is something to test. There is no live shipment, deadline or external report.",
+  "grantEvent": {
+    "type": "enterPuzzle",
+    "puzzleId": "P01"
+  },
+  "supportsFrom": []
+}

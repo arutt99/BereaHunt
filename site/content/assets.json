@@ -1,0 +1,70 @@
+{
+  "assets": [
+    {
+      "id": "A02",
+      "relativePath": "assets/references/r02.svg",
+      "mimeType": "image/svg+xml",
+      "classification": "authored_reference",
+      "factIds": [
+        "F011"
+      ],
+      "sourceCredit": "Original project artwork; factual paraphrases credited in content/sources.json.",
+      "permittedUse": "Original illustration created for this project; no third-party image, logo or map copied.",
+      "textEquivalentRef": "E03#processFigure",
+      "requiredOffline": true,
+      "imageEssential": false,
+      "byteLength": 1609,
+      "sha256": "3d6e99fe73dbbf96da1245f155dac82ccdfe8d335e41438d02614a9826f96713"
+    },
+    {
+      "id": "A03",
+      "relativePath": "assets/references/r03.svg",
+      "mimeType": "image/svg+xml",
+      "classification": "authored_reference",
+      "factIds": [
+        "F021",
+        "F043"
+      ],
+      "sourceCredit": "Original project artwork; factual paraphrases credited in content/sources.json.",
+      "permittedUse": "Original illustration created for this project; no third-party image, logo or map copied.",
+      "textEquivalentRef": "E08#transformationFigure",
+      "requiredOffline": true,
+      "imageEssential": false,
+      "byteLength": 1650,
+      "sha256": "17f6752524de2ec7a311dc06e259cf950354bb689a27c7cb7eceec0151fd0e61"
+    },
+    {
+      "id": "A04",
+      "relativePath": "assets/references/r04.svg",
+      "mimeType": "image/svg+xml",
+      "classification": "authored_reference",
+      "factIds": [
+        "F031",
+        "F032"
+      ],
+      "sourceCredit": "Original project artwork; factual paraphrases credited in content/sources.json.",
+      "permittedUse": "Original illustration created for this project; no third-party image, logo or map copied.",
+      "textEquivalentRef": "E10#civicFigure",
+      "requiredOffline": true,
+      "imageEssential": false,
+      "byteLength": 1752,
+      "sha256": "d23b6c1028f21551ad7294b93afe274c0310c851845a19c20641bb048544c710"
+    },
+    {
+      "id": "A05",
+      "relativePath": "assets/references/r05.svg",
+      "mimeType": "image/svg+xml",
+      "classification": "authored_reference",
+      "factIds": [
+        "F050"
+      ],
+      "sourceCredit": "Original project artwork; factual paraphrases credited in content/sources.json.",
+      "permittedUse": "Original illustration created for this project; no third-party image, logo or map copied.",
+      "textEquivalentRef": "E10#materialFigure",
+      "requiredOffline": true,
+      "imageEssential": false,
+      "byteLength": 1500,
+      "sha256": "8ccf7d4d7e7e7639a1f91cee7616cc93d49965a0c1cd542f3ed0fa1ef9f9c4dc"
+    }
+  ]
+}

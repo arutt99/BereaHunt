@@ -1,0 +1,66 @@
+{
+  "id": "E01",
+  "kind": "document",
+  "title": "Completed receipts",
+  "classification": "fictional",
+  "bodyBlocks": [
+    {
+      "id": "intro",
+      "type": "paragraph",
+      "text": "Completed handoffs · received in mixed order. Keep job IDs separate. Every listed handoff is complete; a reference with no further matching handoff is terminal.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "receipts",
+      "type": "table",
+      "title": "Receipt register",
+      "columns": [
+        {
+          "key": "job",
+          "label": "Job"
+        },
+        {
+          "key": "from",
+          "label": "Incoming seal/reference"
+        },
+        {
+          "key": "to",
+          "label": "Outgoing reference"
+        }
+      ],
+      "rows": [
+        {
+          "job": "LC17",
+          "from": "K8",
+          "to": "R1"
+        },
+        {
+          "job": "LC71",
+          "from": "K8",
+          "to": "R9"
+        },
+        {
+          "job": "LC17",
+          "from": "H0",
+          "to": "J2"
+        },
+        {
+          "job": "LC17",
+          "from": "J2",
+          "to": "K8"
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    }
+  ],
+  "factIds": [],
+  "assetIds": [],
+  "textEquivalent": "Completed handoffs · received in mixed order. Keep job IDs separate. Every listed handoff is complete; a reference with no further matching handoff is terminal.\n\nReceipt register\n\nJob: LC17; Incoming seal/reference: K8; Outgoing reference: R1\n\nJob: LC71; Incoming seal/reference: K8; Outgoing reference: R9\n\nJob: LC17; Incoming seal/reference: H0; Outgoing reference: J2\n\nJob: LC17; Incoming seal/reference: J2; Outgoing reference: K8",
+  "grantEvent": {
+    "type": "enterPuzzle",
+    "puzzleId": "P01"
+  },
+  "supportsFrom": []
+}

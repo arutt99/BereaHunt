@@ -154,3 +154,15 @@ because they can be viewed online. No copied image is presently a dependency.
 | Access / safety / seasonal risk | Normal designated public recreation areas only; no water/ice, stream exposure, field-trip geology route, rail land, reserved facility or seasonal service dependency; ice, cold, daylight, capacity and changes remain ordinary risks |
 | Verification / sources | F070–F072 precise published claims Verified, S30/S31 reviewed 2026-11-11. No current physical clue, field walkthrough or parking-space guarantee |
 | Fallback / outstanding | Full documentary references independent of visit/visibility. Use only a lawful safe stationary position; resume elsewhere if unavailable. Actual assets and device/offline behavior remain later work |
+
+## Phase 5 asset closure — 2026-11-11
+
+Original A02–A05 illustrations and faithful text references are now authored in
+`site/assets/references/` and the E03/E08/E10 records. Their rights, fact IDs,
+text-equivalent links and actual byte sizes/hashes are in `site/content/assets.json`.
+A03 uses F021/F043; the separate A05 carries F050. No A01 or other third-party
+photo was copied or made essential, so no unperformed photo-pixel review is
+claimed. The [content review](../content-review.md) records actual asset checks.
+Earlier “author later” asset notes above are fulfilled by this closure; device,
+app and field checks remain later work. All factual classifications and source
+verification dates remain unchanged.

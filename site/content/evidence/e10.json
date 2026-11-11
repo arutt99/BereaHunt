@@ -1,0 +1,132 @@
+{
+  "id": "E10",
+  "kind": "document",
+  "title": "Commission and provenance references",
+  "classification": "mixed_separated",
+  "bodyBlocks": [
+    {
+      "id": "civic",
+      "type": "paragraph",
+      "text": "The City of Berea reports reinstalling a bell from the former City Hall at East Bridge and Seminary in McKelvey Park. It dates the park’s dedication to 27 September 1985 and rededication to 27 September 2015. These are documentary history, not a present plaque transcription or a destination instruction.",
+      "classification": "authored_reference",
+      "factIds": [
+        "F031",
+        "F032"
+      ],
+      "title": "Documentary reference · original paraphrase"
+    },
+    {
+      "id": "civicFigure",
+      "type": "figure",
+      "assetId": "A04",
+      "caption": "Documentary provenance: a bell from the former City Hall at East Bridge and Seminary was reinstalled in McKelvey Park. Park dedication: 27 September 1985; rededication: 27 September 2015. These dates do not date a privately owned sandstone panel.",
+      "classification": "authored_reference",
+      "factIds": [
+        "F031",
+        "F032"
+      ]
+    },
+    {
+      "id": "material",
+      "type": "paragraph",
+      "text": "Berea sandstone has been used for tool-sharpening grindstones and building stone. A material’s historic uses do not establish the manufacture date or ownership of a particular object.",
+      "classification": "authored_reference",
+      "factIds": [
+        "F050"
+      ],
+      "title": "Documentary reference · original paraphrase"
+    },
+    {
+      "id": "materialFigure",
+      "type": "figure",
+      "assetId": "A05",
+      "caption": "Two documented uses of Berea sandstone: tool-sharpening grindstones and building stone. This is a material-use reference, not a claim about the private panels’ manufacture date or ownership.",
+      "classification": "authored_reference",
+      "factIds": [
+        "F050"
+      ]
+    },
+    {
+      "id": "invoiceIntro",
+      "type": "paragraph",
+      "text": "Certified private commission · signed by the maker and owner, two weeks before the case day. “Newly carve the two relief panels below for Lark Workshop. These are new works, not recovered civic objects.”",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "commission",
+      "type": "table",
+      "title": "Signed commission",
+      "columns": [
+        {
+          "key": "job",
+          "label": "Job"
+        },
+        {
+          "key": "batch",
+          "label": "Batch"
+        },
+        {
+          "key": "serials",
+          "label": "Serials"
+        },
+        {
+          "key": "owner",
+          "label": "Owner"
+        },
+        {
+          "key": "manufacture",
+          "label": "Manufacture"
+        },
+        {
+          "key": "relative_date",
+          "label": "Signed"
+        }
+      ],
+      "rows": [
+        {
+          "job": "LC17",
+          "batch": "B17",
+          "serials": [
+            "K4",
+            "M7"
+          ],
+          "owner": "Lark Workshop",
+          "manufacture": "new",
+          "relative_date": "Two weeks before case day"
+        }
+      ],
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "sale",
+      "type": "paragraph",
+      "text": "Draft sale proposal · claim under examination: “K4 and M7: historic civic salvage, sandstone. Origin label: former City Hall.” Its supporting notes cite only sandstone’s older uses and a copied civic origin label. The proposal is not a certified provenance record.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "authorization",
+      "type": "paragraph",
+      "text": "Certified receiver authorization for LC17: Lark Workshop only. No permission to release the pair to another receiver has been issued. Classify the recovered pair using the evidence specific to its serials.",
+      "classification": "fictional",
+      "factIds": []
+    }
+  ],
+  "factIds": [
+    "F031",
+    "F032",
+    "F050"
+  ],
+  "assetIds": [
+    "A04",
+    "A05"
+  ],
+  "textEquivalent": "Documentary reference · original paraphrase\n\nThe City of Berea reports reinstalling a bell from the former City Hall at East Bridge and Seminary in McKelvey Park. It dates the park’s dedication to 27 September 1985 and rededication to 27 September 2015. These are documentary history, not a present plaque transcription or a destination instruction.\n\nDocumentary provenance: a bell from the former City Hall at East Bridge and Seminary was reinstalled in McKelvey Park. Park dedication: 27 September 1985; rededication: 27 September 2015. These dates do not date a privately owned sandstone panel.\n\nDocumentary reference · original paraphrase\n\nBerea sandstone has been used for tool-sharpening grindstones and building stone. A material’s historic uses do not establish the manufacture date or ownership of a particular object.\n\nTwo documented uses of Berea sandstone: tool-sharpening grindstones and building stone. This is a material-use reference, not a claim about the private panels’ manufacture date or ownership.\n\nCertified private commission · signed by the maker and owner, two weeks before the case day. “Newly carve the two relief panels below for Lark Workshop. These are new works, not recovered civic objects.”\n\nSigned commission\n\nJob: LC17; Batch: B17; Serials: K4, M7; Owner: Lark Workshop; Manufacture: new; Signed: Two weeks before case day\n\nDraft sale proposal · claim under examination: “K4 and M7: historic civic salvage, sandstone. Origin label: former City Hall.” Its supporting notes cite only sandstone’s older uses and a copied civic origin label. The proposal is not a certified provenance record.\n\nCertified receiver authorization for LC17: Lark Workshop only. No permission to release the pair to another receiver has been issued. Classify the recovered pair using the evidence specific to its serials.",
+  "grantEvent": {
+    "type": "enterPuzzle",
+    "puzzleId": "P05"
+  },
+  "supportsFrom": []
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+<title id="title">Separate origins, shared later setting</title>
+<desc id="desc">Two former sandstone quarries were joined by flooding in 1941 to form Wallace Lake through a shallower connecting channel. Shapes are conceptual, not geographic quarry boundaries.</desc>
+<rect width="960" height="560" fill="#F4F0E5"/>
+<g font-family="system-ui, sans-serif">
+<text x="40" y="64" font-size="36" fill="#172530">Separate origins, shared later setting</text>
+<text x="40" y="107" font-size="22" fill="#172530">Documentary reference · original conceptual illustration</text>
+<rect x="45" y="155" width="380" height="100" rx="16" fill="#E4E8E5" stroke="#172530" stroke-width="3"/><text x="75" y="216" font-size="28" fill="#172530">Former quarry</text><rect x="535" y="155" width="380" height="100" rx="16" fill="#E4E8E5" stroke="#172530" stroke-width="3"/><text x="565" y="216" font-size="28" fill="#172530">Former quarry</text><path d="M 230 270 L 390 330 M 730 270 L 570 330" stroke="#172530" stroke-width="4" fill="none"/><rect x="245" y="330" width="470" height="100" rx="16" fill="#E4E8E5" stroke="#172530" stroke-width="3"/><text x="282" y="390" font-size="28" fill="#172530">Shared lake setting</text><text x="158" y="470" font-size="27" fill="#172530">1941 flooding · shallower connecting channel</text>
+<text x="40" y="505" font-size="22" fill="#172530">Conceptual, not a survey, photograph or sign transcription.</text>
+<text x="40" y="538" font-size="22" fill="#172530">Complete readable text is supplied beside this figure.</text>
+</g></svg>

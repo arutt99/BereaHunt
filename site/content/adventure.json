@@ -1,0 +1,106 @@
+{
+  "id": "berea-case-01",
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "stateCompatibility": 1,
+  "publicLabel": "Berea investigation",
+  "initialPuzzleId": "P01",
+  "chapterIds": [
+    "CH00",
+    "CH01",
+    "CH02",
+    "CH03",
+    "CH04"
+  ],
+  "chapterRefs": [
+    "chapters/ch00.json",
+    "chapters/ch01.json",
+    "chapters/ch02.json",
+    "chapters/ch03.json",
+    "chapters/ch04.json"
+  ],
+  "evidenceRefs": [
+    "evidence/e00.json",
+    "evidence/e01.json",
+    "evidence/e02.json",
+    "evidence/e03.json",
+    "evidence/e04.json",
+    "evidence/e05.json",
+    "evidence/e06.json",
+    "evidence/e07.json",
+    "evidence/e08.json",
+    "evidence/e09.json",
+    "evidence/e10.json",
+    "evidence/e11.json",
+    "evidence/e12.json",
+    "evidence/e13.json",
+    "evidence/e14.json",
+    "evidence/e15.json",
+    "evidence/e16.json",
+    "evidence/e17.json"
+  ],
+  "puzzleRefs": [
+    "puzzles/p01.json",
+    "puzzles/p02.json",
+    "puzzles/p03.json",
+    "puzzles/p04.json",
+    "puzzles/p05.json",
+    "puzzles/p06.json",
+    "puzzles/p07.json",
+    "puzzles/p08.json"
+  ],
+  "locationRef": "locations.json",
+  "sourcesRef": "sources.json",
+  "assetRegistry": "assets.json",
+  "assetManifest": "offline-resources.json",
+  "preparationRef": "preparation.json",
+  "travelLegs": [
+    {
+      "id": "TR01",
+      "afterPuzzleId": "P01",
+      "fromLocationId": "L00",
+      "toLocationId": "L01",
+      "confirmationEvidenceIds": [
+        "E02"
+      ],
+      "requiresConfirmation": true,
+      "allocatedMinutes": 20
+    },
+    {
+      "id": "TR02",
+      "afterPuzzleId": "P03",
+      "fromLocationId": "L01",
+      "toLocationId": "L05",
+      "confirmationEvidenceIds": [
+        "E06",
+        "E07"
+      ],
+      "requiresConfirmation": true,
+      "allocatedMinutes": 10
+    }
+  ],
+  "pacing": {
+    "puzzle_minutes": 72,
+    "travel_minutes": 30,
+    "optional_observation_minutes": 20,
+    "reading_and_transitions_minutes": 35,
+    "ending_minutes": 8,
+    "contingency_minutes": 15,
+    "total_minutes": 180,
+    "manipulation_minutes": 18,
+    "winter_observation_cutoff": "16:30",
+    "classification": "untimed_design_estimate"
+  },
+  "contracts": {
+    "singlePhone": true,
+    "audioAllowed": false,
+    "paperRequired": false,
+    "arrivalProofRequired": false,
+    "coreNetworkRequired": false,
+    "hintsDelayed": false,
+    "assistanceBlocksCompletion": false,
+    "revealConfirmationRequired": true,
+    "referenceRevealsAnswer": false
+  },
+  "staticHostingNotice": "Normal play must gate future documents and solutions. Files downloaded to a static client are inspectable; this is not server-side secrecy."
+}

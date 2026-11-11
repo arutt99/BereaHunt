@@ -1,0 +1,13 @@
+{
+  "id": "CH00",
+  "order": 0,
+  "publicLabel": "Chapter 1",
+  "unlockedTitle": "The first handoff",
+  "locationId": "L00",
+  "puzzleIds": [
+    "P01"
+  ],
+  "prerequisitePuzzleIds": [],
+  "introduction": "The packing looks undisturbed. The paperwork is less reassuring. Start with the completed receipts; a job can lose its identity long before anyone changes its label.",
+  "transition": "Follow the terminal research reference. The next setting will be confirmed before departure."
+}

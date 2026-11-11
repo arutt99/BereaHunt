@@ -1,0 +1,37 @@
+{
+  "id": "E02",
+  "kind": "destination_confirmation",
+  "title": "First research confirmation",
+  "classification": "mixed_separated",
+  "bodyBlocks": [
+    {
+      "id": "confirmation",
+      "type": "paragraph",
+      "text": "R1 is the research file for an opening that begins beneath an intact surface. Your first destination is now confirmed; no envelope or physical prop is waiting there.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "arrival",
+      "type": "paragraph",
+      "text": "Berea Falls Scenic Overlook: the operator’s directions target 41.378044, -81.866079, and its trailhead listing describes a small visitor lot. Use the normal visitor approach near Barrett Road and Valley Parkway, not railway land or a roadside shoulder. These are destination coordinates, not a surveyed parking bay.",
+      "classification": "authored_reference",
+      "factIds": [
+        "F010",
+        "F013"
+      ],
+      "title": "Documentary reference · original paraphrase"
+    }
+  ],
+  "factIds": [
+    "F010",
+    "F013"
+  ],
+  "assetIds": [],
+  "textEquivalent": "R1 is the research file for an opening that begins beneath an intact surface. Your first destination is now confirmed; no envelope or physical prop is waiting there.\n\nDocumentary reference · original paraphrase\n\nBerea Falls Scenic Overlook: the operator’s directions target 41.378044, -81.866079, and its trailhead listing describes a small visitor lot. Use the normal visitor approach near Barrett Road and Valley Parkway, not railway land or a roadside shoulder. These are destination coordinates, not a surveyed parking bay.",
+  "grantEvent": {
+    "type": "completePuzzle",
+    "puzzleId": "P01"
+  },
+  "supportsFrom": []
+}

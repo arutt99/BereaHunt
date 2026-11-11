@@ -1,0 +1,50 @@
+{
+  "puzzleId": "P02",
+  "answerType": "sequence_and_text",
+  "canonical": {
+    "sequence": [
+      "shale_erodes",
+      "support_lost",
+      "sandstone_breaks"
+    ],
+    "mechanism": "support withdrawal"
+  },
+  "acceptedAliases": [
+    "support removal",
+    "cradle removal",
+    "removed support"
+  ],
+  "normalizationProfile": "sequence_and_text",
+  "reasoningSteps": [
+    "E03 states that shale erosion undermines support before sandstone breaks away.",
+    "The recovered packing has an intact seal, lower trace and removed cradle.",
+    "Only support withdrawal matches all three bench results; it is not an inference from natural erosion alone."
+  ],
+  "alternativeEliminations": [
+    "Impact fails the seal and contact-trace observations.",
+    "Water fails the trace and retained-cradle observations."
+  ],
+  "hints": [
+    {
+      "id": "P02-H1",
+      "text": "Order the natural process by its stated causes, using the supplied reference."
+    },
+    {
+      "id": "P02-H2",
+      "text": "Compare all three case observations against each controlled bench profile."
+    },
+    {
+      "id": "P02-H3",
+      "text": "The lower-support profile preserves the outer seal and removes the cradle."
+    }
+  ],
+  "reveal": {
+    "id": "P02-REVEAL",
+    "title": "Answer and reasoning",
+    "explanation": "E03 states that shale erosion undermines support before sandstone breaks away. The recovered packing has an intact seal, lower trace and removed cradle. Only support withdrawal matches all three bench results; it is not an inference from natural erosion alone.",
+    "continueLabel": "Continue the case"
+  },
+  "completionEvidenceIds": [
+    "E04"
+  ]
+}

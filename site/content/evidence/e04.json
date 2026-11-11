@@ -1,0 +1,32 @@
+{
+  "id": "E04",
+  "kind": "finding",
+  "title": "Mechanism conclusion",
+  "classification": "fictional",
+  "bodyBlocks": [
+    {
+      "id": "conclusion",
+      "type": "paragraph",
+      "text": "The natural sequence is shale erosion, loss of support, then sandstone breakaway. The packing profile is support withdrawal: intact seal, lower contact trace, cradle removed. Impact and water each fail the full observation set. The intact exterior therefore does not establish that the contents stayed in place.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "keyword",
+      "type": "paragraph",
+      "text": "Foundation-material note: SHALE. Keep this with the next dispatch protocol; it supplies the key, not a guessed password.",
+      "classification": "fictional",
+      "factIds": []
+    }
+  ],
+  "factIds": [],
+  "assetIds": [],
+  "textEquivalent": "The natural sequence is shale erosion, loss of support, then sandstone breakaway. The packing profile is support withdrawal: intact seal, lower contact trace, cradle removed. Impact and water each fail the full observation set. The intact exterior therefore does not establish that the contents stayed in place.\n\nFoundation-material note: SHALE. Keep this with the next dispatch protocol; it supplies the key, not a guessed password.",
+  "grantEvent": {
+    "type": "completePuzzle",
+    "puzzleId": "P02"
+  },
+  "supportsFrom": [
+    "E03"
+  ]
+}

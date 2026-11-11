@@ -201,9 +201,11 @@
     {
       "id": "E05",
       "title": "Cipher protocol and reference selectors",
-      "classification": "fictional",
+      "classification": "mixed_separated",
       "supports_from": [],
-      "fact_ids": [],
+      "fact_ids": [
+        "F021"
+      ],
       "required_offline": true,
       "text_equivalent_required": true
     },
@@ -504,10 +506,12 @@
         "E05"
       ],
       "required_evidence_ids": [
+        "E03",
         "E04",
         "E05"
       ],
       "surfaced_evidence_ids": [
+        "E03",
         "E04",
         "E05"
       ],

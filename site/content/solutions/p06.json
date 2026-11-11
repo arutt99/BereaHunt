@@ -1,0 +1,46 @@
+{
+  "puzzleId": "P06",
+  "answerType": "time_bounds",
+  "canonical": [
+    "15:02",
+    "15:10"
+  ],
+  "acceptedAliases": [],
+  "normalizationProfile": "time_bounds",
+  "reasoningSteps": [
+    "E12 certifies the same clock four minutes fast without drift.",
+    "Subtract four minutes: service 15:06 → case 15:02; service 15:14 → case 15:10.",
+    "The last intact observation excludes the lower endpoint, and the first diverted observation includes the upper endpoint."
+  ],
+  "alternativeEliminations": [
+    "The raw service readings are not case time.",
+    "A single exact minute is not supported."
+  ],
+  "hints": [
+    {
+      "id": "P06-H1",
+      "text": "The same calibrated service clock supplies both entries."
+    },
+    {
+      "id": "P06-H2",
+      "text": "A fast service clock reads four minutes later than case time."
+    },
+    {
+      "id": "P06-H3",
+      "text": "Subtract four minutes from 15:06 and 15:14; the act lies after the first and by the second."
+    }
+  ],
+  "reveal": {
+    "id": "P06-REVEAL",
+    "title": "Answer and reasoning",
+    "explanation": "E12 certifies the same clock four minutes fast without drift. Subtract four minutes: service 15:06 → case 15:02; service 15:14 → case 15:10. The last intact observation excludes the lower endpoint, and the first diverted observation includes the upper endpoint.",
+    "continueLabel": "Continue the case"
+  },
+  "completionEvidenceIds": [
+    "E13"
+  ],
+  "timeBounds": {
+    "lowerInclusive": false,
+    "upperInclusive": true
+  }
+}

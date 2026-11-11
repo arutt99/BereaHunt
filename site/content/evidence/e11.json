@@ -1,0 +1,33 @@
+{
+  "id": "E11",
+  "kind": "finding",
+  "title": "Modern ownership and approved receiver",
+  "classification": "fictional",
+  "bodyBlocks": [
+    {
+      "id": "conclusion",
+      "type": "paragraph",
+      "text": "Supported classification: modern commission. The signed LC17/B17 record identifies K4 and M7 as newly carved for Lark Workshop two weeks before the case. Neither the material’s historic uses nor the unrelated bell’s origin changes that identity. The sale proposal’s civic-salvage label is unsupported.",
+      "classification": "fictional",
+      "factIds": []
+    },
+    {
+      "id": "receiver",
+      "type": "paragraph",
+      "text": "Lark Workshop owns the pair and is the only approved receiver. Gannet Trading is not authorized. Follow custody using the serials, not the copied origin label.",
+      "classification": "fictional",
+      "factIds": []
+    }
+  ],
+  "factIds": [],
+  "assetIds": [],
+  "textEquivalent": "Supported classification: modern commission. The signed LC17/B17 record identifies K4 and M7 as newly carved for Lark Workshop two weeks before the case. Neither the material’s historic uses nor the unrelated bell’s origin changes that identity. The sale proposal’s civic-salvage label is unsupported.\n\nLark Workshop owns the pair and is the only approved receiver. Gannet Trading is not authorized. Follow custody using the serials, not the copied origin label.",
+  "grantEvent": {
+    "type": "completePuzzle",
+    "puzzleId": "P05"
+  },
+  "supportsFrom": [
+    "E09",
+    "E10"
+  ]
+}

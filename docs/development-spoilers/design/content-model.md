@@ -157,3 +157,42 @@ mutations. It prints spoiler-free counts. Detailed results stay in the separate
 testing record. It does not execute a browser, simulate service-worker caching,
 measure enjoyment, inspect real signs, certify actual walks or validate iOS.
 Those claims remain unavailable until the later tests actually happen.
+
+## Phase 5 implementation alignment — 2026-11-11
+
+The proposed layout above is now authored under `site/content/`, with additional
+`locations.json`, `preparation.json` and `assets.json` indexes. IDs and gates are
+preserved. Evidence blocks are explicitly typed `paragraph`, `table`,
+`instructions`, `figure` or post-completion `optional_section`; every block has
+its own fact/fiction classification and local ID. Working aids use
+`EvidenceID#blockID` references to the actual displayed inputs.
+
+E05 is now correctly `mixed_separated`, with F021 attributed separately from the
+fictional cipher. P03 requires/surfaces E03 alongside E04/E05, making its original
+A02/F011 input directly available. Both changes are reflected in the blueprint;
+no answer, route or narrative gate changed. Reference packs explicitly reopen
+all needed already-granted inputs, including the six findings for P08.
+
+Hints and reveals are identified objects within the separate solution file;
+`hintIds`, `revealId` and `solutionRef` resolve there. The solution's `reveal`
+contains its explanation/continuation; correct/reveal reward lists agree. The
+asset registry has computed sizes/hashes and block-level text-equivalent refs.
+
+The offline manifest bootstrap explicitly excludes its own self-hash, inventories
+every other actual `site/` file, and declares `inventoryScope: phase_5_content`
+and `applicationImplemented: false`. Phase 6 must extend this to actual shell,
+styles, icons and interactive code before app readiness. There is no claim of
+an installed/cache-tested game in phase 5. The original blueprint's
+`runtime_content_complete: false` describes its frozen phase-4 artifact type;
+it is not the readiness status of the separately delivered phase-5 dataset.
+
+Development answer parsing and corpus integrity checks live in `scripts/`, with
+regressions in `tests/`. They are not deployed engine code. See the spoiler-free
+[authoring guide](../../content/authoring-guide.md) for exact commands, block
+editing, state/versioning and renderer gating, including source-citation gating.
+
+The source registry's `citationPolicy` requires the current granted fact set and
+each fact/source's `displayAfterPuzzleId`. F021/S08's complete citation waits
+until P03 completes; its real destination name must not shortcut the anonymized
+selector. Show `lockedCitationLabel` until then. The authored E05 reference
+already supplies all unsolved factual inputs without that naming citation.

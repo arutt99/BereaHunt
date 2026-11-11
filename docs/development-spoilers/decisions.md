@@ -43,3 +43,16 @@ approval requests. They supersede the discarded obsolete-base proposal.
 | ND06 | Delegated design choice, complete | Final answer is actor + order ID, checked atomically; Quinn Arden/O43. Concise dramatic reveal with optional full explanation; no essay, score gate or external report. | P08; content/state contract |
 | ND07 | Delegated UX choice, complete | Charcoal/ivory, outdoor-readable system typography, no audio; relevant evidence beside objective; tap/select alternatives for boards; separate reference and confirmed reveal; installed-context complete offline readiness before play. | experience.md; content-model.md |
 | ND08 | Authored pacing estimate | Single 180-minute budget with 72 solving minutes and 18 manipulation minutes (about 25%). Exact puzzle target minutes specified; no timed playthrough or human difficulty result claimed. | blueprint pacing; experience budget |
+
+## Phase 5 delegated content decisions — 2026-11-11
+
+| ID | Status | Selected implementation and reason | Affected records |
+| --- | --- | --- | --- |
+| CD01 | Delegated authoring choice, complete | Text-first typed blocks, original concise dossier prose and four original reference SVGs. No copied photograph, false archival facsimile, source hotlink or image-only clue. | site/content; assets; content-review.md |
+| CD02 | Content accuracy correction | Attribute E05's F021 selector as mixed separated reference/fiction; surface E03 with P03's E04/E05 so A02/F011 is directly available at point of use. No changed canonical solution, route, unlock or requirement. | blueprint; content model; P03/E05 |
+| CD03 | Delegated validation choice | Separate solutions and standard-library typed answer checks; actual authored-table solvers, whole-map/whole-pair validation, assistance-path enumeration and isolated package-corruption regressions. Runtime implementation still phase 6. | scripts; tests; authoring guide |
+| CD04 | Delegated packaging choice | Hash every actual content/asset byte; asset registry before manifest, bootstrap self-hash explicitly excluded. Current scope is phase 5 content, to extend with the actual phase 6 application before offline readiness. | offline-resources.json; inventory tool; content model |
+| CD05 | Delegated spoiler-protection refinement | Withhold the opening's manufacturing conclusion; gate the F021/S08 naming citations until P03 completes while keeping full factual solving inputs available. Source browsing must apply both granted-record and explicit citation display gates. | E00; sources.json; content validator; authoring guide |
+
+All confirmed practical selections and uncertainty remain unchanged. No new
+player decision, case preview, independent helper or field visit is presumed.

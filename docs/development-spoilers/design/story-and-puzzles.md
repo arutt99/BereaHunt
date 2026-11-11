@@ -372,3 +372,16 @@ checked on site. The validator checks graph and finite solution logic. Phase 5
 must still write complete player-facing prose, original assets, exact feedback,
 evidence panels, and the offline resource inventory. Phase 6 builds the app.
 Neither intended player is assigned spoiler-bearing testing.
+
+## Phase 5 authoring review — 2026-11-11
+
+The complete corpus, original references and source/asset inventories now exist
+under `site/`. The separate [content review](../content-review.md) traces every
+actual authored input, normal/reveal/reference continuity and ending, with
+executed content/variant/resource checks and explicit test limits.
+
+P03's surfaced inputs include E03 as well as E04/E05 so the original A02/F011
+reference remains beside the decoding task. E05 separates its documentary F021
+selector from its invented dispatch instructions. The blueprint records both
+authoring corrections; the case, solutions, route and progression are unchanged.
+Application controls/persistence/offline readiness remain phase 6 work.
