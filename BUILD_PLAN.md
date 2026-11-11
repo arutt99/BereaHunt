@@ -353,3 +353,14 @@ Next eligible phase:
 - **Checks performed and evidence:** audited proposed physical observations, rejected weak/disputed dependencies, specified documentary redesigns and separate reference/reveal contingencies; zero unverified physical observations approved as essential. Candidate route and 180-minute budget explicitly distinguish travel allocations/straight-line lower bounds from measured driving/walking. Approximate NOAA-based seasonal sunsets and conservative winter observation limits recorded. Record-integrity, public spoiler-name, link and whitespace checks passed. No physical, iPhone, app, deployment or measured playthrough test performed.
 - **Open uncertainties / blockers:** B01 selected-start no-purchase permission/exact legal position; B02 usable ordinary-bay-to-viewpoint round trips; B03 site-specific free-parking restrictions and final dwell; B04 drivable entrance-to-entrance distances/times. These are critical to the feasible-route completion check; a reference fallback does not verify them. See the spoiler-free readiness record for practical implications and separate research audit for precise evidence needed.
 - **Next eligible phase:** finish phase 3's access/measurement gates, validate the revised evidence and update this tracker. Phase 4 remains Not started until that passes. No future recheck, helper or specific completion date has been arranged.
+
+### Delivery status — 2026-11-11
+
+The scoped work is committed on local branch `codex/research-feasibility`.
+The GitHub push was rejected by automatic approval review: the branch contains
+potentially private research/spoilers and the reviewer could not establish
+authorization for disclosure to the remote. Nothing was pushed or merged.
+User approval to push these records to the existing `arutt99/BereaHunt`
+repository is needed before retrying; do not bypass the rejection. The source
+artifact commit is recorded above; use the branch HEAD for the subsequent
+tracker/delivery updates.

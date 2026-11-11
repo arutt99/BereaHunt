@@ -72,3 +72,8 @@ players to approve clue/solution content to resolve these issues.
 Detailed supporting records are in the clearly labeled
 `docs/development-spoilers/research/` directory; they are **not player reading**
 and must stay outside the eventual deployed `site/` artifact.
+
+Delivery is currently local on `codex/research-feasibility`. Automatic approval
+review rejected pushing the potentially private research/spoiler records to
+GitHub without explicit disclosure approval. No push or merge occurred; the
+committed branch is preserved pending that approval.
