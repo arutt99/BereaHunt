@@ -3,7 +3,11 @@
 Spoiler-free, **2026-11-11**. **Phase 7 — Complete with user-accepted device
 coverage. Phase 8 — Complete.** The user confirms the spoiler-free iPhone
 preparation/install/complete-download/closed-app offline-reopen check works and
-explicitly directs advancement. That check is recorded as a **user-reported pass**,
+explicitly directs advancement. Main additionally preserves the exact report:
+“iphone works. Save works. Even after closure and relaunch.” Asked whether this
+was the installed Home Screen app with internet off, the user answered
+“Yes it was.” Saving and restored progress in that offline installed context
+therefore pass as user-reported evidence. That check is recorded as a **user-reported pass**,
 not a test performed by the assistant. It closes the former D01 advancement gate.
 Exact model/iOS and the expanded physical-device gameplay/update/storage matrix
 were not supplied; no full device protocol or independent playtest is inferred.
@@ -34,7 +38,7 @@ results and a separate field/access review are retained for later sessions.
 | Additional release matrix | Every objective at three layout sizes and doubled text; all locked view URLs, empty/wrong typed answers, focus/controls, enlarged/failed images, maps, multi-stage offline closure, live window conflicts, same-size content-hash mismatch and waiting-worker upgrades pass. No uncaught page errors |
 | Visual review | Neutral 390 × 844 preparation screen inspected; no future case/destination information. Layout/text/zoom checks support readability; no actual outdoor sunlight or physical-device legibility trial |
 | Environment | Linux, Python 3.12.14, Node 24.22.1, Python Playwright and Chromium 156.0.8078.79; local `/BereaHunt/` subpath, compressed static resources |
-| Actual iPhone Safari/Home Screen | **User-reported pass, accepted for advancement:** preparation, Home Screen installation, complete download and closed-app offline reopening work. No device attached to the assistant; model/iOS unspecified. Broader background/update/storage-context and full-path device observations were not supplied |
+| Actual iPhone Safari/Home Screen | **User-reported pass, accepted for advancement:** preparation, Home Screen installation, complete download, saving and restoration after closed-app offline reopening work. Main preserves explicit confirmation of the installed/offline context. No device attached to the assistant; model/iOS unspecified. Broader background/update/storage-context and full-path device observations were not supplied |
 | Supporting WebKit | Not run. Official WebKit 26.5 (Playwright build 2336) installation failed: environment policy returned HTTP 403 `Domain forbidden` for both official download hosts. This is separate from D01 and would not replace it |
 | Field/access | Desk reconciliation against existing 2026-11-11 research; no new source retrieval, physical walk/drive, live map routing or current sign inspection. Essential inputs remain supplied Verified documentary references; current posted restrictions and conditions control |
 | Experience and pacing | Author reasoning/narrative review; no independent tester, human difficulty/sunlight trial or measured three-hour outing. The 180-minute budget and interaction proportion remain authored estimates |
@@ -75,3 +79,13 @@ fixtures; production is not mutated to manufacture an update.
 See [deployment](../deployment.md) for the live-check result and repeatable
 publishing/update/rollback instructions. Phase 9 is the next experience audit
 with phase 8's live check now passed. No final release verdict is claimed here.
+
+
+## Reconciled device handoff
+
+PR #11 added the explicit installed/offline saving and restoration report on
+main `65bfc76`. It is preserved alongside phase 8's actual live test evidence.
+Its earlier partial-coverage/Blocked verdict is historical; the current phase 7
+advancement verdict follows the user's later acceptance and instruction in D14.
+The broader physical-device matrix remains unreported, not inferred as passed.
+No repeated save/relaunch check or player clue inspection is pending.
