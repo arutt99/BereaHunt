@@ -192,3 +192,33 @@ presumed. Only the physical-device protocol can close D01.
 **Verdict:** scoped refinement/testing work is deliverable; phase 7 is **Blocked**,
 not Complete, until required actual-device checks pass. Phase 8 deployment and
 phase 9 final experience verdict are outside this request. No merge to main.
+
+## Subsequent reported Pages landing-page fix — 2026-11-11
+
+The user supplied a screenshot of the repository README being rendered at the
+root Pages URL. Fetched main `c8824db`; feature branch
+`codex/pages-publishing-fix`. No root app index or prior Pages workflow exists.
+A preliminary official static Actions workflow now uploads only `site` contents
+after existing application checks, and can deploy only from main. Exact settings
+and outstanding merge/live checks are in the spoiler-free `docs/pages-setup.md`.
+
+Local YAML/shell/permission/gate checks and exact 65-file artifact pass. The same
+eight Node/eleven Python tests and content/design/inventory checks pass again.
+A tar copy of the actual upload path was extracted as `/BereaHunt/` for a local
+Chromium smoke: neutral preparation, verified complete download, correct project
+worker scope, closed-page offline relaunch and readiness all pass, zero page
+errors. App/case/research bytes and package hash are unchanged. An initial
+artifact-check assertion mistakenly treated the app's runtime `scripts/` as
+development scripts; it was corrected to compare the artifact's exact resource
+set with the manifest, rather than excluding required engine code.
+
+Settings API: `Forbidden`. Live Pages read: HTTP 403 at the outbound proxy.
+No setting changed, main merge, successful Actions deployment, live corrected
+response or new iPhone evidence is claimed. Phase 7 stays Blocked; this limited
+test-origin publishing repair is not a completed phase 8 or release verdict.
+
+Actual GitHub PR workflow run **43044360719** for implementation **6275bf1**
+completed its validation/package/upload job successfully; the publish job was
+skipped as designed. PR **#9** is open and mergeable with no default-branch merge
+performed. This is CI/artifact evidence, not a production deployment or live game
+check. The subsequent documentation revision records the observed CI result.
