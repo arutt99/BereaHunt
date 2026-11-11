@@ -2,8 +2,10 @@
 
 Spoiler-free, **2026-11-11**. **Phase 7 — Blocked on required actual-device
 validation.** The user now reports successful iPhone use, saving and restoration
-after closure/relaunch. Installed-context and offline coverage still need to be
-identified before closing the device gate. Phase 8 is not yet eligible.
+after closure/relaunch, and explicitly confirms that this was the installed
+Home Screen app with internet turned off. That device check is passed as a user
+report; remaining device coverage is listed below. Phase 7 is not yet marked
+Complete solely from this persistence check.
 
 The [test plan](test-plan.md) defines the repeatable matrix and actual-device
 protocol. The case, route, answers, fact classifications and confirmed outing
@@ -31,7 +33,7 @@ results and a separate field/access review are retained for later sessions.
 | Additional release matrix | Every objective at three layout sizes and doubled text; all locked view URLs, empty/wrong typed answers, focus/controls, enlarged/failed images, maps, multi-stage offline closure, live window conflicts, same-size content-hash mismatch and waiting-worker upgrades pass. No uncaught page errors |
 | Visual review | Neutral 390 × 844 preparation screen inspected; no future case/destination information. Layout/text/zoom checks support readability; no actual outdoor sunlight or physical-device legibility trial |
 | Environment | Linux, Python 3.12.14, Node 24.22.1, Python Playwright and Chromium 156.0.8078.79; local `/BereaHunt/` subpath, compressed static resources |
-| Actual iPhone Safari/Home Screen | **D01 partially covered, user-reported 2026-11-11:** iPhone works, saving works, and progress survives closure/relaunch. Model/iOS, Safari versus installed Home Screen context, connectivity during relaunch, and tested candidate/URL were not specified. Offline installed relaunch, full later-content/assistance coverage, storage-context separation and update behavior cannot be inferred from this report |
+| Actual iPhone Safari/Home Screen | **D01 partially covered, user-reported 2026-11-11:** installed Home Screen app works with internet off, saves, and restores progress after closure/relaunch. The user explicitly confirmed both context and connectivity. Model/iOS and exact candidate/URL were not supplied. Full later-content/assistance completion, separate Safari storage and actual-device update behavior remain unreported; desktop coverage for those remains as recorded |
 | Supporting WebKit | Not run. Official WebKit 26.5 (Playwright build 2336) installation failed: environment policy returned HTTP 403 `Domain forbidden` for both official download hosts. This is separate from D01 and would not replace it |
 | Field/access | Desk reconciliation against existing 2026-11-11 research; no new source retrieval, physical walk/drive, live map routing or current sign inspection. Essential inputs remain supplied Verified documentary references; current posted restrictions and conditions control |
 | Experience and pacing | Author reasoning/narrative review; no independent tester, human difficulty/sunlight trial or measured three-hour outing. The 180-minute budget and interaction proportion remain authored estimates |
@@ -47,9 +49,9 @@ outing date becomes known; none is scheduled.
 
 Run the remaining device protocol on an available physical iPhone through a
 secure test origin, record the exact context, and fix/rerun any resulting failures.
-First clarify whether the reported closure/relaunch was from the installed Home
-Screen app with connectivity disabled; model/iOS is useful metadata if available.
-Do not ask the player to repeat the already-reported save check or preview clues.
+Installed-context offline closure/relaunch is now confirmed. Do not repeat that
+passed check or ask the player to preview clues. Model/iOS remains useful metadata;
+remaining device matrix items must retain their actual coverage classifications.
 Keep test solutions away from both intended players. Update this verdict and
 the build tracker only when the required check has actually passed; do not infer
 it from emulation or proceed to another phase under this request.

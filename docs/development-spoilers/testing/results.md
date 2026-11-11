@@ -239,3 +239,11 @@ Fetched main `7c3d785` confirms PR #9 has since merged; that supersedes the prio
 open-PR handoff above. No live deployment result is inferred solely from that
 merge. Follow-up records use `codex/phase-7-testing` synchronized to current main;
 no app/content/research bytes or practical requirements changed.
+
+Follow-up question explicitly named the installed Home Screen app and internet
+turned off. User answered **“Yes it was.”** This confirms the test context and
+offline condition: installed iPhone use, saving, closure and offline relaunch
+with restored progress now pass as user-reported evidence. The preceding
+unknown-context notes are historical and superseded by this clarification.
+It does not supply model/iOS, full game completion, separate Safari storage or
+actual-device update results. No repeat save test or advance clue review needed.
