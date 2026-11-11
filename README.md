@@ -5,9 +5,10 @@ and later destinations stay concealed during normal play. The authored content,
 research and development records contain spoilers: neither intended player needs
 to preview them.
 
-Phase 6 implements the application. It is ready for phase 7 testing, **not yet a
-released or deployed experience**. See [phase 6 readiness](docs/phase-6-readiness.md)
-for the coverage and remaining checks.
+Phase 7 adds release testing and usability refinements. It remains **blocked on
+required actual iPhone Safari/Home Screen validation**, with no released or
+deployed experience claimed. See [testing readiness](docs/testing/readiness.md)
+and the spoiler-free [test plan](docs/testing/test-plan.md).
 
 ## Run locally
 
@@ -67,6 +68,7 @@ installed (or installed in a development virtual environment). Run:
 
 ```sh
 python3 scripts/test_browser.py --chromium /usr/bin/chromium
+python3 scripts/test_release.py --chromium /usr/bin/chromium
 ```
 
 It serves an isolated temporary copy at `/BereaHunt/`, runs real normal and
@@ -76,6 +78,15 @@ answers. Optional `--preparation-screenshot /tmp/preparation.png` captures only
 the neutral preparation screen. A sandbox that blocks local sockets must allow
 the local server/browser command. These tests support, and do not replace,
 iPhone, independent experience, field and live-host review.
+
+The release suite adds every-objective layout/text/focus checks, all locked view
+URLs, image/map failures, stage-by-stage offline reopening, live window conflicts
+and worker upgrades. Layout probes use separate pages at 320 × 844, 390 × 844
+and 844 × 390, with normal and doubled text; they do not establish actual-device
+orientation behavior. Both suites accept `--engine webkit` when that Playwright
+browser is installed. The current environment denied its official download;
+no WebKit or actual iPhone pass is claimed. Detailed case-bearing evidence stays
+outside this README and the deployable site.
 
 ## Structure and updates
 

@@ -5,7 +5,7 @@
   "stateCompatibility": 1,
   "inventoryScope": "complete_application",
   "applicationImplemented": true,
-  "applicationVersion": "1.0.0",
+  "applicationVersion": "1.0.1",
   "bootstrap": {
     "path": "content/offline-resources.json",
     "selfHashExcluded": true,
@@ -342,8 +342,8 @@
     },
     {
       "path": "scripts/aids.js",
-      "sha256": "db79bcca65552de688b7cdbb75553b17088cb9e9241801fcac90ceb731c67571",
-      "byteLength": 8434,
+      "sha256": "1ab43a8b5b55e7c22689f928d20db463c3ddeb1054b6b5c764659262f68002f5",
+      "byteLength": 8537,
       "required": true
     },
     {
@@ -354,8 +354,8 @@
     },
     {
       "path": "scripts/app.js",
-      "sha256": "84444e2e7067714e975aa65f76da6a290d247b2bcd542103ded064fa771c38c7",
-      "byteLength": 26189,
+      "sha256": "afda46a1c9b05c0489e9155eec3c53ea41d8e119fe7a0bf8d54aa79ea2dd2306",
+      "byteLength": 26312,
       "required": true
     },
     {
@@ -396,8 +396,8 @@
     },
     {
       "path": "styles/app.css",
-      "sha256": "004e6cc46853fafb1affd7bd36bf2857107bd9c90f0b7bc577b4a3fa767ad102",
-      "byteLength": 6930,
+      "sha256": "492bb6163a9f938274e8fc94da3f55d479b7f0fdb0dd0d427b7697ccf09640e5",
+      "byteLength": 6985,
       "required": true
     }
   ]

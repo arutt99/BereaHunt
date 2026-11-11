@@ -75,7 +75,7 @@ export function renderAid(model, state, p, saveDraft, rerender) {
     box.append(input('keyword', 'Your grid keyword'), button('Build grid from my keyword', () => {
       const chars = [...v.keyword.normalize('NFKC').toUpperCase()].filter(c => aid.alphabet.includes(c));
       update({ cells: [...new Set([...chars, ...aid.alphabet])] }, true);
-    }));
+    }, 'secondary', { id: 'build-grid' }));
     const grid = el('div', { className: 'grid', role: 'group', 'aria-label': 'Editable coordinate grid, row then column' }, el('span'), [1, 2, 3, 4, 5].map(i => el('span', {}, i)));
     for (let row = 0; row < 5; row++) {
       grid.append(el('span', {}, row + 1));
@@ -108,7 +108,7 @@ export function renderAid(model, state, p, saveDraft, rerender) {
     box.append(input(p.answerFields[0].name, p.answerFields[0].label));
   }
   if (['sequence_and_text', 'unordered_id_pair', 'bijection'].includes(p.answerType) || aid.kind === 'local_polybius_grid') {
-    box.append(el('div', { className: 'actions' }, button('Undo', undo, 'secondary', { disabled: !draft.history.length }), button('Reset working area', reset)));
+    box.append(el('div', { className: 'actions' }, button('Undo', undo, 'secondary', { id: 'undo-working-area', disabled: !draft.history.length }), button('Reset working area', reset, 'secondary', { id: 'reset-working-area' })));
   }
   return box;
 }
