@@ -26,9 +26,9 @@ Allowed statuses: **Not started**, **In progress**, **Blocked**, **Complete**. M
 
 | Phase | Deliverable | Prerequisite | Status | Completion evidence / blocker |
 | --- | --- | --- | --- | --- |
-| 1 | Requirements handoff and decision record | Existing discovery brief | Not started | Interview already recorded; handoff files pending |
-| 2 | Researched location shortlist | Phase 1 | Not started | — |
-| 3 | Verified clue inventory and feasible route | Phase 2 | Not started | — |
+| 1 | Requirements handoff and decision record | Existing discovery brief | Complete | Interview was already complete; [requirements](docs/requirements.md) and [practical decisions](docs/decisions.md) now preserve its handoff (2026-11-11). |
+| 2 | Researched location shortlist | Phase 1 | Complete | Conditional shortlist, 28 sources, 34 classified facts and asset-rights review recorded separately; see [spoiler-free research readiness](docs/research-readiness.md) (2026-11-11). |
+| 3 | Verified clue inventory and feasible route | Phase 2 | Blocked | Dependency audit and candidate route/budget delivered; selected-start permission, exact parking arrangements and usable walking/driving measurements remain unresolved. [Coverage and remaining actions](docs/research-readiness.md) (2026-11-11). |
 | 4 | Coherent story and puzzle architecture | Phase 3 | Not started | — |
 | 5 | Complete, validated adventure content | Phase 4 | Not started | — |
 | 6 | Working mobile game application | Phase 5 | Not started | — |
@@ -318,4 +318,38 @@ Open uncertainties / blockers:
 Next eligible phase:
 ```
 
-No implementation phases have been executed as part of writing this plan. The discovery interview itself is already established in the source brief; phase 1 only records its handoff and does not repeat it.
+### 2026-11-11 — Phase 1 handoff repair
+
+- **Phase:** 1 — requirements handoff (prerequisite repair for the requested phases 2–3).
+- **Status:** Complete.
+- **Date:** 2026-11-11.
+- **Delivered files:** `docs/requirements.md`, `docs/decisions.md`.
+- **Branch and commit:** `codex/research-feasibility`; artifact commit `41b151ca95cd676e08398125be9a84ac77f44d68`. Tracker/handoff recorded in the following commit on the same branch.
+- **User decisions recorded:** preserved the existing completed interview and the user's confirmation of its completion; no new creative approval or requirement change. The previous “Not started” referred to missing handoff files, not incomplete discovery.
+- **Checks performed and evidence:** 24 acceptance criteria traced to source sections; review of confirmed constraints, delegated choices and practical unknowns; local Markdown links and public destination-name scan passed.
+- **Open uncertainties / blockers:** exact outing date, iPhone/iOS version and independent app tester remain unknown; none blocks research or implies an assumed helper/recheck/deadline.
+- **Next eligible phase:** phase 2, executed below.
+
+### 2026-11-11 — Phase 2 location research
+
+- **Phase:** 2 — location research.
+- **Status:** Complete.
+- **Date:** 2026-11-11.
+- **Delivered files:** `docs/development-spoilers/research/locations.md`, `facts.json`, `verification.md`; supporting delegated decisions in `docs/development-spoilers/decisions.md`; spoiler-free `docs/research-readiness.md`.
+- **Branch and commit:** `codex/research-feasibility`; artifact commit `41b151ca95cd676e08398125be9a84ac77f44d68`. Tracker/handoff recorded in the following commit on the same branch.
+- **User decisions recorded:** existing geographic/start, free/short-walk/seasonal constraints preserved; shortlist chosen under delegated discretion and concealed from routine updates. No permission presumed from a business name.
+- **Checks performed and evidence:** five full location records, including selected start and reserve; 28 dated source records and 34 precise fact records (20 Verified documentary claims, 5 Provisionally Verified, 7 Unverified, 2 Rejected); six eligible documentary inputs. Source IDs, location references, classifications, dates, local links and no-essential-unverified-input checks passed. Image capture/publication dates and reuse constraints recorded; retrieval limits distinguished from successful source reads.
+- **Open uncertainties / blockers:** current exact physical legibility and access/walking evidence are explicitly unresolved; conditional shortlist is a research deliverable, not an approved itinerary. No field/image-pixel inspection claimed.
+- **Next eligible phase:** phase 3 verification, executed below.
+
+### 2026-11-11 — Phase 3 audit and blocked feasibility verdict
+
+- **Phase:** 3 — verification and feasibility.
+- **Status:** Blocked; not Complete and not ready for phase 4.
+- **Date:** 2026-11-11.
+- **Delivered files:** updated `docs/development-spoilers/research/facts.json`, `locations.md`, `verification.md`, `route.md`; `docs/development-spoilers/decisions.md`; spoiler-free `docs/research-readiness.md`.
+- **Branch and commit:** `codex/research-feasibility`; artifact commit `41b151ca95cd676e08398125be9a84ac77f44d68`. Tracker/handoff recorded in the following commit on the same branch.
+- **User decisions recorded:** no confirmed requirement relaxed. Story and detailed puzzle authoring remain deferred; no request for either player to inspect concealed clues.
+- **Checks performed and evidence:** audited proposed physical observations, rejected weak/disputed dependencies, specified documentary redesigns and separate reference/reveal contingencies; zero unverified physical observations approved as essential. Candidate route and 180-minute budget explicitly distinguish travel allocations/straight-line lower bounds from measured driving/walking. Approximate NOAA-based seasonal sunsets and conservative winter observation limits recorded. Record-integrity, public spoiler-name, link and whitespace checks passed. No physical, iPhone, app, deployment or measured playthrough test performed.
+- **Open uncertainties / blockers:** B01 selected-start no-purchase permission/exact legal position; B02 usable ordinary-bay-to-viewpoint round trips; B03 site-specific free-parking restrictions and final dwell; B04 drivable entrance-to-entrance distances/times. These are critical to the feasible-route completion check; a reference fallback does not verify them. See the spoiler-free readiness record for practical implications and separate research audit for precise evidence needed.
+- **Next eligible phase:** finish phase 3's access/measurement gates, validate the revised evidence and update this tracker. Phase 4 remains Not started until that passes. No future recheck, helper or specific completion date has been arranged.
