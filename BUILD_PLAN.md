@@ -29,7 +29,7 @@ Allowed statuses: **Not started**, **In progress**, **Blocked**, **Complete**. M
 | 1 | Requirements handoff and decision record | Existing discovery brief | Complete | Interview was already complete; [requirements](docs/requirements.md) and [practical decisions](docs/decisions.md) now preserve its handoff (2026-11-11). |
 | 2 | Researched location shortlist | Phase 1 | Complete | Conditional shortlist, 28 remote sources plus user clarification, 34 classified claim/plan records and asset-rights review; see [spoiler-free research readiness](docs/research-readiness.md) (2026-11-11). |
 | 3 | Verified clue inventory and feasible route | Phase 2 | In progress | No player action pending. Start resolved; ordinary parking availability accepted under D13, retiring B03 as a separate approval gate. ChatGPT owns remaining short-walk/travel estimates (B02/B04). [Coverage and ownership](docs/research-readiness.md) (2026-11-11). |
-| 4 | Coherent story and puzzle architecture | Phase 3 | Not started | — |
+| 4 | Coherent story and puzzle architecture | Phase 3 | Blocked | Current main recovered and prerequisites reviewed. Phases 1/2 are Complete; phase 3 remains In progress on ChatGPT-owned B02/B04 route estimates. See [phase 4 readiness](docs/phase-4-readiness.md). No player decision or repeated discovery is needed. |
 | 5 | Complete, validated adventure content | Phase 4 | Not started | — |
 | 6 | Working mobile game application | Phase 5 | Not started | — |
 | 7 | Tested and refined release candidate | Phase 6 | Not started | — |
@@ -393,3 +393,13 @@ research; no further disclosure approval or default-branch merge is requested.
 - **Checks/evidence:** official public-venue/access pages re-read; shared-browser route lookup returned a navigation-tool error and remained at `about:blank`, supplying no new distance/timing evidence. No factual classification, physical inspection or route measurement is invented. Document/link/spoiler and whitespace validation accompany this correction.
 - **Files:** authoritative brief, requirements/practical decisions, research readiness, development decisions, location/verification/route policy and this tracker. Fact inventory remains unchanged.
 - **Branch:** follow-up on `codex/research-feasibility`, in the commit containing this entry after `87370fa`. Existing push authorization continues; no default-branch merge.
+
+### 2026-11-11 — phase 4 base correction and prerequisite review
+
+- **Phase/status:** phase 4 Blocked by phase 3's remaining completion checks; phases 1/2 remain Complete and phase 3 remains In progress.
+- **Base recovered:** fetched `origin/main` at `57bbbf9`, which includes the requirements handoff, practical decisions, research inventory, verification audit and route-planning records. These records were present on GitHub; an outdated local checkout had omitted them.
+- **Correction:** removed the incompatible untracked phase 4 proposal and its fixture validator. They had used the obsolete brief, repeated settled decisions, and put design details outside the required development-spoiler directory. They were not valid phase 4 deliverables. No prior approved record or research finding was removed or downgraded.
+- **Delivered files:** corrected tracker/handoff and spoiler-free `docs/phase-4-readiness.md`. No replacement plot, puzzle, route or player approval request is introduced before the prerequisite passes.
+- **Remaining action:** finish ChatGPT-owned B02/B04 walking/driving estimates in the existing phase 3 records; validate the route and update phase 3's tracker. Then execute the actual phase 4 deliverables under `docs/development-spoilers/design/`, preserving the confirmed brief and delegated creative authority. No player action is pending.
+- **Checks:** current-main history and all existing phase statuses reviewed; local document links, required records, phase-status consistency and scoped diff/whitespace checks. No new source, route, device, game, field or deployment verification claimed.
+- **Delivery:** `codex/phase-4-architecture`; this entry is included in the correction commit on that branch. Default-branch merge remains outside this request.
