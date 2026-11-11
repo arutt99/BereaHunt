@@ -51,4 +51,6 @@ the build tracker only when the required check has actually passed; do not infer
 it from emulation or proceed to another phase under this request.
 
 Delivery branch: `codex/phase-7-testing`, based on fetched main `1667fad`.
-The [build-plan handoff](../../BUILD_PLAN.md) records the scoped delivery revision.
+Implementation/testing revision: `1b98c624567be51614c040c086530b5b354a72c8`;
+the following documentation commit records this hash. The
+[build-plan handoff](../../BUILD_PLAN.md) preserves the same delivery record.
