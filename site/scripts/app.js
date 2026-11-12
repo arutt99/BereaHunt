@@ -92,12 +92,17 @@ function fallsSketch() {
   </svg>`), h('figcaption', {}, 'Helen’s sketch (not to scale)'));
 }
 
+function noteSheet(ev) { return h('div', { class: 'letter-sheet note' }, ...(ev.blocks || []).map(renderBlock)); }
+function storyParas(text) { return String(text).split(/\n\n+/).map(t => h('p', {}, t)); }
+
 function renderEvidence(id, { open = false, fresh = false } = {}) {
   const ev = model.evidence[id];
   if (!ev) return null;
   const body = h('div', { class: 'doc-body' });
   if (ev.caption) body.append(h('p', { class: 'caption' }, ev.caption));
-  if (ev.kind === 'letter') {
+  if (ev.kind === 'note') {
+    body.append(noteSheet(ev));
+  } else if (ev.kind === 'letter') {
     const lines = ev.blocks.filter(b => b.t === 'line');
     body.append(h('div', { class: 'letter-sheet' }, ...ev.blocks.filter(b => ['date', 'salute'].includes(b.t)).map(renderBlock), h('p', { class: 'l-body' }, lines.map(renderBlock)), ...ev.blocks.filter(b => ['close', 'sign'].includes(b.t)).map(renderBlock)));
   } else if (ev.kind === 'strips') {
@@ -255,6 +260,9 @@ function renderIntro(chapter) {
     h('div', { class: 'chapter-stamp', 'aria-hidden': 'true' }, h('span', {}, 'Chapter'), h('b', {}, chapter.number)),
     h('p', { class: 'eyebrow' }, `Chapter ${chapter.number} of ${model.chapters.length}`),
     h('h1', { class: 'chapter-title' }, chapter.title),
+    chapter.intro ? h('div', { class: 'scene' }, storyParas(chapter.intro)) : null,
+    chapter.letter && model.evidence[chapter.letter] ? noteSheet(model.evidence[chapter.letter]) : null,
+    chapter.aside ? h('p', { class: 'muted aside' }, chapter.aside) : null,
     chapter.location ? locationCard(chapter.location, first ? 'You are at' : 'Go to') : h('section', { class: 'place' }, h('p', {}, 'No travel needed. Anywhere comfortable and safely stopped will do: a bench, a café, home. If you’re in the city lot, drive off first.')),
     !first && chapter.location ? h('p', { class: 'safety' }, 'Read the directions now, before you drive. Don’t use the game while moving.') : null,
     h('div', { class: 'actions' },
@@ -306,6 +314,7 @@ function renderPuzzle(pos) {
       h('div', { class: 'stamp', 'aria-hidden': 'true' }, done === 'solved' ? 'Solved' : 'Revealed'),
       h('p', { class: 'answer' }, h('span', { class: 'label' }, 'Answer'), p.reveal.answer),
       h('details', { class: 'why', open: done === 'revealed' || null }, h('summary', {}, 'How it works'), h('p', {}, p.reveal.why)),
+      p.story ? h('div', { class: 'scene beat' }, storyParas(p.story)) : null,
       granted.length ? h('div', { class: 'new-ev' }, h('h2', { class: 'sect' }, 'New evidence'), granted.map(id => renderEvidence(id, { open: true, fresh: true }))) : null,
       last && chapter.outro ? h('div', { class: 'outro' }, h('p', { class: 'eyebrow' }, `Chapter ${chapter.number} complete`), h('p', {}, chapter.outro)) : null,
       btn(n === order.length ? 'Open the verdict' : last ? 'Next chapter →' : 'Continue →', () => { commit(actions.advance(model, state)); go('play'); }, 'btn primary big')));

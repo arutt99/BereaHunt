@@ -115,6 +115,13 @@ details[open] > summary::before { transform: rotate(90deg); }
 @keyframes thump { from { transform: scale(1.8) rotate(-20deg); opacity: 0; } to { transform: scale(1) rotate(-8deg); opacity: 1; } }
 .chapter-title { font-size: 34px; text-align: center; }
 .intro > .eyebrow { text-align: center; }
+.scene { font: 18px/1.65 var(--f-serif); margin: 8px 0 18px; }
+.scene p { margin: 0 0 12px; } .scene p:last-child { margin-bottom: 0; }
+.scene.beat { margin: 18px 0 4px; padding: 2px 0 2px 14px; border-left: 3px solid var(--accent); font-style: italic; }
+.letter-sheet.note { font-size: 16.5px; line-height: 1.65; margin: 0 0 10px; }
+.letter-sheet.note::after { top: 33%; }
+.letter-sheet.note .sig { color: #2b1f12; font: 600 24px var(--f-hand); font-style: normal; text-align: right; margin-top: 14px; }
+.aside { font-size: 14px; text-align: center; margin: 4px 0 8px; }
 .place { padding: 16px; margin: 16px 0; border-top: 4px solid var(--accent); }
 .place-head h3 { margin: 4px 0 2px; font-size: 22px; } .addr { margin: 0 0 10px; color: var(--ink-2); font-size: 15px; }
 .notes { padding-left: 20px; font-size: 15px; color: var(--ink-2); } .notes li { margin: 5px 0; }
