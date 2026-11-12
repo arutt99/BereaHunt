@@ -1,6 +1,6 @@
 {
   "adventureId": "berea-case-01",
-  "contentVersion": "2.1.0",
+  "contentVersion": "2.2.0",
   "schemaVersion": 1,
   "stateCompatibility": 1,
   "inventoryScope": "complete_application",
@@ -108,14 +108,14 @@
     },
     {
       "path": "content/adventure.json",
-      "sha256": "2c6c9a9d71e6dca8b9d505a7703221a7ef71a7e992f220e67268b2aaf07e2adc",
-      "byteLength": 43802,
+      "sha256": "e64ef35743cf2526411b561445e7a433309025bb7a34936d7dbf128abfc58d35",
+      "byteLength": 45548,
       "required": true
     },
     {
       "path": "content/preparation.json",
-      "sha256": "c09a81840ef9165e8beb028c16732c93dd481f90697a805934cb28fcd4186e37",
-      "byteLength": 2121,
+      "sha256": "d47df1b121ffd98a434b621aee2165851b9d7d299a9c711f9a2df95e52ceda97",
+      "byteLength": 2123,
       "required": true
     },
     {
@@ -132,8 +132,8 @@
     },
     {
       "path": "scripts/app.js",
-      "sha256": "b722b3ca87a035482a30dba8400411e93a41e2a67351846c514da8cc81e8811c",
-      "byteLength": 31373,
+      "sha256": "bf9d37f365c64526158f06834d133650bf8c31704ddac95068c756833c2a1fe2",
+      "byteLength": 32287,
       "required": true
     },
     {

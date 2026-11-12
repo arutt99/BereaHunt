@@ -1,13 +1,13 @@
 {
  "id": "berea-promenade",
- "contentVersion": "2.1.0",
+ "contentVersion": "2.2.0",
  "title": "The Promenade Letter",
  "subtitle": "A Berea investigation",
  "cast": [
   {
    "id": "helen",
    "name": "Dr. Helen Marsh",
-   "role": "Retired geologist. Outside reader for the auction. Found drowned eleven days ago.",
+   "role": "Retired geologist. Outside reader for the auction. Found drowned on a Thursday night, nearly two weeks ago.",
    "fictional": true
   },
   {
@@ -54,7 +54,7 @@
   },
   "L1": {
    "name": "Berea Falls Scenic Overlook",
-   "address": "Cleveland Metroparks, Rocky River Reservation — off Barrett Road near Valley Parkway, Berea",
+   "address": "Cleveland Metroparks, Rocky River Reservation — Valley Parkway near Barrett Road, Berea",
    "mapUrl": "https://maps.google.com/maps?q=41.378044,-81.866079",
    "arrival": "Use the Metroparks destination pin and park in the small visitor lot (Berea Falls Trailhead). Walk the short path to the wooden overlook deck.",
    "walk": "Short: a published estimate is about 80 yards from the lot to the overlook, so roughly 0.1 mile there and back. Not measured by us.",
@@ -66,12 +66,12 @@
   },
   "L2": {
    "name": "Downtown Berea — north end of Coe Lake Park",
-   "address": "Seminary Street, just south of E. Bridge Street, Berea, OH 44017",
+   "address": "Just south of E. Bridge Street, where Seminary Street continues south as Veterans Parkway, Berea, OH 44017",
    "mapUrl": "https://maps.google.com/maps?q=41.3654154,-81.8516549",
-   "arrival": "Park for free on a downtown street (Seminary Street is closest, if spaces are open) or in the free city lot behind City Hall, 11 Berea Commons. Walk to the brown Ohio Historical Marker at the north end of Coe Lake Park, beside the walkway on Seminary Street.",
-   "walk": "From Seminary Street: about 0.15 mile for the whole visit. From the City Hall lot: about 0.3 mile total. Both are map estimates, not walked distances.",
+   "arrival": "Park free in the city lot behind City Hall (11 Berea Commons), toward its east end, beside Veterans Parkway (the short road that continues Seminary Street south of E. Bridge Street). The brown Ohio Historical Marker stands beside Veterans Parkway at the north end of Coe Lake Park, near the lot’s northeast corner, about 300 feet south of E. Bridge Street. Free downtown street parking also works.",
+   "walk": "About 0.25–0.3 mile for both markers and back, from the lot’s east end (about 0.1 mile more each way from its far west end). Map estimates, not walked.",
    "notes": [
-    "You will visit two markers on public sidewalks, about a block apart. You don’t need to go into any building.",
+    "You will visit two markers about 650 feet apart, on the same north–south line, on either side of E. Bridge Street. Cross Bridge Street with care. You don’t need to go into any building.",
     "If a marker is missing, unreadable or too dark to read, use “Can’t access this clue” for the full official text.",
     "Don’t play the game in the parking lot itself (city park rules). Sidewalks, benches or your car once you’ve left the lot are all fine."
    ]
@@ -137,7 +137,7 @@
    "blocks": [
     {
      "t": "date",
-     "x": "Tuesday night"
+     "x": "Helen’s house, late"
     },
     {
      "t": "p",
@@ -527,7 +527,7 @@
    "title": "Helen’s copy from the Triangle marker",
    "kind": "clipping",
    "fictional": false,
-   "caption": "Helen copied this from Ohio Historical Marker 20-18 on the Triangle, about 600 feet west of the Coe Lake marker. Seeing it in person is optional.",
+   "caption": "Helen copied this from Ohio Historical Marker 20-18 on the Triangle, about 600 feet northwest of the Coe Lake marker as the crow flies. Seeing it in person is optional.",
    "blocks": [
     {
      "t": "quote",
@@ -650,7 +650,7 @@
       ],
       [
        "Record",
-       "Badge out of the building at 8:05 pm."
+       "Badged in at 1:10 pm, badged out at 8:05 pm. The doors log every exit, and there were no others."
       ]
      ]
     },
@@ -691,7 +691,7 @@
    "blocks": [
     {
      "t": "p",
-     "x": "Owen was in the air until after 10:00 pm. Dana couldn’t have reached the pit before about 8:40 pm, after the latest time of death."
+     "x": "Owen was in the air until after 10:00 pm. Dana was inside her Cleveland building until 8:05 pm, so she couldn’t have reached the pit before about 8:40 pm, after the latest time of death."
     },
     {
      "t": "p",
@@ -708,7 +708,9 @@
    "evidence": [
     "E03",
     "E04",
-    "E01"
+    "E01",
+    "E02",
+    "E05"
    ],
    "input": {
     "type": "keyword",
@@ -892,7 +894,8 @@
     ]
    },
    "answers": [
-    "274d79d8a4f95b69de64abffb30a1660fc2e0ed67da0e89dd96496e0030d8346"
+    "274d79d8a4f95b69de64abffb30a1660fc2e0ed67da0e89dd96496e0030d8346",
+    "4fa73a687bbe2346d830dd086967ba079a4f19eccbc77bbdaae1a263b954fec0"
    ],
    "hints": [
     "Torn paper only fits one way: each scrap’s bottom edge matches the top edge of the next. The odd scrap is from a different sheet. Look at the paper.",
@@ -901,7 +904,7 @@
    ],
    "reveal": {
     "answer": "Thursday 7:30 pm at the Larkmoor pit",
-    "why": "The page starts with the clean-topped scrap and ends with the clean-bottomed one, and each torn edge matches the next. The grocery scrap is on different paper, from another page. Restored: “Thursday — 7:30 pm. Larkmoor pit, by the north ledge. Meeting the one person who knows where the paper truly came from. If I’m right, the letter dies tonight.” Helen didn’t go to the pit by chance. She went to meet someone."
+    "why": "The page starts with the clean-topped scrap and ends with the clean-bottomed one, and each torn edge matches the next. The grocery scrap is on different paper, from another page. (The edges put the pit line second; if you placed it after the meeting lines instead, the page says the same thing, so that counts too.) Restored: “Thursday — 7:30 pm. Larkmoor pit, by the north ledge. Meeting the one person who knows where the paper truly came from. If I’m right, the letter dies tonight.” Helen didn’t go to the pit by chance. She went to meet someone."
    },
    "grants": [
     "E12"
@@ -928,6 +931,7 @@
     "placeholder": "e.g. 1900"
    },
    "answers": [
+    "9b529828aa0cad1ee3f0dcba4b56f4a7249afa7274909c91e150cea57a3e3300",
     "ad4e9d59aa66bf02dcb626fd1365a31cce282b0428bf9499901ab329b64ae4fc"
    ],
    "near": {
@@ -958,7 +962,7 @@
     "E15",
     "E14"
    ],
-   "onSite": "Walk one block north on Seminary Street to the marker at the corner of Church Street. Read it, and remember that the letter claims 1849.",
+   "onSite": "Walk north from this marker, cross E. Bridge Street with care, and continue up Seminary Street to the next corner, Church Street (about 650 feet). The marker stands on the northwest corner. Read it, and remember that the letter claims 1849.",
    "fallback": [
     "E16",
     "E14"
@@ -1001,6 +1005,13 @@
    "answers": [
     "d5ef45608341311b755597e2fb058dab88241c404d39e2f25d1663ca85aea36f"
    ],
+   "near": {
+    "2c641dcfbe118edc7298bd5702767c835e16e83bdf55fe18bed2e4510af85c4c": "You’ve caught one. Another line borrows words written long after 1849.",
+    "b3e58d3e07901ea30b2bf70517c3bc5ce38172f0db7cce4469b5c00662df1338": "You’ve caught one. Now hold the church line up against the corner marker’s dates.",
+    "d62eaa8cc39ec82398cd360feaa9e91777efa951df9e35a082071eec0fec6891": "Close. The pump: the marker gives only the year it was taken away. Does anything rule it out in 1849?",
+    "77d204e3b11ba4106d8807eebb21653e0dd9298f752c8a1d89504ac30d576a3b": "Close. Count back two summers from June 1849.",
+    "138b43226fed9f195aaa24ec3c5d8ba6e757dcaec58c5335400e691bada50d1f": "Close. When did Berea’s grindstone trade begin?"
+   },
    "hints": [
     "Judge every line against 1849. “Not contradicted” doesn’t mean proven; it means nothing on the markers rules it out.",
     "The Triangle went to the people in 1847, which is two summers before 1849. Grindstones date to the 1830s and the quarries were thriving in the 1840s. The pump stood there until 1924, and its start date isn’t given. Now read the church marker’s dates.",
@@ -1013,8 +1024,7 @@
    "grants": [
     "E17"
    ],
-   "story": "Two lines the real John Baldwin could never have written, set among three true ones copied with care. This wasn’t a careless fake. Someone patient made it, someone who had read this town’s markers closely. Helen was about to say so in writing.",
-   "near": {}
+   "story": "Two lines the real John Baldwin could never have written, set among three true ones copied with care. This wasn’t a careless fake. Someone patient made it, someone who had read this town’s markers closely. Helen was about to say so in writing."
   },
   "P7": {
    "chapter": "C4",
@@ -1056,12 +1066,12 @@
    },
    "hints": [
     "The window is 7:15–8:30 pm. For each person, find the earliest moment they could have stood on that ledge.",
-    "Owen landed at 10:10 pm. Dana left downtown Cleveland at 8:05 pm, and that’s a 35-minute drive.",
+    "Owen landed at 10:10 pm. Dana was inside her downtown Cleveland building from 1:10 until 8:05 pm, and the pit is a 35-minute drive from there.",
     "Dana couldn’t arrive before about 8:40 pm, and Owen was in the air. Victor (off air at 7:05, 15 minutes away) and Iris (no record) both had time."
    ],
    "reveal": {
     "answer": "Victor Hale and Iris Calloway",
-    "why": "Owen was on a plane until 10:10 pm. Dana left her Cleveland office at 8:05 pm. With a 35-minute drive, she reaches the pit around 8:40, after the latest time of death. Victor’s livestream ended at 7:05 in Berea, 15 minutes away, so he could be there by about 7:20. Iris has no record at all, and her phone was off for the whole window. Both remain."
+    "why": "Owen was on a plane until 10:10 pm. Dana was inside her Cleveland office building all afternoon and evening, with no exit logged until 8:05 pm. With a 35-minute drive, she reaches the pit around 8:40, after the latest time of death. Victor’s livestream ended at 7:05 in Berea, 15 minutes away, so he could be there by about 7:20. Iris has no record at all, and her phone was off for the whole window. Both remain."
    },
    "grants": [
     "E20"
@@ -1137,7 +1147,7 @@
    },
    {
     "head": "Opportunity",
-    "x": "The examiner’s window is 7:15–8:30 pm. Owen was in the air. Dana left Cleveland at 8:05 and couldn’t arrive before about 8:40. Victor and Iris both could have been there."
+    "x": "The examiner’s window is 7:15–8:30 pm. Owen was in the air. Dana was inside her Cleveland building until 8:05 and couldn’t arrive before about 8:40. Victor and Iris both could have been there."
    },
    {
     "head": "Knowledge",
@@ -1145,7 +1155,7 @@
    },
    {
     "head": "Fact and fiction",
-    "x": "Everything about the people and Lot 112 is invented. The marker texts, the coin toss and the geology of the falls are real, quoted from the Ohio History Connection, the City of Berea and Cleveland Metroparks."
+    "x": "Everything about the people, the auction house, the Larkmoor pit and Lot 112 is invented. The marker texts, the coin toss and the geology of the falls are real, quoted from the Ohio History Connection, the City of Berea and Cleveland Metroparks."
    }
   ]
  }

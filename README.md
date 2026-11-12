@@ -14,13 +14,18 @@ may contain spoilers.** If you're one of the players, don't browse the repo.
   it looks the same offline.
 - Tested in an emulated phone browser: the whole case played end to end in light
   and dark, including the offline download and offline relaunch.
+- 2026-11-12 end-to-end audit (v2.2): real-world quotes rechecked against the
+  official sources. Several directions, a street name and a walking distance were
+  corrected. A few story/logic inconsistencies were fixed, and updating an
+  already-installed copy was tested.
 - **Not yet done:** testing on a real iPhone Home Screen install of v2, any
   physical visit to the route, and timing with real players. The real-world
   details come from official online sources; no one has walked the route.
 
-If the iPhone already had the old version downloaded, open the installed app
-with a connection and tap **Check again for updates**. The old version's saved
-progress isn't carried over. Nobody had started the old case, so nothing is lost.
+If the iPhone already has the game installed, open the installed app with a
+connection, tap **Check again for updates**, wait for **Ready offline**, then
+close the app completely and reopen it. Progress from any earlier v2 version is
+kept. (Progress from the original v1 case isn't carried over.)
 
 ## Play
 
