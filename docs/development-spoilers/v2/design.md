@@ -94,3 +94,25 @@ Fairness notes:
   offline relaunch. Both passed.
 - Not done: a real iPhone, Home Screen install, any physical visit, or timing
   with real players.
+
+## Narrative pass (2026-11-12, v2.1.0)
+
+Player feedback: the opening was only a location card, and the first puzzle had
+little story around it.
+
+- Bug fixed: `chapter.intro` was authored but never rendered. All four chapter
+  intro screens now show it.
+- Chapter 1 opens with an in-fiction scene (the bartender hands over an envelope)
+  and Claire's letter (E01, now kind `note`, which replaces the old text message). The
+  letter sets up Helen, the players' link to her (Fat Head's regulars), the
+  drowning, Lot 112 and the coded envelope, plus one atmospheric detail: an
+  anonymous caller asking about Helen's papers. It's deliberately gender-neutral
+  and not a clue.
+- Requirement kept: no staff-delivered clue (brief §9, R06/R07). The handoff
+  happens only in the fiction. A one-line aside on the intro tells players that
+  nobody at the brewery is involved.
+- Each of P1–P7 now has a short `story` beat shown after it's solved or revealed. The beats
+  carry the narrative between puzzles without adding deductive information.
+  The P7 beat points back to Helen's pages, as P8's objective already does.
+- Checks: `npm test` 6/6, and `node tests/playthrough.cjs` passed in light and dark.
+  Screenshots of the new intro and beats were reviewed. Nothing has been tested on a real device or on site.

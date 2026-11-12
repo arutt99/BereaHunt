@@ -1,7 +1,7 @@
 {
   "_comment": "DEVELOPMENT SPOILERS. Authoring source for site/content/case.json. Contains plaintext answers. Build with: python3 scripts/build_case.py",
   "id": "berea-promenade",
-  "contentVersion": "2.0.0",
+  "contentVersion": "2.1.0",
   "title": "The Promenade Letter",
   "subtitle": "A Berea investigation",
   "cast": [
@@ -14,7 +14,7 @@
     {
       "id": "claire",
       "name": "Claire Marsh",
-      "role": "Helen’s niece. She sent you the envelope.",
+      "role": "Helen’s niece. She left you a letter at Fat Head’s.",
       "fictional": true
     },
     {
@@ -84,12 +84,14 @@
       "number": 1,
       "title": "The Envelope",
       "location": "L0",
-      "intro": "Claire Marsh’s message reaches your phone as the drinks arrive. Her aunt Helen drowned eleven days ago, and the police called it an accident. Claire doesn’t believe them. Helen mailed her an envelope the day she died. Claire wants two patient people to look at it before she takes it to anyone official.",
+      "intro": "Your drinks arrive with something you didn’t order. The bartender sets a cream envelope on the bar between you. Both your names are on the front in careful blue ink. A woman left it yesterday, they say, and asked them to hold it until you came in.\n\nInside is a thick case folder and, on top, a letter.",
       "puzzles": [
         "P1",
         "P2"
       ],
-      "outro": "Helen’s first message is open, and so is her first destination. Finish your drinks — there’s no hurry. When you’re ready, drive to the falls."
+      "outro": "Helen’s first message is open, and so is her first destination. Finish your drinks — there’s no hurry. When you’re ready, drive to the falls.",
+      "letter": "E01",
+      "aside": "In the story, the envelope comes from the bar. In real life it’s here on the phone. Nobody at Fat Head’s is part of the game, so there’s nothing to ask for."
     },
     {
       "id": "C2",
@@ -130,29 +132,41 @@
   ],
   "evidence": {
     "E01": {
-      "title": "Message from Claire",
-      "kind": "message",
+      "title": "Claire’s letter",
+      "kind": "note",
       "fictional": true,
       "blocks": [
         {
-          "t": "p",
-          "x": "Thank you for doing this. I don’t know who else to ask."
+          "t": "date",
+          "x": "Tuesday night"
         },
         {
           "t": "p",
-          "x": "Aunt Helen was a geologist — forty years of rocks and quarries. Lately she was an outside reader for Halberd & Finch, the Cleveland auction house. They had her check a letter they’re selling: a letter John Baldwin supposedly wrote in 1849. Estimate $85,000."
+          "x": "If the bartender did as I asked, you’re reading this over a drink. I’m sorry to spoil it. I couldn’t think how to reach you without it going through a phone or an inbox. And I knew you’d turn up here sooner or later. Aunt Helen always said Fat Head’s was where she’d find you two."
         },
         {
           "t": "p",
-          "x": "Eleven days ago they found her in the water at the old Larkmoor pit, a flooded private quarry outside town. Thursday night. They say she slipped on a wet ledge. Helen never went near ledges at night. She used to lecture ME about it."
+          "x": "You’ll remember Helen: white hair, field jacket, the Saturday crossword in pen. She talked about you more than you’d guess. “The only two people at that bar who actually notice things,” she said."
         },
         {
           "t": "p",
-          "x": "The same day, she mailed me an envelope: a copy of the letter, the paperwork, and pages from her notebook. Half of it is in some code of hers. Please read it. Tell me if I’m crazy."
+          "x": "Eleven days ago they found her in the water at the old Larkmoor pit, a flooded private quarry outside town. Thursday night. The police say she slipped on a wet ledge in the dark. Helen spent forty years on quarry edges and never once went near one at night. She used to lecture ME about it."
+        },
+        {
+          "t": "p",
+          "x": "Lately she’d been an outside reader for Halberd & Finch, the Cleveland auction house. They had her check a letter they’re about to sell: a letter John Baldwin supposedly wrote in 1849. Yes, that Baldwin. Estimate: $85,000. She never finished her report."
+        },
+        {
+          "t": "p",
+          "x": "The day she died, she mailed me an envelope: a copy of the letter, the sale paperwork and pages from her notebook. Half of it is in some code of hers. The day after the funeral, someone rang the house asking whether Helen had left any papers. They wouldn’t give a name."
+        },
+        {
+          "t": "p",
+          "x": "It’s all in this folder. Please read it. If she was wrong, tell me, and I’ll let it go. If she wasn’t, I think she meant someone to follow her. I think she meant it to be you."
         },
         {
           "t": "sig",
-          "x": "— Claire"
+          "x": "— Claire Marsh"
         }
       ]
     },
@@ -740,7 +754,8 @@
       },
       "grants": [
         "E06"
-      ]
+      ],
+      "story": "In plain English the line looks different. The capitals are pressed hard into the page, and the last word is underlined twice. Whatever Helen found, she wouldn’t trust it to an email. She trusted it to a coin toss from 1836, and to whoever cared enough to look it up."
     },
     "P2": {
       "chapter": "C1",
@@ -797,7 +812,8 @@
         "answer": "Berea Falls",
         "why": "“Begin where the river breaks it” — “it” is the stone from the line before. Coe Lake and Wallace Lake are still, flooded quarries. The Triangle has no river. Only at Berea Falls does a river break stone: Metroparks describes the Rocky River wearing away the shale until the sandstone above breaks off."
       },
-      "grants": []
+      "grants": [],
+      "story": "Four pins, and only one where the water still moves. Helen’s ink on that pin is darker than on the others, as if she went over it twice."
     },
     "P3": {
       "chapter": "C2",
@@ -843,7 +859,8 @@
         "answer": "Seep → shale wears → ledge hangs → breaks off",
         "why": "The sandstone is the hard top layer, so the water can’t cut it head-on. It seeps through cracks to the soft shale below. As the shale wears away, the sandstone above loses its support and juts out. Eventually it breaks off, and the breaks make the falls. This is the Metroparks explanation. Helen’s point: a hard, honest face can fail because of what’s underneath it."
       },
-      "grants": []
+      "grants": [],
+      "story": "Hard on top, soft underneath, and the hard face falls anyway. Helen wasn’t teaching geology. She was telling you how Lot 112 would come apart. Folded behind the sketch, where you’d only find it after reading it, are six torn scraps of notebook paper."
     },
     "P4": {
       "chapter": "C2",
@@ -914,7 +931,8 @@
       },
       "grants": [
         "E12"
-      ]
+      ],
+      "story": "Thursday, 7:30. The night she died. Helen didn’t wander onto that ledge. She went to the pit to meet someone, and she expected the letter to die that night. Instead, it was Helen who didn’t come home."
     },
     "P5": {
       "chapter": "C3",
@@ -968,7 +986,8 @@
         "answer": "1895",
         "why": "Side B of marker 16-18 quotes Anna M. Nokes’s 1895 essay “The Big Quarry.” Her passage ends “…nothing but a quiet, blue body of water, glimmering in the sunlight.” The Promenade Letter, dated 1849, ends with those same words. A letter can’t quote an essay written 46 years later. And in 1849 the quarries were booming, not flooded. Standing there, you can see why Helen wrote “where have I read this before?”"
       },
-      "grants": []
+      "grants": [],
+      "story": "Helen stood here, read these words in bronze, and knew. The letter isn’t what it claims to be. But one borrowed line could be a coincidence. Two would be a method."
     },
     "P6": {
       "chapter": "C3",
@@ -1033,7 +1052,8 @@
       },
       "grants": [
         "E17"
-      ]
+      ],
+      "story": "Two lines the real John Baldwin could never have written, set among three true ones copied with care. This wasn’t a careless fake. Someone patient made it, someone who had read this town’s markers closely. Helen was about to say so in writing."
     },
     "P7": {
       "chapter": "C4",
@@ -1093,7 +1113,8 @@
       },
       "grants": [
         "E20"
-      ]
+      ],
+      "story": "Two names left. One had $85,000 to lose. The other’s phone went dark for the whole evening. The records can’t choose between them. Helen’s own pages might."
     },
     "P8": {
       "chapter": "C4",
