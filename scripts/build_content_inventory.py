@@ -22,32 +22,28 @@ def serialize(value):
 
 
 def inventory_outputs():
-    adventure = json.loads((SITE / 'content/adventure.json').read_text())
-    registry_path = SITE / 'content/assets.json'
-    registry = json.loads(registry_path.read_text())
-    for asset in registry['assets']:
-        asset.update(fingerprint(SITE / asset['relativePath']))
-    registry_text = serialize(registry)
+    case = json.loads((SITE / 'content/adventure.json').read_text())
     resources = []
     for path in sorted(SITE.rglob('*')):
-        if not path.is_file():
+        if not path.is_file() or path.name.startswith('.'):
             continue
         relative = path.relative_to(SITE).as_posix()
         if relative == MANIFEST:
             continue
-        data = registry_text.encode() if path == registry_path else path.read_bytes()
+        data = path.read_bytes()
         resources.append(dict(path=relative, sha256=hashlib.sha256(data).hexdigest(),
                               byteLength=len(data), required=True))
-    manifest = dict(adventureId=adventure['id'], contentVersion=adventure['contentVersion'],
-                    schemaVersion=adventure['schemaVersion'],
-                    stateCompatibility=adventure['stateCompatibility'],
-                    inventoryScope='complete_application', applicationImplemented=True, applicationVersion='1.0.1',
+    # adventureId/schemaVersion/stateCompatibility are the offline *package protocol*
+    # checked by service-worker.js; keep them stable so installed phones can update.
+    manifest = dict(adventureId='berea-case-01', contentVersion=case['contentVersion'],
+                    schemaVersion=1, stateCompatibility=1,
+                    inventoryScope='complete_application', applicationImplemented=True, applicationVersion='2.0.0',
                     bootstrap=dict(path=MANIFEST, selfHashExcluded=True,
                                    reason='A manifest cannot contain its own hash. Fetch this versioned bootstrap first; verify every listed resource before declaring the package complete.'),
                     externalResourcesRequired=False,
-                    externalExclusions=['Optional external navigation and citation links'],
+                    externalExclusions=['Optional external map and source links'],
                     resources=resources)
-    return {registry_path: registry_text, SITE / MANIFEST: serialize(manifest)}
+    return {SITE / MANIFEST: serialize(manifest)}
 
 
 def main():

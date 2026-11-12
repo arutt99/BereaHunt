@@ -1,43 +1,31 @@
 {
-  "publicLabel": "Berea investigation",
-  "introduction": "One shared phone. One investigation. Begin by opening the first clue during your planned customer drink visit at Fat Head’s in Middleburg Heights. Allow roughly three hours for the core outing; your visit and personal pauses can extend it.",
-  "installInstructions": [
-    "In iPhone Safari, use Share → Add to Home Screen, then open the new icon. Exact menu wording may vary with iOS.",
-    "Use the installed app for both preparation and the outing. Safari and the Home Screen app may keep separate progress.",
-    "With connectivity, choose Download complete adventure. Wait until every required resource is confirmed locally. Opening the first screen is not a complete download.",
-    "Check offline readiness and close/relaunch the installed app offline before relying on it for the outing. Start the actual case when you are together at the planned starting visit."
+  "coverTitle": "Berea Case File",
+  "coverLine": "A sealed investigation for two.",
+  "intro": "One phone, one case, both of you. You’ll open it with a drink at Fat Head’s in Middleburg Heights, then follow it to a few nearby places. Most stops are short walks from the car.",
+  "facts": [
+    {"label": "Start", "value": "Fat Head’s Brewery, Middleburg Heights — around 3 p.m."},
+    {"label": "Length", "value": "About 2½–3 hours, plus any breaks you take"},
+    {"label": "Walking", "value": "Short. No single walk from the car is more than about a quarter mile."},
+    {"label": "Driving", "value": "A few short drives, all close to Berea"},
+    {"label": "Cost", "value": "Nothing beyond your own drinks. Parking is free."}
   ],
-  "practicalGuidance": [
-    "Bring a charged phone and clothing for the weather. No printing, pen, paper, audio or prepared props are needed.",
-    "Subsequent exploration is short and optional, aiming below about a quarter mile total per car-to-stop-to-car walk. No extra purchase, business entry or scheduled break is required.",
-    "Read, solve and use controls only while legally and safely stopped; never while driving or crossing a street. External maps are optional and may require connectivity.",
-    "Posted closures, restrictions and unsafe conditions take priority. Use Can’t access this clue for complete unsolved evidence without visiting; Reveal answer is a separate deliberate action.",
-    "In winter, finish optional outdoor observation by about 16:30, earlier in poor light or unsafe conditions. References carry all essential facts. If travel itself is unsuitable, postpone and resume safely.",
-    "Pause whenever you like. There is no countdown, hint delay or penalty. Local progress and downloaded files can be lost if browser/device data is removed; the app must report storage problems truthfully."
+  "bring": [
+    "The phone this game is installed on, fully charged",
+    "Your car",
+    "Warm layers and shoes for short outdoor walks",
+    "Nothing to write with. The game keeps track of everything."
   ],
-  "labels": {
-    "download": "Download complete adventure",
-    "preparationIncomplete": "Preparation incomplete",
-    "readyOffline": "Ready offline",
-    "begin": "Start the investigation",
-    "resume": "Resume investigation",
-    "hint": "Show next hint",
-    "reference": "Can’t access this clue",
-    "reveal": "Reveal answer",
-    "travel": "Stop safely before investigating",
-    "destinationConfirmation": "Confirm destination",
-    "finalSubmit": "Record finding",
-    "fullExplanation": "How the case fits together",
-    "restart": "Restart investigation"
-  },
-  "restartConfirmation": "Restart this investigation and erase its local progress, hints and drafts? The complete compatible download can remain. This cannot recover removed device data.",
-  "storageNotices": {
-    "unavailable": "Progress is available in this session, but local saving is unavailable. Keep this app open until saving works.",
-    "writeFailed": "The latest progress could not be saved. Keep the app open and retry; closing it may lose recent changes.",
-    "incompatible": "This saved case needs its compatible content version. Keep the existing data; do not reset it automatically."
-  },
-  "referenceNotice": "Reference evidence lets you keep solving without a visit. It does not reveal or submit an answer.",
-  "mapNotice": "External navigation may need a connection. Written arrival instructions and reference evidence remain in the downloaded case.",
-  "sourceReviewDate": "2026-11-11",
-  "dateNotice": "Access information is documentary research, not a guarantee of future conditions. No on-site or device validation is claimed by the content package."
+  "daylight": "Some steps are outdoors and are easiest in daylight. In January or early February, start no later than 3 p.m. If light, ice or a closure gets in the way, every clue has a “Can’t access this clue” option, so you can always finish.",
+  "rules": [
+    "Hints never cost anything, and nothing is timed. Pause whenever you like; progress saves on its own.",
+    "Never use the game while driving. Each chapter tells you where to go before you leave.",
+    "The people and the crime are fiction. The places and their history are real. No business or park is part of the game, so you’ll never need to ask staff for anything."
+  ],
+  "install": [
+    "Open this page in Safari on the iPhone you’ll use.",
+    "Tap Share, then Add to Home Screen. Open the game from the new icon.",
+    "In the installed app, tap Download for offline play and wait for “Ready offline.”",
+    "Optional: switch to airplane mode and reopen the app to check that it works offline. Don’t open the case until you’re together at the start."
+  ],
+  "contextNote": "Safari and the Home Screen app keep separate progress. Use the Home Screen app for everything."
 }
