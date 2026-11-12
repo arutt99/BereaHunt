@@ -1,4 +1,4 @@
-export const SAVE_KEY = 'berea-case-01:investigation';
+export const SAVE_KEY = 'berea-case-02:investigation';
 // Leave corrupt/incompatible bytes untouched until an explicit confirmed restart.
 export class Persistence {
   constructor(storage) { this.storage = storage; this.lastRaw = null; this.status = 'unsaved'; this.blocked = false; }

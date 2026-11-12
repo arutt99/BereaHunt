@@ -1,125 +1,104 @@
-import { checkAnswer } from './answers.js';
-import { validDraft } from './aids.js';
-export const SAVE_SCHEMA = 1;
-const unique = values => [...new Set(values)];
-const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
-export function createState(model) {
-  return refresh(model, {
-    schemaVersion: SAVE_SCHEMA, adventureId: model.adventure.id,
-    contentVersion: model.adventure.contentVersion, stateCompatibility: model.adventure.stateCompatibility,
-    started: false, mode: 'preparation', completedPuzzleIds: [], confirmedTravelLegIds: [], arrivedTravelLegIds: [],
-    hintLevelByPuzzle: {}, referenceUsedPuzzleIds: [], revealedPuzzleIds: [], workingAidDraftByPuzzle: {},
-    endingViewed: false, fullExplanationViewed: false, revision: 0, updatedAt: null,
-  });
+// Game rules: progression, answer checking and unlocked evidence. No DOM access.
+export const STATE_VERSION = 2;
+const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+export function normalizeText(value) {
+  let s = String(value).normalize('NFKC').toLowerCase();
+  s = s.replace(/&/g, ' and ').replace(/[’‘'`]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+  return s.replace(/^the /, '');
 }
-export const orderOf = model => model.adventure.puzzleRefs.map(ref => model.puzzlesByRef[ref].id);
-export function currentPuzzle(model, state) {
-  const order = orderOf(model), n = state.completedPuzzleIds.length;
-  return model.puzzles[order[state.mode === 'finding' || state.mode === 'ending' ? n - 1 : n]] || null;
+export const normalizeKeyword = value => String(value).normalize('NFKC').toLowerCase().replace(/[^a-z]/g, '');
+
+export function normalizeFor(kind, value) {
+  if (kind === 'keyword') return normalizeKeyword(value);
+  if (['choice', 'final', 'multi', 'order', 'strips', 'classify'].includes(kind)) return String(value).trim().toLowerCase();
+  return normalizeText(value);
 }
-export function pendingTravel(model, state) {
-  const last = state.completedPuzzleIds.at(-1);
-  return model.adventure.travelLegs.find(t => t.afterPuzzleId === last && !state.arrivedTravelLegIds.includes(t.id)) || null;
+
+export async function sha256(text) {
+  const bytes = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return [...new Uint8Array(digest)].map(n => n.toString(16).padStart(2, '0')).join('');
 }
-export function enteredIds(model, state) {
-  if (!state.started) return [];
-  return unique([...state.completedPuzzleIds, ...(state.mode === 'objective' ? [currentPuzzle(model, state).id] : [])]);
+
+export async function checkAnswer(puzzleId, puzzle, raw) {
+  const normalized = normalizeFor(puzzle.input.type, raw);
+  if (!normalized) return { empty: true };
+  const hash = await sha256(`berea|${puzzleId}|${normalized}`);
+  if (puzzle.answers.includes(hash)) return { correct: true };
+  return { correct: false, near: puzzle.near?.[hash] || null };
 }
-export function refresh(model, state) {
-  const entered = enteredIds(model, state);
-  state.evidenceIds = unique(entered.flatMap(id => model.puzzles[id].entryEvidenceIds)
-    .concat(state.completedPuzzleIds.flatMap(id => model.puzzles[id].rewardEvidenceIds)));
-  state.currentPuzzleId = currentPuzzle(model, state)?.id || model.adventure.initialPuzzleId;
-  state.currentChapterId = model.puzzles[state.currentPuzzleId].chapterId;
-  return state;
+
+export function keyedAlphabet(keyword) {
+  const out = [];
+  for (const ch of (String(keyword).toUpperCase() + ALPHABET)) if (ALPHABET.includes(ch) && !out.includes(ch)) out.push(ch);
+  return out.join('');
 }
-export function transition(model, original, event, solution = null) {
-  const s = structuredClone(original), p = currentPuzzle(model, s), leg = pendingTravel(model, s);
-  switch (event.type) {
-    case 'begin':
-      if (s.started) return original;
-      s.started = true; s.mode = 'objective'; break;
-    case 'draft':
-      if (s.mode !== 'objective') throw Error('LOCKED');
-      if (!validDraft(p, event.draft)) throw Error('INVALID_DRAFT');
-      s.workingAidDraftByPuzzle[p.id] = structuredClone(event.draft); break;
-    case 'hint':
-      if (s.mode !== 'objective') throw Error('LOCKED');
-      s.hintLevelByPuzzle[p.id] = Math.min(3, (s.hintLevelByPuzzle[p.id] || 0) + 1); break;
-    case 'reference':
-      if (s.mode !== 'objective') throw Error('LOCKED');
-      s.referenceUsedPuzzleIds = unique([...s.referenceUsedPuzzleIds, p.id]); break;
-    case 'submit':
-    case 'reveal':
-      if (s.mode !== 'objective' || solution?.puzzleId !== p.id) throw Error('LOCKED');
-      if (event.type === 'reveal' && event.confirmed !== true) throw Error('CONFIRM_REQUIRED');
-      if (event.type === 'submit' && !checkAnswer(solution, event.payload)) return original;
-      s.completedPuzzleIds.push(p.id);
-      if (event.type === 'reveal') s.revealedPuzzleIds = unique([...s.revealedPuzzleIds, p.id]);
-      s.mode = p.nextPuzzleId ? 'finding' : 'ending';
-      s.endingViewed = s.mode === 'ending'; break;
-    case 'continue':
-      if (s.mode !== 'finding') throw Error('LOCKED');
-      s.mode = leg ? 'destination' : 'objective'; break;
-    case 'confirmDestination':
-      if (s.mode !== 'destination' || !leg) throw Error('LOCKED');
-      s.confirmedTravelLegIds = unique([...s.confirmedTravelLegIds, leg.id]); s.mode = 'travel'; break;
-    case 'arrive':
-    case 'referenceTravel':
-      if (!['destination', 'travel'].includes(s.mode) || !leg || event.safelyStopped !== true) throw Error('STOP_REQUIRED');
-      if (event.type === 'arrive' && s.mode !== 'travel') throw Error('LOCKED');
-      s.confirmedTravelLegIds = unique([...s.confirmedTravelLegIds, leg.id]);
-      s.arrivedTravelLegIds = unique([...s.arrivedTravelLegIds, leg.id]); s.mode = 'objective';
-      if (event.type === 'referenceTravel') s.referenceUsedPuzzleIds = unique([...s.referenceUsedPuzzleIds, currentPuzzle(model, s).id]);
-      break;
-    case 'fullExplanation':
-      if (s.mode !== 'ending') throw Error('LOCKED');
-      s.fullExplanationViewed = true; break;
-    default: throw Error('UNKNOWN_EVENT');
+export function decipher(cipher, keyword) {
+  const key = keyedAlphabet(keyword);
+  return [...cipher].map(c => { const i = key.indexOf(c); return i < 0 ? c : ALPHABET[i]; }).join('');
+}
+
+export function puzzleOrder(model) { return model.chapters.flatMap(c => c.puzzles); }
+export function chapterOf(model, puzzleId) { return model.chapters.find(c => c.puzzles.includes(puzzleId)); }
+
+export function newState() {
+  return { v: STATE_VERSION, started: false, index: 0, done: {}, hints: {}, refs: {}, seen: {}, outro: {}, finished: false };
+}
+
+export function restoreState(model, raw) {
+  if (!raw || raw.v !== STATE_VERSION) throw Error('INCOMPATIBLE_SAVE');
+  const order = puzzleOrder(model);
+  const s = { ...newState(), ...raw };
+  if (!Number.isInteger(s.index) || s.index < 0 || s.index > order.length) throw Error('CORRUPT_SAVE');
+  for (const key of ['done', 'hints', 'refs', 'seen', 'outro']) if (typeof s[key] !== 'object' || !s[key]) throw Error('CORRUPT_SAVE');
+  return s;
+}
+
+/** Where the players are: a chapter intro, a puzzle, a chapter outro, or the ending. */
+export function position(model, state) {
+  const order = puzzleOrder(model);
+  if (state.finished || state.index >= order.length) return { kind: 'ending' };
+  const puzzleId = order[state.index];
+  const chapter = chapterOf(model, puzzleId);
+  if (!state.seen[chapter.id]) return { kind: 'intro', chapter };
+  return { kind: 'puzzle', chapter, puzzleId, last: chapter.puzzles.at(-1) === puzzleId };
+}
+
+export function unlockedEvidence(model, state) {
+  const order = puzzleOrder(model);
+  const ids = [];
+  const add = id => { if (model.evidence[id] && !ids.includes(id)) ids.push(id); };
+  for (let i = 0; i <= Math.min(state.index, order.length - 1); i++) {
+    const pid = order[i];
+    const chapter = chapterOf(model, pid);
+    if (!state.seen[chapter.id]) break;
+    const p = model.puzzles[pid];
+    p.evidence.forEach(add);
+    if (state.refs[pid] || state.done[pid]) (p.fallback || []).forEach(add);
+    if (state.done[pid]) p.grants.forEach(add);
   }
-  s.revision += 1; s.updatedAt = new Date().toISOString();
-  return refresh(model, s);
+  return ids;
 }
-// Strict restore: completion prefixes and legal travel gates are the authority,
-// never a URL, supplied chapter, or independently supplied evidence collection.
-export function restoreState(model, value) {
-  const fail = () => { throw Error('INVALID_SAVE'); };
-  if (!value || typeof value !== 'object') fail();
-  if (value.schemaVersion !== SAVE_SCHEMA || value.adventureId !== model.adventure.id || value.stateCompatibility !== model.adventure.stateCompatibility) throw Error('INCOMPATIBLE_SAVE');
-  const order = orderOf(model), n = value.completedPuzzleIds?.length;
-  if (!Array.isArray(value.completedPuzzleIds) || n > order.length || !same(value.completedPuzzleIds, order.slice(0, n))) fail();
-  if (typeof value.started !== 'boolean' || !['preparation', 'objective', 'finding', 'destination', 'travel', 'ending'].includes(value.mode)) fail();
-  if (!value.started && (n !== 0 || value.mode !== 'preparation')) fail();
-  if (value.started && (value.mode === 'preparation' || (n === 0 && value.mode !== 'objective'))) fail();
-  if ((value.mode === 'ending') !== (n === order.length) || (value.endingViewed !== (value.mode === 'ending'))) fail();
-  if (typeof value.fullExplanationViewed !== 'boolean' || (value.fullExplanationViewed && !value.endingViewed)) fail();
-  if (!Number.isSafeInteger(value.revision) || value.revision < 0 || typeof value.contentVersion !== 'string') fail();
-  for (const field of ['confirmedTravelLegIds', 'arrivedTravelLegIds']) {
-    if (!Array.isArray(value[field]) || unique(value[field]).length !== value[field].length ||
-        value[field].some(id => !model.adventure.travelLegs.some(t => t.id === id && value.completedPuzzleIds.includes(t.afterPuzzleId)))) fail();
-  }
-  if (value.arrivedTravelLegIds.some(id => !value.confirmedTravelLegIds.includes(id))) fail();
-  for (const t of model.adventure.travelLegs) {
-    const after = order.indexOf(t.afterPuzzleId);
-    if (n > after + 1 && !value.arrivedTravelLegIds.includes(t.id)) fail();
-  }
-  const leg = pendingTravel(model, value);
-  if (['destination', 'travel'].includes(value.mode) && !leg) fail();
-  if (value.mode === 'travel' && !value.confirmedTravelLegIds.includes(leg.id)) fail();
-  if (value.mode === 'objective' && leg) fail();
-  const entered = enteredIds(model, value);
-  for (const field of ['referenceUsedPuzzleIds', 'revealedPuzzleIds']) {
-    if (!Array.isArray(value[field]) || unique(value[field]).length !== value[field].length || value[field].some(id => !(field === 'revealedPuzzleIds' ? value.completedPuzzleIds : entered).includes(id))) fail();
-  }
-  if (!value.hintLevelByPuzzle || typeof value.hintLevelByPuzzle !== 'object' || Array.isArray(value.hintLevelByPuzzle) ||
-      Object.entries(value.hintLevelByPuzzle).some(([id, level]) => !entered.includes(id) || !Number.isInteger(level) || level < 0 || level > 3)) fail();
-  if (!value.workingAidDraftByPuzzle || Array.isArray(value.workingAidDraftByPuzzle) || typeof value.workingAidDraftByPuzzle !== 'object' ||
-      Object.entries(value.workingAidDraftByPuzzle).some(([id, draft]) => !entered.includes(id) || !validDraft(model.puzzles[id], draft)) || JSON.stringify(value.workingAidDraftByPuzzle).length > 100000) fail();
-  const restored = refresh(model, structuredClone(value));
-  if (!same(value.evidenceIds, restored.evidenceIds) || value.currentPuzzleId !== restored.currentPuzzleId || value.currentChapterId !== restored.currentChapterId) fail();
-  restored.contentVersion = model.adventure.contentVersion; // compatible IDs retain all progress
-  return restored;
+
+export function visitedLocations(model, state) {
+  return model.chapters.filter(c => c.location && state.seen[c.id]).map(c => c.location);
 }
-export function citationAllowed(record, state) {
-  return !record.displayAfterPuzzleId || state.completedPuzzleIds.includes(record.displayAfterPuzzleId);
-}
+
+// Pure transitions. Each returns a new state.
+export const actions = {
+  start: s => ({ ...s, started: true }),
+  openChapter: (s, chapterId) => ({ ...s, seen: { ...s.seen, [chapterId]: true } }),
+  hint: (s, pid, total) => ({ ...s, hints: { ...s.hints, [pid]: Math.min(total, (s.hints[pid] || 0) + 1) } }),
+  reference: (s, pid) => ({ ...s, refs: { ...s.refs, [pid]: true } }),
+  solve: (s, pid, how) => s.done[pid] ? s : ({ ...s, done: { ...s.done, [pid]: how } }),
+  advance(model, s) {
+    const order = puzzleOrder(model);
+    const pid = order[s.index];
+    if (!s.done[pid]) return s;
+    const chapter = chapterOf(model, pid);
+    const next = { ...s, index: s.index + 1, outro: chapter.puzzles.at(-1) === pid ? { ...s.outro, [chapter.id]: true } : s.outro };
+    if (next.index >= order.length) next.finished = true;
+    return next;
+  },
+};

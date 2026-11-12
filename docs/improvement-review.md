@@ -1,5 +1,7 @@
 # Improvement review (spoiler-free)
 
+> **Update 2026-11-12:** These recommendations were acted on in the v2 overhaul. See the README status section. Remaining: real-iPhone recheck, a physical walkthrough and real player timing.
+
 Reviewed 2026-11-11. Written for an intended player. It names no story details,
 destinations past the known start, clues or answers. The reviewer read the
 spoiler records so this assessment could be made. Neither player should read them.

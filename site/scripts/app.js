@@ -1,345 +1,438 @@
-import { createState, transition, restoreState, currentPuzzle, pendingTravel, enteredIds, citationAllowed } from './engine.js';
-import { loadPreparation, loadAdventure, loadSolution } from './content.js';
+import { actions, checkAnswer, decipher, keyedAlphabet, newState, position, puzzleOrder, restoreState, unlockedEvidence, visitedLocations, chapterOf } from './engine.js';
 import { connectOffline, workerRequest } from './offline.js';
-import { Persistence, SAVE_KEY } from './persistence.js';
-import { renderAid, payloadFor, incomplete } from './aids.js';
-import { parseBounds } from './answers.js';
-import { el, button, paragraph, table } from './dom.js';
+import { Persistence } from './persistence.js';
 
-const main = document.querySelector('#main'), dialog = document.querySelector('#dialog');
-let prep, model, state, store, ready = false, offlineSupported = false, packageId = null, version = null;
-let view = 'preparation', offlineMessage = 'Preparation incomplete', downloading = false, progress = null, updateReady = false, busy = false;
-let feedback = '', compare = false;
-const opened = new Map();
-const base = new URL('../', import.meta.url);
-const localURL = path => new URL(path, base).href;
-const standalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
-const storageMessages = {
-  unavailable: 'Local saving is unavailable. Progress can continue in this open session; closing it may lose changes.',
-  writeFailed: 'The latest progress could not be saved. Keep the app open and retry saving before closing it.',
-  corrupt: 'The saved investigation could not be read. Its original data is still stored. Retry reading it or deliberately restart; nothing has been reset.',
-  incompatible: 'The saved investigation needs a compatible version. Its original data is still stored. Reopen the compatible app, or deliberately restart.',
-  conflict: 'Progress changed in another window. This window will not overwrite it. Close this window and reopen the investigation to use the latest save.',
-};
-function updateSaveNotice() {
-  const status = store?.status;
-  document.querySelector('#save-status').textContent = status === 'saved' ? 'Saved on this device' : status && storageMessages[status] ? 'Saving needs attention' : 'Local preparation';
-  const notice = document.querySelector('#storage-notice');
-  notice.replaceChildren(); notice.hidden = !storageMessages[status];
-  if (notice.hidden) return;
-  notice.append(paragraph(storageMessages[status]));
-  if (['unavailable', 'writeFailed'].includes(status)) notice.append(button('Retry saving', () => { store.save(state); updateSaveNotice(); }));
-  if (['corrupt', 'incompatible', 'conflict'].includes(status)) notice.append(button('Retry reading saved progress', () => location.reload()));
-}
-function commit(event, solution = null) {
-  if (store?.blocked) return false;
-  const next = transition(model, state, event, solution);
-  if (next === state) return false;
-  state = next; store.save(state); updateSaveNotice(); return true;
-}
-function showDialog(title, children, closeLabel = 'Close') {
-  document.querySelector('#dialog-body').replaceChildren(el('h2', { id: 'dialog-title', tabindex: '-1' }, title), ...children);
-  dialog.querySelector('form button').textContent = closeLabel;
-  if (!dialog.open) dialog.showModal();
-  document.querySelector('#dialog-title').focus();
-}
-function confirmAction(title, text, label, action) {
-  showDialog(title, [paragraph(text), button(label, () => { dialog.close(); run(action); }, '')], 'Cancel');
-}
-async function run(action) {
-  if (busy) return;
-  busy = true;
-  try { await action(); }
-  catch { feedback = 'This action could not finish. Your saved progress has not been reset. Reopen preparation to check the local package, then retry.'; await render(); }
-  finally { busy = false; }
-}
-async function navigate(next, focus = true) {
-  feedback = ''; view = next; await render();
-  if (focus) { main.focus(); window.scrollTo(0, 0); }
-}
-async function redrawPreservingPosition() {
-  const scroll = window.scrollY, focus = document.activeElement?.id;
-  await render();
-  if (focus) {
-    let target = document.getElementById(focus);
-    if (target?.disabled) target = target.parentElement.querySelector('button:not(:disabled)');
-    target?.focus({ preventScroll: true });
+// ---------- tiny DOM helper ----------
+function h(tag, attrs = {}, ...kids) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v === null || v === undefined || v === false) continue;
+    if (k === 'class') node.className = v;
+    else if (k.startsWith('on')) node.addEventListener(k.slice(2), v);
+    else if (k === 'html') node.innerHTML = v;
+    else node.setAttribute(k, v === true ? '' : v);
   }
-  window.scrollTo(0, scroll);
+  for (const kid of kids.flat(Infinity)) if (kid !== null && kid !== undefined && kid !== false) node.append(kid instanceof Node ? kid : document.createTextNode(String(kid)));
+  return node;
 }
-function renderNavigation() {
-  const nav = document.querySelector('#navigation');
-  nav.replaceChildren();
-  if (ready && state?.started && !store.blocked) {
-    for (const [id, label] of [['objective', 'Current task'], ['case', 'Case file']]) nav.append(button(label, () => run(() => navigate(id)), 'quiet', { 'aria-current': view === id ? 'page' : null }));
+const btn = (label, onclick, cls = 'btn', attrs = {}) => h('button', { type: 'button', class: cls, onclick, ...attrs }, label);
+const svg = markup => { const t = document.createElement('template'); t.innerHTML = markup.trim(); return t.content.firstChild; };
+
+// ---------- app state ----------
+const main = document.querySelector('#main');
+const tabs = document.querySelector('#tabs');
+const dialog = document.querySelector('#dialog');
+const saveStatus = document.querySelector('#save-status');
+let prep, model, state, store;
+let view = 'prep', fileTab = 'evidence';
+let offline = { supported: false, ready: false, busy: false, message: 'Checking…' };
+const drafts = {}; // per-puzzle unsent input
+const feedback = {};
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function save() {
+  store.save(state);
+  saveStatus.textContent = store.status === 'saved' ? 'Saved' : store.status === 'unavailable' || store.status === 'writeFailed' ? 'Not saving!' : '';
+  saveStatus.classList.toggle('warn', store.status !== 'saved');
+}
+function commit(next) { if (next === state) return; state = next; save(); }
+
+function showDialog(title, body, buttons) {
+  const box = document.querySelector('#dialog-body');
+  box.replaceChildren(h('h2', { id: 'dialog-title' }, title), ...[].concat(body), h('div', { class: 'dialog-actions' }, ...buttons.map(([label, fn, cls]) => btn(label, () => { dialog.close(); fn?.(); }, cls || 'btn'))));
+  dialog.showModal();
+}
+
+function go(next, opts = {}) {
+  view = next;
+  render();
+  if (!opts.keepScroll) window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+  if (!opts.noFocus) main.focus({ preventScroll: true });
+}
+
+// ---------- evidence rendering ----------
+function sourceLine(src) {
+  if (!src) return null;
+  return h('p', { class: 'source' }, 'Source: ', h('a', { href: src.url, target: '_blank', rel: 'noopener' }, src.label));
+}
+function fictionTag(ev) { return h('span', { class: `tag ${ev.fictional ? 'tag-fiction' : 'tag-real'}` }, ev.fictional ? 'Case document' : 'Real history'); }
+
+function renderBlock(b) {
+  switch (b.t) {
+    case 'p': return h('p', {}, b.x);
+    case 'sig': return h('p', { class: 'sig' }, b.x);
+    case 'head': return h('h4', {}, b.x);
+    case 'sub': return h('h5', {}, b.x);
+    case 'quote': return h('blockquote', {}, b.x);
+    case 'hand': return h('p', { class: 'hand' }, b.x);
+    case 'cipher': return h('p', { class: 'cipher', 'aria-label': 'Coded line' }, b.x);
+    case 'date': return h('p', { class: 'l-date' }, b.x);
+    case 'salute': return h('p', { class: 'l-salute' }, b.x);
+    case 'line': return h('span', { class: 'l-line' }, b.x + ' ');
+    case 'close': return h('p', { class: 'l-close' }, b.x);
+    case 'sign': return h('p', { class: 'l-sign' }, b.x);
+    case 'form': return h('div', { class: 'form' }, h('div', { class: 'form-head' }, b.head), h('dl', {}, ...b.rows.map(([k, v]) => [h('dt', {}, k), h('dd', {}, v)])));
+    case 'pin': return h('div', { class: 'pin' }, h('div', { class: 'pin-head' }, svg('<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>'), b.head), h('p', {}, b.x), h('p', { class: 'pin-src' }, b.source));
+    case 'sketch': return fallsSketch();
+    default: return h('p', {}, b.x || '');
   }
-  nav.append(button('Offline & install', () => run(() => navigate('preparation')), 'quiet', { 'aria-current': view === 'preparation' ? 'page' : null }));
 }
-async function render() {
-  renderNavigation(); updateSaveNotice();
-  main.classList.toggle('compare', compare);
-  main.replaceChildren();
-  if (view === 'preparation' || !model || !state || store.blocked) renderPreparation();
-  else if (view === 'case') await renderCaseFile();
-  else await renderCurrent();
-  if (feedback && !document.querySelector('#answer-feedback')) main.append(el('p', { className: 'feedback', role: 'status', id: 'page-feedback', tabindex: '-1' }, feedback));
+function fallsSketch() {
+  return h('figure', { class: 'sketch' }, svg(`<svg viewBox="0 0 320 170" role="img" aria-label="Helen's sketch: a hard layer of sandstone on top, a softer layer of shale beneath it, water pouring over the edge, and broken blocks below.">
+    <defs><pattern id="sh" width="8" height="5" patternUnits="userSpaceOnUse"><path d="M0 4.5h8" stroke="currentColor" stroke-width=".7" opacity=".55"/></pattern>
+    <pattern id="ss" width="14" height="10" patternUnits="userSpaceOnUse"><path d="M0 9.5h14M7 0v10" stroke="currentColor" stroke-width=".8" opacity=".5"/></pattern></defs>
+    <path d="M8 40 H196 V72 H8Z" fill="url(#ss)" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M8 72 H170 Q160 98 172 128 H8Z" fill="url(#sh)" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M196 44 C214 60 214 110 220 150" fill="none" stroke="#3d78a8" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+    <path d="M8 34 H196" stroke="#3d78a8" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+    <path d="M226 150 l14 -10 l12 8 l-8 10z M250 156 l12 -8 l10 6 l-10 7z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <text x="16" y="62" class="sk">A — hard</text><text x="16" y="104" class="sk">B — soft</text>
+    <text x="228" y="40" class="sk">river</text><text x="236" y="136" class="sk">fallen</text>
+    <path d="M178 86 l-14 0" stroke="currentColor" stroke-width="1.2" marker-end=""/><text x="182" y="90" class="sk sm">hollow?</text>
+  </svg>`), h('figcaption', {}, 'Helen’s sketch (not to scale)'));
 }
-function renderPreparation() {
-  main.append(el('p', { className: 'eyebrow' }, 'A case for two'), el('h1', {}, 'Prepare the investigation'), paragraph(prep?.introduction || 'One shared phone. Begin together during your planned customer drink visit at Fat Head’s in Middleburg Heights.'));
-  const card = el('section', { className: 'card', 'aria-label': 'Complete offline preparation' },
-    el('h2', {}, ready ? 'Ready offline' : 'Preparation incomplete'), el('p', { role: 'status', id: 'offline-status' }, offlineMessage));
-  card.append(el('small', {}, `${standalone() ? 'Home Screen app' : 'Browser context'}${version ? ` · version ${version}` : ''}. Readiness and progress belong to this context.`));
-  if (progress) card.append(el('progress', { max: progress.total, value: progress.done, 'aria-label': 'Complete package progress' }), paragraph(`${progress.done} / ${progress.total} resources${progress.totalBytes ? ` · ${Math.ceil(progress.totalBytes / 1024)} KB total` : ''}`));
-  if (offlineSupported) {
-    card.append(el('div', { className: 'actions' },
-      button(ready ? 'Check for a complete update' : 'Download complete adventure', () => run(downloadPackage), '', { disabled: downloading }),
-      button('Check offline readiness', () => run(checkPackage), 'secondary', { disabled: downloading })));
-  } else card.append(paragraph('Complete offline play needs service workers, local cache storage and a secure connection (HTTPS, or localhost for development). Reopen in a supported browser with connectivity and retry.'), button('Retry preparation', () => location.reload()));
-  if (updateReady) card.append(button('Use verified update', () => location.reload(), ''));
-  if (ready) card.append(paragraph('Every required resource was checked locally. Before the outing, close and relaunch this app offline in this same context. Device data removal or eviction can remove the download and progress.'));
-  main.append(card);
-  if (ready && model && !store.blocked) main.append(button(state.started ? prep.labels.resume : prep.labels.begin, () => run(async () => {
-    if (state.started) { await navigate('objective'); return; }
-    const start = async () => { commit({ type: 'begin' }); await navigate('objective'); };
-    if (!standalone()) confirmAction('Start in this browser?', 'For iPhone play, add this app to your Home Screen and prepare there first. Safari and the installed app may keep separate progress. Continue here only if you want this browser context to hold the case.', 'Start in this browser', start);
-    else await start();
-  }), ''));
-  main.append(el('h2', {}, 'Install, then download'), el('ol', {}, (prep?.installInstructions || []).map(text => el('li', {}, text))),
-    el('details', { className: 'document' }, el('summary', {}, 'Before you go'), el('div', { className: 'document-body' }, (prep?.practicalGuidance || []).map(paragraph))));
-  main.append(paragraph('Core play uses no external service. Maps and source links are optional and may need connectivity. All answers and content are inspectable in a static download; normal play conceals future records.'));
-  if (state && (state.started || store.blocked)) main.append(button('Restart investigation', restart, 'secondary danger'));
+
+function renderEvidence(id, { open = false, fresh = false } = {}) {
+  const ev = model.evidence[id];
+  if (!ev) return null;
+  const body = h('div', { class: 'doc-body' });
+  if (ev.caption) body.append(h('p', { class: 'caption' }, ev.caption));
+  if (ev.kind === 'letter') {
+    const lines = ev.blocks.filter(b => b.t === 'line');
+    body.append(h('div', { class: 'letter-sheet' }, ...ev.blocks.filter(b => ['date', 'salute'].includes(b.t)).map(renderBlock), h('p', { class: 'l-body' }, lines.map(renderBlock)), ...ev.blocks.filter(b => ['close', 'sign'].includes(b.t)).map(renderBlock)));
+  } else if (ev.kind === 'strips') {
+    body.append(h('p', { class: 'muted' }, 'Use the puzzle board below to arrange the scraps.'));
+  } else {
+    (ev.blocks || []).forEach(b => body.append(renderBlock(b)));
+  }
+  if (ev.source) body.append(sourceLine(ev.source));
+  return h('details', { class: `doc doc-${ev.kind}${fresh ? ' fresh' : ''}`, open: open || null, id: `ev-${id}` },
+    h('summary', {}, h('span', { class: 'doc-title' }, ev.title), fictionTag(ev)),
+    body);
 }
-async function checkPackage() {
-  downloading = true; progress = null; offlineMessage = 'Checking every required local resource…'; await render();
+
+// ---------- puzzle inputs ----------
+function draft(pid, init) { if (!(pid in drafts)) drafts[pid] = init; return drafts[pid]; }
+
+function keywordInput(pid, p) {
+  const d = draft(pid, { key: '' });
+  const out = h('p', { class: 'decoded', 'aria-live': 'polite' });
+  const strip = h('div', { class: 'alpha', 'aria-hidden': 'true' });
+  const update = () => {
+    const key = d.key.toUpperCase().replace(/[^A-Z]/g, '');
+    const alpha = keyedAlphabet(key);
+    strip.replaceChildren(h('div', { class: 'alpha-row' }, ...[...alpha].map((c, i) => h('span', { class: i < new Set(key).size ? 'k' : '' }, c))),
+      h('div', { class: 'alpha-row' }, ...[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(c => h('span', {}, c))),
+      h('p', { class: 'alpha-cap' }, 'Top row: Helen’s alphabet. Bottom row: what each letter means.'));
+    out.textContent = key.length >= 2 ? decipher(p.input.cipher, key) : 'Type a key word to decode the line.';
+  };
+  const input = h('input', { id: `in-${pid}`, class: 'field mono', autocomplete: 'off', autocapitalize: 'characters', spellcheck: 'false', value: d.key, oninput: e => { d.key = e.target.value; update(); } });
+  update();
+  return {
+    node: h('div', { class: 'tool tool-keyword' }, h('p', { class: 'cipher big' }, p.input.cipher), h('label', { for: `in-${pid}`, class: 'label' }, p.input.label), input, h('p', { class: 'help' }, p.input.help), strip, h('div', { class: 'decoded-wrap' }, h('span', { class: 'label' }, 'Decoded'), out)),
+    value: () => d.key,
+  };
+}
+
+function textInput(pid, p) {
+  const d = draft(pid, { v: '' });
+  const input = h('input', { id: `in-${pid}`, class: 'field', autocomplete: 'off', inputmode: p.input.inputmode || 'text', placeholder: p.input.placeholder || '', value: d.v, oninput: e => { d.v = e.target.value; }, onkeydown: e => { if (e.key === 'Enter') submit(pid); } });
+  return { node: h('div', { class: 'tool' }, h('label', { for: `in-${pid}`, class: 'label' }, p.input.label || 'Answer'), input), value: () => d.v };
+}
+
+function choiceInput(pid, p, multi = false) {
+  const d = draft(pid, { sel: [] });
+  const wrap = h('div', { class: 'choices', role: multi ? 'group' : 'radiogroup', 'aria-label': p.objective });
+  const paint = () => wrap.querySelectorAll('button').forEach(b => { const on = d.sel.includes(b.dataset.id); b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
+  for (const o of p.input.options) {
+    wrap.append(h('button', { type: 'button', class: 'choice', 'data-id': o.id, onclick: () => {
+      if (multi) d.sel = d.sel.includes(o.id) ? d.sel.filter(x => x !== o.id) : [...d.sel, o.id];
+      else d.sel = [o.id];
+      paint();
+    } }, h('span', { class: 'tick', 'aria-hidden': 'true' }), o.label));
+  }
+  paint();
+  return { node: h('div', { class: 'tool' }, multi ? h('p', { class: 'help' }, 'Select all that apply.') : null, wrap), value: () => [...d.sel].sort().join(',') };
+}
+
+function sequenceInput(pid, p, strips = false) {
+  const items = p.input.items;
+  const need = p.input.use || items.length;
+  const d = draft(pid, { seq: [] });
+  const wrap = h('div', { class: `tool tool-seq${strips ? ' strips' : ''}` });
+  const render = () => {
+    const placed = h('ol', { class: 'slots', 'aria-label': 'Your order' });
+    for (let i = 0; i < need; i++) {
+      const id = d.seq[i];
+      const it = items.find(x => x.id === id);
+      placed.append(h('li', { class: `slot${it ? ' filled' : ''}` }, it ? (strips ? stripNode(it, () => { d.seq.splice(i, 1); render(); }) : btn([h('span', { class: 'n' }, i + 1), it.x], () => { d.seq.splice(i, 1); render(); }, 'card-btn placed', { 'aria-label': `Remove step ${i + 1}: ${it.x}` })) : h('span', { class: 'empty' }, `${strips ? 'Scrap' : 'Step'} ${i + 1}`)));
+    }
+    const pool = h('div', { class: 'pool', 'aria-label': 'Unplaced' });
+    for (const it of items) if (!d.seq.includes(it.id)) pool.append(strips ? stripNode(it, () => { if (d.seq.length < need) { d.seq.push(it.id); render(); } }) : btn(it.x, () => { if (d.seq.length < need) { d.seq.push(it.id); render(); } }, 'card-btn'));
+    wrap.replaceChildren(...[
+      h('p', { class: 'help' }, strips ? `Tap scraps to lay them down from top to bottom (${need} of ${items.length}). Tap a placed scrap to take it back.` : 'Tap the cards in order. Tap a placed card to take it back.'),
+      placed,
+      pool.childNodes.length ? h('div', {}, h('p', { class: 'label' }, strips ? 'Loose scraps' : 'Cards'), pool) : null,
+      d.seq.length ? btn('Clear', () => { d.seq = []; render(); }, 'btn ghost small') : null,
+    ].filter(Boolean));
+  };
+  render();
+  return { node: wrap, value: () => d.seq.join(',') };
+}
+function edge(profile, side) {
+  if (!profile) return side === 'top' ? '0% 0px, 100% 0px' : '100% 100%, 0% 100%';
+  const pts = [];
+  let seed = profile * 9301 + 49297;
+  for (let x = 0; x <= 100; x += 5) { seed = (seed * 9301 + 49297) % 233280; pts.push([x, 2 + Math.round((seed / 233280) * 14)]); }
+  if (side === 'top') return pts.map(([x, y]) => `${x}% ${y}px`).join(', ');
+  return pts.reverse().map(([x, y]) => `${x}% calc(100% - ${16 - y}px)`).join(', ');
+}
+function stripNode(it, onclick) {
+  return h('span', { class: 'strip-wrap' }, h('button', { type: 'button', class: `strip paper-${it.paper}`, onclick, style: `clip-path: polygon(${edge(it.top, 'top')}, ${edge(it.bottom, 'bottom')})`, 'aria-label': `Scrap: ${it.x}${it.paper === 'b' ? ' (yellow paper)' : ''}` }, h('span', {}, it.x)));
+}
+
+function classifyInput(pid, p) {
+  const d = draft(pid, { pick: {} });
+  const wrap = h('div', { class: 'tool classify' });
+  const render = () => {
+    wrap.replaceChildren(...p.input.items.map(it => h('div', { class: 'cl-row' },
+      h('p', { class: 'cl-text' }, h('span', { class: 'cl-id' }, it.id.toUpperCase()), it.x),
+      h('div', { class: 'seg', role: 'radiogroup', 'aria-label': `Line ${it.id.toUpperCase()}` }, ...p.input.options.map(o => h('button', { type: 'button', role: 'radio', 'aria-checked': String(d.pick[it.id] === o.id), class: `seg-btn${d.pick[it.id] === o.id ? ' on' : ''} seg-${o.id}`, onclick: () => { d.pick[it.id] = o.id; render(); } }, o.label))))));
+  };
+  render();
+  return { node: wrap, value: () => p.input.items.every(it => d.pick[it.id]) ? p.input.items.map(it => `${it.id}:${d.pick[it.id]}`).sort().join(',') : '' };
+}
+
+function makeInput(pid, p) {
+  switch (p.input.type) {
+    case 'keyword': return keywordInput(pid, p);
+    case 'choice': case 'final': return choiceInput(pid, p);
+    case 'multi': return choiceInput(pid, p, true);
+    case 'order': return sequenceInput(pid, p);
+    case 'strips': return sequenceInput(pid, p, true);
+    case 'classify': return classifyInput(pid, p);
+    default: return textInput(pid, p);
+  }
+}
+
+let currentInput = null;
+async function submit(pid) {
+  const p = model.puzzles[pid];
+  const value = currentInput?.value() ?? '';
+  const run = async () => {
+    const result = await checkAnswer(pid, p, value);
+    if (result.empty) feedback[pid] = { kind: 'info', text: p.input.type === 'classify' ? 'Choose an answer for every line first.' : p.input.type === 'strips' || p.input.type === 'order' ? 'Place every piece first.' : 'Enter an answer first.' };
+    else if (result.correct) { feedback[pid] = null; commit(actions.solve(state, pid, 'solved')); celebrate(); }
+    else feedback[pid] = { kind: 'miss', text: result.near || 'Not quite. Nothing is lost, so try again or take a hint.' };
+    render({ keepFocus: true });
+    if (!result.correct) document.querySelector('.feedback')?.focus();
+  };
+  if (p.input.type === 'final' && value) {
+    const name = p.input.options.find(o => o.id === value)?.label;
+    showDialog('Submit your finding?', [h('p', {}, `You are naming ${name}. You can’t change it after this.`)], [['Not yet', null, 'btn ghost'], ['Submit finding', run, 'btn primary']]);
+  } else await run();
+}
+
+function celebrate() {
+  if (reduceMotion) return;
+  document.body.classList.remove('flash'); void document.body.offsetWidth; document.body.classList.add('flash');
+}
+
+// ---------- views ----------
+function locationCard(loc, mode) {
+  const L = model.locations[loc];
+  return h('section', { class: 'place' },
+    h('div', { class: 'place-head' }, h('span', { class: 'eyebrow' }, mode), h('h3', {}, L.name), h('p', { class: 'addr' }, L.address)),
+    h('p', {}, L.arrival),
+    h('p', {}, h('strong', {}, 'Walking: '), L.walk),
+    L.notes?.length ? h('ul', { class: 'notes' }, L.notes.map(n => h('li', {}, n))) : null,
+    h('a', { class: 'btn ghost map', href: L.mapUrl, target: '_blank', rel: 'noopener' }, 'Open in Maps ↗'));
+}
+
+function renderIntro(chapter) {
+  const first = chapter.number === 1;
+  return h('div', { class: 'intro' },
+    h('div', { class: 'chapter-stamp', 'aria-hidden': 'true' }, h('span', {}, 'Chapter'), h('b', {}, chapter.number)),
+    h('p', { class: 'eyebrow' }, `Chapter ${chapter.number} of ${model.chapters.length}`),
+    h('h1', { class: 'chapter-title' }, chapter.title),
+    chapter.location ? locationCard(chapter.location, first ? 'You are at' : 'Go to') : h('section', { class: 'place' }, h('p', {}, 'No travel needed. Anywhere comfortable and safely stopped will do: a bench, a café, home. If you’re in the city lot, drive off first.')),
+    !first && chapter.location ? h('p', { class: 'safety' }, 'Read the directions now, before you drive. Don’t use the game while moving.') : null,
+    h('div', { class: 'actions' },
+      btn(first ? 'Open the envelope' : chapter.location ? 'We’re here — open the chapter' : 'Open the last folder', () => { commit(actions.openChapter(state, chapter.id)); go('play'); }, 'btn primary big')),
+    !first && chapter.location ? h('p', { class: 'muted center' }, 'Can’t get there, or it’s closed? Open the chapter anyway. Every clue here has a backup.') : null);
+}
+
+function renderPuzzle(pos) {
+  const { chapter, puzzleId: pid, last } = pos;
+  const p = model.puzzles[pid];
+  const order = puzzleOrder(model);
+  const n = order.indexOf(pid) + 1;
+  const done = state.done[pid];
+  const hintsShown = state.hints[pid] || 0;
+  const evidence = unlockedEvidence(model, state);
+  const relevant = [...new Set([...p.evidence, ...(state.refs[pid] || done ? (p.fallback || []) : [])])].filter(id => evidence.includes(id));
+  const wrap = h('div', { class: 'puzzle' });
+
+  wrap.append(
+    h('div', { class: 'progress', 'aria-label': `Puzzle ${n} of ${order.length}` }, order.map((id, i) => h('span', { class: `dot${state.done[id] ? ' done' : ''}${i === n - 1 ? ' now' : ''}` }))),
+    h('p', { class: 'eyebrow' }, `Chapter ${chapter.number} · ${chapter.title}`),
+    h('h1', {}, p.title),
+    h('div', { class: 'objective', role: 'note' }, h('span', { class: 'obj-label' }, 'Objective'), h('p', {}, p.objective)));
+  if (p.onSite && !done) wrap.append(h('div', { class: 'onsite' }, h('span', { class: 'obj-label' }, 'On site'), h('p', {}, p.onSite)));
+
+  wrap.append(h('section', { class: 'evidence', 'aria-label': 'Relevant evidence' }, h('h2', { class: 'sect' }, 'Evidence on the table'),
+    relevant.map((id, i) => renderEvidence(id, { open: i === 0 || (p.fallback || []).includes(id) && state.refs[pid] && !done }))));
+
+  if (!done) {
+    currentInput = makeInput(pid, p);
+    const fb = feedback[pid];
+    wrap.append(h('section', { class: 'work', 'aria-label': 'Your answer' }, h('h2', { class: 'sect' }, p.input.type === 'final' ? 'Your finding' : 'Work it out'), currentInput.node,
+      fb ? h('p', { class: `feedback ${fb.kind}`, tabindex: '-1', role: 'status' }, fb.text) : h('p', { class: 'feedback', role: 'status' }),
+      btn(p.input.type === 'final' ? 'Submit finding…' : 'Check answer', () => submit(pid), 'btn primary big')));
+
+    const help = h('section', { class: 'help-box', 'aria-label': 'Help' }, h('h2', { class: 'sect' }, 'Help'),
+      h('p', { class: 'muted' }, 'Help is free and never timed.'));
+    p.hints.slice(0, hintsShown).forEach((t, i) => help.append(h('div', { class: 'hint' }, h('span', { class: 'hint-n' }, `Hint ${i + 1}`), h('p', {}, t))));
+    const row = h('div', { class: 'help-row' });
+    if (hintsShown < p.hints.length) row.append(btn(`Show hint ${hintsShown + 1} of ${p.hints.length}`, () => { commit(actions.hint(state, pid, p.hints.length)); render({ keepScroll: true }); }, 'btn ghost'));
+    if (p.fallback && !state.refs[pid]) row.append(btn('Can’t access this clue', () => { commit(actions.reference(state, pid)); render({ keepScroll: true }); document.querySelector(`#ev-${p.fallback[0]}`)?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }); }, 'btn ghost'));
+    row.append(btn('Reveal answer…', () => showDialog('Reveal the answer?', [h('p', {}, 'You’ll see the answer and the full reasoning, then carry on. The story continues exactly the same.')], [['Keep trying', null, 'btn ghost'], ['Reveal', () => { commit(actions.solve(state, pid, 'revealed')); render(); }, 'btn danger']]), 'btn ghost'));
+    help.append(row);
+    if (p.fallback && state.refs[pid]) help.append(h('p', { class: 'muted' }, 'The backup reference is in the evidence above. It gives you everything the place would have. You still solve it yourselves.'));
+    wrap.append(help);
+  } else {
+    const granted = p.grants.filter(id => model.evidence[id]);
+    wrap.append(h('section', { class: `solved ${done}` },
+      h('div', { class: 'stamp', 'aria-hidden': 'true' }, done === 'solved' ? 'Solved' : 'Revealed'),
+      h('p', { class: 'answer' }, h('span', { class: 'label' }, 'Answer'), p.reveal.answer),
+      h('details', { class: 'why', open: done === 'revealed' || null }, h('summary', {}, 'How it works'), h('p', {}, p.reveal.why)),
+      granted.length ? h('div', { class: 'new-ev' }, h('h2', { class: 'sect' }, 'New evidence'), granted.map(id => renderEvidence(id, { open: true, fresh: true }))) : null,
+      last && chapter.outro ? h('div', { class: 'outro' }, h('p', { class: 'eyebrow' }, `Chapter ${chapter.number} complete`), h('p', {}, chapter.outro)) : null,
+      btn(n === order.length ? 'Open the verdict' : last ? 'Next chapter →' : 'Continue →', () => { commit(actions.advance(model, state)); go('play'); }, 'btn primary big')));
+  }
+  return wrap;
+}
+
+function renderEnding() {
+  const e = model.ending;
+  const used = Object.values(state.hints).reduce((a, b) => a + b, 0);
+  const revealed = Object.values(state.done).filter(v => v === 'revealed').length;
+  return h('div', { class: 'ending' },
+    h('div', { class: 'stamp big-stamp', 'aria-hidden': 'true' }, 'Case closed'),
+    h('h1', {}, e.headline),
+    e.short.map((t, i) => h('p', { class: i === e.short.length - 1 ? 'kicker' : '' }, t)),
+    h('details', { class: 'full' }, h('summary', {}, 'Read the full case explanation'), e.full.map(s => h('section', {}, h('h3', {}, s.head), h('p', {}, s.x)))),
+    h('p', { class: 'muted center' }, `Hints opened: ${used}. Answers revealed: ${revealed}. No score — just for your curiosity.`),
+    h('div', { class: 'actions' }, btn('Browse the case file', () => go('file'), 'btn ghost')));
+}
+
+function renderFile() {
+  const ids = unlockedEvidence(model, state);
+  const tabsRow = h('div', { class: 'seg file-tabs', role: 'tablist' }, [['evidence', 'Evidence'], ['people', 'People'], ['places', 'Places']].map(([id, label]) => h('button', { type: 'button', role: 'tab', 'aria-selected': String(fileTab === id), class: `seg-btn${fileTab === id ? ' on' : ''}`, onclick: () => { fileTab = id; render({ keepScroll: true }); } }, label)));
+  let body;
+  if (!state.started || !ids.length) body = h('p', { class: 'muted' }, 'The case file is sealed until you open the case.');
+  else if (fileTab === 'people') body = h('div', { class: 'people' }, model.cast.map(c => h('div', { class: 'person' }, h('div', { class: 'avatar', 'aria-hidden': 'true' }, c.name.split(' ').filter(w => !w.endsWith('.')).map(w => w[0]).join('').slice(0, 2)), h('div', {}, h('h3', {}, c.name), h('p', {}, c.role)))), h('p', { class: 'muted' }, 'Everyone here is fictional.'));
+  else if (fileTab === 'places') body = h('div', {}, visitedLocations(model, state).map(l => locationCard(l, 'Visited')), h('p', { class: 'muted' }, 'Places appear here once their chapter opens.'));
+  else body = h('div', { class: 'evidence' }, ids.slice().reverse().map(id => renderEvidence(id)));
+  return h('div', { class: 'file' }, h('p', { class: 'eyebrow' }, 'Everything you’ve collected'), h('h1', {}, 'Case file'), tabsRow, body);
+}
+
+function renderPrep() {
+  const started = state.started;
+  const offlineBox = h('section', { class: `offline ${offline.ready ? 'ok' : ''}` },
+    h('div', { class: 'offline-head' }, h('span', { class: 'light', 'aria-hidden': 'true' }), h('h2', {}, offline.ready ? 'Ready offline' : 'Not ready offline yet')),
+    h('p', { role: 'status' }, offline.message),
+    offline.supported ? h('div', { class: 'help-row' },
+      btn(offline.ready ? 'Check again for updates' : 'Download for offline play', () => doDownload(), 'btn primary', { disabled: offline.busy || null }),
+      btn('Check this phone', () => doCheck(), 'btn ghost', { disabled: offline.busy || null })) : null);
+  const cover = h('div', { class: 'cover' },
+    h('div', { class: 'folder-tab' }, 'Case No. 06-12'),
+    h('div', { class: 'cover-stamp', 'aria-hidden': 'true' }, started ? 'Open' : 'Sealed'),
+    h('p', { class: 'eyebrow' }, 'Confidential · for two'),
+    h('h1', { class: 'cover-title' }, prep.coverTitle),
+    h('p', { class: 'cover-line' }, prep.coverLine),
+    h('p', {}, prep.intro));
+  return h('div', { class: 'prep' }, cover,
+    h('dl', { class: 'facts' }, prep.facts.map(f => [h('dt', {}, f.label), h('dd', {}, f.value)])),
+    h('div', { class: 'actions' }, started
+      ? btn('Return to the case', () => go(state.finished ? 'play' : 'play'), 'btn primary big')
+      : btn('Open the case', startCase, 'btn primary big'),
+      !started ? h('p', { class: 'muted center' }, 'Only when you’re both at the start, drinks ordered.') : null),
+    offlineBox,
+    h('details', { class: 'panel', open: !offline.ready || null }, h('summary', {}, 'Install on the iPhone'), h('ol', {}, prep.install.map(t => h('li', {}, t))), h('p', { class: 'muted' }, prep.contextNote)),
+    h('details', { class: 'panel' }, h('summary', {}, 'What to bring'), h('ul', {}, prep.bring.map(t => h('li', {}, t)))),
+    h('details', { class: 'panel' }, h('summary', {}, 'Daylight & conditions'), h('p', {}, prep.daylight)),
+    h('details', { class: 'panel' }, h('summary', {}, 'How it works'), h('ul', {}, prep.rules.map(t => h('li', {}, t)))),
+    started ? h('details', { class: 'panel' }, h('summary', {}, 'Restart'), h('p', {}, 'Erase this phone’s progress and start the case from the beginning.'), btn('Restart the investigation…', () => showDialog('Erase all progress?', [h('p', {}, 'This deletes your saved investigation on this phone. It can’t be undone.')], [['Cancel', null, 'btn ghost'], ['Erase and restart', () => { state = newState(); store.restart(state); save(); go('prep'); }, 'btn danger']]), 'btn danger')) : null);
+}
+
+function startCase() {
+  const begin = () => { commit(actions.start(state)); go('play'); };
+  if (!offline.ready) showDialog('Not downloaded for offline play', [h('p', {}, 'Parts of the route may have weak signal. Download for offline play first, from the Home Screen app.')], [['Go back', null, 'btn ghost'], ['Start anyway', begin, 'btn primary']]);
+  else begin();
+}
+
+function renderTabs() {
+  tabs.replaceChildren();
+  const items = state.started ? [['play', 'Case', '<path d="M4 5h16v14H4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2"/>'], ['file', 'File', '<path d="M3 7h7l2 2h9v10H3z" fill="none" stroke="currentColor" stroke-width="2"/>'], ['prep', 'Setup', '<circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="2"/>']] : [];
+  tabs.hidden = !items.length;
+  for (const [id, label, icon] of items) tabs.append(h('button', { type: 'button', class: `tab${view === id ? ' on' : ''}`, 'aria-current': view === id ? 'page' : null, onclick: () => go(id) }, svg(`<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">${icon}</svg>`), h('span', {}, label)));
+}
+
+function render(opts = {}) {
+  const y = window.scrollY;
+  renderTabs();
+  let node;
+  if (view === 'file') node = renderFile();
+  else if (view === 'play' && state.started) {
+    const pos = position(model, state);
+    node = pos.kind === 'ending' ? renderEnding() : pos.kind === 'intro' ? renderIntro(pos.chapter) : renderPuzzle(pos);
+    document.body.dataset.chapter = pos.chapter?.number || 'end';
+  } else { view = 'prep'; node = renderPrep(); document.body.dataset.chapter = 'prep'; }
+  main.replaceChildren(node);
+  if (opts.keepScroll || opts.keepFocus) window.scrollTo(0, y);
+}
+
+// ---------- offline ----------
+async function doCheck() {
+  offline.busy = true; offline.message = 'Checking every file on this phone…'; render({ keepScroll: true });
   try {
-    const result = await workerRequest('CHECK', p => { progress = p; updateProgress(); });
-    ready = result.ready; packageId = result.id; version = result.version;
-    offlineMessage = ready ? 'Complete adventure verified locally. Ready for an offline relaunch in this context.' : 'The complete local package is unavailable. Connect and retry the full download. Saved progress has not been reset.';
-    if (ready && !model) await initializeCase();
-  } catch { ready = false; offlineMessage = 'Local readiness could not be verified. Connect, reopen and retry; saved progress has not been reset.'; }
-  downloading = false; progress = null; await render();
+    const r = await workerRequest('CHECK', d => { offline.message = `Checking… ${d.done} / ${d.total}`; render({ keepScroll: true }); });
+    offline.ready = !!r.ready;
+    offline.message = r.ready ? 'Every chapter, clue, hint and backup is saved on this phone. You can play with no signal.' : 'Not everything is saved yet. Connect to the internet and tap Download for offline play.';
+  } catch { offline.message = 'Couldn’t check. Open the app with a connection and try again.'; }
+  offline.busy = false; render({ keepScroll: true });
 }
-function updateProgress() {
-  const bar = document.querySelector('progress');
-  if (bar && progress) { bar.max = progress.total; bar.value = progress.done; }
-  const status = document.querySelector('#offline-status');
-  if (status && progress) status.textContent = `${progress.phase === 'download' ? 'Downloading' : 'Checking local package'}: ${progress.done} / ${progress.total} resources${progress.totalBytes ? ` · ${Math.ceil(progress.totalBytes / 1024)} KB` : ''}.`;
-}
-async function downloadPackage() {
-  const oldReady = ready;
-  downloading = true; progress = { done: 0, total: 1 }; offlineMessage = 'Preparing a complete verified package…'; await render();
+async function doDownload() {
+  offline.busy = true; offline.message = 'Downloading…'; render({ keepScroll: true });
   try {
-    const result = await workerRequest('DOWNLOAD', p => { progress = p; updateProgress(); });
-    if (!oldReady) { location.reload(); return; }
-    updateReady = result.id !== packageId;
-    offlineMessage = updateReady ? 'A complete compatible update is verified. Use verified update to reopen it with your saved progress. This open case still uses its current complete version.' : 'Your complete local package is up to date and verified.';
-  } catch (error) {
-    offlineMessage = error.message === 'INCOMPATIBLE_PACKAGE' ? 'This update needs a different state version. The current compatible download and save are retained.' : `Download incomplete. Check connectivity and available device storage, then retry.${oldReady ? ' Your previous complete version and progress are retained.' : ' No complete package is confirmed yet.'}`;
-  }
-  downloading = false; progress = null; await render();
+    await workerRequest('DOWNLOAD', d => { offline.message = d.phase === 'download' ? `Downloading… ${d.done} / ${d.total} files` : `Checking… ${d.done} / ${d.total}`; render({ keepScroll: true }); });
+    offline.busy = false; await doCheck(); return;
+  } catch { offline.message = 'The download didn’t finish. Your progress is safe. Check your connection and try again.'; }
+  offline.busy = false; render({ keepScroll: true });
 }
-function restart() {
-  confirmAction('Restart investigation?', prep.restartConfirmation, 'Erase progress and restart', async () => {
-    state = createState(model); store.restart(state); opened.clear(); compare = false; view = 'preparation'; await render(); main.focus();
-  });
-}
-function sourcesFor(factIds) {
-  if (!factIds.length) return null;
-  const details = el('details', {}, el('summary', {}, 'Documentary sources'));
-  for (const id of [...new Set(factIds)]) {
-    const fact = model.sources.facts.find(f => f.id === id);
-    if (!fact) continue;
-    if (!citationAllowed(fact, state)) { details.append(paragraph(model.sources.citationPolicy.lockedCitationLabel)); continue; }
-    details.append(paragraph(fact.claim), el('small', {}, `${fact.classification} · reviewed ${fact.reviewedOn} · ${fact.scope}`));
-    for (const sid of fact.sourceIds) {
-      const source = model.sources.sources.find(s => s.id === sid);
-      if (!source || !citationAllowed(source, state)) { details.append(paragraph(model.sources.citationPolicy.lockedCitationLabel)); continue; }
-      details.append(paragraph(`${source.publisher} · ${source.title} · reviewed ${source.reviewedOn}`), el('a', { href: source.url, target: '_blank', rel: 'noopener noreferrer' }, 'Open optional external source'));
-    }
-  }
-  details.append(el('small', {}, model.sources.notice));
-  return details;
-}
-function imageView(asset, caption) {
-  const viewport = el('div', { className: 'inspection', tabindex: '0', 'aria-label': 'Scrollable enlarged image' });
-  const image = el('img', { src: localURL(asset.relativePath), alt: caption, style: 'width:960px' });
-  viewport.append(image);
-  const zoom = el('input', { type: 'range', id: 'image-zoom', min: 320, max: 1920, step: 160, value: 960, oninput: event => { image.style.width = `${event.target.value}px`; } });
-  showDialog('Inspect reference image', [el('label', { for: 'image-zoom' }, 'Image width / zoom'), zoom, viewport, paragraph(caption)]);
-}
-function renderBlock(block) {
-  const out = el('section');
-  if (block.type === 'optional_section') {
-    const details = el('details', { className: 'document', open: state.fullExplanationViewed, ontoggle: event => {
-      if (event.target.open && !state.fullExplanationViewed) commit({ type: 'fullExplanation' });
-    } }, el('summary', {}, block.title), el('div', { className: 'document-body' }, block.paragraphs.map(paragraph)));
-    return details;
-  }
-  out.append(el('span', { className: 'classification' }, block.classification === 'fictional' ? 'Fictional case record' : 'Documentary reference · original paraphrase'));
-  if (block.title && block.type !== 'table') out.append(el('h3', {}, block.title));
-  if (block.type === 'paragraph') out.append(paragraph(block.text));
-  if (block.type === 'table') out.append(table(block));
-  if (block.type === 'instructions') out.append(el('ol', {}, block.steps.map(text => el('li', {}, text))));
-  if (block.type === 'figure') {
-    const asset = model.assets[block.assetId];
-    const image = el('img', { src: localURL(asset.relativePath), alt: block.caption, loading: 'lazy', onerror: event => { event.target.hidden = true; } });
-    out.append(el('figure', {}, button([image, el('span', { className: 'quiet' }, 'Enlarge reference')], () => imageView(asset, block.caption), 'secondary', { 'aria-label': 'Enlarge reference image' }), el('figcaption', {}, block.caption)));
-  }
-  return out;
-}
-function documentBody(id) {
-  if (!state.evidenceIds.includes(id)) return paragraph('This record is locked. Return to the current task.');
-  const evidence = model.evidence[id];
-  const body = el('div', { className: 'document-body' }, evidence.bodyBlocks.map(renderBlock));
-  const sources = sourcesFor(evidence.factIds); if (sources) body.append(sources);
-  return body;
-}
-function evidenceCard(id, defaultOpen = true) {
-  if (!state.evidenceIds.includes(id)) return null;
-  return el('details', { className: 'document', open: opened.has(id) ? opened.get(id) : defaultOpen, 'data-evidence': id, ontoggle: event => opened.set(id, event.target.open) },
-    el('summary', {}, el('span', { className: 'badge' }, `${id} / `), model.evidence[id].title), documentBody(id));
-}
-function showEvidence(id) {
-  if (!state.evidenceIds.includes(id)) { feedback = 'This record is locked. Continue the current task to collect it.'; return render(); }
-  showDialog(model.evidence[id].title, [documentBody(id)]);
-}
-function locationCard(location) {
-  // This caller must have passed either the start or completed destination gate.
-  return el('section', { className: 'card' }, el('h2', {}, location.name), paragraph(location.addressOrOperatorDescription), paragraph(location.arrivalInstructions),
-    paragraph(location.walkingPlan), el('ul', {}, location.restrictions.map(text => el('li', {}, text))), el('small', {}, `Documentary review: ${location.reviewedOn}. Posted conditions take priority.`),
-    paragraph(prep.mapNotice), el('a', { href: location.optionalMapUrl, target: '_blank', rel: 'noopener noreferrer' }, 'Open optional external map'), sourcesFor(location.navigationFactIds));
-}
-function progressHeader(p) {
-  const chapter = model.chapters[p.chapterId];
-  main.append(el('p', { className: 'eyebrow' }, `${chapter.publicLabel} of ${model.adventure.chapterIds.length} · ${state.completedPuzzleIds.length} / 8 findings`),
-    el('div', { className: 'progress-track', role: 'progressbar', 'aria-label': 'Findings recorded', 'aria-valuemin': 0, 'aria-valuemax': 8, 'aria-valuenow': state.completedPuzzleIds.length }, el('span', { style: `width:${state.completedPuzzleIds.length / 8 * 100}%` })));
-}
-async function explanation(id) {
-  const solution = await loadSolution(model, state, id);
-  return el('section', { className: 'card' }, el('h2', {}, 'Answer and reasoning'),
-    paragraph(solution.reveal.explanation), el('ol', {}, solution.reasoningSteps.map(text => el('li', {}, text))),
-    el('details', {}, el('summary', {}, 'Why the alternatives do not fit'), solution.alternativeEliminations.map(paragraph)));
-}
-async function renderCurrent() {
-  const p = currentPuzzle(model, state);
-  if (!state.started) { view = 'preparation'; renderPreparation(); return; }
-  if (['destination', 'travel'].includes(state.mode)) { renderTravel(); return; }
-  progressHeader(p);
-  if (state.mode === 'ending') {
-    main.append(el('h1', {}, 'Investigation complete'), documentBody('E17'),
-      button('Review the case file', () => run(() => navigate('case')), ''));
-    return;
-  }
-  const chapter = model.chapters[p.chapterId];
-  if (state.mode === 'finding') {
-    main.append(el('h1', {}, 'Finding recorded'), paragraph(p.feedback.correct), await explanation(p.id));
-    for (const id of p.rewardEvidenceIds) main.append(evidenceCard(id));
-    if (chapter.puzzleIds.at(-1) === p.id) main.append(paragraph(chapter.transition));
-    main.append(button(pendingTravel(model, state) ? 'Review confirmed destination' : 'Continue the case', () => run(async () => { commit({ type: 'continue' }); await navigate('objective'); }), ''));
-    return;
-  }
-  main.append(el('h1', {}, chapter.unlockedTitle), paragraph(chapter.introduction), el('section', { className: 'objective' }, el('h2', {}, 'Current objective'), paragraph(p.prompt)));
-  const place = model.locations[p.locationId];
-  main.append(el('details', { className: 'document' }, el('summary', {}, 'Current visit & safe access'), locationCard(place)));
-  main.append(el('h2', {}, 'Relevant evidence'), button(compare ? 'Use single-column evidence' : 'Compare relevant evidence', () => run(async () => { compare = !compare; p.surfacedEvidenceIds.forEach(id => opened.set(id, true)); await redrawPreservingPosition(); }), 'quiet', { id: 'compare-evidence' }));
-  main.append(el('div', { className: 'evidence-grid' }, p.surfacedEvidenceIds.map(id => evidenceCard(id))));
-  const form = el('form', { id: 'answer-form', onsubmit: event => { event.preventDefault(); run(submitAnswer); } });
-  form.append(renderAid(model, state, p, draft => commit({ type: 'draft', draft }), () => run(redrawPreservingPosition)),
-    el('button', { type: 'submit' }, p.answerType === 'final_pair' ? prep.labels.finalSubmit : 'Check answer'),
-    el('p', { id: 'answer-feedback', className: 'feedback', role: 'status', tabindex: '-1' }, feedback));
-  main.append(form);
-  const hints = state.hintLevelByPuzzle[p.id] || 0;
-  const help = el('section', { className: 'card', 'aria-label': 'Assistance' }, el('h2', {}, 'Keep investigating'), paragraph('Help is available whenever you want it. No delays or penalties.'));
-  if (hints) {
-    const solution = await loadSolution(model, state, p.id);
-    help.append(el('ol', { id: 'shown-hints' }, solution.hints.slice(0, hints).map(hint => el('li', { tabindex: '-1' }, hint.text))));
-  }
-  help.append(el('div', { className: 'actions' },
-    button(hints < 3 ? `Show hint ${hints + 1} of 3` : 'All three hints shown', () => run(async () => {
-      await loadSolution(model, state, p.id); commit({ type: 'hint' }); await redrawPreservingPosition();
-      const hint = document.querySelector('#shown-hints li:last-child');
-      hint?.focus({ preventScroll: true }); hint?.scrollIntoView({ block: 'nearest' });
-    }), 'secondary', { disabled: hints === 3 }),
-    button('Can’t access this clue', () => run(async () => {
-      commit({ type: 'reference' }); showDialog('Unsolved reference evidence', [paragraph(p.assistance.referenceIntroduction), ...p.referenceEvidenceIds.map(id => evidenceCard(id, true))]);
-    })),
-    button('Reveal answer', () => confirmAction('Reveal answer?', p.assistance.revealConfirmation, 'Reveal answer and continue', async () => {
-      const solution = await loadSolution(model, state, p.id); commit({ type: 'reveal', confirmed: true }, solution); await navigate('objective');
-    }))));
-  main.append(help);
-}
-async function submitAnswer() {
-  const p = currentPuzzle(model, state), payload = payloadFor(p, state);
-  if (incomplete(payload)) feedback = p.feedback.empty;
-  else {
-    let validFormat = true;
-    if (p.answerType === 'time_bounds') {
-      try { parseBounds(payload); } catch { validFormat = false; }
-    }
-    if (!validFormat) feedback = 'Use hour:minute in both fields, as 24-hour time or with AM/PM. A trailing PM may apply to both fields.';
-    else {
-      const solution = await loadSolution(model, state, p.id);
-      if (commit({ type: 'submit', payload }, solution)) { await navigate('objective'); return; }
-      feedback = p.feedback.incorrect;
-    }
-  }
-  const node = document.querySelector('#answer-feedback'); node.textContent = feedback; node.focus({ preventScroll: false });
-}
-function renderTravel() {
-  const leg = pendingTravel(model, state), location = model.locations[leg.toLocationId];
-  main.append(el('p', { className: 'eyebrow' }, 'Destination confirmed by your finding'), el('h1', {}, state.mode === 'travel' ? 'Stop safely before investigating' : 'Your next public approach'), locationCard(location));
-  for (const id of leg.confirmationEvidenceIds) main.append(evidenceCard(id));
-  if (state.mode === 'destination') main.append(button('Confirm destination', () => run(async () => { commit({ type: 'confirmDestination' }); await navigate('objective'); }), ''));
-  else main.append(paragraph('Put the phone away during travel. The next objective opens only when you choose to continue from a lawful safe stationary position.'), button('I’m safely stopped — continue', () => run(async () => { commit({ type: 'arrive', safelyStopped: true }); await navigate('objective'); }), ''));
-  main.append(button('Can’t visit — continue with references from a safe place', () => confirmAction('Continue without visiting?', 'Stay legally and safely stopped. The full unsolved inputs are available without a visit, GPS or network. This does not reveal an answer.', 'I’m safely stopped — use references', async () => { commit({ type: 'referenceTravel', safelyStopped: true }); await navigate('objective'); })));
-}
-async function renderCaseFile() {
-  main.append(el('p', { className: 'eyebrow' }, 'Collected locally'), el('h1', {}, 'Your case file'), paragraph('Revisit collected documents and completed explanations. Future records stay locked.'));
-  const entered = enteredIds(model, state);
-  const chapters = el('ol', { className: 'case-list' });
-  for (const id of model.adventure.chapterIds) {
-    const chapter = model.chapters[id], unlocked = chapter.puzzleIds.some(pid => entered.includes(pid));
-    chapters.append(el('li', { className: unlocked ? '' : 'locked' }, `${chapter.publicLabel} · ${unlocked ? chapter.unlockedTitle : 'Locked'}`));
-  }
-  main.append(chapters, el('h2', {}, 'Evidence'), el('ul', { className: 'case-list' }, state.evidenceIds.map(id => el('li', {}, button(`${id} · ${model.evidence[id].title}`, () => showEvidence(id))))));
-  if (state.completedPuzzleIds.length) main.append(el('h2', {}, 'Completed findings'), el('ul', { className: 'case-list' }, state.completedPuzzleIds.map((id, i) => el('li', {}, button(`Finding ${i + 1} · answer and reasoning`, () => run(async () => showDialog(`Finding ${i + 1}`, [await explanation(id)])))))));
-  main.append(button('Return to current task', () => run(() => navigate('objective')), ''));
-}
-async function followHash() {
-  if (!state || !model || !state.started || store.blocked) return;
-  const match = /^#(evidence|puzzle)\/([A-Z][0-9]{2})$/.exec(location.hash);
-  if (!match) return;
-  if (match[1] === 'evidence') await showEvidence(match[2]);
-  else if (state.completedPuzzleIds.includes(match[2])) showDialog('Completed finding', [await explanation(match[2])]);
-  else if (state.mode === 'objective' && state.currentPuzzleId === match[2]) await navigate('objective');
-  else { feedback = 'This finding is locked. Continue the current task.'; await render(); }
-}
-async function initializeCase() {
-  model = await loadAdventure();
-  let storage;
-  try { storage = window.localStorage; } catch { storage = { getItem() { throw Error(); }, setItem() { throw Error(); } }; }
-  store = new Persistence(storage);
-  const restored = store.read(value => restoreState(model, value));
-  state = restored || createState(model);
-  if (restored && JSON.parse(store.lastRaw).contentVersion !== state.contentVersion) store.save(state);
-  if (state.started && !store.blocked) view = 'objective';
-}
+
+// ---------- boot ----------
 async function boot() {
-  try { prep = await loadPreparation(); } catch { /* neutral shell still explains repair */ }
-  await render();
-  try {
-    await connectOffline(); offlineSupported = true;
-    const status = await workerRequest('STATUS'); packageId = status.id; version = status.version;
-    if (status.hasPackage) await checkPackage();
-    else { offlineMessage = 'Download and verify the whole adventure before starting. Later chapters, tools, hints and references are included.'; await render(); }
-    await followHash();
-  } catch { offlineMessage = 'Offline preparation is unavailable in this context. Check browser support, connectivity and storage, then reopen to retry.'; await render(); }
-}
-document.querySelector('.brand').addEventListener('click', event => { event.preventDefault(); run(() => navigate(state?.started ? 'objective' : 'preparation')); });
-window.addEventListener('hashchange', () => run(followHash));
-window.addEventListener('storage', () => {
-  if (store && state && store.status === 'saved') {
-    try { if (store.storage.getItem(SAVE_KEY) !== store.lastRaw) { store.blocked = true; store.status = 'conflict'; render(); } } catch { /* next write gives a truthful notice */ }
+  const base = new URL('../', import.meta.url);
+  [prep, model] = await Promise.all(['content/preparation.json', 'content/adventure.json'].map(p => fetch(new URL(p, base)).then(r => { if (!r.ok) throw Error(p); return r.json(); })));
+  store = new Persistence(localStorage);
+  state = store.read(raw => restoreState(model, raw)) || newState();
+  if (store.blocked) {
+    main.replaceChildren(h('div', { class: 'prep' }, h('h1', {}, 'Saved progress can’t be read'), h('p', {}, 'This phone has a saved investigation from a different version. Nothing has been deleted.'), btn('Start fresh (erases the old save)', () => { state = newState(); store.restart(state); save(); go('prep'); }, 'btn danger')));
+    return;
   }
-});
-boot();
+  view = state.started ? 'play' : 'prep';
+  render();
+  saveStatus.textContent = state.started ? 'Saved' : '';
+  try {
+    await connectOffline();
+    offline.supported = true;
+    const s = await workerRequest('STATUS');
+    if (s.hasPackage) await doCheck(); else { offline.message = 'Download once, with a good connection, then the whole case works without signal.'; render({ keepScroll: true }); }
+  } catch {
+    offline.message = 'Offline download isn’t available in this browser. Open the game from the Home Screen app on the iPhone.';
+    render({ keepScroll: true });
+  }
+}
+boot().catch(() => { main.replaceChildren(h('div', { class: 'prep' }, h('h1', {}, 'The case file didn’t load'), h('p', {}, 'Check your connection and reopen. Saved progress is untouched.'))); });

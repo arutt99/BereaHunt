@@ -1,0 +1,1188 @@
+{
+  "_comment": "DEVELOPMENT SPOILERS. Authoring source for site/content/case.json. Contains plaintext answers. Build with: python3 scripts/build_case.py",
+  "id": "berea-promenade",
+  "contentVersion": "2.0.0",
+  "title": "The Promenade Letter",
+  "subtitle": "A Berea investigation",
+  "cast": [
+    {
+      "id": "helen",
+      "name": "Dr. Helen Marsh",
+      "role": "Retired geologist. Outside reader for the auction. Found drowned eleven days ago.",
+      "fictional": true
+    },
+    {
+      "id": "claire",
+      "name": "Claire Marsh",
+      "role": "Helen’s niece. She sent you the envelope.",
+      "fictional": true
+    },
+    {
+      "id": "victor",
+      "name": "Victor Hale",
+      "role": "Antiques dealer in Berea. Consigned the letter for auction.",
+      "fictional": true
+    },
+    {
+      "id": "dana",
+      "name": "Dana Pruitt",
+      "role": "Specialist at the Cleveland auction house. Signed off the catalogue.",
+      "fictional": true
+    },
+    {
+      "id": "owen",
+      "name": "Owen Marsh",
+      "role": "Helen’s nephew, Claire’s brother. Inherits Helen’s house.",
+      "fictional": true
+    },
+    {
+      "id": "iris",
+      "name": "Iris Calloway",
+      "role": "Paper conservator. Stabilized the letter before sale.",
+      "fictional": true
+    }
+  ],
+  "locations": {
+    "L0": {
+      "name": "Fat Head’s Brewery",
+      "address": "17450 Engle Lake Dr, Middleburg Heights, OH 44130",
+      "mapUrl": "https://maps.google.com/?q=17450+Engle+Lake+Dr+Middleburg+Heights+OH+44130",
+      "arrival": "Order your drinks and get comfortable. This chapter is all on the phone; you don’t need to go anywhere or talk to anyone.",
+      "walk": "None.",
+      "notes": [
+        "The brewery is not part of the game. Normal hours and customer arrangements apply."
+      ]
+    },
+    "L1": {
+      "name": "Berea Falls Scenic Overlook",
+      "address": "Cleveland Metroparks, Rocky River Reservation — off Barrett Road near Valley Parkway, Berea",
+      "mapUrl": "https://maps.google.com/maps?q=41.378044,-81.866079",
+      "arrival": "Use the Metroparks destination pin and park in the small visitor lot (Berea Falls Trailhead). Walk the short path to the wooden overlook deck.",
+      "walk": "Short: a published estimate is about 80 yards from the lot to the overlook, so roughly 0.1 mile there and back. Not measured by us.",
+      "notes": [
+        "Stay on the deck and the designated path. No stream banks, railway land or scrambling.",
+        "If the path is icy, closed or too dark, stay in the car and use “Can’t access this clue.” You lose nothing.",
+        "Metroparks hours are 6 a.m.–11 p.m., but daylight matters more. Aim to be here before about 4:30 p.m. in winter."
+      ]
+    },
+    "L2": {
+      "name": "Downtown Berea — north end of Coe Lake Park",
+      "address": "Seminary Street, just south of E. Bridge Street, Berea, OH 44017",
+      "mapUrl": "https://maps.google.com/maps?q=41.3654154,-81.8516549",
+      "arrival": "Park for free on a downtown street (Seminary Street is closest, if spaces are open) or in the free city lot behind City Hall, 11 Berea Commons. Walk to the brown Ohio Historical Marker at the north end of Coe Lake Park, beside the walkway on Seminary Street.",
+      "walk": "From Seminary Street: about 0.15 mile for the whole visit. From the City Hall lot: about 0.3 mile total. Both are map estimates, not walked distances.",
+      "notes": [
+        "You will visit two markers on public sidewalks, about a block apart. You don’t need to go into any building.",
+        "If a marker is missing, unreadable or too dark to read, use “Can’t access this clue” for the full official text.",
+        "Don’t play the game in the parking lot itself (city park rules). Sidewalks, benches or your car once you’ve left the lot are all fine."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "id": "C1",
+      "number": 1,
+      "title": "The Envelope",
+      "location": "L0",
+      "intro": "Claire Marsh’s message reaches your phone as the drinks arrive. Her aunt Helen drowned eleven days ago, and the police called it an accident. Claire doesn’t believe them. Helen mailed her an envelope the day she died. Claire wants two patient people to look at it before she takes it to anyone official.",
+      "puzzles": [
+        "P1",
+        "P2"
+      ],
+      "outro": "Helen’s first message is open, and so is her first destination. Finish your drinks — there’s no hurry. When you’re ready, drive to the falls."
+    },
+    {
+      "id": "C2",
+      "number": 2,
+      "title": "Where the Stone Breaks",
+      "location": "L1",
+      "intro": "Helen spent forty years reading rock. Whatever she meant you to understand, she meant you to understand it here, watching the river work.",
+      "puzzles": [
+        "P3",
+        "P4"
+      ],
+      "outro": "Helen went to meet someone the night she died. To prove what she found, you have to read the same stones she read — in town, where the quarries began."
+    },
+    {
+      "id": "C3",
+      "number": 3,
+      "title": "Words in Stone",
+      "location": "L2",
+      "intro": "Helen’s last notebook page has no date and no name. It has one paragraph in her handwriting, which wanders more than usual. Claire thought it was a poem. It isn’t.",
+      "puzzles": [
+        "P5",
+        "P6"
+      ],
+      "outro": "Now you know what Helen knew. Someone else knew it too. Find somewhere comfortable — a bench, a café, your car once you’ve left the lot — and open the last folder."
+    },
+    {
+      "id": "C4",
+      "number": 4,
+      "title": "The Pit at Night",
+      "location": null,
+      "intro": "Claire has requested the records she can legally get. They arrived this afternoon, and they are short. Everything in them is accurate.",
+      "puzzles": [
+        "P7",
+        "P8"
+      ],
+      "outro": ""
+    }
+  ],
+  "evidence": {
+    "E01": {
+      "title": "Message from Claire",
+      "kind": "message",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Thank you for doing this. I don’t know who else to ask."
+        },
+        {
+          "t": "p",
+          "x": "Aunt Helen was a geologist — forty years of rocks and quarries. Lately she was an outside reader for Halberd & Finch, the Cleveland auction house. They had her check a letter they’re selling: a letter John Baldwin supposedly wrote in 1849. Estimate $85,000."
+        },
+        {
+          "t": "p",
+          "x": "Eleven days ago they found her in the water at the old Larkmoor pit, a flooded private quarry outside town. Thursday night. They say she slipped on a wet ledge. Helen never went near ledges at night. She used to lecture ME about it."
+        },
+        {
+          "t": "p",
+          "x": "The same day, she mailed me an envelope: a copy of the letter, the paperwork, and pages from her notebook. Half of it is in some code of hers. Please read it. Tell me if I’m crazy."
+        },
+        {
+          "t": "sig",
+          "x": "— Claire"
+        }
+      ]
+    },
+    "E02": {
+      "title": "The Promenade Letter (Lot 112)",
+      "kind": "letter",
+      "fictional": true,
+      "caption": "Auction catalogue transcription of a letter dated 12 June 1849, signed “J. Baldwin.” The text and the letter are fictional.",
+      "blocks": [
+        {
+          "t": "date",
+          "x": "Berea, 12th June 1849."
+        },
+        {
+          "t": "salute",
+          "x": "My dear Brother,"
+        },
+        {
+          "t": "line",
+          "id": "a",
+          "x": "The Seminary trustees having given the Triangle to the people two summers past, to be kept forever a public promenade, our little town has a heart at last."
+        },
+        {
+          "t": "line",
+          "id": "b",
+          "x": "Our grindstones go out by every wagon, and the stone keeps faith with us."
+        },
+        {
+          "t": "line",
+          "id": "c",
+          "x": "The town pump at the south-east angle of the promenade draws a crowd each market morning."
+        },
+        {
+          "t": "line",
+          "id": "d",
+          "x": "On the Sabbath the brethren of the Congregational church gather beneath their meeting-house spire, a full hundred feet above the square."
+        },
+        {
+          "t": "line",
+          "id": "e",
+          "x": "And where the old pit lies, all is now nothing but a quiet, blue body of water, glimmering in the sunlight."
+        },
+        {
+          "t": "close",
+          "x": "Yr. affectionate brother,"
+        },
+        {
+          "t": "sign",
+          "x": "J. Baldwin"
+        }
+      ]
+    },
+    "E03": {
+      "title": "Helen’s notebook — page 1",
+      "kind": "notebook",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "hand",
+          "x": "Lot 112. Paper is old — rag, right weight. Ink is right. The LOOK is right."
+        },
+        {
+          "t": "hand",
+          "x": "It’s the words."
+        },
+        {
+          "t": "hand",
+          "x": "If I’m right: V. loses $85,000. D. signed the catalogue. O. keeps asking about the house."
+        },
+        {
+          "t": "hand",
+          "x": "Writing the rest my way. My emails are being read — I’m sure of it."
+        },
+        {
+          "t": "cipher",
+          "x": "{{P1_CIPHER}}"
+        },
+        {
+          "t": "hand",
+          "x": "Key: the name that lost the toss. One word."
+        }
+      ]
+    },
+    "E04": {
+      "title": "Clipping pinned to the notebook",
+      "kind": "clipping",
+      "fictional": false,
+      "caption": "Real history. Helen pinned a printout of this to her page.",
+      "blocks": [
+        {
+          "t": "head",
+          "x": "How Berea got its name"
+        },
+        {
+          "t": "p",
+          "x": "“Berea got its name by the flip of a coin back in 1836. Reverend Henry O. Sheldon, a circuit rider and later Berea’s first postmaster, chose the name over another biblical locale: Tabor (Mount Tabor). Baldwin called ‘heads’ and the rest is history.”"
+        }
+      ],
+      "source": {
+        "label": "City of Berea, “History: A History Set in Stone” (reviewed 2026-11-12)",
+        "url": "https://www.cityofberea.org/326/History"
+      }
+    },
+    "E05": {
+      "title": "The paperwork",
+      "kind": "records",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "form",
+          "head": "Halberd & Finch — Consignment receipt",
+          "rows": [
+            [
+              "Lot",
+              "112, “The Promenade Letter”"
+            ],
+            [
+              "Consignor",
+              "Victor Hale, Hale Antiques, Berea"
+            ],
+            [
+              "Received",
+              "3 March"
+            ],
+            [
+              "Catalogue photograph",
+              "Taken on receipt, 3 March"
+            ],
+            [
+              "Estimate",
+              "$60,000–85,000"
+            ],
+            [
+              "Catalogue approved",
+              "D. Pruitt"
+            ],
+            [
+              "Outside reader",
+              "Dr. H. Marsh — report pending"
+            ]
+          ]
+        },
+        {
+          "t": "form",
+          "head": "Hale Antiques — Bill of sale (purchase)",
+          "rows": [
+            [
+              "Item",
+              "Letter, signed J. Baldwin, 1849"
+            ],
+            [
+              "Bought from",
+              "Iris Calloway, Calloway Paper Conservation, acting as agent for a private estate"
+            ],
+            [
+              "Price paid",
+              "$4,000"
+            ],
+            [
+              "Provenance",
+              "Estate details held by seller; not disclosed to buyer"
+            ],
+            [
+              "Date",
+              "20 February"
+            ]
+          ]
+        },
+        {
+          "t": "form",
+          "head": "Calloway Paper Conservation — Treatment note",
+          "rows": [
+            [
+              "Object",
+              "Single sheet, one fold, iron-gall ink"
+            ],
+            [
+              "Treatment",
+              "Humidified, flattened, two edge tears repaired"
+            ],
+            [
+              "Observation",
+              "Paper and ink consistent with the mid-19th century"
+            ],
+            [
+              "Signed",
+              "I. Calloway"
+            ]
+          ]
+        }
+      ]
+    },
+    "E06": {
+      "title": "Helen’s message, decoded",
+      "kind": "notebook",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "hand",
+          "x": "THE LETTER IS A LIE. THE STONE REMEMBERS. BEGIN WHERE THE RIVER BREAKS IT."
+        }
+      ]
+    },
+    "E07": {
+      "title": "Helen’s map pins",
+      "kind": "pins",
+      "fictional": false,
+      "caption": "Four places Helen pinned on a map of Berea, with her notes. Each fact is real.",
+      "blocks": [
+        {
+          "t": "pin",
+          "id": "coe",
+          "head": "Coe Lake (north end)",
+          "x": "Heart of the old sandstone quarries. The “Big Quarry” here filled with water after the work stopped.",
+          "source": "Ohio Historical Marker 16-18"
+        },
+        {
+          "t": "pin",
+          "id": "falls",
+          "head": "Berea Falls",
+          "x": "The Rocky River pours over Berea sandstone. Where the shale underneath wears away, the sandstone on top cracks and breaks off.",
+          "source": "Cleveland Metroparks"
+        },
+        {
+          "t": "pin",
+          "id": "wallace",
+          "head": "Wallace Lake",
+          "x": "Two former quarries, flooded in 1941 to make a swimming lake.",
+          "source": "Cleveland Metroparks"
+        },
+        {
+          "t": "pin",
+          "id": "triangle",
+          "head": "The Triangle",
+          "x": "Downtown’s public promenade, protected by deed since 1847.",
+          "source": "Ohio Historical Marker 20-18"
+        }
+      ]
+    },
+    "E09": {
+      "title": "Helen’s sketch of the falls",
+      "kind": "notebook",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "sketch",
+          "x": "falls"
+        },
+        {
+          "t": "hand",
+          "x": "A waterfall here isn’t water winning. It’s stone losing, in order. Put it in order and you’ll see how Lot 112 fails too: a hard, honest face over something soft."
+        },
+        {
+          "t": "hand",
+          "x": "Stand at the rail. Watch the lip. Ask what’s holding it up."
+        }
+      ]
+    },
+    "E10": {
+      "title": "Reference: Berea Falls (Cleveland Metroparks)",
+      "kind": "reference",
+      "fictional": false,
+      "blocks": [
+        {
+          "t": "quote",
+          "x": "“The raging waters of Rocky River that formed the Berea Falls are a piece of glacial history. Post-glacial river water found its way along the Berea sandstone, seeping through fissures and cracks to the soft shale below. As the shale eroded, the sandstone on top was undermined and began to break off. Those breaks in turn became the Berea Falls.”"
+        }
+      ],
+      "source": {
+        "label": "Cleveland Metroparks, Berea Falls Scenic Overlook (reviewed 2026-11-12)",
+        "url": "https://www.clevelandmetroparks.com/parks/visit/parks/rocky-river-reservation/berea-falls-scenic-overlook"
+      }
+    },
+    "E11": {
+      "title": "The torn page",
+      "kind": "strips",
+      "fictional": true,
+      "caption": "Torn up and mailed loose in the envelope. Six scraps; one is from a different page."
+    },
+    "E12": {
+      "title": "Helen’s meeting page, restored",
+      "kind": "notebook",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "hand",
+          "x": "Thursday — 7:30 pm"
+        },
+        {
+          "t": "hand",
+          "x": "Larkmoor pit, by the north ledge."
+        },
+        {
+          "t": "hand",
+          "x": "Meeting the one person who knows"
+        },
+        {
+          "t": "hand",
+          "x": "where the paper truly came from."
+        },
+        {
+          "t": "hand",
+          "x": "If I’m right, the letter dies tonight."
+        }
+      ]
+    },
+    "E13": {
+      "title": "Helen’s last notebook page",
+      "kind": "notebook",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "hand",
+          "x": "“Gradually the water came, first a little pool, then it rose higher and higher, until at last the workmen gathered up their tools and left the water to fill to the brim this basin they had made in the earth…”"
+        },
+        {
+          "t": "hand",
+          "x": "Where have I read this before?"
+        },
+        {
+          "t": "hand",
+          "x": "Go and stand where the photographer stood."
+        }
+      ]
+    },
+    "E14": {
+      "title": "Reference: Ohio Historical Marker 16-18",
+      "kind": "reference",
+      "fictional": false,
+      "caption": "Official text of the marker at the north end of Coe Lake Park (erected 1998).",
+      "blocks": [
+        {
+          "t": "head",
+          "x": "Berea Sandstone Quarries / The “Big Quarry”"
+        },
+        {
+          "t": "sub",
+          "x": "Side A"
+        },
+        {
+          "t": "p",
+          "x": "For more than ninety years, this area was the heart and soul of Berea’s sandstone quarries. In the early 1830s, John Baldwin discovered that the area’s sandstone deposits made superb grindstones and building stones. In the 1840s, thriving sandstone quarries developed and became Berea’s lifeblood. Searching for the “American Dream,” German, Irish, Italian, Hungarian, and Polish immigrants, among others, came here to work. The quarries eventually encompassed nearly 250 acres and consumed the fashionable houses of Berea’s “South Side” and the buildings of Baldwin University. The Cuyahoga County Court House, Ohio’s Capitol, and Canada’s parliament buildings are among many structures in North America and Europe constructed of Berea sandstone. Decreasing demand for sandstone and the Great Depression closed the last of Berea’s quarries in the mid-1930s."
+        },
+        {
+          "t": "sub",
+          "x": "Side B"
+        },
+        {
+          "t": "p",
+          "x": "The photograph looks north to the buildings on East Bridge Street, which constituted the northern boundary of Berea’s sandstone quarries around 1895. The photographer stood approximately where you are standing. “Gradually the water came, first a little pool, then it rose higher and higher, until at last the workmen gathered up their tools and left the water to fill to the brim this basin they had made in the earth, until that place formerly so full of busy sounds was nothing but a quiet, blue body of water, glimmering in the sunlight.” Anna M. Nokes, “The Big Quarry,” 1895 (Nokes was a Baldwin University student.)"
+        }
+      ],
+      "source": {
+        "label": "Ohio History Connection, Remarkable Ohio, marker 16-18 (reviewed 2026-11-12)",
+        "url": "https://remarkableohio.org/marker/16-18-berea-sandstone-quarries-the-big-quarry/"
+      }
+    },
+    "E15": {
+      "title": "Helen’s copy from the Triangle marker",
+      "kind": "clipping",
+      "fictional": false,
+      "caption": "Helen copied this from Ohio Historical Marker 20-18 on the Triangle, about 600 feet west of the Coe Lake marker. Seeing it in person is optional.",
+      "blocks": [
+        {
+          "t": "quote",
+          "x": "“When the seminary trustees transferred the Triangle tract to the people of Berea in 1847, they designated it by deed as a public promenade.”"
+        },
+        {
+          "t": "quote",
+          "x": "“The town pump and watering trough stood on the southeast angle of the Triangle until 1924.”"
+        }
+      ],
+      "source": {
+        "label": "Ohio History Connection, Remarkable Ohio, marker 20-18 (reviewed 2026-11-12)",
+        "url": "https://remarkableohio.org/marker/20-18-the-berea-triangle/"
+      }
+    },
+    "E16": {
+      "title": "Reference: Ohio Historical Marker 82-18",
+      "kind": "reference",
+      "fictional": false,
+      "caption": "Official text of the marker at the northwest corner of Seminary Street and Church Street. The plate itself carries the number transposed, as 18-82.",
+      "blocks": [
+        {
+          "t": "head",
+          "x": "First Congregational United Church of Christ of Berea"
+        },
+        {
+          "t": "p",
+          "x": "Seven original members, who were staunch abolitionists, organized the First Congregational Church of Berea in the nearby Union School House on June 9, 1855. These members publicly articulated opposition to slavery and their desire for a church with full local autonomy. The church purchased this property and erected this sanctuary in 1869, the oldest still standing structure used as a church in Berea and the original Middleburg Township. It is constructed of locally manufactured brick with a foundation from the Berea sandstone quarries. The 100-foot spire was added in 1954 to celebrate its 100th anniversary since the founding of the church in 1855. The church joined the newly formed United Church of Christ in 1961. During its long history, the church has developed many programs to assist persons in need in the Berea area and developed collaborative ventures with other churches and civic groups."
+        }
+      ],
+      "source": {
+        "label": "Ohio History Connection, Remarkable Ohio, marker 82-18 (reviewed 2026-11-12)",
+        "url": "https://remarkableohio.org/marker/82-18-first-congregational-united-church-of-christ-of-berea/"
+      }
+    },
+    "E17": {
+      "title": "Finding: Lot 112 is a forgery",
+      "kind": "finding",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "p",
+          "x": "The paper is genuinely old. The words are not. Whoever wrote the letter built it from modern historical markers. They copied the true details and got caught by two they couldn’t have known in 1849: a church that didn’t exist yet, under a spire added in 1954, and a student’s description of a flooded quarry from 1895."
+        },
+        {
+          "t": "p",
+          "x": "Anyone selling the letter would want that kept quiet. Only one person could explain where the paper really came from."
+        }
+      ]
+    },
+    "E18": {
+      "title": "Thursday night: what is known",
+      "kind": "records",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "form",
+          "head": "County medical examiner — summary",
+          "rows": [
+            [
+              "Deceased",
+              "Helen Marsh, 71"
+            ],
+            [
+              "Place",
+              "Larkmoor pit (private, flooded quarry), north ledge"
+            ],
+            [
+              "Estimated time of death",
+              "Between 7:15 pm and 8:30 pm, Thursday"
+            ]
+          ]
+        },
+        {
+          "t": "form",
+          "head": "Drive times to the Larkmoor pit (typical evening)",
+          "rows": [
+            [
+              "From downtown Berea",
+              "about 15 minutes"
+            ],
+            [
+              "From downtown Cleveland",
+              "about 35 minutes"
+            ],
+            [
+              "From Cleveland Hopkins Airport",
+              "about 20 minutes"
+            ]
+          ]
+        }
+      ]
+    },
+    "E19": {
+      "title": "Four records for Thursday evening",
+      "kind": "records",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "form",
+          "head": "Victor Hale",
+          "rows": [
+            [
+              "Source",
+              "Public video archive of Hale Antiques’ weekly livestream, broadcast from the Berea shop"
+            ],
+            [
+              "Record",
+              "Live from 6:30 pm to 7:05 pm. Nothing else on record that evening."
+            ]
+          ]
+        },
+        {
+          "t": "form",
+          "head": "Dana Pruitt",
+          "rows": [
+            [
+              "Source",
+              "Halberd & Finch building access log, downtown Cleveland"
+            ],
+            [
+              "Record",
+              "Badge out of the building at 8:05 pm."
+            ]
+          ]
+        },
+        {
+          "t": "form",
+          "head": "Owen Marsh",
+          "rows": [
+            [
+              "Source",
+              "Airline boarding and arrival record"
+            ],
+            [
+              "Record",
+              "Flight from Denver landed at Cleveland Hopkins at 10:10 pm. Owen was aboard."
+            ]
+          ]
+        },
+        {
+          "t": "form",
+          "head": "Iris Calloway",
+          "rows": [
+            [
+              "Source",
+              "Mobile carrier record (obtained by Claire’s lawyer)"
+            ],
+            [
+              "Record",
+              "Phone switched off from 7:02 pm to 9:40 pm. Nothing else on record that evening."
+            ]
+          ]
+        }
+      ]
+    },
+    "E20": {
+      "title": "Finding: who could have been at the pit",
+      "kind": "finding",
+      "fictional": true,
+      "blocks": [
+        {
+          "t": "p",
+          "x": "Owen was in the air until after 10:00 pm. Dana couldn’t have reached the pit before about 8:40 pm, after the latest time of death."
+        },
+        {
+          "t": "p",
+          "x": "Victor and Iris both had time. Records alone can’t choose between them."
+        }
+      ]
+    }
+  },
+  "puzzles": {
+    "P1": {
+      "chapter": "C1",
+      "title": "Helen’s code",
+      "objective": "Find Helen’s key word and use it to read her coded line.",
+      "evidence": [
+        "E03",
+        "E04",
+        "E01"
+      ],
+      "input": {
+        "type": "keyword",
+        "keyword": "TABOR",
+        "plaintext": "THE LETTER IS A LIE. THE STONE REMEMBERS. BEGIN WHERE THE RIVER BREAKS IT.",
+        "label": "Key word",
+        "help": "Type a key word. The decoder rebuilds Helen’s alphabet: the key word first (skipping repeated letters), then the rest of A–Z in order. Then it decodes her line."
+      },
+      "answers": [
+        "tabor"
+      ],
+      "near": [
+        {
+          "a": "mount tabor",
+          "m": "Close. Helen said one word."
+        },
+        {
+          "a": "mounttabor",
+          "m": "Close. Helen said one word."
+        },
+        {
+          "a": "berea",
+          "m": "That’s the name that won the toss."
+        },
+        {
+          "a": "heads",
+          "m": "That’s the call, not a name."
+        },
+        {
+          "a": "tails",
+          "m": "That’s the call, not a name."
+        }
+      ],
+      "hints": [
+        "The key is in the clipping Helen pinned to the page. A coin decided between two names.",
+        "Berea won the toss. What was the other name?",
+        "The losing name was Tabor (as in Mount Tabor). Helen said one word, so try TABOR."
+      ],
+      "reveal": {
+        "answer": "TABOR",
+        "why": "The clipping says Berea was chosen over “Tabor (Mount Tabor)” on a coin toss. Helen’s key is “the name that lost the toss. One word,” so the key is TABOR. Her alphabet is T A B O R followed by the unused letters C D E F G H I J K L M N P Q S U V W X Y Z. Each coded letter stands where its plain letter sits in the normal alphabet, so T→A, A→B, B→C, O→D, R→E, and so on. Decoded: “THE LETTER IS A LIE. THE STONE REMEMBERS. BEGIN WHERE THE RIVER BREAKS IT.”"
+      },
+      "grants": [
+        "E06"
+      ]
+    },
+    "P2": {
+      "chapter": "C1",
+      "title": "Where the river breaks it",
+      "objective": "Which of Helen’s pinned places does her message send you to?",
+      "evidence": [
+        "E06",
+        "E07"
+      ],
+      "input": {
+        "type": "choice",
+        "options": [
+          {
+            "id": "coe",
+            "label": "Coe Lake (north end)"
+          },
+          {
+            "id": "falls",
+            "label": "Berea Falls"
+          },
+          {
+            "id": "wallace",
+            "label": "Wallace Lake"
+          },
+          {
+            "id": "triangle",
+            "label": "The Triangle"
+          }
+        ]
+      },
+      "answers": [
+        "falls"
+      ],
+      "near": [
+        {
+          "a": "coe",
+          "m": "Water and stone, yes — but still water. Nothing there is breaking now."
+        },
+        {
+          "a": "wallace",
+          "m": "Flooded quarries, not a river."
+        },
+        {
+          "a": "triangle",
+          "m": "Stone lies beneath it, but there’s no river."
+        }
+      ],
+      "hints": [
+        "Helen’s line has three parts: a river, the stone, and something breaking.",
+        "Only one pin has a river, and stone actively breaking.",
+        "Berea Falls: the river undermines the sandstone until it breaks off."
+      ],
+      "reveal": {
+        "answer": "Berea Falls",
+        "why": "“Begin where the river breaks it” — “it” is the stone from the line before. Coe Lake and Wallace Lake are still, flooded quarries. The Triangle has no river. Only at Berea Falls does a river break stone: Metroparks describes the Rocky River wearing away the shale until the sandstone above breaks off."
+      },
+      "grants": []
+    },
+    "P3": {
+      "chapter": "C2",
+      "title": "How the stone loses",
+      "objective": "Put Helen’s four cards in the order the falls actually formed.",
+      "evidence": [
+        "E09"
+      ],
+      "onSite": "From the overlook deck, look at the falls: water sliding over a hard edge of rock and dropping below. Then sort the cards.",
+      "fallback": [
+        "E10"
+      ],
+      "input": {
+        "type": "order",
+        "items": [
+          {
+            "id": "break",
+            "x": "The unsupported sandstone cracks and breaks off — a falls is born."
+          },
+          {
+            "id": "seep",
+            "x": "River water seeps down through cracks in the hard sandstone."
+          },
+          {
+            "id": "under",
+            "x": "With nothing beneath it, the sandstone ledge hangs out over empty space."
+          },
+          {
+            "id": "shale",
+            "x": "The soft shale below the sandstone wears away."
+          }
+        ]
+      },
+      "answers": [
+        "seep,shale,under,break"
+      ],
+      "hints": [
+        "The hard layer is on top and the soft one is below. Which one can the water attack first, and how does it get there?",
+        "Water has to get down to the soft layer before anything else can happen.",
+        "Seep through cracks → soft shale wears away → sandstone left hanging → sandstone breaks off."
+      ],
+      "reveal": {
+        "answer": "Seep → shale wears → ledge hangs → breaks off",
+        "why": "The sandstone is the hard top layer, so the water can’t cut it head-on. It seeps through cracks to the soft shale below. As the shale wears away, the sandstone above loses its support and juts out. Eventually it breaks off, and the breaks make the falls. This is the Metroparks explanation. Helen’s point: a hard, honest face can fail because of what’s underneath it."
+      },
+      "grants": []
+    },
+    "P4": {
+      "chapter": "C2",
+      "title": "The torn page",
+      "objective": "Rebuild Helen’s torn page. One scrap doesn’t belong.",
+      "evidence": [
+        "E11"
+      ],
+      "input": {
+        "type": "strips",
+        "use": 5,
+        "items": [
+          {
+            "id": "s4",
+            "x": "where the paper truly came from.",
+            "top": 4,
+            "bottom": 2,
+            "paper": "a"
+          },
+          {
+            "id": "sx",
+            "x": "Pick up milk, call Claire re: Sunday",
+            "top": 5,
+            "bottom": 5,
+            "paper": "b"
+          },
+          {
+            "id": "s1",
+            "x": "Thursday — 7:30 pm",
+            "top": 0,
+            "bottom": 3,
+            "paper": "a"
+          },
+          {
+            "id": "s5",
+            "x": "If I’m right, the letter dies tonight.",
+            "top": 2,
+            "bottom": 0,
+            "paper": "a"
+          },
+          {
+            "id": "s2",
+            "x": "Larkmoor pit, by the north ledge.",
+            "top": 3,
+            "bottom": 1,
+            "paper": "a"
+          },
+          {
+            "id": "s3",
+            "x": "Meeting the one person who knows",
+            "top": 1,
+            "bottom": 4,
+            "paper": "a"
+          }
+        ]
+      },
+      "answers": [
+        "s1,s2,s3,s4,s5"
+      ],
+      "hints": [
+        "Torn paper only fits one way: each scrap’s bottom edge matches the top edge of the next. The odd scrap is from a different sheet. Look at the paper.",
+        "Set aside the scrap on different paper. The first scrap has a clean top edge, and the last has a clean bottom.",
+        "Order: “Thursday — 7:30 pm”, “Larkmoor pit…”, “Meeting the one person…”, “where the paper truly…”, “If I’m right…”."
+      ],
+      "reveal": {
+        "answer": "Thursday 7:30 pm at the Larkmoor pit",
+        "why": "The page starts with the clean-topped scrap and ends with the clean-bottomed one, and each torn edge matches the next. The grocery scrap is on different paper, from another page. Restored: “Thursday — 7:30 pm. Larkmoor pit, by the north ledge. Meeting the one person who knows where the paper truly came from. If I’m right, the letter dies tonight.” Helen didn’t go to the pit by chance. She went to meet someone."
+      },
+      "grants": [
+        "E12"
+      ]
+    },
+    "P5": {
+      "chapter": "C3",
+      "title": "Where the photographer stood",
+      "objective": "Helen recognized the words on her last page. When were they really written?",
+      "evidence": [
+        "E13",
+        "E02"
+      ],
+      "onSite": "Find the Ohio Historical Marker at the north end of Coe Lake Park. Read both sides. One side tells you where to stand.",
+      "fallback": [
+        "E14"
+      ],
+      "input": {
+        "type": "text",
+        "label": "Year the words were written",
+        "inputmode": "numeric",
+        "placeholder": "e.g. 1900"
+      },
+      "answers": [
+        "1895"
+      ],
+      "near": [
+        {
+          "a": "1849",
+          "m": "That’s the date the letter claims. When were these words really written?"
+        },
+        {
+          "a": "1998",
+          "m": "That’s when the marker went up. Whose words is it quoting, and from when?"
+        },
+        {
+          "a": "anna nokes",
+          "m": "Right author. Now the year she wrote them."
+        },
+        {
+          "a": "nokes",
+          "m": "Right author. Now the year she wrote them."
+        },
+        {
+          "a": "anna m nokes",
+          "m": "Right author. Now the year she wrote them."
+        }
+      ],
+      "hints": [
+        "The paragraph on Helen’s last page is quoted, with credit, on one side of the marker.",
+        "Side B quotes a Baldwin University student and gives her essay’s title and year.",
+        "Anna M. Nokes, “The Big Quarry,” 1895. Now look at the last line of the Promenade Letter."
+      ],
+      "reveal": {
+        "answer": "1895",
+        "why": "Side B of marker 16-18 quotes Anna M. Nokes’s 1895 essay “The Big Quarry.” Her passage ends “…nothing but a quiet, blue body of water, glimmering in the sunlight.” The Promenade Letter, dated 1849, ends with those same words. A letter can’t quote an essay written 46 years later. And in 1849 the quarries were booming, not flooded. Standing there, you can see why Helen wrote “where have I read this before?”"
+      },
+      "grants": []
+    },
+    "P6": {
+      "chapter": "C3",
+      "title": "Two summers past",
+      "objective": "Check each line of the Promenade Letter. Which lines are contradicted by the markers, and which aren’t?",
+      "evidence": [
+        "E02",
+        "E15",
+        "E14"
+      ],
+      "onSite": "Walk one block north on Seminary Street to the marker at the corner of Church Street. Read it, and remember that the letter claims 1849.",
+      "fallback": [
+        "E16",
+        "E14"
+      ],
+      "input": {
+        "type": "classify",
+        "options": [
+          {
+            "id": "x",
+            "label": "Contradicted"
+          },
+          {
+            "id": "ok",
+            "label": "Not contradicted"
+          }
+        ],
+        "items": [
+          {
+            "id": "a",
+            "x": "“The Seminary trustees having given the Triangle to the people two summers past, to be kept forever a public promenade…”"
+          },
+          {
+            "id": "b",
+            "x": "“Our grindstones go out by every wagon…”"
+          },
+          {
+            "id": "c",
+            "x": "“The town pump at the south-east angle of the promenade…”"
+          },
+          {
+            "id": "d",
+            "x": "“…the Congregational church… their meeting-house spire, a full hundred feet above the square.”"
+          },
+          {
+            "id": "e",
+            "x": "“…nothing but a quiet, blue body of water, glimmering in the sunlight.”"
+          }
+        ]
+      },
+      "answers": [
+        "a:ok,b:ok,c:ok,d:x,e:x"
+      ],
+      "hints": [
+        "Judge every line against 1849. “Not contradicted” doesn’t mean proven; it means nothing on the markers rules it out.",
+        "The Triangle went to the people in 1847, which is two summers before 1849. Grindstones date to the 1830s and the quarries were thriving in the 1840s. The pump stood there until 1924, and its start date isn’t given. Now read the church marker’s dates.",
+        "Contradicted: the church (organized 1855; 100-foot spire added 1954) and the flooded quarry (Nokes, 1895). The other three aren’t contradicted."
+      ],
+      "reveal": {
+        "answer": "Contradicted: the church spire and the blue water",
+        "why": "Two summers before 1849 is 1847, the year the Triangle was deeded as a public promenade, so that fits. Grindstones (1830s) and thriving 1840s quarries fit. The marker says the pump stood on the southeast angle until 1924 and gives no start date, so nothing rules it out. But the Congregational church wasn’t organized until June 9, 1855, and its 100-foot spire went up in 1954. The flooded quarry is described in words written in 1895. The forger copied the true details carefully and gave themselves away with the two they couldn’t have known."
+      },
+      "grants": [
+        "E17"
+      ]
+    },
+    "P7": {
+      "chapter": "C4",
+      "title": "Thursday night",
+      "objective": "Using the records, who could have been at the pit when Helen died? Choose everyone it could have been.",
+      "evidence": [
+        "E18",
+        "E19",
+        "E12"
+      ],
+      "input": {
+        "type": "multi",
+        "options": [
+          {
+            "id": "victor",
+            "label": "Victor Hale"
+          },
+          {
+            "id": "dana",
+            "label": "Dana Pruitt"
+          },
+          {
+            "id": "owen",
+            "label": "Owen Marsh"
+          },
+          {
+            "id": "iris",
+            "label": "Iris Calloway"
+          }
+        ]
+      },
+      "answers": [
+        "iris,victor"
+      ],
+      "near": [
+        {
+          "a": "iris",
+          "m": "Not only her. Check every record against the window."
+        },
+        {
+          "a": "victor",
+          "m": "Not only him. Check every record against the window."
+        },
+        {
+          "a": "dana,iris,victor",
+          "m": "Check Dana’s badge-out time against the drive time."
+        }
+      ],
+      "hints": [
+        "The window is 7:15–8:30 pm. For each person, find the earliest moment they could have stood on that ledge.",
+        "Owen landed at 10:10 pm. Dana left downtown Cleveland at 8:05 pm, and that’s a 35-minute drive.",
+        "Dana couldn’t arrive before about 8:40 pm, and Owen was in the air. Victor (off air at 7:05, 15 minutes away) and Iris (no record) both had time."
+      ],
+      "reveal": {
+        "answer": "Victor Hale and Iris Calloway",
+        "why": "Owen was on a plane until 10:10 pm. Dana left her Cleveland office at 8:05 pm. With a 35-minute drive, she reaches the pit around 8:40, after the latest time of death. Victor’s livestream ended at 7:05 in Berea, 15 minutes away, so he could be there by about 7:20. Iris has no record at all, and her phone was off for the whole window. Both remain."
+      },
+      "grants": [
+        "E20"
+      ]
+    },
+    "P8": {
+      "chapter": "C4",
+      "title": "Who met Helen at the pit?",
+      "objective": "Name the person Helen went to meet — the one who killed her.",
+      "evidence": [
+        "E12",
+        "E05",
+        "E17",
+        "E20"
+      ],
+      "input": {
+        "type": "final",
+        "options": [
+          {
+            "id": "victor",
+            "label": "Victor Hale"
+          },
+          {
+            "id": "dana",
+            "label": "Dana Pruitt"
+          },
+          {
+            "id": "owen",
+            "label": "Owen Marsh"
+          },
+          {
+            "id": "iris",
+            "label": "Iris Calloway"
+          }
+        ]
+      },
+      "answers": [
+        "iris"
+      ],
+      "near": [
+        {
+          "a": "victor",
+          "m": "Victor had the most money at stake. But read his bill of sale: does he know where the paper came from?"
+        },
+        {
+          "a": "dana",
+          "m": "The records put Dana in Cleveland too late."
+        },
+        {
+          "a": "owen",
+          "m": "Owen was still in the air."
+        }
+      ],
+      "hints": [
+        "Helen’s page tells you exactly who she was meeting: “the one person who knows where the paper truly came from.”",
+        "Look at Victor’s bill of sale. What does it say about provenance, and who held that information?",
+        "Victor bought the letter from Iris, and the estate details were “held by seller; not disclosed to buyer.” Only Iris knew where the paper came from."
+      ],
+      "reveal": {
+        "answer": "Iris Calloway",
+        "why": "Helen went to meet “the one person who knows where the paper truly came from.” Victor’s bill of sale says the estate details were “held by seller; not disclosed to buyer.” Victor never knew, and only Iris did. Iris also had the skill: as a conservator she handled real old paper and period ink, and her own note vouches that both are genuine, which they were. The words were the forgery, built from modern markers. Dana and Owen were too far away, and Victor didn’t know what Helen needed to ask."
+      },
+      "grants": []
+    }
+  },
+  "ending": {
+    "headline": "Case closed: Iris Calloway",
+    "short": [
+      "Claire took your findings to the county prosecutor the next morning: two impossible lines, a restored page and a bill of sale.",
+      "Iris had taken a blank sheet of genuine 1840s rag paper from a ruined ledger. She wrote the letter in period ink, copying phrases she had read on Berea’s historical markers. When Helen asked to see the estate trunk the letter supposedly came from, Iris chose the place: an old quarry, at night. Lot 112 has been withdrawn, and Helen’s death is being investigated again.",
+      "The stone remembered."
+    ],
+    "full": [
+      {
+        "head": "The forgery",
+        "x": "The paper and ink were genuinely old, which is why the conservation note was honest and the letter looked right. The words were new. Three of the letter’s details are real Berea history copied from markers: the 1847 promenade deed, the grindstones and the town pump. Two are impossible in 1849. The Congregational church wasn’t organized until 1855, and its 100-foot spire dates from 1954. The “quiet, blue body of water” is Anna M. Nokes describing the flooded Big Quarry in 1895."
+      },
+      {
+        "head": "The meeting",
+        "x": "Helen’s torn page shows she went to the Larkmoor pit to meet “the one person who knows where the paper truly came from.” She wasn’t there by accident."
+      },
+      {
+        "head": "Opportunity",
+        "x": "The examiner’s window is 7:15–8:30 pm. Owen was in the air. Dana left Cleveland at 8:05 and couldn’t arrive before about 8:40. Victor and Iris both could have been there."
+      },
+      {
+        "head": "Knowledge",
+        "x": "Victor bought the letter for $4,000 from Iris, and the estate details were withheld from him. He stood to lose $85,000, which made him look guilty, but he was the forger’s mark, not the forger. Only Iris knew where the paper came from, so only Iris was the person Helen went to meet."
+      },
+      {
+        "head": "Fact and fiction",
+        "x": "Everything about the people and Lot 112 is invented. The marker texts, the coin toss and the geology of the falls are real, quoted from the Ohio History Connection, the City of Berea and Cleveland Metroparks."
+      }
+    ]
+  }
+}
