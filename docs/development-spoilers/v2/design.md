@@ -17,8 +17,8 @@ reference.
 | Ch | Place | Arrive (est.) | Physical use | Walk (car→stop→car) |
 |----|-------|---------------|--------------|---------------------|
 | 1 | Fat Head's, 17450 Engle Lake Dr (customer drink visit) | 15:00 | none (phone only) | none |
-| 2 | Berea Falls Scenic Overlook, Metroparks pin 41.378044,-81.866079, Berea Falls Trailhead lot | ~15:50 | watch the falls from the deck (P3) | ~0.1 mi (published "80-yard" approach, provisional) |
-| 3 | North end of Coe Lake Park, Seminary St S of E. Bridge St: marker 16-18 (41.3654154,-81.8516549), then marker 82-18 at NW corner Seminary & Church St (41.3672041,-81.8515956) | ~16:25 | read marker 16-18 side B (P5); read marker 82-18 (P6) | ~0.15 mi from Seminary St parking; ~0.3 mi from the City Hall lot (11 Berea Commons). Map estimates, not walked |
+| 2 | Berea Falls Scenic Overlook, Metroparks pin 41.378044,-81.866079 (same point as the Berea Falls Trailhead lot pin 41.37805,-81.86608; OSM: parking on Valley Parkway) | ~15:50 | watch the falls from the deck (P3) | ~0.1 mi (published "80-yard" approach, provisional) |
+| 3 | North end of Coe Lake Park, beside Veterans Parkway ~93 m S of E. Bridge St: marker 16-18 (41.3654154,-81.8516549), then N across Bridge St and up Seminary St to marker 82-18, NW corner Seminary & Church St (41.3672041,-81.8515956), ~198 m apart | ~16:25 | read marker 16-18 side B (P5); read marker 82-18 (P6) | ~0.25–0.3 mi from the east end of the City Hall lot (its NE corner is ~20 m from 16-18); +~0.09 mi each way from the lot's west end. Map estimates (OSM geometry), not walked |
 | 4 | Anywhere seated (no travel) | ~16:55 | none | none |
 
 Drive estimates: Fat Head's to the falls is about 3–4 mi, about 10–15 min. The
@@ -116,3 +116,67 @@ little story around it.
   The P7 beat points back to Helen's pages, as P8's objective already does.
 - Checks: `npm test` 6/6, and `node tests/playthrough.cjs` passed in light and dark.
   Screenshots of the new intro and beats were reviewed. Nothing has been tested on a real device or on site.
+
+## End-to-end audit (2026-11-12, v2.2.0)
+
+Full audit requested by the user. Everything below was checked in this container;
+no physical visit or real-device test happened.
+
+**Sources re-read this session (2026-11-12):** Remarkable Ohio marker pages
+16-18, 82-18 and 20-18 (read in headless Chromium past the bot check), City of
+Berea History and Parking/Working Here pages, Cleveland Metroparks Berea Falls
+Scenic Overlook, Berea Falls Trailhead and Wallace Lake pages, and OpenStreetMap
+data via Nominatim (search/reverse/lookup). Overpass and Wikimedia image
+downloads were unavailable (proxy resets / rate limits), so no new photos were
+reviewed.
+
+**Verified unchanged:** every quoted marker sentence (E14, E15, E16), the 82-18
+transposition alert, the coin-toss clipping (E04), the falls geology quote (E10),
+and the Wallace Lake 1941 flooding of two quarries (E07). Ohio Historical Markers
+are, by design, brown cast aluminum with gold lettering (multiple secondary
+sources; no official spec found).
+
+**Corrected (player-facing):**
+- L1 address: the trailhead lot is on **Valley Parkway** near Barrett Road (the app
+  said "off Barrett Road").
+- L2: south of E. Bridge St, the street beside marker 16-18 is **Veterans Parkway**
+  (OSM way 233303650); Seminary Street starts at Bridge St and runs north. The
+  free municipal lot behind City Hall (OSM way 499176385) runs east to Veterans
+  Parkway, with its NE corner ~20 m from the marker. The old walk figure (0.15 mi
+  from Seminary St) was impossible: the markers alone are ~198 m apart, so any
+  visit to both and back is ≥ ~0.25 mi. New text gives 0.25–0.3 mi from the lot's
+  east end. The unverified "Seminary Street parking" suggestion was removed.
+- P6 on-site direction now says to cross E. Bridge St and names the NW corner.
+- E15: the Triangle marker is ~180 m (~600 ft) **northwest**, not west.
+- Prep "Walking" line now says round trip.
+
+**Corrected (logic / story):**
+- E01 was dated "Tuesday night" but said Helen was found "eleven days ago" on a
+  Thursday night (that's 12 days). The weekday was removed from the letter's date line, and the
+  cast line now says "nearly two weeks ago", consistent for any real play day.
+- P7: Dana's record only showed a badge-out, so she could have gone to the pit at
+  7:15–7:30 and been back by 8:05. Her record now shows badge-in 1:10 pm and no
+  other exits, and the hints, reveal, E20 and ending match.
+- P4: by text alone, the pit scrap fits second or fourth with an identical
+  meaning, and the torn-edge profiles are subtle on a phone. Both orders are now
+  accepted, and the reveal says so.
+- E02 (the letter) and E05 (paperwork) are now on the table from P1, as Claire's
+  letter promises. Iris is introduced by a document early, and the provenance
+  line foreshadows P8 (the twist's evidence is available from chapter 1).
+- P5 also accepts "in 1895". P6 has five targeted near-miss messages.
+- Ending "Fact and fiction" now names the auction house and Larkmoor as invented.
+
+**App fixes:** restart now clears unsent answers left in memory. The torn-page
+document no longer says "board below" in the case file. After "Check again for
+updates" fetches a newer package, the app says to close and reopen (the page
+keeps running the old version until relaunch).
+
+**Tests:** `npm test` 6/6. `node tests/playthrough.cjs` passed light and dark.
+A one-off update test (scratch script) passed both directions: the previous
+deployed build updated to this one with mid-game progress kept, new content
+active and offline relaunch working, and this build updated to a later build
+and showed the reopen notice.
+
+**Still unverified:** current presence and legibility of both downtown markers
+(fallbacks cover it), the exact falls path length, pedestrian facilities on
+Veterans Parkway, real-iPhone behavior of v2.2, and real player timing.

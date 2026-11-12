@@ -95,7 +95,7 @@ function fallsSketch() {
 function noteSheet(ev) { return h('div', { class: 'letter-sheet note' }, ...(ev.blocks || []).map(renderBlock)); }
 function storyParas(text) { return String(text).split(/\n\n+/).map(t => h('p', {}, t)); }
 
-function renderEvidence(id, { open = false, fresh = false } = {}) {
+function renderEvidence(id, { open = false, fresh = false, inPuzzle = false } = {}) {
   const ev = model.evidence[id];
   if (!ev) return null;
   const body = h('div', { class: 'doc-body' });
@@ -106,7 +106,9 @@ function renderEvidence(id, { open = false, fresh = false } = {}) {
     const lines = ev.blocks.filter(b => b.t === 'line');
     body.append(h('div', { class: 'letter-sheet' }, ...ev.blocks.filter(b => ['date', 'salute'].includes(b.t)).map(renderBlock), h('p', { class: 'l-body' }, lines.map(renderBlock)), ...ev.blocks.filter(b => ['close', 'sign'].includes(b.t)).map(renderBlock)));
   } else if (ev.kind === 'strips') {
-    body.append(h('p', { class: 'muted' }, 'Use the puzzle board below to arrange the scraps.'));
+    const [solvedBy] = Object.entries(model.puzzles).filter(([pid, p]) => p.input.type === 'strips' && p.evidence.includes(id) && state.done[pid]);
+    const rebuilt = solvedBy && model.evidence[solvedBy[1].grants[0]];
+    body.append(h('p', { class: 'muted' }, rebuilt ? `Rebuilt: see “${rebuilt.title}”.` : inPuzzle ? 'Use the puzzle board below to arrange the scraps.' : 'The scraps are on the puzzle board in the Case tab.'));
   } else {
     (ev.blocks || []).forEach(b => body.append(renderBlock(b)));
   }
@@ -289,7 +291,7 @@ function renderPuzzle(pos) {
   if (p.onSite && !done) wrap.append(h('div', { class: 'onsite' }, h('span', { class: 'obj-label' }, 'On site'), h('p', {}, p.onSite)));
 
   wrap.append(h('section', { class: 'evidence', 'aria-label': 'Relevant evidence' }, h('h2', { class: 'sect' }, 'Evidence on the table'),
-    relevant.map((id, i) => renderEvidence(id, { open: i === 0 || (p.fallback || []).includes(id) && state.refs[pid] && !done }))));
+    relevant.map((id, i) => renderEvidence(id, { inPuzzle: !done, open: i === 0 || (p.fallback || []).includes(id) && state.refs[pid] && !done }))));
 
   if (!done) {
     currentInput = makeInput(pid, p);
@@ -372,7 +374,13 @@ function renderPrep() {
     h('details', { class: 'panel' }, h('summary', {}, 'What to bring'), h('ul', {}, prep.bring.map(t => h('li', {}, t)))),
     h('details', { class: 'panel' }, h('summary', {}, 'Daylight & conditions'), h('p', {}, prep.daylight)),
     h('details', { class: 'panel' }, h('summary', {}, 'How it works'), h('ul', {}, prep.rules.map(t => h('li', {}, t)))),
-    started ? h('details', { class: 'panel' }, h('summary', {}, 'Restart'), h('p', {}, 'Erase this phone’s progress and start the case from the beginning.'), btn('Restart the investigation…', () => showDialog('Erase all progress?', [h('p', {}, 'This deletes your saved investigation on this phone. It can’t be undone.')], [['Cancel', null, 'btn ghost'], ['Erase and restart', () => { state = newState(); store.restart(state); save(); go('prep'); }, 'btn danger']]), 'btn danger')) : null);
+    started ? h('details', { class: 'panel' }, h('summary', {}, 'Restart'), h('p', {}, 'Erase this phone’s progress and start the case from the beginning.'), btn('Restart the investigation…', () => showDialog('Erase all progress?', [h('p', {}, 'This deletes your saved investigation on this phone. It can’t be undone.')], [['Cancel', null, 'btn ghost'], ['Erase and restart', restartCase, 'btn danger']]), 'btn danger')) : null);
+}
+
+function restartCase() {
+  for (const k of Object.keys(drafts)) delete drafts[k];
+  for (const k of Object.keys(feedback)) delete feedback[k];
+  state = newState(); store.restart(state); save(); go('prep');
 }
 
 function startCase() {
@@ -415,8 +423,15 @@ async function doCheck() {
 async function doDownload() {
   offline.busy = true; offline.message = 'Downloading…'; render({ keepScroll: true });
   try {
-    await workerRequest('DOWNLOAD', d => { offline.message = d.phase === 'download' ? `Downloading… ${d.done} / ${d.total} files` : `Checking… ${d.done} / ${d.total}`; render({ keepScroll: true }); });
-    offline.busy = false; await doCheck(); return;
+    const r = await workerRequest('DOWNLOAD', d => { offline.message = d.phase === 'download' ? `Downloading… ${d.done} / ${d.total} files` : `Checking… ${d.done} / ${d.total}`; render({ keepScroll: true }); });
+    offline.busy = false; await doCheck();
+    const running = offline.pkg;
+    if (!running && r?.id) offline.pkg = r.id; // first download: this page already runs that version
+    if (offline.ready && running && r?.id && r.id !== running) {
+      offline.message = 'A newer version is downloaded and ready offline. Close the app completely and reopen it to load it. Your progress is kept.';
+      render({ keepScroll: true });
+    }
+    return;
   } catch { offline.message = 'The download didn’t finish. Your progress is safe. Check your connection and try again.'; }
   offline.busy = false; render({ keepScroll: true });
 }
@@ -428,7 +443,7 @@ async function boot() {
   store = new Persistence(localStorage);
   state = store.read(raw => restoreState(model, raw)) || newState();
   if (store.blocked) {
-    main.replaceChildren(h('div', { class: 'prep' }, h('h1', {}, 'Saved progress can’t be read'), h('p', {}, 'This phone has a saved investigation from a different version. Nothing has been deleted.'), btn('Start fresh (erases the old save)', () => { state = newState(); store.restart(state); save(); go('prep'); }, 'btn danger')));
+    main.replaceChildren(h('div', { class: 'prep' }, h('h1', {}, 'Saved progress can’t be read'), h('p', {}, 'This phone has a saved investigation from a different version. Nothing has been deleted.'), btn('Start fresh (erases the old save)', restartCase, 'btn danger')));
     return;
   }
   view = state.started ? 'play' : 'prep';
@@ -438,6 +453,7 @@ async function boot() {
     await connectOffline();
     offline.supported = true;
     const s = await workerRequest('STATUS');
+    offline.pkg = s.hasPackage ? s.id : null;
     if (s.hasPackage) await doCheck(); else { offline.message = 'Download once, with a good connection, then the whole case works without signal.'; render({ keepScroll: true }); }
   } catch {
     offline.message = 'Offline download isn’t available in this browser. Open the game from the Home Screen app on the iPhone.';
