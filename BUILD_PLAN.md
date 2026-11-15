@@ -525,3 +525,11 @@ research; no further disclosure approval or default-branch merge is requested.
 - **Verification:** Real-world details come from official registries and operator/city pages, reviewed 2026-11-12. Recent-photo evidence varies by feature and is recorded in the concealed design record. No physical visit, real-iPhone test of v2 or player timing has been done.
 - **Branch:** `claude/code-review-suggestions-tu7nrq`.
 
+### 2026-11-15 — audit follow-up, minimum scope (spoiler-free)
+
+- **Request:** Address the November 14 spoiler-free audit with the minimum changes that matter for the experience (D16). Daylight is out of scope (D15).
+- **What changed (content 2.3.0):** Tightened the deductions the audit flagged. One alibi no longer depends on an approximate travel estimate, one documentary inference is stated at its real strength, and the final question now asks only what the evidence establishes, with the missing link added to an early document. Explanations and the ending match. Corrected the preparation walking line and one location's walk estimate to agree with the documented figures, and removed an unsupported description of a structure's material. Confirmed that every on-site clue has a "Can't access this clue" fallback that carries everything the puzzle needs.
+- **Verification:** `npm run build`, `npm test` 6/6, `npm run playthrough` passed in light and dark (Chromium iPhone emulation). One official source re-read on 2026-11-15 and unchanged. No physical visit, real-device test or player timing.
+- **Deferred audit items:** two-tab save conflict, recovery confirmation, update-notice edge cases, explanation archive, enlarged-text layout, dark-mode contrast and refreshed readiness documents. Download the final version a day or two before the outing and don't update on the day.
+- **Branch:** `claude/epic-bell-nodicr`. Details: `docs/development-spoilers/v2/design.md`.
+
