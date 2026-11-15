@@ -1,6 +1,6 @@
 {
  "id": "berea-promenade",
- "contentVersion": "2.2.0",
+ "contentVersion": "2.3.0",
  "title": "The Promenade Letter",
  "subtitle": "A Berea investigation",
  "cast": [
@@ -56,8 +56,8 @@
    "name": "Berea Falls Scenic Overlook",
    "address": "Cleveland Metroparks, Rocky River Reservation — Valley Parkway near Barrett Road, Berea",
    "mapUrl": "https://maps.google.com/maps?q=41.378044,-81.866079",
-   "arrival": "Use the Metroparks destination pin and park in the small visitor lot (Berea Falls Trailhead). Walk the short path to the wooden overlook deck.",
-   "walk": "Short: a published estimate is about 80 yards from the lot to the overlook, so roughly 0.1 mile there and back. Not measured by us.",
+   "arrival": "Use the Metroparks destination pin and park in the small visitor lot (Berea Falls Trailhead). Walk the short path to the overlook deck.",
+   "walk": "Short: a published estimate is about 80 yards from the lot to the overlook. Allowing for the lot itself, that is roughly 0.1–0.15 mile there and back. Not measured by us.",
    "notes": [
     "Stay on the deck and the designated path. No stream banks, railway land or scrambling.",
     "If the path is icy, closed or too dark, stay in the car and use “Can’t access this clue.” You lose nothing.",
@@ -154,6 +154,10 @@
     {
      "t": "p",
      "x": "Lately she’d been an outside reader for Halberd & Finch, the Cleveland auction house. They had her check a letter they’re about to sell: a letter John Baldwin supposedly wrote in 1849. Yes, that Baldwin. Estimate: $85,000. She never finished her report."
+    },
+    {
+     "t": "p",
+     "x": "The last time I saw her, she was cross about the paperwork. She’d asked the dealer who consigned the letter where it came from, and he couldn’t tell her. He’d bought it through an agent, and the estate was never named to him. “There’s exactly one person who can answer that,” she said, “and they’re not returning my calls.”"
     },
     {
      "t": "p",
@@ -650,7 +654,7 @@
       ],
       [
        "Record",
-       "Badged in at 1:10 pm, badged out at 8:05 pm. The doors log every exit, and there were no others."
+       "Badged in at 1:10 pm, badged out at 8:20 pm. The doors log every exit, and there were no others."
       ]
      ]
     },
@@ -691,7 +695,7 @@
    "blocks": [
     {
      "t": "p",
-     "x": "Owen was in the air until after 10:00 pm. Dana was inside her Cleveland building until 8:05 pm, so she couldn’t have reached the pit before about 8:40 pm, after the latest time of death."
+     "x": "Owen was in the air until after 10:00 pm. Dana was inside her Cleveland building until 8:20 pm. With a drive of about 35 minutes, she couldn’t have reached the pit before about 8:55 pm, well after the latest time of death. Even a fast drive can’t close a gap that wide."
     },
     {
      "t": "p",
@@ -1019,7 +1023,7 @@
    ],
    "reveal": {
     "answer": "Contradicted: the church spire and the blue water",
-    "why": "Two summers before 1849 is 1847, the year the Triangle was deeded as a public promenade, so that fits. Grindstones (1830s) and thriving 1840s quarries fit. The marker says the pump stood on the southeast angle until 1924 and gives no start date, so nothing rules it out. But the Congregational church wasn’t organized until June 9, 1855, and its 100-foot spire went up in 1954. The flooded quarry is described in words written in 1895. The forger copied the true details carefully and gave themselves away with the two they couldn’t have known."
+    "why": "Two summers before 1849 is 1847, the year the Triangle was deeded as a public promenade, so that fits. Grindstones (1830s) and thriving 1840s quarries fit. The marker says the pump stood on the southeast angle until 1924 and gives no start date, so nothing rules it out. But the First Congregational Church of Berea wasn’t organized until June 9, 1855, its sanctuary dates from 1869, and its 100-foot spire went up in 1954. And the blue-water line isn’t merely similar to Nokes: it repeats her 1895 words exactly. A letter from 1849 can’t quote a student writing 46 years later. The forger copied the true details carefully and gave themselves away with the two they couldn’t have known."
    },
    "grants": [
     "E17"
@@ -1066,12 +1070,12 @@
    },
    "hints": [
     "The window is 7:15–8:30 pm. For each person, find the earliest moment they could have stood on that ledge.",
-    "Owen landed at 10:10 pm. Dana was inside her downtown Cleveland building from 1:10 until 8:05 pm, and the pit is a 35-minute drive from there.",
-    "Dana couldn’t arrive before about 8:40 pm, and Owen was in the air. Victor (off air at 7:05, 15 minutes away) and Iris (no record) both had time."
+    "Owen landed at 10:10 pm. Dana was inside her downtown Cleveland building from 1:10 until 8:20 pm, and the pit is about a 35-minute drive from there.",
+    "Dana couldn’t arrive before about 8:55 pm, far too late even with a fast drive, and Owen was in the air. Victor (off air at 7:05, 15 minutes away) and Iris (no record) both had time."
    ],
    "reveal": {
     "answer": "Victor Hale and Iris Calloway",
-    "why": "Owen was on a plane until 10:10 pm. Dana was inside her Cleveland office building all afternoon and evening, with no exit logged until 8:05 pm. With a 35-minute drive, she reaches the pit around 8:40, after the latest time of death. Victor’s livestream ended at 7:05 in Berea, 15 minutes away, so he could be there by about 7:20. Iris has no record at all, and her phone was off for the whole window. Both remain."
+    "why": "Owen was on a plane until 10:10 pm. Dana was inside her Cleveland office building all afternoon and evening, with no exit logged until 8:20 pm. With a drive of about 35 minutes, she reaches the pit around 8:55, nearly half an hour after the latest time of death, a gap no fast drive could close. Victor’s livestream ended at 7:05 in Berea, 15 minutes away, so he could be there by about 7:20. Iris has no record at all, and her phone was off for the whole window. Both remain."
    },
    "grants": [
     "E20"
@@ -1081,9 +1085,10 @@
   "P8": {
    "chapter": "C4",
    "title": "Who met Helen at the pit?",
-   "objective": "Name the person Helen went to meet — the one who killed her.",
+   "objective": "Name the person Helen went to the pit to meet.",
    "evidence": [
     "E12",
+    "E01",
     "E05",
     "E17",
     "E20"
@@ -1113,18 +1118,18 @@
     "c1e46d00a9ad1f8f68b8503eefe8141465b8ce2467f30929e43329fc2a19a866"
    ],
    "near": {
-    "84b8254c46b0fc5d62c7739febfa34724aff0782f2e0da018d99981d0abc83b2": "Victor had the most money at stake. But read his bill of sale: does he know where the paper came from?",
+    "84b8254c46b0fc5d62c7739febfa34724aff0782f2e0da018d99981d0abc83b2": "Victor had the most money at stake. But could he answer the question Helen went to the pit to ask? Check Claire’s letter and his bill of sale.",
     "c1fced3b9995ec5ae178d7f82e2270a1e42dede47170ecfe8c51d10e1b73af24": "The records put Dana in Cleveland too late.",
     "e3fddc37d0c1cef7882167c227f7cdaed26722089101d5d5113a8f3c4c25a701": "Owen was still in the air."
    },
    "hints": [
     "Helen’s page tells you exactly who she was meeting: “the one person who knows where the paper truly came from.”",
-    "Look at Victor’s bill of sale. What does it say about provenance, and who held that information?",
-    "Victor bought the letter from Iris, and the estate details were “held by seller; not disclosed to buyer.” Only Iris knew where the paper came from."
+    "Claire’s letter says what Helen learned when she asked the dealer where the letter came from. Then read his bill of sale: who sold it to him, and who held the estate details?",
+    "Helen asked Victor where the letter came from, and he couldn’t tell her. His bill of sale shows he bought it from Iris, acting as agent, with the estate details “held by seller; not disclosed to buyer.” The one person who could answer Helen’s question was Iris."
    ],
    "reveal": {
     "answer": "Iris Calloway",
-    "why": "Helen went to meet “the one person who knows where the paper truly came from.” Victor’s bill of sale says the estate details were “held by seller; not disclosed to buyer.” Victor never knew, and only Iris did. Iris also had the skill: as a conservator she handled real old paper and period ink, and her own note vouches that both are genuine, which they were. The words were the forgery, built from modern markers. Dana and Owen were too far away, and Victor didn’t know what Helen needed to ask."
+    "why": "Helen went to meet “the one person who knows where the paper truly came from.” She had already asked Victor, and Claire’s letter records that he couldn’t tell her. He had bought it through an agent, and his bill of sale says the estate details were “held by seller; not disclosed to buyer.” That seller was Iris, so she was the person who could answer Helen’s question. She also had the skill: as a conservator she handled real old paper and period ink, and her own note vouches that both are genuine, which they were. The words were the forgery, built from modern markers. Dana and Owen were too far away to be at the pit, and Victor didn’t have the answer Helen went there for."
    },
    "grants": []
   }
@@ -1133,7 +1138,7 @@
   "headline": "Case closed: Iris Calloway",
   "short": [
    "Claire took your findings to the county prosecutor the next morning: two impossible lines, a restored page and a bill of sale.",
-   "Iris had taken a blank sheet of genuine 1840s rag paper from a ruined ledger. She wrote the letter in period ink, copying phrases she had read on Berea’s historical markers. When Helen asked to see the estate trunk the letter supposedly came from, Iris chose the place: an old quarry, at night. Lot 112 has been withdrawn, and Helen’s death is being investigated again.",
+   "Investigators searched Calloway Paper Conservation that week. In a back drawer was a ruined 1840s ledger with one leaf cut cleanly out, the same rag paper as Lot 112. Iris had written the letter on that leaf in period ink, copying phrases she had read on Berea’s historical markers. When Helen asked to see the estate trunk the letter supposedly came from, Iris chose the place: an old quarry, at night. Lot 112 has been withdrawn, and Helen’s death is being investigated again.",
    "The stone remembered."
   ],
   "full": [
@@ -1147,11 +1152,11 @@
    },
    {
     "head": "Opportunity",
-    "x": "The examiner’s window is 7:15–8:30 pm. Owen was in the air. Dana was inside her Cleveland building until 8:05 and couldn’t arrive before about 8:40. Victor and Iris both could have been there."
+    "x": "The examiner’s window is 7:15–8:30 pm. Owen was in the air. Dana was inside her Cleveland building until 8:20 and couldn’t arrive before about 8:55. Victor and Iris both could have been there."
    },
    {
     "head": "Knowledge",
-    "x": "Victor bought the letter for $4,000 from Iris, and the estate details were withheld from him. He stood to lose $85,000, which made him look guilty, but he was the forger’s mark, not the forger. Only Iris knew where the paper came from, so only Iris was the person Helen went to meet."
+    "x": "Helen had already asked Victor where the letter came from, and he couldn’t tell her. He bought it for $4,000 from Iris, acting as agent, and the estate details were withheld from him. He stood to lose $85,000, which made him look guilty, but he couldn’t answer the question Helen went to the pit to ask. Only Iris could, so Iris was the person Helen went to meet. The ledger found in her studio afterward tied her to the forgery itself."
    },
    {
     "head": "Fact and fiction",

@@ -79,7 +79,7 @@ Fairness notes:
   contradicted" is defined in the hint as "nothing rules it out."
 - P6, line "Congregational church": the 1954 spire alone rules it out, even if
   some earlier Congregational group had existed.
-- P7: Dana's 20:05 badge-out plus 35 min gives 20:40, after 20:30.
+- P7: Dana's 20:20 badge-out plus ~35 min gives ~20:55, 25 min after 20:30 (v2.3.0; was 20:05).
 
 ## Testing (2026-11-12, this container)
 
@@ -180,3 +180,49 @@ and showed the reopen notice.
 **Still unverified:** current presence and legibility of both downtown markers
 (fallbacks cover it), the exact falls path length, pedestrian facilities on
 Veterans Parkway, real-iPhone behavior of v2.2, and real player timing.
+
+## Audit follow-up (2026-11-15, v2.3.0)
+
+The external audit dated 2026-11-14 was spoiler-free. Its detailed findings file
+was not in this repository, so the flagged items were identified from the audit's
+descriptions and a fresh logic review. The user approved a minimum scope (D16)
+and dropped daylight work (D15).
+
+**Deductions:**
+- **P8, the central conclusion.** Before: "Name the person Helen went to meet — the one
+  who killed her." Two gaps. (1) That Victor didn't know the provenance rested on one
+  bill-of-sale line ("not disclosed to buyer"), which is circumstantial: he could have
+  learned it anyway. (2) Meeting Helen is not proof of killing her. Fixes: E01 (Claire's
+  letter, ch 1) adds Helen's own finding that the consigning dealer couldn't say where
+  the letter came from. He bought it through an agent and the estate was never named
+  to him. Helen says "There's exactly one person who can answer that... they're not
+  returning my calls" (gender-neutral). The objective is now "Name the person Helen went
+  to the pit to meet." E01 is added to P8's evidence, and the hints, the Victor near-miss
+  and the reveal cite both sources. The ending's short text now has investigators find
+  the ruined ledger with a cut-out leaf, so "Case closed" rests on outcome evidence
+  rather than the player's deduction alone. The full-case "Knowledge" section says the
+  same.
+- **P7, the hard limit from an approximate estimate.** Dana's badge-out moves from 8:05
+  to 8:20, so a "~35 min" drive lands at ~8:55. Excluding her now needs the drive to be
+  wrong by more than 25 minutes, where before 10 minutes would do. E19, E20, the hints,
+  the reveal and the ending's Opportunity section are updated. Victor's inclusion is
+  insensitive to drive estimates.
+- **P6 reveal.** The church line now cites "First" Congregational (organized 1855),
+  the 1869 sanctuary and the 1954 spire. The blue-water line is explained as a verbatim
+  1895 quotation rather than just a dated description. Answers are unchanged.
+
+**Practical wording:** L1 "wooden overlook deck" becomes "overlook deck". The
+operator page and earlier research describe a deck but not its material, and the
+audit didn't name which material was wrong, so this is the best-supported reading
+and not a confirmed match. L1's walk is now 0.1–0.15 mi, matching the v1 feasibility
+allowance (80 yd one way plus the lot). The preparation Walking line now notes that
+the downtown walk is about a third of a mile (L2 is 0.25–0.3 mi, more from the lot's
+west end).
+
+**Fallbacks:** P3→E10, P5→E14 and P6→E16 (+E14) each carry every input the puzzle
+needs. The Metroparks falls page was re-read on 2026-11-15 and the E10 text is
+unchanged.
+
+**Checks:** build, `npm test` 6/6, `npm run playthrough` light and dark all pass.
+Not re-verified: current marker legibility, any physical visit, a real device, or
+player timing. Deferred audit items are listed in BUILD_PLAN's 2026-11-15 handoff.
