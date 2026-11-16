@@ -82,7 +82,7 @@ h2, h3 { font-family: var(--f-type); font-weight: 400; }
 .help-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; } .help-row .btn { flex: 1 1 180px; }
 
 /* paper base */
-.paper, .doc, .objective, .onsite, .place, .work, .help-box, .solved, .panel, .offline, .facts, .cover, .person, .ending .full {
+.paper, .doc, .objective, .onsite, .brief, .place, .work, .help-box, .solved, .panel, .offline, .facts, .cover, .person, .ending .full {
   background: var(--paper); border-radius: var(--r); box-shadow: var(--shadow); }
 
 /* cover */
@@ -139,6 +139,9 @@ details[open] > summary::before { transform: rotate(90deg); }
 .objective p, .onsite p { margin: 2px 0 0; font-weight: 600; }
 .onsite p { font-weight: 400; }
 .obj-label { font: 12px var(--f-type); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+.brief { padding: 14px 16px 14px 18px; margin: 18px 0 8px; border-left: 5px solid var(--accent); }
+.brief p { margin: 6px 0 0; font-size: 16px; line-height: 1.5; } .brief p:first-of-type { font-weight: 600; }
+.sect.sub { font-size: 12px; margin: 18px 0 8px; }
 
 /* documents */
 .doc { margin: 12px 0; overflow: hidden; }
