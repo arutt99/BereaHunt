@@ -18,7 +18,7 @@ jobs:
   playthrough:
     name: Play the deployed case end to end
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # Playwright 1.58 cannot install Chromium on ubuntu-latest (26.04)
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
