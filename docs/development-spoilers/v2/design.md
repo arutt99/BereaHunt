@@ -226,3 +226,27 @@ unchanged.
 **Checks:** build, `npm test` 6/6, `npm run playthrough` light and dark all pass.
 Not re-verified: current marker legibility, any physical visit, a real device, or
 player timing. Deferred audit items are listed in BUILD_PLAN's 2026-11-15 handoff.
+
+## Opening clarity (2026-11-16, v2.4.0)
+
+A player found the Chapter 1 opening confusing: no stated goal, the death and the
+auction letter read as separate threads, too much arrived at once, and the letter
+appeared before the "Open the envelope" button.
+
+- **C1 `brief`** (new chapter field, rendered as a "Your case" card after the
+  letter): goal (what Helen found about the letter, who wanted her stopped), the
+  chapter-to-chapter travel pattern, one name at the end (matches P8's single
+  choice without hinting at Helen's meeting, which P5 reveals), start with the notebook.
+- **E01 rewrite.** Cuts "sorry to spoil it" and "Yes, that Baldwin". Adds the
+  Baldwin gloss from marker 16-18 (E-text already in the case: in the early 1830s he
+  discovered the sandstone made superb grindstones). States Claire's belief that the
+  letter got Helen killed. **The provenance paragraph (dealer couldn't say; agent;
+  estate never named; "exactly one person") is kept verbatim** because P8's hints and
+  reveal depend on it. Value now "could fetch $85,000", consistent with E05's estimate.
+- **Order.** C1 intro now opens the envelope in the scene; button is "Open the case
+  folder."
+- **P1 `focus: 2`** (new optional puzzle field): the first N evidence items, plus any
+  unlocked fallback, show under "Evidence on the table"; the rest under "Also in the
+  folder". Unlock order is unchanged, so E01/E02/E05 still unlock at P1.
+
+**Checks:** build, `npm test` 6/6, `npm run playthrough` light and dark pass.

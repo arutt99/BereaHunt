@@ -533,3 +533,10 @@ research; no further disclosure approval or default-branch merge is requested.
 - **Deferred audit items:** two-tab save conflict, recovery confirmation, update-notice edge cases, explanation archive, enlarged-text layout, dark-mode contrast and refreshed readiness documents. Download the final version a day or two before the outing and don't update on the day.
 - **Branch:** `claude/epic-bell-nodicr`. Details: `docs/development-spoilers/v2/design.md`.
 
+
+### 2026-11-16 — clearer opening (spoiler-free)
+
+- **Request:** The user, who is a player, found the opening confusing: it didn't say what the investigation was for.
+- **What changed (content 2.4.0):** Chapter 1 now has a short "Your case" card after the opening letter. It states the goal, explains that each chapter says where to go next, says the ending asks for one name, and says where to start. The opening letter is shorter and clearer, connects its two threads explicitly, and briefly says who Baldwin was, citing a fact the game already sources from a historical marker. The scene now opens the envelope before the letter appears, and the button reads "Open the case folder." The first puzzle lists the documents it needs first and groups the others under "Also in the folder." Answers, clues and later chapters are unchanged.
+- **Verification:** `npm run build`, `npm test` 6/6, `npm run playthrough` passed in light and dark (Chromium iPhone emulation); Chapter 1 screenshots inspected. No real-device test or player timing.
+- **Branch:** `claude/laughing-ride-6vrqs9`. Details: `docs/development-spoilers/v2/design.md`.

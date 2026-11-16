@@ -264,11 +264,12 @@ function renderIntro(chapter) {
     h('h1', { class: 'chapter-title' }, chapter.title),
     chapter.intro ? h('div', { class: 'scene' }, storyParas(chapter.intro)) : null,
     chapter.letter && model.evidence[chapter.letter] ? noteSheet(model.evidence[chapter.letter]) : null,
+    chapter.brief ? h('section', { class: 'brief', 'aria-label': 'Your case' }, h('span', { class: 'obj-label' }, 'Your case'), [].concat(chapter.brief).map(t => h('p', {}, t))) : null,
     chapter.aside ? h('p', { class: 'muted aside' }, chapter.aside) : null,
     chapter.location ? locationCard(chapter.location, first ? 'You are at' : 'Go to') : h('section', { class: 'place' }, h('p', {}, 'No travel needed. Anywhere comfortable and safely stopped will do: a bench, a café, home. If you’re in the city lot, drive off first.')),
     !first && chapter.location ? h('p', { class: 'safety' }, 'Read the directions now, before you drive. Don’t use the game while moving.') : null,
     h('div', { class: 'actions' },
-      btn(first ? 'Open the envelope' : chapter.location ? 'We’re here — open the chapter' : 'Open the last folder', () => { commit(actions.openChapter(state, chapter.id)); go('play'); }, 'btn primary big')),
+      btn(first ? 'Open the case folder' : chapter.location ? 'We’re here — open the chapter' : 'Open the last folder', () => { commit(actions.openChapter(state, chapter.id)); go('play'); }, 'btn primary big')),
     !first && chapter.location ? h('p', { class: 'muted center' }, 'Can’t get there, or it’s closed? Open the chapter anyway. Every clue here has a backup.') : null);
 }
 
@@ -290,8 +291,12 @@ function renderPuzzle(pos) {
     h('div', { class: 'objective', role: 'note' }, h('span', { class: 'obj-label' }, 'Objective'), h('p', {}, p.objective)));
   if (p.onSite && !done) wrap.append(h('div', { class: 'onsite' }, h('span', { class: 'obj-label' }, 'On site'), h('p', {}, p.onSite)));
 
+  const evDoc = (id, i) => renderEvidence(id, { inPuzzle: !done, open: i === 0 || (p.fallback || []).includes(id) && state.refs[pid] && !done });
+  const lead = p.focus ? relevant.filter((id, i) => i < p.focus || (p.fallback || []).includes(id)) : relevant;
+  const rest = relevant.filter(id => !lead.includes(id));
   wrap.append(h('section', { class: 'evidence', 'aria-label': 'Relevant evidence' }, h('h2', { class: 'sect' }, 'Evidence on the table'),
-    relevant.map((id, i) => renderEvidence(id, { inPuzzle: !done, open: i === 0 || (p.fallback || []).includes(id) && state.refs[pid] && !done }))));
+    lead.map(evDoc),
+    rest.length ? [h('h3', { class: 'sect sub' }, 'Also in the folder'), rest.map((id, i) => evDoc(id, lead.length + i))] : null));
 
   if (!done) {
     currentInput = makeInput(pid, p);

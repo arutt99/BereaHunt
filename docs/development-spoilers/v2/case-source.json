@@ -1,7 +1,7 @@
 {
   "_comment": "DEVELOPMENT SPOILERS. Authoring source for site/content/case.json. Contains plaintext answers. Build with: python3 scripts/build_case.py",
   "id": "berea-promenade",
-  "contentVersion": "2.3.0",
+  "contentVersion": "2.4.0",
   "title": "The Promenade Letter",
   "subtitle": "A Berea investigation",
   "cast": [
@@ -84,14 +84,19 @@
       "number": 1,
       "title": "The Envelope",
       "location": "L0",
-      "intro": "Your drinks arrive with something you didn’t order. The bartender sets a cream envelope on the bar between you. Both your names are on the front in careful blue ink. A woman left it yesterday, they say, and asked them to hold it until you came in.\n\nInside is a thick case folder and, on top, a letter.",
+      "intro": "Your drinks arrive with something you didn’t order. The bartender sets a cream envelope on the bar between you. Both your names are on the front in careful blue ink. A woman left it yesterday, they say, and asked them to hold it until you came in.\n\nYou open it. Inside is a thick case folder with a handwritten letter clipped to the front.",
       "puzzles": [
         "P1",
         "P2"
       ],
       "outro": "Helen’s first message is open, and so is her first destination. Finish your drinks — there’s no hurry. When you’re ready, drive to the falls.",
       "letter": "E01",
-      "aside": "In the story, the envelope comes from the bar. In real life it’s here on the phone. Nobody at Fat Head’s is part of the game, so there’s nothing to ask for."
+      "aside": "In real life the envelope is here on the phone. Nobody at Fat Head’s is part of the game, so there’s nothing to ask for.",
+      "brief": [
+        "Find out what Helen discovered about the Baldwin letter, and who wanted her stopped.",
+        "Her clues will send you to a few places around Berea. Each chapter tells you where to go next. At the end you’ll name one person.",
+        "Start with Helen’s notebook. The rest of the folder is background, and it stays in the Case file whenever you need it."
+      ]
     },
     {
       "id": "C2",
@@ -142,19 +147,19 @@
         },
         {
           "t": "p",
-          "x": "If the bartender did as I asked, you’re reading this over a drink. I’m sorry to spoil it. I couldn’t think how to reach you without it going through a phone or an inbox. And I knew you’d turn up here sooner or later. Aunt Helen always said Fat Head’s was where she’d find you two."
+          "x": "If you’re reading this, the bartender kept the envelope for you. Forgive me for leaving it at a bar. I didn’t trust a phone or an inbox with this, and Aunt Helen always said Fat Head’s was where she’d find you two."
         },
         {
           "t": "p",
-          "x": "You’ll remember Helen: white hair, field jacket, the Saturday crossword in pen. She talked about you more than you’d guess. “The only two people at that bar who actually notice things,” she said."
+          "x": "You’ll know her from the bar: white hair, field jacket, the Saturday crossword in pen. She thought a lot of you. “The only two people in that place who actually notice things,” she said."
         },
         {
           "t": "p",
-          "x": "Eleven days ago they found her in the water at the old Larkmoor pit, a flooded private quarry outside town. Thursday night. The police say she slipped on a wet ledge in the dark. Helen spent forty years on quarry edges and never once went near one at night. She used to lecture ME about it."
+          "x": "Eleven days ago Helen was found drowned at the old Larkmoor pit, a flooded private quarry outside town. It was a Thursday night. The police say she slipped on a wet ledge in the dark. Helen spent forty years on quarry edges and never once went near one at night. She used to lecture ME about it."
         },
         {
           "t": "p",
-          "x": "Lately she’d been an outside reader for Halberd & Finch, the Cleveland auction house. They had her check a letter they’re about to sell: a letter John Baldwin supposedly wrote in 1849. Yes, that Baldwin. Estimate: $85,000. She never finished her report."
+          "x": "Here’s what the police don’t know. Helen was checking a letter for Halberd & Finch, the Cleveland auction house, before they sell it. It’s supposedly written in 1849 by John Baldwin, the man who found in the 1830s that Berea’s sandstone made superb grindstones. It could fetch $85,000. Helen died before she finished her report on it."
         },
         {
           "t": "p",
@@ -162,11 +167,15 @@
         },
         {
           "t": "p",
-          "x": "The day she died, she mailed me an envelope: a copy of the letter, the sale paperwork and pages from her notebook. Half of it is in some code of hers. The day after the funeral, someone rang the house asking whether Helen had left any papers. They wouldn’t give a name."
+          "x": "The day she died, she mailed me copies of the letter, the sale paperwork and pages from her notebook. Half of it is in some code of hers. The day after the funeral, someone rang the house asking whether Helen had left any papers. They wouldn’t give a name."
         },
         {
           "t": "p",
-          "x": "It’s all in this folder. Please read it. If she was wrong, tell me, and I’ll let it go. If she wasn’t, I think she meant someone to follow her. I think she meant it to be you."
+          "x": "I don’t think she slipped. I think something about that letter got her killed. She didn’t leave me answers, but she left a trail, and I think she meant someone to follow it. I think she meant you."
+        },
+        {
+          "t": "p",
+          "x": "It’s all in this folder. If she was wrong, tell me, and I’ll let it go."
         },
         {
           "t": "sig",
@@ -761,7 +770,8 @@
       "grants": [
         "E06"
       ],
-      "story": "In plain English the line looks different. The capitals are pressed hard into the page, and the last word is underlined twice. Whatever Helen found, she wouldn’t trust it to an email. She trusted it to a coin toss from 1836, and to whoever cared enough to look it up."
+      "story": "In plain English the line looks different. The capitals are pressed hard into the page, and the last word is underlined twice. Whatever Helen found, she wouldn’t trust it to an email. She trusted it to a coin toss from 1836, and to whoever cared enough to look it up.",
+      "focus": 2
     },
     "P2": {
       "chapter": "C1",
